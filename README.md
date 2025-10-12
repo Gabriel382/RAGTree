@@ -1,93 +1,358 @@
-# RAGTree
+# 🌳 RAGTree  
+**Retrieval-Augmented Generation Benchmarking Framework for Causality Tree Extraction**
 
+---
 
+## 📘 Overview
 
-## Getting started
+**RAGTree** is a modular, research-ready framework for building, comparing, and benchmarking multiple **RAG (Retrieval-Augmented Generation)** strategies and **LLM backends** for the automatic **generation of causality trees** from technical document corpora.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+The library follows a **three-phase architecture** — *Preprocessing → Processing → Postprocessing* — with plug-and-play modules for every major component, allowing easy experimentation with:
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- Different **RAG variants** (ChunkRAG, ContextualRAG, Self-RAG, GraphRAG, etc.)
+- Different **LLM providers** (Ollama local models, OpenRouter cloud models)
+- Different **retrievers** and **rerankers** (BM25, dense, hybrid, cross-encoder)
+- Flexible **evaluation metrics** (edge precision/recall, tree edit distance, path correctness)
 
-## Add your files
+RAGTree is designed for both **industrial applications** (e.g., Root Cause Analysis in manufacturing) and **academic research** on explainable, graph-based reasoning.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+---
+
+## 🧩 Key Features
+
+✅ Modular **Pre-/Proc-/Post-processing** pipeline  
+✅ Unified interfaces for **RAG** and **LLM** components  
+✅ Easily compare **12+ RAG strategies** on your datasets  
+✅ Works with **Ollama** (local) and **OpenRouter** (cloud) seamlessly  
+✅ Built-in **benchmark harness** and **evaluation metrics**  
+✅ Produces structured **Causality Trees** with evidence attribution  
+✅ Compatible with **FAISS**, **Qdrant**, **ElasticSearch**, **BM25**  
+✅ Export results in **JSON**, **GraphML**, **CSV**, or **Markdown**  
+
+---
+
+## 🏗️ Project Layout
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/post-doc2/ragtree.git
-git branch -M main
-git push -uf origin main
+
+RAGTree/
+├── ragtree/
+│   ├── core/                         # Contracts, registry, configs, datatypes
+│   │   ├── types.py                  # Query, Evidence, CausalTree, etc.
+│   │   ├── interfaces.py             # Pre/Proc/Post ABCs
+│   │   ├── registry.py               # Dynamic component registry
+│   │   └── config.py                 # Global settings & Pydantic configs
+│   │
+│   ├── preprocessing/                # PREPROCESSING PHASE
+│   │   ├── ingest/                   # Loaders, cleaning, OCR
+│   │   ├── chunking/                 # Structure & token-based splitters
+│   │   ├── nlp/                      # Entities, normalization
+│   │   └── indexing/                 # Dense/BM25/Hybrid index builders
+│   │
+│   ├── processing/                   # PROCESSING PHASE
+│   │   ├── llm/                      # Ollama & OpenRouter clients
+│   │   ├── retrieval/                # Retriever & reranker blocks
+│   │   ├── rag/                      # RAG strategies
+│   │   │   ├── base_strategy.py
+│   │   │   └── strategies/
+│   │   │       ├── chunkrag.py
+│   │   │       ├── contextualrag.py
+│   │   │       ├── parentdoc.py
+│   │   │       ├── hybridrag.py
+│   │   │       ├── hyde.py
+│   │   │       ├── selfrag.py
+│   │   │       ├── adaptive.py
+│   │   │       ├── crag.py
+│   │   │       ├── speculative.py
+│   │   │       ├── agentic.py
+│   │   │       └── graphrag.py
+│   │   └── orchestrators/pipeline.py # Retrieval → LLM → Graph → Tree
+│   │
+│   ├── postprocessing/               # POSTPROCESSING PHASE
+│   │   ├── prune.py                  # Edge filtering, stability
+│   │   ├── explain.py                # Evidence & rationale generation
+│   │   ├── export.py                 # JSON, GraphML, CSV, Markdown
+│   │   ├── eval.py                   # Metrics & benchmark evaluation
+│   │   └── viz.py                    # Visualization helpers
+│   │
+│   └── utils/                        # Shared helpers
+│       ├── io.py
+│       ├── logger.py
+│       └── timer.py
+│
+├── configs/                          # YAML configs for each phase
+│   ├── preprocessing/
+│   ├── processing/
+│   └── postprocessing/
+│
+├── scripts/                          # CLI tools
+│   ├── run_preprocess.py
+│   ├── run_processing.py
+│   ├── run_postprocess.py
+│   └── bench_grid.py
+│
+├── data/                             # Sample or benchmark datasets
+│   ├── raw/
+│   ├── processed/
+│   ├── embeddings/
+│   └── gold_trees/
+│
+├── tests/                            # Unit and integration tests
+├── docs/                             # Documentation
+├── examples/                         # Quick-start notebooks
+├── README.md
+└── pyproject.toml
+
+````
+
+---
+
+## 🔍 Supported RAG Strategies
+
+| Strategy | Complexity | Latency | Performance | Modularity |
+|-----------|-------------|----------|--------------|-------------|
+| ChunkRAG |  |  |  |  |
+| ContextualRAG |  |  |  |  |
+| ParentDocRAG |  |  |  |  |
+| HybridRAG |  |  |  |  |
+| HyDe (Hypothetical Doc Embedding) |  |  |  |  |
+| BranchedRAG |  |  |  |  |
+| SelfRAG |  |  |  |  |
+| AdaptiveRAG |  |  |  |  |
+| CorrectiveRAG (CRAG) |  |  |  |  |
+| SpeculativeRAG |  |  |  |  |
+| AgenticRAG |  |  |  |  |
+| GraphRAG |  |  |  |  |
+
+---
+
+## 🧠 Core Concepts
+
+**Causality Tree:**  
+Directed, evidence-attributed structure connecting causal factors to observed effects extracted from heterogeneous documents.
+
+**Three-Phase Architecture:**
+1. **Preprocessing** — ingest, clean, chunk, and index corpora  
+2. **Processing** — retrieve, reason, and generate causal trees via RAG + LLM  
+3. **Postprocessing** — prune, explain, export, and evaluate results  
+
+**Plug-and-Play Components:**
+- Swap LLMs (Ollama / OpenRouter / custom APIs)
+- Swap retrievers (BM25 / dense / hybrid)
+- Swap RAG strategies
+- Swap evaluation metrics
+
+---
+
+## 🚀 Quick Start
+
+### 1️⃣ Clone the repo
+
+```bash
+git clone https://github.com/yourname/RAGTree.git
+cd RAGTree
+````
+
+### 2️⃣ Install dependencies
+
+```bash
+pip install -e .
+# or
+pip install -r requirements.txt
 ```
 
-## Integrate with your tools
+### 3️⃣ Configure model and strategy
 
-- [ ] [Set up project integrations](https://gitlab.com/post-doc2/ragtree/-/settings/integrations)
+Edit `configs/default.yaml` or override at runtime:
 
-## Collaborate with your team
+```yaml
+proc:
+  llm:
+    name: openrouter
+    params:
+      model: qwen/qwen2.5-32b-instruct
+  retriever:
+    name: hybrid
+  strategy:
+    name: chunkrag
+    params:
+      k: 40
+```
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+### 4️⃣ Run a single pipeline
 
-## Test and Deploy
+```bash
+python scripts/run_processing.py \
+  --config configs/default.yaml \
+  --situation data/raw/example_case/
+```
 
-Use the built-in continuous integration in GitLab.
+### 5️⃣ Run benchmarks across multiple models & RAG types
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```bash
+python scripts/bench_grid.py
+```
 
-***
+---
 
-# Editing this README
+## 🧪 Example Output
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+```json
+{
+  "situation_id": "MX-17-2025-10-12",
+  "trees": [
+    {
+      "root": "Cooling circuit blockage",
+      "edges": [
+        {
+          "src": "Cooling circuit blockage",
+          "dst": "Pump cavitation",
+          "confidence": 0.86,
+          "evidence": [
+            {"doc_id": "log_001", "chunk_id": "c17",
+             "quote": "Pump cavitated due to restricted coolant flow."}
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
-## Suggestions for a good README
+---
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## 📊 Evaluation Metrics
 
-## Name
-Choose a self-explaining name for your project.
+RAGTree includes structural and semantic evaluation metrics for causality graphs:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+| Metric                           | Description                                        |
+| -------------------------------- | -------------------------------------------------- |
+| **Node Precision / Recall / F1** | Accuracy of detected causal factors and effects    |
+| **Edge Precision / Recall / F1** | Accuracy of causal links                           |
+| **Tree Edit Distance (TED)**     | Structural similarity to gold trees                |
+| **Path Correctness**             | Root-to-leaf causal chain accuracy                 |
+| **Evidence Attribution**         | Percentage of edges with valid supporting evidence |
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+---
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## 🔗 Related & Referenced Projects
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+RAGTree draws design inspiration and benchmarking methodology from:
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+* [**RAGChecker (Amazon Science)**](https://github.com/amazon-science/RAGChecker) – Diagnostic framework for analyzing RAG pipelines.
+* [**open-rag-eval (Vectara)**](https://github.com/vectara/open-rag-eval) – Extensible open benchmark for RAG evaluation.
+* [**BenchmarkQED (Microsoft Research)**](https://www.microsoft.com/en-us/research/blog/benchmarkqed-automated-benchmarking-of-rag-systems/) – Automated benchmarking and evaluation framework.
+* [**RAGBench (Meta AI)**](https://arxiv.org/abs/2407.11005) – Large-scale benchmarking of retrieval-augmented systems.
+* [**GraphRAG (Microsoft)**](https://github.com/microsoft/graphrag) – RAG variant leveraging graph structures for reasoning.
+* [**MIRAGE / MIRAGE-Bench (NLP-AI Lab)**](https://github.com/nlpai-lab/MIRAGE) – Multi-domain RAG performance evaluation suite.
+* [**CReSt (Reasoning over Structured Docs)**](https://arxiv.org/abs/2505.17503) – Evaluation of complex reasoning over structured documents.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## ⚙️ Configuration System
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+All phases and components are configurable via YAML:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```yaml
+pre:
+  loader: {name: pdf_loader, params: {ocr: true}}
+  chunker: {name: token_split, params: {max_tokens: 800}}
+  indexer: {name: hybrid, params: {alpha: 0.6}}
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+proc:
+  llm: {name: ollama, params: {model: mistral}}
+  retriever: {name: hybrid}
+  reranker: {name: cross_encoder}
+  strategy: {name: selfrag, params: {k: 30}}
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+post:
+  pruner: {name: confidence_filter, params: {threshold: 0.65}}
+  exporter: {name: json, params: {path: "outputs/"}}
+```
 
-## License
-For open source projects, say how it is licensed.
+---
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## 🧱 Extend RAGTree
+
+### ➕ Add a new RAG Strategy
+
+```python
+# ragtree/processing/rag/strategies/myrag.py
+from ...core.registry import register
+from ...core.interfaces import RAGStrategy
+
+@register("processing.rag", "myrag")
+class MyRAG(RAGStrategy):
+    def run(self, query, **kw):
+        ev = self.retriever.search(query.question, k=30)
+        txt = self.llm.generate("Build causal tree:\n" + str(ev))
+        return self._parse(txt)
+```
+
+### ➕ Add a new LLM Backend
+
+```python
+@register("processing.llm", "huggingface")
+class HuggingFaceClient(LLMClient):
+    def generate(self, prompt, **kw):
+        ...
+```
+
+---
+
+## 📈 Roadmap
+
+| Phase   | Goal                                               |
+| ------- | -------------------------------------------------- |
+| ✅ v0.1  | Modular pipeline with 3-phase structure            |
+| ✅ v0.2  | Benchmark grid across RAG × LLM                    |
+| 🔜 v0.3 | Add ontology alignment (PropaPhen / ISO 14224)     |
+| 🔜 v0.4 | Streamlit dashboard for causal graph visualization |
+| 🔜 v0.5 | Public benchmark dataset release                   |
+
+---
+
+## 🧪 Citation
+
+If you use **RAGTree** in your research, please cite:
+
+```
+@software{ragtree2025,
+  title        = {RAGTree: Retrieval-Augmented Generation Benchmarking Framework for Causality Tree Extraction},
+  author       = {Medeiros, Gabriel Henrique Alencar},
+  year         = {2025},
+  url          = {https://github.com/gabrielhenriqueam/RAGTree}
+}
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Fork the repo and open a pull request with a short description.
+
+```bash
+# install dev deps
+pip install -e ".[dev]"
+pytest tests/
+```
+
+See `docs/CONTRIBUTING.md` for style and testing guidelines.
+
+---
+
+## 🪪 License
+
+RAGTree is released under the **MIT License**.
+See the [LICENSE](./LICENSE) file for details.
+
+---
+
+## 💬 Contact
+
+Maintainer: **Gabriel Henrique Alencar Medeiros**
+📧 [gabriel.medeiros@insa-rouen.fr](mailto:gabriel.medeiros@insa-rouen.fr)
+🌐 [LinkedIn](https://www.linkedin.com/in/gabriel-henrique-am/) — [Google Scholar](https://scholar.google.com/) — [SeaFortress](https://seafortress.ai)
+
+---
