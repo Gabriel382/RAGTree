@@ -1,5 +1,3 @@
----
-
 ## 🧪 Full Validation Pipeline — Step-by-Step Enumeration
 
 ### **I. Project setup**
@@ -175,6 +173,7 @@
 
 ### Folder structure
 
+```
 ragtree/
 ├── pyproject.toml
 ├── README.md
@@ -245,5 +244,6 @@ ragtree/
     ├── test_rags.py
     └── test_eval.py
 
+```
 
 ---
