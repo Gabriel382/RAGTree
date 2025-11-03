@@ -1,0 +1,763 @@
+{
+  "doc_id": "8_6ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attended",
+      "token_ids": "111"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "413"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "referring",
+      "token_ids": "128"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "132"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "participation",
+      "token_ids": "147"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "151"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made",
+      "token_ids": "157"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "clashes",
+      "token_ids": "514"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "502"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spread",
+      "token_ids": "517"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "battles",
+      "token_ids": "904"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gathered",
+      "token_ids": "527"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rage",
+      "token_ids": "907"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tried",
+      "token_ids": "535"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burning",
+      "token_ids": "50"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "claim",
+      "token_ids": "916"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "visit",
+      "token_ids": "537"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "54"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mobilising",
+      "token_ids": "920"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "battle",
+      "token_ids": "58"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "storm",
+      "token_ids": "924"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suffocated",
+      "token_ids": "68"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "76"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made the round",
+      "token_ids": "507 508 509"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "70"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "events",
+      "token_ids": "397"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "battles",
+      "token_ids": "82"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "96"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "404"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "marking",
+      "token_ids": "97"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "break",
+      "token_ids": "406"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "103"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "408"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "claim",
+      "token_ids": "410"
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_storm_parliament",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_strike",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_spread",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fire_bank",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fighting",
+      "token_ids": ""
+    },
+    {
+      "id": "91",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_demonstrations",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_STATE",
+      "span_text": "under pressure",
+      "token_ids": "393 394"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_STATE",
+      "span_text": "death",
+      "token_ids": "425"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_STATE",
+      "span_text": "dead",
+      "token_ids": "46"
+    },
+    {
+      "id": "94",
+      "label": "ACTION_STATE",
+      "span_text": "t8_dead",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "reports",
+      "token_ids": "382"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "turns into",
+      "token_ids": "55 56"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "515"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "began",
+      "token_ids": "384"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "436"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "remains",
+      "token_ids": "442"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continue",
+      "token_ids": "905"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "led to",
+      "token_ids": "422 423"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "clashes",
+      "token_ids": "514"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spread",
+      "token_ids": "517"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gathered",
+      "token_ids": "527"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rage",
+      "token_ids": "907"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tried",
+      "token_ids": "535"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burning",
+      "token_ids": "50"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "claim",
+      "token_ids": "916"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "visit",
+      "token_ids": "537"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "54"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mobilising",
+      "token_ids": "920"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "battle",
+      "token_ids": "58"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "storm",
+      "token_ids": "924"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suffocated",
+      "token_ids": "68"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "76"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made the round",
+      "token_ids": "507 508 509"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "70"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "events",
+      "token_ids": "397"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "battles",
+      "token_ids": "82"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "96"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "404"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "marking",
+      "token_ids": "97"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "break",
+      "token_ids": "406"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "103"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "408"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "claim",
+      "token_ids": "410"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attended",
+      "token_ids": "111"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "413"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "referring",
+      "token_ids": "128"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "132"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "participation",
+      "token_ids": "147"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "151"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made",
+      "token_ids": "157"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "502"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "battles",
+      "token_ids": "904"
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_storm_parliament",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_strike",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_spread",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fire_bank",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fighting",
+      "token_ids": ""
+    },
+    {
+      "id": "91",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_demonstrations",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_STATE",
+      "span_text": "under pressure",
+      "token_ids": "393 394"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_STATE",
+      "span_text": "death",
+      "token_ids": "425"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_STATE",
+      "span_text": "dead",
+      "token_ids": "46"
+    },
+    {
+      "id": "94",
+      "label": "ACTION_STATE",
+      "span_text": "t8_dead",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "reports",
+      "token_ids": "382"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "turns into",
+      "token_ids": "55 56"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "515"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "began",
+      "token_ids": "384"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "436"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "remains",
+      "token_ids": "442"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continue",
+      "token_ids": "905"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "led to",
+      "token_ids": "422 423"
+    }
+  ],
+  "edges": [
+    {
+      "source": "45",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "30",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "36",
+      "target": "38",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "43",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "43",
+      "target": "24",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "34",
+      "target": "44",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "34",
+      "target": "40",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "40",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "41",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "45",
+      "target": "34",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "34",
+      "target": "39",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "23",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "43",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "43",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "44",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "27",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "31",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "28",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

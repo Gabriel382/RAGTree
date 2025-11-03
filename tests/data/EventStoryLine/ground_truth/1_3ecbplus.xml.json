@@ -1,0 +1,554 @@
+{
+  "doc_id": "1_3ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Out",
+      "token_ids": "22 23"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Check Into",
+      "token_ids": "30 31"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "41"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gone",
+      "token_ids": "47"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "finding",
+      "token_ids": "57"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ordered",
+      "token_ids": "150"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "82"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep",
+      "token_ids": "92"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "messed around",
+      "token_ids": "165 166"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gone",
+      "token_ids": "109"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "published",
+      "token_ids": "118"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "had enough",
+      "token_ids": "131 132"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "141"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "named",
+      "token_ids": "159"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "getting",
+      "token_ids": "168"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked out",
+      "token_ids": "188 189"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "committing",
+      "token_ids": "204"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "treatment",
+      "token_ids": "79"
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "103"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_named_cliffside",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_court_ordered",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_publish_report_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "61",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_messed_around",
+      "token_ids": ""
+    },
+    {
+      "id": "62",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_decided_leave_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_out_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_finding_difficult",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_leaving_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_keep_around",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_cliffside",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_getting_to_cliffside",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_had_enough_of_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "stay",
+      "token_ids": "151"
+    },
+    {
+      "id": "70",
+      "label": "ACTION_STATE",
+      "span_text": "t1_stay_in_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "finished",
+      "token_ids": "74"
+    },
+    {
+      "id": "73",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_finished_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Out",
+      "token_ids": "22 23"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Check Into",
+      "token_ids": "30 31"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "41"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gone",
+      "token_ids": "47"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "finding",
+      "token_ids": "57"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ordered",
+      "token_ids": "150"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "82"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep",
+      "token_ids": "92"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "messed around",
+      "token_ids": "165 166"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gone",
+      "token_ids": "109"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "published",
+      "token_ids": "118"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "had enough",
+      "token_ids": "131 132"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "141"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "named",
+      "token_ids": "159"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "getting",
+      "token_ids": "168"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked out",
+      "token_ids": "188 189"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "committing",
+      "token_ids": "204"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "treatment",
+      "token_ids": "79"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "105"
+    },
+    {
+      "id": "59",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_named_cliffside",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_court_ordered",
+      "token_ids": ""
+    },
+    {
+      "id": "62",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_publish_report_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_messed_around",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_decided_leave_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_out_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_finding_difficult",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_leaving_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_keep_around",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_cliffside",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_getting_to_cliffside",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_had_enough_of_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "stay",
+      "token_ids": "151"
+    },
+    {
+      "id": "72",
+      "label": "ACTION_STATE",
+      "span_text": "t1_stay_in_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "finished",
+      "token_ids": "74"
+    },
+    {
+      "id": "75",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_finished_treatment",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "57",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "57",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "57",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "18",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

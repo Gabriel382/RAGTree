@@ -1,0 +1,769 @@
+{
+  "doc_id": "1_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "allowed",
+      "token_ids": "111"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "approves",
+      "token_ids": "117"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensconced",
+      "token_ids": "125"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "objected",
+      "token_ids": "141"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "155"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shopping",
+      "token_ids": "173"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "entered",
+      "token_ids": "188"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "agreed",
+      "token_ids": "198"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "remain",
+      "token_ids": "205"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "treatment",
+      "token_ids": "76"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "201"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "113"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "placement",
+      "token_ids": "119"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "choice",
+      "token_ids": "146"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "30 31"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "52 53"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "88"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "perform",
+      "token_ids": "68"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "driving",
+      "token_ids": "87"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "required",
+      "token_ids": "79"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "receive",
+      "token_ids": "83"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "settling in",
+      "token_ids": "99 100"
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_remain_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_choice_of_facilities",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_received_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_should_stay_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_shopping_electronics",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_argued",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_approve_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_agree_stay_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_the_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_settling_in_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "94",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "95",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_ensconsed",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_perform_unlicensed",
+      "token_ids": ""
+    },
+    {
+      "id": "104",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_required_treatment_by_judge",
+      "token_ids": ""
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_placement_at_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_prosecutor_objected",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_allow_stay_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_STATE",
+      "span_text": "unknown",
+      "token_ids": "215"
+    },
+    {
+      "id": "78",
+      "label": "ACTION_STATE",
+      "span_text": "t1_unknown_whereabouts",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_REPORTING",
+      "span_text": "argued",
+      "token_ids": "105"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_REPORTING",
+      "span_text": "argued",
+      "token_ids": "137"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "48"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "63"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "93"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "170"
+    },
+    {
+      "id": "77",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_told_settling_at_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "100",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "106",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_said_heller_thursday",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "argued",
+      "token_ids": "105"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "allowed",
+      "token_ids": "111"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "approves",
+      "token_ids": "117"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensconced",
+      "token_ids": "125"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "argued",
+      "token_ids": "137"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "objected",
+      "token_ids": "141"
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "155"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shopping",
+      "token_ids": "173"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "entered",
+      "token_ids": "188"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "agreed",
+      "token_ids": "198"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "remain",
+      "token_ids": "205"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "treatment",
+      "token_ids": "76"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "201"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "113"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "placement",
+      "token_ids": "119"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "choice",
+      "token_ids": "146"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "30 31"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "should",
+      "token_ids": "204"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "52 53"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "88"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "perform",
+      "token_ids": "68"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "driving",
+      "token_ids": "87"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "required",
+      "token_ids": "79"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "receive",
+      "token_ids": "83"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "settling in",
+      "token_ids": "99 100"
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_remain_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_choice_of_facilities",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_received_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_should_stay_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_shopping_electronics",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_argued",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_approve_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_agree_stay_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_the_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "94",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_settling_in_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "95",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "96",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_ensconsed",
+      "token_ids": ""
+    },
+    {
+      "id": "103",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_perform_unlicensed",
+      "token_ids": ""
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_required_treatment_by_judge",
+      "token_ids": ""
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_placement_at_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_prosecutor_objected",
+      "token_ids": ""
+    },
+    {
+      "id": "109",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_allow_stay_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_STATE",
+      "span_text": "unknown",
+      "token_ids": "215"
+    },
+    {
+      "id": "79",
+      "label": "ACTION_STATE",
+      "span_text": "t1_unknown_whereabouts",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "48"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "63"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "93"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "170"
+    },
+    {
+      "id": "78",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_told_settling_at_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_said_heller_thursday",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "17",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "24",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "24",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "12",
+      "relation": ""
+    },
+    {
+      "source": "12",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "23",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "23",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "24",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "71",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "71",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "71",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

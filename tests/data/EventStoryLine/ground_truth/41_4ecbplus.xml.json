@@ -1,0 +1,307 @@
+{
+  "doc_id": "41_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombed",
+      "token_ids": "50"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "138"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "99"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "156"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "107"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "detonated",
+      "token_ids": "144"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attending",
+      "token_ids": "166"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "class",
+      "token_ids": "167"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "119"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "delivering",
+      "token_ids": "128"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Bombing",
+      "token_ids": "22"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombing",
+      "token_ids": "213"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_airstrip",
+      "token_ids": ""
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_school",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_heli_deliver_aid",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "result",
+      "token_ids": "210"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombed",
+      "token_ids": "50"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "138"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "99"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "156"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "needed",
+      "token_ids": "130"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "107"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "detonated",
+      "token_ids": "144"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attending",
+      "token_ids": "166"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "class",
+      "token_ids": "167"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "119"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "delivering",
+      "token_ids": "128"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Bombing",
+      "token_ids": "22"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombing",
+      "token_ids": "213"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_airstrip",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_school",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_heli_deliver_aid",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "result",
+      "token_ids": "210"
+    }
+  ],
+  "edges": [
+    {
+      "source": "12",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "27",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "39",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

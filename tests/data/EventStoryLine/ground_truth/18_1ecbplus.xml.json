@@ -1,0 +1,331 @@
+{
+  "doc_id": "18_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "surgery",
+      "token_ids": "121"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "27"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "427"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "51"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kills",
+      "token_ids": "28"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "two",
+      "token_ids": "429"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injures",
+      "token_ids": "31"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "49"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "55"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fired",
+      "token_ids": "69"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "107"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "underwent",
+      "token_ids": "120"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_fired",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_died",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "believed",
+      "token_ids": "112"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "132"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "74"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_REPORTING",
+      "span_text": "t18_police_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "follows",
+      "token_ids": "428"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "surgery",
+      "token_ids": "121"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "27"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "427"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "51"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kills",
+      "token_ids": "28"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "two",
+      "token_ids": "429"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injures",
+      "token_ids": "31"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "49"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "55"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fired",
+      "token_ids": "69"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "107"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "underwent",
+      "token_ids": "120"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_fired",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_died",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "believed",
+      "token_ids": "112"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "132"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "74"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_REPORTING",
+      "span_text": "t18_police_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "follows",
+      "token_ids": "428"
+    }
+  ],
+  "edges": [
+    {
+      "source": "3",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "37",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "2",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

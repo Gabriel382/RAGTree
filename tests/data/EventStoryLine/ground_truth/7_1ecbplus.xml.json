@@ -1,0 +1,1039 @@
+{
+  "doc_id": "7_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep a hold on",
+      "token_ids": "68 69 71 72"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struggling",
+      "token_ids": "310"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "66"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sixth",
+      "token_ids": "138"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fifth",
+      "token_ids": "302"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appeared",
+      "token_ids": "336"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cornered",
+      "token_ids": "317"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "340"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopped",
+      "token_ids": "60"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "caught",
+      "token_ids": "344"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "183"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "nominated",
+      "token_ids": "190"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sixth",
+      "token_ids": "324"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fell",
+      "token_ids": "195"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopped",
+      "token_ids": "178"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "257"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "327"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "second",
+      "token_ids": "263"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gave",
+      "token_ids": "144"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "extended",
+      "token_ids": "369"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "punches",
+      "token_ids": "328"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wrestled",
+      "token_ids": "268"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "count",
+      "token_ids": "149"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "retains",
+      "token_ids": "44"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blow",
+      "token_ids": "335"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "floored",
+      "token_ids": "100"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "domination",
+      "token_ids": "371"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fight",
+      "token_ids": "153"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hand",
+      "token_ids": "106"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shares",
+      "token_ids": "377"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "acted",
+      "token_ids": "395"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "113"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stepped up",
+      "token_ids": "276 277"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "401"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landing",
+      "token_ids": "282"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "284"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "third",
+      "token_ids": "290"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "chants",
+      "token_ids": "413"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tactics",
+      "token_ids": "280"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stirred",
+      "token_ids": "419"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knockouts",
+      "token_ids": "98"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "306"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "133"
+    },
+    {
+      "id": "115",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_standing_count",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_3",
+      "token_ids": ""
+    },
+    {
+      "id": "117",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_appeared",
+      "token_ids": ""
+    },
+    {
+      "id": "118",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_klitschko_ends _fight",
+      "token_ids": ""
+    },
+    {
+      "id": "120",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_knockouts",
+      "token_ids": ""
+    },
+    {
+      "id": "121",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_caught",
+      "token_ids": ""
+    },
+    {
+      "id": "125",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_6",
+      "token_ids": ""
+    },
+    {
+      "id": "128",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_retain_awards",
+      "token_ids": ""
+    },
+    {
+      "id": "129",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_ref_ends_fight",
+      "token_ids": ""
+    },
+    {
+      "id": "134",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round 11_2008",
+      "token_ids": ""
+    },
+    {
+      "id": "136",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_damage",
+      "token_ids": ""
+    },
+    {
+      "id": "138",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_blow",
+      "token_ids": ""
+    },
+    {
+      "id": "141",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_1",
+      "token_ids": ""
+    },
+    {
+      "id": "142",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_the_match",
+      "token_ids": ""
+    },
+    {
+      "id": "143",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_chants",
+      "token_ids": ""
+    },
+    {
+      "id": "145",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_5",
+      "token_ids": ""
+    },
+    {
+      "id": "147",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_2",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_STATE",
+      "span_text": "satisfied",
+      "token_ids": "168"
+    },
+    {
+      "id": "53",
+      "label": "ACTION_STATE",
+      "span_text": "strong",
+      "token_ids": "357"
+    },
+    {
+      "id": "124",
+      "label": "ACTION_STATE",
+      "span_text": "t7_satifsied",
+      "token_ids": ""
+    },
+    {
+      "id": "133",
+      "label": "ACTION_STATE",
+      "span_text": "t7_strong",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "172"
+    },
+    {
+      "id": "51",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "351"
+    },
+    {
+      "id": "123",
+      "label": "ACTION_REPORTING",
+      "span_text": "t7_klitschko_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "end",
+      "token_ids": "109"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "ended",
+      "token_ids": "307"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "end",
+      "token_ids": "321"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "followed",
+      "token_ids": "259"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "stopping",
+      "token_ids": "151"
+    },
+    {
+      "id": "119",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t7_end_round_5",
+      "token_ids": ""
+    },
+    {
+      "id": "144",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t7_1_followed_by_2",
+      "token_ids": ""
+    },
+    {
+      "id": "146",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t7_end_round_6",
+      "token_ids": ""
+    },
+    {
+      "id": "5",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "cause",
+      "token_ids": "338"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appeared",
+      "token_ids": "336"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "340"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "caught",
+      "token_ids": "344"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "nominated",
+      "token_ids": "190"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fell",
+      "token_ids": "195"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "257"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "second",
+      "token_ids": "263"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "extended",
+      "token_ids": "369"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wrestled",
+      "token_ids": "268"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "retains",
+      "token_ids": "44"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "floored",
+      "token_ids": "100"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "domination",
+      "token_ids": "371"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hand",
+      "token_ids": "106"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shares",
+      "token_ids": "377"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "acted",
+      "token_ids": "395"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "113"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stepped up",
+      "token_ids": "276 277"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "401"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landing",
+      "token_ids": "282"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "284"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "third",
+      "token_ids": "290"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "chants",
+      "token_ids": "413"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tactics",
+      "token_ids": "280"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stirred",
+      "token_ids": "419"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knockouts",
+      "token_ids": "98"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "306"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "133"
+    },
+    {
+      "id": "111",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep a hold on",
+      "token_ids": "68 69 71 72"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struggling",
+      "token_ids": "310"
+    },
+    {
+      "id": "112",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "66"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sixth",
+      "token_ids": "138"
+    },
+    {
+      "id": "113",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fifth",
+      "token_ids": "302"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cornered",
+      "token_ids": "317"
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopped",
+      "token_ids": "60"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "round",
+      "token_ids": "183"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sixth",
+      "token_ids": "324"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopped",
+      "token_ids": "178"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landed",
+      "token_ids": "327"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gave",
+      "token_ids": "144"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "punches",
+      "token_ids": "328"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "count",
+      "token_ids": "149"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blow",
+      "token_ids": "335"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopping",
+      "token_ids": "151"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fight",
+      "token_ids": "153"
+    },
+    {
+      "id": "115",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_standing_count",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_3",
+      "token_ids": ""
+    },
+    {
+      "id": "117",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_appeared",
+      "token_ids": ""
+    },
+    {
+      "id": "118",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_klitschko_ends _fight",
+      "token_ids": ""
+    },
+    {
+      "id": "120",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_knockouts",
+      "token_ids": ""
+    },
+    {
+      "id": "121",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_caught",
+      "token_ids": ""
+    },
+    {
+      "id": "125",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_6",
+      "token_ids": ""
+    },
+    {
+      "id": "128",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_retain_awards",
+      "token_ids": ""
+    },
+    {
+      "id": "129",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_ref_ends_fight",
+      "token_ids": ""
+    },
+    {
+      "id": "134",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round 11_2008",
+      "token_ids": ""
+    },
+    {
+      "id": "136",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_damage",
+      "token_ids": ""
+    },
+    {
+      "id": "138",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_blow",
+      "token_ids": ""
+    },
+    {
+      "id": "141",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_1",
+      "token_ids": ""
+    },
+    {
+      "id": "142",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_the_match",
+      "token_ids": ""
+    },
+    {
+      "id": "143",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_chants",
+      "token_ids": ""
+    },
+    {
+      "id": "145",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_5",
+      "token_ids": ""
+    },
+    {
+      "id": "147",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t7_round_2",
+      "token_ids": ""
+    },
+    {
+      "id": "48",
+      "label": "ACTION_STATE",
+      "span_text": "satisfied",
+      "token_ids": "168"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_STATE",
+      "span_text": "strong",
+      "token_ids": "357"
+    },
+    {
+      "id": "124",
+      "label": "ACTION_STATE",
+      "span_text": "t7_satifsied",
+      "token_ids": ""
+    },
+    {
+      "id": "133",
+      "label": "ACTION_STATE",
+      "span_text": "t7_strong",
+      "token_ids": ""
+    },
+    {
+      "id": "46",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "172"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "351"
+    },
+    {
+      "id": "123",
+      "label": "ACTION_REPORTING",
+      "span_text": "t7_klitschko_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "end",
+      "token_ids": "109"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "ended",
+      "token_ids": "307"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "end",
+      "token_ids": "321"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "followed",
+      "token_ids": "259"
+    },
+    {
+      "id": "119",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t7_end_round_5",
+      "token_ids": ""
+    },
+    {
+      "id": "144",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t7_1_followed_by_2",
+      "token_ids": ""
+    },
+    {
+      "id": "146",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t7_end_round_6",
+      "token_ids": ""
+    },
+    {
+      "id": "5",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "cause",
+      "token_ids": "338"
+    }
+  ],
+  "edges": [
+    {
+      "source": "39",
+      "target": "33",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "100",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "46",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "46",
+      "target": "48",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "52",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "99",
+      "target": "34",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "38",
+      "target": "45",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "47",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "38",
+      "target": "47",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "42",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "114",
+      "target": "111",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "96",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "27",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "48",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "41",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "95",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "39",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

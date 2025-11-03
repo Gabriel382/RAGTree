@@ -1,0 +1,347 @@
+{
+  "doc_id": "30_7ecbplus.xml",
+  "nodes": [
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "service",
+      "token_ids": "59"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "monitor",
+      "token_ids": "69"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensure",
+      "token_ids": "71"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "traffic",
+      "token_ids": "84"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flowing",
+      "token_ids": "88"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "outage",
+      "token_ids": "98"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "terrestrial break",
+      "token_ids": "103 104"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "OUTAGE",
+      "token_ids": "27"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "browsing",
+      "token_ids": "56"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experienced",
+      "token_ids": "50"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "outage",
+      "token_ids": "52"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affecting",
+      "token_ids": "53"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "online",
+      "token_ids": "63"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "stable",
+      "token_ids": "75"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_STATE",
+      "span_text": "BRIEF",
+      "token_ids": "22"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_STATE",
+      "span_text": "UNPLANNED",
+      "token_ids": "23"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "According to",
+      "token_ids": "92 93"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continue",
+      "token_ids": "67"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "caused",
+      "token_ids": "100"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "service",
+      "token_ids": "59"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "monitor",
+      "token_ids": "69"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensure",
+      "token_ids": "71"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "traffic",
+      "token_ids": "84"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flowing",
+      "token_ids": "88"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "outage",
+      "token_ids": "98"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "terrestrial break",
+      "token_ids": "103 104"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "OUTAGE",
+      "token_ids": "27"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "browsing",
+      "token_ids": "56"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experienced",
+      "token_ids": "50"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "outage",
+      "token_ids": "52"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affecting",
+      "token_ids": "53"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "online",
+      "token_ids": "63"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "stable",
+      "token_ids": "75"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_STATE",
+      "span_text": "normally",
+      "token_ids": "89"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_STATE",
+      "span_text": "BRIEF",
+      "token_ids": "22"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "UNPLANNED",
+      "token_ids": "23"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "According to",
+      "token_ids": "92 93"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continue",
+      "token_ids": "67"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "caused",
+      "token_ids": "100"
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

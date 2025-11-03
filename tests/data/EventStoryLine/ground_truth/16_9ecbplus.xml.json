@@ -1,0 +1,232 @@
+{
+  "doc_id": "16_9ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "laughed",
+      "token_ids": "41"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ruling",
+      "token_ids": "47"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed",
+      "token_ids": "58"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "67"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "72"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "76"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "put",
+      "token_ids": "51"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_convicted",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "death",
+      "token_ids": "53"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "Death",
+      "token_ids": "20"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "hearing",
+      "token_ids": "44"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "laughed",
+      "token_ids": "41"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ruling",
+      "token_ids": "47"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed",
+      "token_ids": "58"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "emotion",
+      "token_ids": "61"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "67"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "72"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "76"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "put",
+      "token_ids": "51"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_convicted",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "death",
+      "token_ids": "53"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "Death",
+      "token_ids": "20"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "hearing",
+      "token_ids": "44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

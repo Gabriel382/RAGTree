@@ -1,0 +1,29 @@
+{
+  "docs_evaluated": [
+    "1_10ecbplus.xml",
+    "1_11ecbplus.xml",
+    "1_12ecbplus.xml",
+    "1_13ecbplus.xml",
+    "1_14ecbplus.xml",
+    "1_15ecbplus.xml",
+    "1_16ecbplus.xml",
+    "1_19ecbplus.xml",
+    "1_1ecbplus.xml"
+  ],
+  "label_strategy": "strict",
+  "macro": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "micro": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "counts": {
+    "TP": 0,
+    "FP": 25,
+    "FN": 100
+  }
+}

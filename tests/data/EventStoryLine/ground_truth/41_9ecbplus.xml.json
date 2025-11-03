@@ -1,0 +1,227 @@
+{
+  "doc_id": "41_9ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombed",
+      "token_ids": "54"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "alleges",
+      "token_ids": "73"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "consists",
+      "token_ids": "94"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fled",
+      "token_ids": "103"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fighting",
+      "token_ids": "106"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombing",
+      "token_ids": "140"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "result",
+      "token_ids": "143"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "286"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Bombed",
+      "token_ids": "37"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "tensions",
+      "token_ids": "147"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "heightening",
+      "token_ids": "146"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_STATE",
+      "span_text": "t41_tensions_bw_sudan_southsudan",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "According to",
+      "token_ids": "274 275"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "press release",
+      "token_ids": "279 280"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombed",
+      "token_ids": "54"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "alleges",
+      "token_ids": "73"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "consists",
+      "token_ids": "94"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fled",
+      "token_ids": "103"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fighting",
+      "token_ids": "106"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombing",
+      "token_ids": "140"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "result",
+      "token_ids": "143"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "286"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Bombed",
+      "token_ids": "37"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "tensions",
+      "token_ids": "147"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "heightening",
+      "token_ids": "146"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_STATE",
+      "span_text": "t41_tensions_bw_sudan_southsudan",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "According to",
+      "token_ids": "274 275"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "press release",
+      "token_ids": "279 280"
+    }
+  ],
+  "edges": [
+    {
+      "source": "6",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "33",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "33",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "33",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

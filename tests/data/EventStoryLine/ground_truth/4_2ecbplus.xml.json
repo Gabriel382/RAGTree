@@ -1,0 +1,279 @@
+{
+  "doc_id": "4_2ecbplus.xml",
+  "nodes": [
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "80"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experiences",
+      "token_ids": "60"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals\"",
+      "token_ids": "74"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "designed",
+      "token_ids": "75"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dies",
+      "token_ids": "49"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "115"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "64"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_designed",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_experiences_as_swimming_champion",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_swimming_skills",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "119"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "97"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "134"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "led to",
+      "token_ids": "66 67"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "career",
+      "token_ids": "69"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "made",
+      "token_ids": "152"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "due to",
+      "token_ids": "126 127"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "80"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experiences",
+      "token_ids": "60"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals\"",
+      "token_ids": "74"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "designed",
+      "token_ids": "75"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dies",
+      "token_ids": "49"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "115"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "64"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_designed",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_experiences_as_swimming_champion",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_swimming_skills",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "119"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "6",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "97"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "134"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "led to",
+      "token_ids": "66 67"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "career",
+      "token_ids": "69"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "made",
+      "token_ids": "152"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "due to",
+      "token_ids": "126 127"
+    }
+  ],
+  "edges": [
+    {
+      "source": "6",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "27",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "30",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

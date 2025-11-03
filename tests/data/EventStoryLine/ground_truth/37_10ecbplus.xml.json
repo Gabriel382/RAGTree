@@ -1,0 +1,765 @@
+{
+  "doc_id": "37_10ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "573"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reach",
+      "token_ids": "282"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "find",
+      "token_ids": "157"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "two aftershocks",
+      "token_ids": "290 291"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trapped",
+      "token_ids": "78"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trapped",
+      "token_ids": "161"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami alert",
+      "token_ids": "617 618"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "71"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "58"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapse",
+      "token_ids": "165"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude quake",
+      "token_ids": "46 47 48 49 50 51"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "61"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "EARTHQUAKE",
+      "token_ids": "70"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struggled",
+      "token_ids": "280"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strikes",
+      "token_ids": "52"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "126"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapsed",
+      "token_ids": "82"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Koran reading session",
+      "token_ids": "85 86 87"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "it",
+      "token_ids": "117"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bringing",
+      "token_ids": "93"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude quake",
+      "token_ids": "106 107 108 109 110 111"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death toll",
+      "token_ids": "96 97"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "134"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disaster",
+      "token_ids": "100"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "115"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rocked",
+      "token_ids": "118"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "confirmed",
+      "token_ids": "95"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "devastated",
+      "token_ids": "123"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "129"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reduced",
+      "token_ids": "135"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tremor",
+      "token_ids": "568"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "571"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landslides",
+      "token_ids": "147"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "8 . 6 - magnitude quake",
+      "token_ids": "598 599 600 601 602 603"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "150"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "604"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struggling",
+      "token_ids": "155"
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_2004quake_before_tsunami",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_collapse_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_landslides",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_earthquake_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_devastated_by_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37b_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_injured_dozens",
+      "token_ids": ""
+    },
+    {
+      "id": "85",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_aceh_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "prompting",
+      "token_ids": "611"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparked",
+      "token_ids": "569"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "set off",
+      "token_ids": "144 145"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "triggered",
+      "token_ids": "128"
+    },
+    {
+      "id": "73",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_triggering_landslides",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_caused_by_2004quake",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trapped",
+      "token_ids": "78"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami alert",
+      "token_ids": "617 618"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "58"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude quake",
+      "token_ids": "46 47 48 49 50 51"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "EARTHQUAKE",
+      "token_ids": "70"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strikes",
+      "token_ids": "52"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "126"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapsed",
+      "token_ids": "82"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Koran reading session",
+      "token_ids": "85 86 87"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "it",
+      "token_ids": "117"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bringing",
+      "token_ids": "93"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude quake",
+      "token_ids": "106 107 108 109 110 111"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death toll",
+      "token_ids": "96 97"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "134"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disaster",
+      "token_ids": "100"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "115"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rocked",
+      "token_ids": "118"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "confirmed",
+      "token_ids": "95"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "devastated",
+      "token_ids": "123"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "129"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reduced",
+      "token_ids": "135"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tremor",
+      "token_ids": "568"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "571"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "landslides",
+      "token_ids": "147"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "8 . 6 - magnitude quake",
+      "token_ids": "598 599 600 601 602 603"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "150"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "604"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struggling",
+      "token_ids": "155"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "573"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reach",
+      "token_ids": "282"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "find",
+      "token_ids": "157"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "two aftershocks",
+      "token_ids": "290 291"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trapped",
+      "token_ids": "161"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "71"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapse",
+      "token_ids": "165"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "2004 tsunami",
+      "token_ids": "60 61"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struggled",
+      "token_ids": "280"
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_2004quake_before_tsunami",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_collapse_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_landslides",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_earthquake_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_devastated_by_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "85",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37b_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_injured_dozens",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_aceh_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_STATE",
+      "span_text": "Indian Ocean - wide",
+      "token_ids": "613 614 615 616"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "prompting",
+      "token_ids": "611"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparked",
+      "token_ids": "569"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "set off",
+      "token_ids": "144 145"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "triggered",
+      "token_ids": "128"
+    },
+    {
+      "id": "75",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_triggering_landslides",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_caused_by_2004quake",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "9",
+      "target": "38",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "23",
+      "target": "24",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "37",
+      "target": "39",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "33",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "33",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "33",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "36",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "35",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "15",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "26",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "20",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

@@ -1,0 +1,818 @@
+{
+  "doc_id": "1_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spent",
+      "token_ids": "245"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leaving",
+      "token_ids": "134"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "served",
+      "token_ids": "253"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "265"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drama",
+      "token_ids": "270"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "80"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "257"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "challenge",
+      "token_ids": "225"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehires",
+      "token_ids": "39"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heads to",
+      "token_ids": "45 46"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "handle",
+      "token_ids": "78"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "had enough",
+      "token_ids": "58 59"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "re - hired",
+      "token_ids": "70 71 72"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked in",
+      "token_ids": "94 95"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "106"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked in",
+      "token_ids": "120 121"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made it",
+      "token_ids": "149 150"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "received",
+      "token_ids": "165"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "confirmation",
+      "token_ids": "166"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked in",
+      "token_ids": "170 171"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "receiving",
+      "token_ids": "191"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "256"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "88"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "treatment",
+      "token_ids": "192"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "surfaced",
+      "token_ids": "197"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep",
+      "token_ids": "229"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "violation",
+      "token_ids": "132"
+    },
+    {
+      "id": "85",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_surfaced_reports",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_confirmation_check_in",
+      "token_ids": ""
+    },
+    {
+      "id": "95",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_probation_violation",
+      "token_ids": ""
+    },
+    {
+      "id": "96",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "98",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_receive_confirmation_lohan_in_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_out_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "104",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_stay_betty_ford_previously",
+      "token_ids": ""
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_challenge",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_handle_case",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_received_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "109",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_served_sentence_previously",
+      "token_ids": ""
+    },
+    {
+      "id": "111",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_made_it_new_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_rehire_attorney",
+      "token_ids": ""
+    },
+    {
+      "id": "115",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_keep_lohan_in_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heading_to_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "119",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "122",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "124",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_had_enough_of_heller",
+      "token_ids": ""
+    },
+    {
+      "id": "125",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drama",
+      "token_ids": ""
+    },
+    {
+      "id": "126",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_the_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "128",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "lawyer",
+      "token_ids": "41"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "attorney",
+      "token_ids": "63"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_STATE",
+      "span_text": "attorney",
+      "token_ids": "74"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "162"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "240"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "83"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "145"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "159"
+    },
+    {
+      "id": "112",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_said_white",
+      "token_ids": ""
+    },
+    {
+      "id": "118",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_told_source",
+      "token_ids": ""
+    },
+    {
+      "id": "121",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spent",
+      "token_ids": "245"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leaving",
+      "token_ids": "134"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "served",
+      "token_ids": "253"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "265"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drama",
+      "token_ids": "270"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "80"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "257"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "challenge",
+      "token_ids": "225"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehires",
+      "token_ids": "39"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heads to",
+      "token_ids": "45 46"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "handle",
+      "token_ids": "78"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "had enough",
+      "token_ids": "58 59"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "re - hired",
+      "token_ids": "70 71 72"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked in",
+      "token_ids": "94 95"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "106"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked in",
+      "token_ids": "120 121"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made it",
+      "token_ids": "149 150"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "received",
+      "token_ids": "165"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "confirmation",
+      "token_ids": "166"
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "47"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked in",
+      "token_ids": "170 171"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "receiving",
+      "token_ids": "191"
+    },
+    {
+      "id": "85",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "256"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "88"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "treatment",
+      "token_ids": "192"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "surfaced",
+      "token_ids": "197"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep",
+      "token_ids": "229"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "violation",
+      "token_ids": "132"
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_surfaced_reports",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_confirmation_check_in",
+      "token_ids": ""
+    },
+    {
+      "id": "96",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_probation_violation",
+      "token_ids": ""
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "99",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_receive_confirmation_lohan_in_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "103",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_out_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_stay_betty_ford_previously",
+      "token_ids": ""
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_challenge",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_handle_case",
+      "token_ids": ""
+    },
+    {
+      "id": "109",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_received_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "110",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_served_sentence_previously",
+      "token_ids": ""
+    },
+    {
+      "id": "112",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_made_it_new_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "115",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_rehire_attorney",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_keep_lohan_in_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "117",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heading_to_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "120",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "123",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "125",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_had_enough_of_heller",
+      "token_ids": ""
+    },
+    {
+      "id": "126",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drama",
+      "token_ids": ""
+    },
+    {
+      "id": "127",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_the_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "129",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "lawyer",
+      "token_ids": "41"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "attorney",
+      "token_ids": "63"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "attorney",
+      "token_ids": "74"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "162"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "240"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "83"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "145"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "159"
+    },
+    {
+      "id": "113",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_said_white",
+      "token_ids": ""
+    },
+    {
+      "id": "119",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_told_source",
+      "token_ids": ""
+    },
+    {
+      "id": "122",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_tmz",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "27",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "2",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

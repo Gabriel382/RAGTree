@@ -1,0 +1,547 @@
+{
+  "doc_id": "8_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "55"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "protesting",
+      "token_ids": "58"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "threw",
+      "token_ids": "63"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tried",
+      "token_ids": "358"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "storm",
+      "token_ids": "360"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pushed back",
+      "token_ids": "364 365"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "debate",
+      "token_ids": "374"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took to the streets",
+      "token_ids": "83 84 85 86"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "clashed",
+      "token_ids": "90"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "responded",
+      "token_ids": "98"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "clouded",
+      "token_ids": "109"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "28"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "working",
+      "token_ids": "188"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "erupts",
+      "token_ids": "29"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "choked",
+      "token_ids": "194"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke",
+      "token_ids": "199"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tossed",
+      "token_ids": "211"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "measures",
+      "token_ids": "62"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_broke_window",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_demonstrations",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_austerity_measures",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_threw_fire_bomb",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bomb_attack_eallier",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_rioting",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_took_to_streets",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_tried_to_storm",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "pregnant",
+      "token_ids": "51"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "violence",
+      "token_ids": "31"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "dead",
+      "token_ids": "34"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_STATE",
+      "span_text": "t8_violent",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_STATE",
+      "span_text": "t8_pregnant",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_STATE",
+      "span_text": "t8_dead",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "174"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "372"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "55"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "protesting",
+      "token_ids": "58"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "threw",
+      "token_ids": "63"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tried",
+      "token_ids": "358"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "storm",
+      "token_ids": "360"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pushed back",
+      "token_ids": "364 365"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "debate",
+      "token_ids": "374"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took to the streets",
+      "token_ids": "83 84 85 86"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "clashed",
+      "token_ids": "90"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "responded",
+      "token_ids": "98"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "clouded",
+      "token_ids": "109"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "march",
+      "token_ids": "28"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "working",
+      "token_ids": "188"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "erupts",
+      "token_ids": "29"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "choked",
+      "token_ids": "194"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke",
+      "token_ids": "199"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tossed",
+      "token_ids": "211"
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "measures",
+      "token_ids": "62"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_broke_window",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_demonstrations",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_austerity_measures",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_threw_fire_bomb",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bomb_attack_eallier",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_rioting",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_took_to_streets",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_tried_to_storm",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "pregnant",
+      "token_ids": "51"
+    },
+    {
+      "id": "52",
+      "label": "ACTION_STATE",
+      "span_text": "violence",
+      "token_ids": "31"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "dead",
+      "token_ids": "34"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_STATE",
+      "span_text": "t8_violent",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_STATE",
+      "span_text": "t8_pregnant",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_STATE",
+      "span_text": "t8_dead",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "174"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "372"
+    }
+  ],
+  "edges": [
+    {
+      "source": "13",
+      "target": "22",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "52",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "52",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "51",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

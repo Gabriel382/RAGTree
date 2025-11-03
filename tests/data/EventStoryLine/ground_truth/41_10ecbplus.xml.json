@@ -1,0 +1,523 @@
+{
+  "doc_id": "41_10ecbplus.xml",
+  "nodes": [
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "violence",
+      "token_ids": "95"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombings",
+      "token_ids": "116"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "came",
+      "token_ids": "112"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "127"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "condemnation",
+      "token_ids": "131"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "lives",
+      "token_ids": "338"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "deaths",
+      "token_ids": "73"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "372"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leading",
+      "token_ids": "344"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "warns",
+      "token_ids": "32"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombs",
+      "token_ids": "37"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "war",
+      "token_ids": "34"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "crossed",
+      "token_ids": "44"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "53"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "filled",
+      "token_ids": "61"
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_reported_deaths",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_warns_of_war",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_war_threat",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_bomber_crossed_border",
+      "token_ids": ""
+    },
+    {
+      "id": "26",
+      "label": "ACTION_STATE",
+      "span_text": "located",
+      "token_ids": "104"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "66"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "72"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "spoke",
+      "token_ids": "80"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "88"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_REPORTING",
+      "span_text": "talked",
+      "token_ids": "354"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "352"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "367"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "118"
+    },
+    {
+      "id": "61",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_activist_says_no_deaths",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_officials_and_witnesses_say",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_govt_official_reported_deaths",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_activist_spoketo_workers",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "caused",
+      "token_ids": "376"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "provoked",
+      "token_ids": "129"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "violence",
+      "token_ids": "95"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombings",
+      "token_ids": "116"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "came",
+      "token_ids": "112"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "127"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "condemnation",
+      "token_ids": "131"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "lives",
+      "token_ids": "338"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "deaths",
+      "token_ids": "73"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "372"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leading",
+      "token_ids": "344"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "warns",
+      "token_ids": "32"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombs",
+      "token_ids": "37"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "war",
+      "token_ids": "34"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "crossed",
+      "token_ids": "44"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dropped",
+      "token_ids": "53"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "filled",
+      "token_ids": "61"
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_reported_deaths",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_warns_of_war",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_war_threat",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_bomber_crossed_border",
+      "token_ids": ""
+    },
+    {
+      "id": "26",
+      "label": "ACTION_STATE",
+      "span_text": "former",
+      "token_ids": "334"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_STATE",
+      "span_text": "located",
+      "token_ids": "104"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "66"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "72"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "spoke",
+      "token_ids": "80"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "88"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_REPORTING",
+      "span_text": "talked",
+      "token_ids": "354"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "352"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "367"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "118"
+    },
+    {
+      "id": "62",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_activist_says_no_deaths",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_officials_and_witnesses_say",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_govt_official_reported_deaths",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_activist_spoketo_workers",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "caused",
+      "token_ids": "376"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "provoked",
+      "token_ids": "129"
+    }
+  ],
+  "edges": [
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "56",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "56",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "57",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "53",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "53",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "54",
+      "relation": "PRECONDITION"
+    }
+  ]
+}
