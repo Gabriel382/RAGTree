@@ -1,0 +1,277 @@
+{
+  "doc_id": "24_2ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "grabbed",
+      "token_ids": "138"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "robbery",
+      "token_ids": "171"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heist",
+      "token_ids": "44"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulled off",
+      "token_ids": "49 50"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "smashing",
+      "token_ids": "65"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heist",
+      "token_ids": "57"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rammed",
+      "token_ids": "83"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "robberies",
+      "token_ids": "105"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drove",
+      "token_ids": "120"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_smash_window",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_spate",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_heist",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_crashed",
+      "token_ids": ""
+    },
+    {
+      "id": "48",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_robberies",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "worth",
+      "token_ids": "143"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "117"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "over",
+      "token_ids": "173"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "grabbed",
+      "token_ids": "138"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "robbery",
+      "token_ids": "171"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heist",
+      "token_ids": "44"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulled off",
+      "token_ids": "49 50"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "smashing",
+      "token_ids": "65"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heist",
+      "token_ids": "57"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rammed",
+      "token_ids": "83"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spate",
+      "token_ids": "100"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "robberies",
+      "token_ids": "105"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drove",
+      "token_ids": "120"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_smash_window",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_spate",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_heist",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_crashed",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t24_robberies",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "worth",
+      "token_ids": "143"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "117"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "over",
+      "token_ids": "173"
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

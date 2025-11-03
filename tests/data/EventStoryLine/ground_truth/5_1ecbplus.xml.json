@@ -1,0 +1,613 @@
+{
+  "doc_id": "5_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "488"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reached",
+      "token_ids": "493"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "notifying",
+      "token_ids": "497"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spun",
+      "token_ids": "59"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pushing out",
+      "token_ids": "69 70"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "job",
+      "token_ids": "478"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bringing in",
+      "token_ids": "78 79"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke",
+      "token_ids": "857"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "107"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decision",
+      "token_ids": "501"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "news",
+      "token_ids": "859"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "109"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took place",
+      "token_ids": "881 882"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shown door",
+      "token_ids": "42 44"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "change",
+      "token_ids": "888"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "change",
+      "token_ids": "895"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "signed",
+      "token_ids": "125"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hired",
+      "token_ids": "129"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "865"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "felt",
+      "token_ids": "875"
+    },
+    {
+      "id": "96",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "season",
+      "token_ids": "104"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "think",
+      "token_ids": "886"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "in",
+      "token_ids": "1231"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going",
+      "token_ids": "891"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gone",
+      "token_ids": "1226"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "458"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "replacement",
+      "token_ids": "94"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "returns",
+      "token_ids": "35"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "462"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked",
+      "token_ids": "467"
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_replacing_coaches",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_made_new_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_STATE",
+      "span_text": "interested",
+      "token_ids": "475"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_STATE",
+      "span_text": "left",
+      "token_ids": "120"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "853"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "870"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "456"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "481"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "ended",
+      "token_ids": "102"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "see",
+      "token_ids": "471"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "488"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reached",
+      "token_ids": "493"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "notifying",
+      "token_ids": "497"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spun",
+      "token_ids": "59"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pushing out",
+      "token_ids": "69 70"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "job",
+      "token_ids": "478"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bringing in",
+      "token_ids": "78 79"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke",
+      "token_ids": "857"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "107"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decision",
+      "token_ids": "501"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "news",
+      "token_ids": "859"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "109"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took place",
+      "token_ids": "881 882"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shown door",
+      "token_ids": "42 44"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "change",
+      "token_ids": "888"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "change",
+      "token_ids": "895"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "signed",
+      "token_ids": "125"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hired",
+      "token_ids": "129"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "865"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ended",
+      "token_ids": "102"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "felt",
+      "token_ids": "875"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "think",
+      "token_ids": "886"
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "in",
+      "token_ids": "1231"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going",
+      "token_ids": "891"
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gone",
+      "token_ids": "1226"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "decided",
+      "token_ids": "458"
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "replacement",
+      "token_ids": "94"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "returns",
+      "token_ids": "35"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "462"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked",
+      "token_ids": "467"
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_replacing_coaches",
+      "token_ids": ""
+    },
+    {
+      "id": "95",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_made_new_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "96",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "interested",
+      "token_ids": "475"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "left",
+      "token_ids": "120"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "481"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "853"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "870"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "456"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "see",
+      "token_ids": "471"
+    }
+  ],
+  "edges": [
+    {
+      "source": "28",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "27",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "29",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "29",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "29",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "88",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "87",
+      "target": "86",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

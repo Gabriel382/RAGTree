@@ -1,0 +1,209 @@
+{
+  "doc_id": "4_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "27"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "starred",
+      "token_ids": "43"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showcased",
+      "token_ids": "73"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "starring",
+      "token_ids": "81"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "96"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "103"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals",
+      "token_ids": "88"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_starred",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "glamour",
+      "token_ids": "77"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "athleticism",
+      "token_ids": "79"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "107"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "117"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "27"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "starred",
+      "token_ids": "43"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showcased",
+      "token_ids": "73"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "starring",
+      "token_ids": "81"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "96"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "103"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals",
+      "token_ids": "88"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_starred",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "glamour",
+      "token_ids": "77"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "athleticism",
+      "token_ids": "79"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "107"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "117"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

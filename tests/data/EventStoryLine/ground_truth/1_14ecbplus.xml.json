@@ -1,0 +1,483 @@
+{
+  "doc_id": "1_14ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Into",
+      "token_ids": "25 26"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "62 63"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "88"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed up",
+      "token_ids": "98 99"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hated",
+      "token_ids": "109"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "interested",
+      "token_ids": "114"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going back",
+      "token_ids": "116 117"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knows",
+      "token_ids": "123"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "check - in",
+      "token_ids": "154 155 156"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flout",
+      "token_ids": "190"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "enter",
+      "token_ids": "195"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "'Knows",
+      "token_ids": "33"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "in rehab",
+      "token_ids": "133 134"
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "order",
+      "token_ids": "193"
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_flout_court_order",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_unspecified_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_hated_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_knows_everyone_at_bf",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_interested_in_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_stay_betty_ford_this_time",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_court_ordered",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_STATE",
+      "span_text": "was",
+      "token_ids": "143"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "confirms",
+      "token_ids": "92"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "164"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "173"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_prosecutors_said_lohan_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_rep_confirms",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continued",
+      "token_ids": "188"
+    },
+    {
+      "id": "79",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_continue_to_flout",
+      "token_ids": ""
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Into",
+      "token_ids": "25 26"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "62 63"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stay",
+      "token_ids": "88"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed up",
+      "token_ids": "98 99"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "order",
+      "token_ids": "193"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hated",
+      "token_ids": "109"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "interested",
+      "token_ids": "114"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going back",
+      "token_ids": "116 117"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knows",
+      "token_ids": "123"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "check - in",
+      "token_ids": "154 155 156"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flout",
+      "token_ids": "190"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "enter",
+      "token_ids": "195"
+    },
+    {
+      "id": "53",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "'Knows",
+      "token_ids": "33"
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "in rehab",
+      "token_ids": "133 134"
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "a rehab facility",
+      "token_ids": "196 197 198"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "61",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_flout_court_order",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_unspecified_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_hated_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_knows_everyone_at_bf",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_interested_in_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_stay_betty_ford_this_time",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_court_ordered",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "confirms",
+      "token_ids": "92"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "164"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "173"
+    },
+    {
+      "id": "62",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_prosecutors_said_lohan_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_tmz",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_rep_confirms",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continued",
+      "token_ids": "188"
+    },
+    {
+      "id": "84",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_continue_to_flout",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "84",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "44",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "84",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "84",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "56",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

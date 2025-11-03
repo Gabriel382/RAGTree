@@ -1,0 +1,421 @@
+{
+  "doc_id": "14_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "96"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrival",
+      "token_ids": "90"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "92"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "180"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checking",
+      "token_ids": "187"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "out",
+      "token_ids": "183"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "201"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Investigations",
+      "token_ids": "316"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "caused",
+      "token_ids": "319"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "57"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "321"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "catches",
+      "token_ids": "35"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "36"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "300"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "response",
+      "token_ids": "311"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "help",
+      "token_ids": "314"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "caught",
+      "token_ids": "47"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "48"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "significant",
+      "token_ids": "99"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "ongoing",
+      "token_ids": "323"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "explained",
+      "token_ids": "198"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "explained",
+      "token_ids": "292"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "began",
+      "token_ids": "202"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "55"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "96"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrival",
+      "token_ids": "90"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "92"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "180"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checking",
+      "token_ids": "187"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "out",
+      "token_ids": "183"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "201"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Investigations",
+      "token_ids": "316"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "caused",
+      "token_ids": "319"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "321"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "catches",
+      "token_ids": "35"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "36"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "300"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "response",
+      "token_ids": "311"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "help",
+      "token_ids": "314"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "caught",
+      "token_ids": "47"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "48"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "significant",
+      "token_ids": "99"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "ongoing",
+      "token_ids": "323"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "explained",
+      "token_ids": "198"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "explained",
+      "token_ids": "292"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "began",
+      "token_ids": "202"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "55"
+    }
+  ],
+  "edges": [
+    {
+      "source": "14",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "34",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "34",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "34",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "32",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

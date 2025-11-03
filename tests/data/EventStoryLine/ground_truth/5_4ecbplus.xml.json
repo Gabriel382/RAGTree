@@ -1,0 +1,169 @@
+{
+  "doc_id": "5_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "relieved",
+      "token_ids": "47"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "duties",
+      "token_ids": "50"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hired",
+      "token_ids": "218"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fire",
+      "token_ids": "20"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Hire",
+      "token_ids": "25"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_made_new_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_coaching_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "6",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "40"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "212"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_REPORTING",
+      "span_text": "t5_king_announces_coach_change",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "relieved",
+      "token_ids": "47"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "duties",
+      "token_ids": "50"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hired",
+      "token_ids": "218"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fire",
+      "token_ids": "20"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Hire",
+      "token_ids": "25"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_made_new_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_coaching_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "6",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "40"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "212"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_REPORTING",
+      "span_text": "t5_king_announces_coach_change",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

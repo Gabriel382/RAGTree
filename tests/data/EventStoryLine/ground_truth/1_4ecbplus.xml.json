@@ -1,0 +1,519 @@
+{
+  "doc_id": "1_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spent",
+      "token_ids": "177"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensconced",
+      "token_ids": "105"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made",
+      "token_ids": "136"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "walked",
+      "token_ids": "150"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "walked",
+      "token_ids": "156"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "161"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Into",
+      "token_ids": "35 36"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Out",
+      "token_ids": "39 40"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "did",
+      "token_ids": "91"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "know",
+      "token_ids": "51"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "lie",
+      "token_ids": "70"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "buying",
+      "token_ids": "118"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "jumped",
+      "token_ids": "195"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spooked",
+      "token_ids": "185"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed up",
+      "token_ids": "169 170"
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_ensconsed",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_spent_minutes_at_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_lie_gnome",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_walked_into_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_shopping_electronics",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_showed_up_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_out_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_jumped_into_suv",
+      "token_ids": ""
+    },
+    {
+      "id": "98",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "100",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_spooked_by_paparazzi",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_judge_know_not_trust_gnone",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_STATE",
+      "span_text": "lawyer",
+      "token_ids": "88"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_STATE",
+      "span_text": "shifty",
+      "token_ids": "66"
+    },
+    {
+      "id": "73",
+      "label": "ACTION_STATE",
+      "span_text": "t1_should_know",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_STATE",
+      "span_text": "t1_shifty",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "132"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "98"
+    },
+    {
+      "id": "96",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_nydn_says",
+      "token_ids": ""
+    },
+    {
+      "id": "99",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_said_heller_thursday",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "111"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spent",
+      "token_ids": "177"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensconced",
+      "token_ids": "105"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made",
+      "token_ids": "136"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "walked",
+      "token_ids": "150"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "walked",
+      "token_ids": "156"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "161"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Into",
+      "token_ids": "35 36"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Checks Out",
+      "token_ids": "39 40"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "did",
+      "token_ids": "91"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "know",
+      "token_ids": "51"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "lie",
+      "token_ids": "70"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "buying",
+      "token_ids": "118"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "jumped",
+      "token_ids": "195"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spooked",
+      "token_ids": "185"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed up",
+      "token_ids": "169 170"
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_ensconsed",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_spent_minutes_at_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_lie_gnome",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_walked_into_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "85",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_shopping_electronics",
+      "token_ids": ""
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_showed_up_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_out_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "99",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_jumped_into_suv",
+      "token_ids": ""
+    },
+    {
+      "id": "100",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_spooked_by_paparazzi",
+      "token_ids": ""
+    },
+    {
+      "id": "103",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_judge_know_not_trust_gnone",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_STATE",
+      "span_text": "should",
+      "token_ids": "50"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_STATE",
+      "span_text": "lawyer",
+      "token_ids": "88"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "shifty",
+      "token_ids": "66"
+    },
+    {
+      "id": "75",
+      "label": "ACTION_STATE",
+      "span_text": "t1_should_know",
+      "token_ids": ""
+    },
+    {
+      "id": "95",
+      "label": "ACTION_STATE",
+      "span_text": "t1_shifty",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "132"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "98"
+    },
+    {
+      "id": "98",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_nydn_says",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_said_heller_thursday",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "49",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "49",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "49",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "49",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

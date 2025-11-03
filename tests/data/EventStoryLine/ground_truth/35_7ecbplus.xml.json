@@ -1,0 +1,489 @@
+{
+  "doc_id": "35_7ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrest",
+      "token_ids": "54"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ARRESTED",
+      "token_ids": "19"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DUI",
+      "token_ids": "23"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "43"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drunk driving",
+      "token_ids": "47 48"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulled over",
+      "token_ids": "63 64"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "speeding",
+      "token_ids": "66"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gave",
+      "token_ids": "85"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "booked into",
+      "token_ids": "106 107"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "call",
+      "token_ids": "142"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "released",
+      "token_ids": "112"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "149"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DUI",
+      "token_ids": "153"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loss",
+      "token_ids": "165"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigation",
+      "token_ids": "151"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "on bail",
+      "token_ids": "113 114"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "previous DUI arrest",
+      "token_ids": "184 185 186"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shared",
+      "token_ids": "202"
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jwills_pulled_over",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jamal_wills_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jwills_speeding",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jamal_wills_DUI",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "ON SUSPICION",
+      "token_ids": "20 21"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "on suspicion",
+      "token_ids": "44 45"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_STATE",
+      "span_text": "due",
+      "token_ids": "171"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_STATE",
+      "span_text": "on probation",
+      "token_ids": "180 181"
+    },
+    {
+      "id": "67",
+      "label": "ACTION_STATE",
+      "span_text": "t35_suspicion",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "192"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "120"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "82"
+    },
+    {
+      "id": "66",
+      "label": "ACTION_REPORTING",
+      "span_text": "t35_patrol_said",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrest",
+      "token_ids": "54"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ARRESTED",
+      "token_ids": "19"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DUI",
+      "token_ids": "23"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "43"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drunk driving",
+      "token_ids": "47 48"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulled over",
+      "token_ids": "63 64"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "speeding",
+      "token_ids": "66"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gave",
+      "token_ids": "85"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "booked into",
+      "token_ids": "106 107"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "call",
+      "token_ids": "142"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "released",
+      "token_ids": "112"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "149"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DUI",
+      "token_ids": "153"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loss",
+      "token_ids": "165"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigation",
+      "token_ids": "151"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "on bail",
+      "token_ids": "113 114"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "previous DUI arrest",
+      "token_ids": "184 185 186"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shared",
+      "token_ids": "202"
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jwills_pulled_over",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jamal_wills_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "76",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jwills_speeding",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t35_jamal_wills_DUI",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "ON SUSPICION",
+      "token_ids": "20 21"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "on suspicion",
+      "token_ids": "44 45"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "due",
+      "token_ids": "171"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_STATE",
+      "span_text": "on probation",
+      "token_ids": "180 181"
+    },
+    {
+      "id": "68",
+      "label": "ACTION_STATE",
+      "span_text": "t35_suspicion",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "192"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "120"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "82"
+    },
+    {
+      "id": "67",
+      "label": "ACTION_REPORTING",
+      "span_text": "t35_patrol_said",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "65",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "23",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

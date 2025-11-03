@@ -1,0 +1,685 @@
+{
+  "doc_id": "32_3ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "69"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "71"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "82"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "89"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "92"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took place",
+      "token_ids": "108 109"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appear",
+      "token_ids": "121"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "risk",
+      "token_ids": "137"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "167"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "164"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "188"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "TRIAL",
+      "token_ids": "37"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "215"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "228"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "facing",
+      "token_ids": "240"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DOUBLE MURDER",
+      "token_ids": "42 43"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charge",
+      "token_ids": "242"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suffering",
+      "token_ids": "246"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "255"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "274"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "held",
+      "token_ids": "277"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "286"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bail",
+      "token_ids": "262"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heard",
+      "token_ids": "157"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "completed",
+      "token_ids": "292"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "plea",
+      "token_ids": "265"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "298"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "SET",
+      "token_ids": "39"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "58"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "62"
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_animal_cruelty_charge",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_double_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial_date_set",
+      "token_ids": ""
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_charges_of_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "dead",
+      "token_ids": "216"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "148"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "244"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "69"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "71"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "82"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "89"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "92"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took place",
+      "token_ids": "108 109"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appear",
+      "token_ids": "121"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "risk",
+      "token_ids": "137"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "167"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "164"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "188"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "TRIAL",
+      "token_ids": "37"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "215"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "228"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "facing",
+      "token_ids": "240"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DOUBLE MURDER",
+      "token_ids": "42 43"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charge",
+      "token_ids": "242"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suffering",
+      "token_ids": "246"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "255"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "274"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "held",
+      "token_ids": "277"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case management",
+      "token_ids": "272 273"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "plea",
+      "token_ids": "270"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "286"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bail",
+      "token_ids": "262"
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heard",
+      "token_ids": "157"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "completed",
+      "token_ids": "292"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "plea",
+      "token_ids": "265"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "298"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "SET",
+      "token_ids": "39"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "58"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "62"
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_animal_cruelty_charge",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_double_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "94",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial",
+      "token_ids": ""
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial_date_set",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_charges_of_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "dead",
+      "token_ids": "216"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_STATE",
+      "span_text": "provisional",
+      "token_ids": "163"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_STATE",
+      "span_text": "relation",
+      "token_ids": "251"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_STATE",
+      "span_text": "unnecessary",
+      "token_ids": "245"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "148"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "244"
+    }
+  ],
+  "edges": [
+    {
+      "source": "13",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "30",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "59",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "58",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "33",
+      "relation": ""
+    },
+    {
+      "source": "3",
+      "target": "33",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "15",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "15",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "27",
+      "target": "29",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "63",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "62",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "34",
+      "relation": ""
+    },
+    {
+      "source": "30",
+      "target": "34",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "30",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "17",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

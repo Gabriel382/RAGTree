@@ -1,0 +1,535 @@
+{
+  "doc_id": "1_21ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "driving",
+      "token_ids": "60"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "61"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drama",
+      "token_ids": "70"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "placement",
+      "token_ids": "122"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "32 33"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "47 48"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "comply",
+      "token_ids": "53"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrival",
+      "token_ids": "65"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "argued",
+      "token_ids": "87"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "objected",
+      "token_ids": "91"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "choice",
+      "token_ids": "94"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blindsided\"",
+      "token_ids": "119"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "agreed",
+      "token_ids": "129"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "said",
+      "token_ids": "115"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "send",
+      "token_ids": "131"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "vetted",
+      "token_ids": "141"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensconced",
+      "token_ids": "75"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "56"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_arrival_at_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_white_said",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_comply",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_send",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_argued",
+      "token_ids": ""
+    },
+    {
+      "id": "53",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_prosecutor_objected",
+      "token_ids": ""
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_ensconsed",
+      "token_ids": ""
+    },
+    {
+      "id": "61",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_blindsided",
+      "token_ids": ""
+    },
+    {
+      "id": "62",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_choice_of_facilities",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_vetted",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drama",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_agreed",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "rehab",
+      "token_ids": "102"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "driving",
+      "token_ids": "60"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "61"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drama",
+      "token_ids": "70"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "placement",
+      "token_ids": "122"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "32 33"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "47 48"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "comply",
+      "token_ids": "53"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrival",
+      "token_ids": "65"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "argued",
+      "token_ids": "87"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "objected",
+      "token_ids": "91"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "choice",
+      "token_ids": "94"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blindsided\"",
+      "token_ids": "119"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "agreed",
+      "token_ids": "129"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "said",
+      "token_ids": "115"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "send",
+      "token_ids": "131"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "102"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "vetted",
+      "token_ids": "141"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ensconced",
+      "token_ids": "75"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going",
+      "token_ids": "109"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "56"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_arrival_at_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_white_said",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_comply",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_send",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_argued",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_prosecutor_objected",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_ensconsed",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_blindsided",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_choice_of_facilities",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_vetted",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drama",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_heller_agreed",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "17",
+      "relation": ""
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "18",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

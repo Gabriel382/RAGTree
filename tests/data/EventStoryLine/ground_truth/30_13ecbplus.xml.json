@@ -1,0 +1,828 @@
+{
+  "doc_id": "30_13ecbplus.xml",
+  "nodes": [
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "229"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "factors",
+      "token_ids": "162"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "29"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "39"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "68"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "outage",
+      "token_ids": "79"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "69"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "published",
+      "token_ids": "94"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "230"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "transit",
+      "token_ids": "109"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "received",
+      "token_ids": "114"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "120"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "finalized",
+      "token_ids": "126"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "received",
+      "token_ids": "130"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrival",
+      "token_ids": "133"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "144"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "expected",
+      "token_ids": "147"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "89"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "impact",
+      "token_ids": "177"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "using",
+      "token_ids": "73"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "179"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experience",
+      "token_ids": "185"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problems",
+      "token_ids": "186"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problem",
+      "token_ids": "201"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "associated",
+      "token_ids": "163"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sub - sea repairs",
+      "token_ids": "165 166 167 168"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "weather",
+      "token_ids": "171"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "currents",
+      "token_ids": "173"
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_downtime",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_restored_service_alternate_routes",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_experiencing_problems",
+      "token_ids": ""
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_seacom_services",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_STATE",
+      "span_text": "expected",
+      "token_ids": "83"
+    },
+    {
+      "id": "77",
+      "label": "ACTION_STATE",
+      "span_text": "t30_expected_12day_repair",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "196"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "225"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "34"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "56"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "statement",
+      "token_ids": "93"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "101"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "141"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_REPORTING",
+      "span_text": "warned",
+      "token_ids": "157"
+    },
+    {
+      "id": "76",
+      "label": "ACTION_REPORTING",
+      "span_text": "t30_seacom_said_fixed",
+      "token_ids": ""
+    },
+    {
+      "id": "85",
+      "label": "ACTION_REPORTING",
+      "span_text": "t30_seacom_said_problems_14days",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "completed",
+      "token_ids": "150"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "183"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "caused",
+      "token_ids": "198"
+    },
+    {
+      "id": "83",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t30_caused_downtime",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "229"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "factors",
+      "token_ids": "162"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "29"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "39"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restored",
+      "token_ids": "68"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "outage",
+      "token_ids": "79"
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "69"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "published",
+      "token_ids": "94"
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "230"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "transit",
+      "token_ids": "109"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "received",
+      "token_ids": "114"
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Seacom",
+      "token_ids": "28"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "permit",
+      "token_ids": "117"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "120"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operational permits",
+      "token_ids": "122 123"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "finalized",
+      "token_ids": "126"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "received",
+      "token_ids": "130"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrival",
+      "token_ids": "133"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "144"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "expected",
+      "token_ids": "147"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "89"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "impact",
+      "token_ids": "177"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "using",
+      "token_ids": "73"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "repair",
+      "token_ids": "179"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experience",
+      "token_ids": "185"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problems",
+      "token_ids": "186"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problem",
+      "token_ids": "201"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "associated",
+      "token_ids": "163"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sub - sea repairs",
+      "token_ids": "165 166 167 168"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "weather",
+      "token_ids": "171"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "currents",
+      "token_ids": "173"
+    },
+    {
+      "id": "80",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_downtime",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_restored_service_alternate_routes",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_experiencing_problems",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_seacom_services",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_STATE",
+      "span_text": "expected",
+      "token_ids": "83"
+    },
+    {
+      "id": "79",
+      "label": "ACTION_STATE",
+      "span_text": "t30_expected_12day_repair",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "196"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "225"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "34"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "56"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_REPORTING",
+      "span_text": "statement",
+      "token_ids": "93"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "101"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "141"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_REPORTING",
+      "span_text": "warned",
+      "token_ids": "157"
+    },
+    {
+      "id": "78",
+      "label": "ACTION_REPORTING",
+      "span_text": "t30_seacom_said_fixed",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_REPORTING",
+      "span_text": "t30_seacom_said_problems_14days",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "completed",
+      "token_ids": "150"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "183"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "caused",
+      "token_ids": "198"
+    },
+    {
+      "id": "85",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t30_caused_downtime",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "24",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "18",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "30",
+      "target": "19",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "19",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "19",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "23",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "16",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

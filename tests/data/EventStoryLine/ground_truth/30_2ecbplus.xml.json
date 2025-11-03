@@ -1,0 +1,265 @@
+{
+  "doc_id": "30_2ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "resulted",
+      "token_ids": "72"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "61"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "severed",
+      "token_ids": "68"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "severed",
+      "token_ids": "39"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blocking",
+      "token_ids": "75"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "79"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "owned",
+      "token_ids": "131"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cut",
+      "token_ids": "138"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affecting",
+      "token_ids": "140"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "141"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "malfunctioned",
+      "token_ids": "155"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cut",
+      "token_ids": "120"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "iterated",
+      "token_ids": "147"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "116"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "statement",
+      "token_ids": "89"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "resulted in",
+      "token_ids": "72 73"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "61"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "severed",
+      "token_ids": "68"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "severed",
+      "token_ids": "39"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blocking",
+      "token_ids": "75"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "79"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "owned by",
+      "token_ids": "131 132"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cut",
+      "token_ids": "138"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affecting",
+      "token_ids": "140"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "services",
+      "token_ids": "141"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "malfunctioned",
+      "token_ids": "155"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cut",
+      "token_ids": "120"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "iterated",
+      "token_ids": "147"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "116"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "statement",
+      "token_ids": "89"
+    }
+  ],
+  "edges": [
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "doc_id": "32_2ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "283"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "271"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "288"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "doted on",
+      "token_ids": "295 296"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "obsessed",
+      "token_ids": "310"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "feared",
+      "token_ids": "625"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wishes",
+      "token_ids": "74"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harm",
+      "token_ids": "628"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sectioned",
+      "token_ids": "592"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "slit",
+      "token_ids": "601"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tragedy",
+      "token_ids": "614"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "49"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "locked up",
+      "token_ids": "57 58"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "released",
+      "token_ids": "67"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "91"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "90"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "double murders",
+      "token_ids": "118 119"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sectioned",
+      "token_ids": "176"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suicide attempt",
+      "token_ids": "180 181"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "332"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "double murder",
+      "token_ids": "187 188"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shocked",
+      "token_ids": "338"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mental health problems",
+      "token_ids": "200 201 202"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "341"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pleaded",
+      "token_ids": "205"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "studying",
+      "token_ids": "359"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "locked up",
+      "token_ids": "211 212"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "visit",
+      "token_ids": "368"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harming",
+      "token_ids": "216"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "feared",
+      "token_ids": "215"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "224"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "242"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "323"
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_bodies_found",
+      "token_ids": ""
+    },
+    {
+      "id": "111",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_double_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_police_called",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_sectioned",
+      "token_ids": ""
+    },
+    {
+      "id": "35",
+      "label": "ACTION_STATE",
+      "span_text": "kept",
+      "token_ids": "210"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_STATE",
+      "span_text": "allowed",
+      "token_ids": "606"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_STATE",
+      "span_text": "stay",
+      "token_ids": "56"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_STATE",
+      "span_text": "suspected",
+      "token_ids": "47"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_STATE",
+      "span_text": "suspicion",
+      "token_ids": "286"
+    },
+    {
+      "id": "115",
+      "label": "ACTION_STATE",
+      "span_text": "t32_suspicion_of_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_REPORTING",
+      "span_text": "begged",
+      "token_ids": "54"
+    },
+    {
+      "id": "104",
+      "label": "ACTION_REPORTING",
+      "span_text": "t32_begged",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "283"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "288"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "doted on",
+      "token_ids": "295 296"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "obsessed",
+      "token_ids": "310"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "feared",
+      "token_ids": "625"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wishes",
+      "token_ids": "74"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harm",
+      "token_ids": "628"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sectioned",
+      "token_ids": "592"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "slit",
+      "token_ids": "601"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tragedy",
+      "token_ids": "614"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "49"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "locked up",
+      "token_ids": "57 58"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "released",
+      "token_ids": "67"
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "91"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "90"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "119"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sectioned",
+      "token_ids": "176"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suicide attempt",
+      "token_ids": "180 181"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "332"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "188"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shocked",
+      "token_ids": "338"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mental health problems",
+      "token_ids": "200 201 202"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "341"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pleaded",
+      "token_ids": "205"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "studying",
+      "token_ids": "359"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "locked up",
+      "token_ids": "211 212"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "visit",
+      "token_ids": "368"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harming",
+      "token_ids": "216"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "feared",
+      "token_ids": "215"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "224"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "242"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "323"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "271"
+    },
+    {
+      "id": "109",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_bodies_found",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_double_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "117",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_police_called",
+      "token_ids": ""
+    },
+    {
+      "id": "119",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_sectioned",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "kept",
+      "token_ids": "210"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "allowed",
+      "token_ids": "606"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_STATE",
+      "span_text": "stay",
+      "token_ids": "56"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_STATE",
+      "span_text": "suspected",
+      "token_ids": "47"
+    },
+    {
+      "id": "104",
+      "label": "ACTION_STATE",
+      "span_text": "suspicion",
+      "token_ids": "286"
+    },
+    {
+      "id": "118",
+      "label": "ACTION_STATE",
+      "span_text": "t32_suspicion_of_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "106",
+      "label": "ACTION_REPORTING",
+      "span_text": "begged",
+      "token_ids": "54"
+    },
+    {
+      "id": "107",
+      "label": "ACTION_REPORTING",
+      "span_text": "t32_begged",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "23",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "18",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "36",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "94",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "34",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "92",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

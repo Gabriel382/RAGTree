@@ -1,0 +1,239 @@
+{
+  "doc_id": "13_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "moved to",
+      "token_ids": "51 52"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burned",
+      "token_ids": "76"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "walked out",
+      "token_ids": "157 158"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Arson",
+      "token_ids": "28"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "31"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "33"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dissolve",
+      "token_ids": "53"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire_destroyed",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_arson",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "run",
+      "token_ids": "58"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "housed",
+      "token_ids": "70"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "in flames",
+      "token_ids": "173 174"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "suspected",
+      "token_ids": "29"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "spied",
+      "token_ids": "168"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "moved to",
+      "token_ids": "51 52"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burned",
+      "token_ids": "76"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "walked out",
+      "token_ids": "157 158"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Arson",
+      "token_ids": "28"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "31"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "33"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dissolve",
+      "token_ids": "53"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire_destroyed",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_arson",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "run",
+      "token_ids": "58"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "housed",
+      "token_ids": "70"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "in flames",
+      "token_ids": "173 174"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "suspected",
+      "token_ids": "29"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "spied",
+      "token_ids": "168"
+    }
+  ],
+  "edges": [
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "11",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

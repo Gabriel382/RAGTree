@@ -1,0 +1,161 @@
+{
+  "doc_id": "4_3ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "make",
+      "token_ids": "51"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals\"",
+      "token_ids": "48"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swam",
+      "token_ids": "20"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "helped",
+      "token_ids": "50"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "56"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dies",
+      "token_ids": "27"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_swimming_skills",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "7",
+      "label": "ACTION_STATE",
+      "span_text": "stardom",
+      "token_ids": "22"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_STATE",
+      "span_text": "popular",
+      "token_ids": "57"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "t4_popularity",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "make",
+      "token_ids": "51"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals\"",
+      "token_ids": "48"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swam",
+      "token_ids": "20"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "helped",
+      "token_ids": "50"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "56"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dies",
+      "token_ids": "27"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_swimming_skills",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "7",
+      "label": "ACTION_STATE",
+      "span_text": "stardom",
+      "token_ids": "22"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_STATE",
+      "span_text": "popular",
+      "token_ids": "57"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "t4_popularity",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "8",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

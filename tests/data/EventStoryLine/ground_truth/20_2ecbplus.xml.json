@@ -1,0 +1,603 @@
+{
+  "doc_id": "20_2ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "56"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sinking",
+      "token_ids": "408"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rose",
+      "token_ids": "60"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rises",
+      "token_ids": "33"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tremor",
+      "token_ids": "445"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "447"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "126"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "came",
+      "token_ids": "68"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "77"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopped",
+      "token_ids": "460"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "95"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "providing",
+      "token_ids": "461"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "91"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "service",
+      "token_ids": "463"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "31"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "51"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "66"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "aftershocks",
+      "token_ids": "348"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "350"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rocked",
+      "token_ids": "357"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "365"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Aftershocks",
+      "token_ids": "25"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "378"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "jolt",
+      "token_ids": "26"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "registered",
+      "token_ids": "376"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "measuring",
+      "token_ids": "379"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "aftershock",
+      "token_ids": "38"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "400"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shook",
+      "token_ids": "39"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knocked down",
+      "token_ids": "401 402"
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_aftershocks",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "darkness",
+      "token_ids": "411"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "457"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "101"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "56"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sinking",
+      "token_ids": "408"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rose",
+      "token_ids": "60"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rises",
+      "token_ids": "33"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tremor",
+      "token_ids": "445"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "447"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "126"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "came",
+      "token_ids": "68"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "77"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stopped",
+      "token_ids": "460"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "95"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "providing",
+      "token_ids": "461"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "91"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "service",
+      "token_ids": "463"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "31"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "51"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "66"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "aftershocks",
+      "token_ids": "348"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "350"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rocked",
+      "token_ids": "357"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "365"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Aftershocks",
+      "token_ids": "25"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "378"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "jolt",
+      "token_ids": "26"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "registered",
+      "token_ids": "376"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "measuring",
+      "token_ids": "379"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "aftershock",
+      "token_ids": "38"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "400"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shook",
+      "token_ids": "39"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knocked down",
+      "token_ids": "401 402"
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_aftershocks",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_STATE",
+      "span_text": "darkness",
+      "token_ids": "411"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "457"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "101"
+    }
+  ],
+  "edges": [
+    {
+      "source": "22",
+      "target": "15",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "27",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "25",
+      "target": "23",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "28",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "29",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "25",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "23",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "12",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

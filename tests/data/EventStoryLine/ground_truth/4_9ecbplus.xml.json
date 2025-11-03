@@ -1,0 +1,209 @@
+{
+  "doc_id": "4_9ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "70"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "passed",
+      "token_ids": "80"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "40"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "WWII",
+      "token_ids": "94"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mourn",
+      "token_ids": "120"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "passing",
+      "token_ids": "122"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "life",
+      "token_ids": "131"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_ww2",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "86"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "popular",
+      "token_ids": "114"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_STATE",
+      "span_text": "t4_popularity",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "according to",
+      "token_ids": "88 89"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "kept",
+      "token_ids": "112"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "70"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "passed",
+      "token_ids": "80"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "40"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "WWII",
+      "token_ids": "94"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mourn",
+      "token_ids": "120"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "passing",
+      "token_ids": "122"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "life",
+      "token_ids": "131"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_ww2",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "86"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "popular",
+      "token_ids": "114"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_STATE",
+      "span_text": "t4_popularity",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_REPORTING",
+      "span_text": "according to",
+      "token_ids": "88 89"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "kept",
+      "token_ids": "112"
+    }
+  ],
+  "edges": [
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

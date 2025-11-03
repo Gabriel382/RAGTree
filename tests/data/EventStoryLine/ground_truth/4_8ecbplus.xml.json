@@ -1,0 +1,297 @@
+{
+  "doc_id": "4_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dead",
+      "token_ids": "32"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals\"",
+      "token_ids": "79"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "delighted",
+      "token_ids": "122"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "129"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "circulated",
+      "token_ids": "137"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "36"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "World War II",
+      "token_ids": "96 97 98"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "news",
+      "token_ids": "126"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "passed",
+      "token_ids": "155"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spread",
+      "token_ids": "130"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_ww2",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "warm",
+      "token_ids": "109"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "breezy",
+      "token_ids": "111"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "frankness",
+      "token_ids": "115"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "humor",
+      "token_ids": "120"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "tweeted",
+      "token_ids": "148"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_lamas_tweeted",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "launched",
+      "token_ids": "69"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dead",
+      "token_ids": "32"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals\"",
+      "token_ids": "79"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "delighted",
+      "token_ids": "122"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "129"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "circulated",
+      "token_ids": "137"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "36"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "World War II",
+      "token_ids": "96 97 98"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "news",
+      "token_ids": "126"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "passed",
+      "token_ids": "155"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spread",
+      "token_ids": "130"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_ww2",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "warm",
+      "token_ids": "109"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "breezy",
+      "token_ids": "111"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "frankness",
+      "token_ids": "115"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "humor",
+      "token_ids": "120"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "tweeted",
+      "token_ids": "148"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_lamas_tweeted",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "launched",
+      "token_ids": "69"
+    }
+  ],
+  "edges": [
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

@@ -1,0 +1,877 @@
+{
+  "doc_id": "3_11ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulled",
+      "token_ids": "144"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fallout",
+      "token_ids": "95"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "faced",
+      "token_ids": "204"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "driving",
+      "token_ids": "151"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "FALLOUT",
+      "token_ids": "22"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "171"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "consequences",
+      "token_ids": "205"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "185"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "209"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "use",
+      "token_ids": "187"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ESCAPE",
+      "token_ids": "26"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "recommended",
+      "token_ids": "200"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "elected",
+      "token_ids": "214"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "termination",
+      "token_ids": "202"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "retire",
+      "token_ids": "216"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "changes",
+      "token_ids": "37"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drove",
+      "token_ids": "228"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "facing",
+      "token_ids": "219"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escaped",
+      "token_ids": "237"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "55"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "questioned",
+      "token_ids": "240"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "action",
+      "token_ids": "221"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "257"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "used",
+      "token_ids": "53"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "moved to",
+      "token_ids": "259 260"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "facing",
+      "token_ids": "113"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disciplinary",
+      "token_ids": "220"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pat - downs",
+      "token_ids": "262 263 264"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "jailbreak",
+      "token_ids": "268"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "66"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "termination",
+      "token_ids": "114"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pat - downs",
+      "token_ids": "284 285 286"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "75"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "action",
+      "token_ids": "117"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "recaptured",
+      "token_ids": "77"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disciplinary",
+      "token_ids": "116"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "122"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escaped",
+      "token_ids": "135"
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_capture",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_escape_nov_30",
+      "token_ids": ""
+    },
+    {
+      "id": "113",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_pulled_a_gun_on",
+      "token_ids": ""
+    },
+    {
+      "id": "117",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_transport_to_beaumont",
+      "token_ids": ""
+    },
+    {
+      "id": "118",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_convicted_98",
+      "token_ids": ""
+    },
+    {
+      "id": "120",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_fallout",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_STATE",
+      "span_text": "on the run",
+      "token_ids": "83 84 85"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_STATE",
+      "span_text": "housed",
+      "token_ids": "103"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_STATE",
+      "span_text": "subject to",
+      "token_ids": "281 282"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_STATE",
+      "span_text": "at large",
+      "token_ids": "161 162"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_STATE",
+      "span_text": "shoeless",
+      "token_ids": "172"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_STATE",
+      "span_text": "wet",
+      "token_ids": "174"
+    },
+    {
+      "id": "50",
+      "label": "ACTION_STATE",
+      "span_text": "hungry",
+      "token_ids": "176"
+    },
+    {
+      "id": "115",
+      "label": "ACTION_STATE",
+      "span_text": "t3_on_the_run",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "59"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "124"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "289"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "Lyons",
+      "token_ids": "288"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "CONTINUES",
+      "token_ids": "23"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "faced",
+      "token_ids": "204"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "FALLOUT",
+      "token_ids": "22"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "consequences",
+      "token_ids": "205"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "209"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ESCAPE",
+      "token_ids": "26"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "elected",
+      "token_ids": "214"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "retire",
+      "token_ids": "216"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "changes",
+      "token_ids": "37"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drove",
+      "token_ids": "228"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "facing",
+      "token_ids": "219"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escaped",
+      "token_ids": "237"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "55"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "questioned",
+      "token_ids": "240"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "action",
+      "token_ids": "221"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "257"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "used",
+      "token_ids": "53"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "moved to",
+      "token_ids": "259 260"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "facing",
+      "token_ids": "113"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disciplinary",
+      "token_ids": "220"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pat - downs",
+      "token_ids": "262 263 264"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "jailbreak",
+      "token_ids": "268"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "66"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "termination",
+      "token_ids": "114"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pat - downs",
+      "token_ids": "284 285 286"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "75"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "action",
+      "token_ids": "117"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "recaptured",
+      "token_ids": "77"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disciplinary",
+      "token_ids": "116"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "122"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escaped",
+      "token_ids": "135"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulled",
+      "token_ids": "144"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fallout",
+      "token_ids": "95"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "driving",
+      "token_ids": "151"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "171"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "185"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "use",
+      "token_ids": "187"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "recommended",
+      "token_ids": "200"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "termination",
+      "token_ids": "202"
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_capture",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_escape_nov_30",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_pulled_a_gun_on",
+      "token_ids": ""
+    },
+    {
+      "id": "118",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_transport_to_beaumont",
+      "token_ids": ""
+    },
+    {
+      "id": "119",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_convicted_98",
+      "token_ids": ""
+    },
+    {
+      "id": "121",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_fallout",
+      "token_ids": ""
+    },
+    {
+      "id": "104",
+      "label": "ACTION_STATE",
+      "span_text": "on the run",
+      "token_ids": "83 84 85"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_STATE",
+      "span_text": "housed",
+      "token_ids": "103"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_STATE",
+      "span_text": "subject to",
+      "token_ids": "281 282"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_STATE",
+      "span_text": "at large",
+      "token_ids": "161 162"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_STATE",
+      "span_text": "shoeless",
+      "token_ids": "172"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_STATE",
+      "span_text": "wet",
+      "token_ids": "174"
+    },
+    {
+      "id": "50",
+      "label": "ACTION_STATE",
+      "span_text": "hungry",
+      "token_ids": "176"
+    },
+    {
+      "id": "116",
+      "label": "ACTION_STATE",
+      "span_text": "t3_on_the_run",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "announced",
+      "token_ids": "59"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "124"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "289"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "Lyons",
+      "token_ids": "288"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "CONTINUES",
+      "token_ids": "23"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "because of",
+      "token_ids": "118 119"
+    }
+  ],
+  "edges": [
+    {
+      "source": "29",
+      "target": "44",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "24",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "34",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "31",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "28",
+      "target": "31",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "33",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "35",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "47",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "40",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "23",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "91",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "104",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "22",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "23",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "47",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "32",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "35",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "32",
+      "target": "39",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "90",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "36",
+      "target": "38",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "30",
+      "target": "33",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

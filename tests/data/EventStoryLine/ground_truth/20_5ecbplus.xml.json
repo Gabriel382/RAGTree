@@ -1,0 +1,391 @@
+{
+  "doc_id": "20_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "186"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "temblor",
+      "token_ids": "190"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "aftershocks",
+      "token_ids": "198"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "increased",
+      "token_ids": "213"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "panic",
+      "token_ids": "215"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Earthquake",
+      "token_ids": "38"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Jolts",
+      "token_ids": "39"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "46"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leveled",
+      "token_ids": "48"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "56"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounding",
+      "token_ids": "60"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destruction",
+      "token_ids": "177"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_aftershocks",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_destroyed_villages",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_damage",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "quoted",
+      "token_ids": "67"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "saying",
+      "token_ids": "71"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "t20_officials_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "followed",
+      "token_ids": "192"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "186"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "temblor",
+      "token_ids": "190"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "aftershocks",
+      "token_ids": "198"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "increased",
+      "token_ids": "213"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "panic",
+      "token_ids": "215"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Earthquake",
+      "token_ids": "38"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Jolts",
+      "token_ids": "39"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "earthquake",
+      "token_ids": "46"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leveled",
+      "token_ids": "48"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "56"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounding",
+      "token_ids": "60"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destruction",
+      "token_ids": "177"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_aftershocks",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_destroyed_villages",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_damage",
+      "token_ids": ""
+    },
+    {
+      "id": "48",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t20_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "magnitudes",
+      "token_ids": "201"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "3 . 6",
+      "token_ids": "204 205 206"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_STATE",
+      "span_text": "4 . 3",
+      "token_ids": "208 209 210"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "quoted",
+      "token_ids": "67"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "saying",
+      "token_ids": "71"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_REPORTING",
+      "span_text": "t20_officials_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "followed",
+      "token_ids": "192"
+    }
+  ],
+  "edges": [
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

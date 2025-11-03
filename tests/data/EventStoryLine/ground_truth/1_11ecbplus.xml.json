@@ -1,0 +1,372 @@
+{
+  "doc_id": "1_11ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "34 35"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "56"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehires",
+      "token_ids": "42"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "51 52"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hiring",
+      "token_ids": "66"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "102 103"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sought",
+      "token_ids": "136"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "got into",
+      "token_ids": "143 144"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "help",
+      "token_ids": "72"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "altercation",
+      "token_ids": "147"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sought_help",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_altercation_with_staffer",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_rehire_attorney",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_help",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_got_into_altercation",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "53",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "confusion",
+      "token_ids": "117"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "help",
+      "token_ids": "137"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_STATE",
+      "span_text": "t1_whereabouts",
+      "token_ids": ""
+    },
+    {
+      "id": "48",
+      "label": "ACTION_STATE",
+      "span_text": "t1_confusion",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_STATE",
+      "span_text": "t1_help_state",
+      "token_ids": ""
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "124"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_source_told_daily_news",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "34 35"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "56"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehires",
+      "token_ids": "42"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rehab",
+      "token_ids": "36"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "51 52"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hiring",
+      "token_ids": "66"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "102 103"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sought",
+      "token_ids": "136"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "got into",
+      "token_ids": "143 144"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "help",
+      "token_ids": "72"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "altercation",
+      "token_ids": "147"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sought_help",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_altercation_with_staffer",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_rehire_attorney",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_help",
+      "token_ids": ""
+    },
+    {
+      "id": "53",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_got_into_altercation",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_betty_ford",
+      "token_ids": ""
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "confusion",
+      "token_ids": "117"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "whereabouts",
+      "token_ids": "121"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "help",
+      "token_ids": "137"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_STATE",
+      "span_text": "t1_whereabouts",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_STATE",
+      "span_text": "t1_confusion",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_STATE",
+      "span_text": "t1_help_state",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "124"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_source_told_daily_news",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "31",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "34",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "35",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

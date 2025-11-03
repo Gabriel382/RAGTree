@@ -1,0 +1,361 @@
+{
+  "doc_id": "12_3ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "apprehending",
+      "token_ids": "76"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "confiscating",
+      "token_ids": "81"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operation",
+      "token_ids": "93"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operation",
+      "token_ids": "257"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "conducted",
+      "token_ids": "258"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "patrol",
+      "token_ids": "268"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mission",
+      "token_ids": "269"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "foils",
+      "token_ids": "40"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "41"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "nabs",
+      "token_ids": "47"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "patrolling",
+      "token_ids": "57"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "thwarted",
+      "token_ids": "63"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "68"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_operation",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_thwarted",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_patrols",
+      "token_ids": ""
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_confiscating",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_pirates_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_piracy_attack",
+      "token_ids": ""
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "282"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "commenced",
+      "token_ids": "276"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t12_commenced",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "apprehending",
+      "token_ids": "76"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "confiscating",
+      "token_ids": "81"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operation",
+      "token_ids": "93"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operation",
+      "token_ids": "257"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "conducted",
+      "token_ids": "258"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "patrol",
+      "token_ids": "268"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mission",
+      "token_ids": "269"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "foils",
+      "token_ids": "40"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "41"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "nabs",
+      "token_ids": "47"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "patrolling",
+      "token_ids": "57"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "thwarted",
+      "token_ids": "63"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "68"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_operation",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_thwarted",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_patrols",
+      "token_ids": ""
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_confiscating",
+      "token_ids": ""
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_pirates_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_piracy_attack",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "282"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "commenced",
+      "token_ids": "276"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t12_commenced",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "9",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

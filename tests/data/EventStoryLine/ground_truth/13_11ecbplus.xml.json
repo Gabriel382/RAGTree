@@ -1,0 +1,155 @@
+{
+  "doc_id": "13_11ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burns",
+      "token_ids": "42"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mop up",
+      "token_ids": "45 46"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "smolder",
+      "token_ids": "53"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "60"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "6",
+      "label": "ACTION_STATE",
+      "span_text": "under investigation",
+      "token_ids": "73 74"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "62"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_REPORTING",
+      "span_text": "t13_reported_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burns",
+      "token_ids": "42"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "mop up",
+      "token_ids": "45 46"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "smolder",
+      "token_ids": "53"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "60"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "4",
+      "label": "ACTION_STATE",
+      "span_text": "under investigation",
+      "token_ids": "73 74"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "62"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_REPORTING",
+      "span_text": "t13_reported_fire",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "4",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "doc_id": "18_6ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "98"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "78"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "104"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "slaying",
+      "token_ids": "108"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "81"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assault",
+      "token_ids": "118"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "86"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kill",
+      "token_ids": "122"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shootings",
+      "token_ids": "125"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "36"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "63"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "66"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "71"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_charged",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "found",
+      "token_ids": "92"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "assault",
+      "token_ids": "100"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "37"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "93"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_STATE",
+      "span_text": "intent",
+      "token_ids": "102"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_STATE",
+      "span_text": "intent",
+      "token_ids": "120"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "98"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "left",
+      "token_ids": "78"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "104"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "slaying",
+      "token_ids": "108"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "81"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assault",
+      "token_ids": "118"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "86"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kill",
+      "token_ids": "122"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shootings",
+      "token_ids": "125"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "36"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "63"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "66"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "71"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_charged",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_injured",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "found",
+      "token_ids": "92"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "assault",
+      "token_ids": "100"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "37"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "93"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "intent",
+      "token_ids": "102"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "intent",
+      "token_ids": "120"
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "18",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "19",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "35",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "36",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "33",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "4",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

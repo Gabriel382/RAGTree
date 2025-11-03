@@ -1,0 +1,785 @@
+{
+  "doc_id": "33_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suspected",
+      "token_ids": "195"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "121"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "359"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kill",
+      "token_ids": "201"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Trial",
+      "token_ids": "27"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "207"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "scheduled",
+      "token_ids": "361"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "214"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Released",
+      "token_ids": "25"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "222"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fatal Shooting",
+      "token_ids": "23 24"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "testified",
+      "token_ids": "233"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "claims",
+      "token_ids": "372"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "236"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "40"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shots",
+      "token_ids": "219"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shows",
+      "token_ids": "63"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "209"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "threatened",
+      "token_ids": "375"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "picking up",
+      "token_ids": "73 74"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "42"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "waiting",
+      "token_ids": "106"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kill",
+      "token_ids": "377"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulls up to",
+      "token_ids": "114 115 116"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "46"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "breaks out",
+      "token_ids": "123 124"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "revealed",
+      "token_ids": "48"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pushing",
+      "token_ids": "128"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "take",
+      "token_ids": "136"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "take the stand",
+      "token_ids": "385 386 387"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "grips",
+      "token_ids": "142"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapses",
+      "token_ids": "146"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed",
+      "token_ids": "152"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "158"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "testimony",
+      "token_ids": "367"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "163"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "letting off",
+      "token_ids": "216 217"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murdering",
+      "token_ids": "165"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "177"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "firing",
+      "token_ids": "180"
+    },
+    {
+      "id": "94",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_charge",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_showed_footage",
+      "token_ids": ""
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_both_suspects_accused",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_pushed_child_aside",
+      "token_ids": ""
+    },
+    {
+      "id": "110",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_trial",
+      "token_ids": ""
+    },
+    {
+      "id": "112",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_shielded_children",
+      "token_ids": ""
+    },
+    {
+      "id": "113",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_spraying_bullets",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_killing_mother",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_STATE",
+      "span_text": "scared",
+      "token_ids": "383"
+    },
+    {
+      "id": "44",
+      "label": "ACTION_REPORTING",
+      "span_text": "according to",
+      "token_ids": "51 52"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "resume",
+      "token_ids": "363"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "directed",
+      "token_ids": "198"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "seen",
+      "token_ids": "105"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "359"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Trial",
+      "token_ids": "27"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "scheduled",
+      "token_ids": "361"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Released",
+      "token_ids": "25"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fatal Shooting",
+      "token_ids": "23 24"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "claims",
+      "token_ids": "372"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "40"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shows",
+      "token_ids": "63"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "threatened",
+      "token_ids": "375"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "picking up",
+      "token_ids": "73 74"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "42"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "waiting",
+      "token_ids": "106"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kill",
+      "token_ids": "377"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pulls up to",
+      "token_ids": "114 115 116"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "46"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "breaks out",
+      "token_ids": "123 124"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "revealed",
+      "token_ids": "48"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pushing",
+      "token_ids": "128"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "take",
+      "token_ids": "136"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "take the stand",
+      "token_ids": "385 386 387"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "grips",
+      "token_ids": "142"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapses",
+      "token_ids": "146"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed",
+      "token_ids": "152"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "158"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "testimony",
+      "token_ids": "367"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "163"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "letting off",
+      "token_ids": "216 217"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murdering",
+      "token_ids": "165"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused of",
+      "token_ids": "177 178"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "firing at",
+      "token_ids": "180 181"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suspected",
+      "token_ids": "195"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "121"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "kill",
+      "token_ids": "201"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "207"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "214"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "222"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "testified",
+      "token_ids": "233"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "236"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shots",
+      "token_ids": "219"
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "209"
+    },
+    {
+      "id": "94",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_charge",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_showed_footage",
+      "token_ids": ""
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_both_suspects_accused",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_pushed_child_aside",
+      "token_ids": ""
+    },
+    {
+      "id": "110",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_trial",
+      "token_ids": ""
+    },
+    {
+      "id": "112",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_shielded_children",
+      "token_ids": ""
+    },
+    {
+      "id": "113",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_spraying_bullets",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t33_killing_mother",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_STATE",
+      "span_text": "scared",
+      "token_ids": "383"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_REPORTING",
+      "span_text": "according to",
+      "token_ids": "51 52"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "resume",
+      "token_ids": "363"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "directed",
+      "token_ids": "198"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "seen",
+      "token_ids": "105"
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "34",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "30",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "35",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "42",
+      "target": "41",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "41",
+      "target": "38",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "37",
+      "target": "41",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "36",
+      "target": "42",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "36",
+      "target": "40",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "36",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "33",
+      "target": "30",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "35",
+      "target": "39",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "37",
+      "target": "39",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "92",
+      "target": "28",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "28",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "24",
+      "target": "28",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "23",
+      "target": "92",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "23",
+      "target": "27",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "23",
+      "target": "29",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

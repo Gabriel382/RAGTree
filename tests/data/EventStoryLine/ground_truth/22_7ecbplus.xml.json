@@ -1,0 +1,229 @@
+{
+  "doc_id": "22_7ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Rampage",
+      "token_ids": "52"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "68"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "77"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rampage",
+      "token_ids": "81"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "93"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "98"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Convicted",
+      "token_ids": "44"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Murder",
+      "token_ids": "47"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_wounded",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "75"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Rampage",
+      "token_ids": "52"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "68"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "77"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "rampage",
+      "token_ids": "81"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "93"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "98"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Convicted",
+      "token_ids": "44"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Murder",
+      "token_ids": "47"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "that",
+      "token_ids": "89"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_wounded",
+      "token_ids": ""
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "75"
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

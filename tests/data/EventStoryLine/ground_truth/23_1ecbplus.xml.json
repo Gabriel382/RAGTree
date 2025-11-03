@@ -1,0 +1,155 @@
+{
+  "doc_id": "23_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "thought",
+      "token_ids": "134"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fallen",
+      "token_ids": "137"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fall",
+      "token_ids": "36"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "falling",
+      "token_ids": "58"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fell",
+      "token_ids": "74"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "56"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "31"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t23_death_australian",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t23_fall_new_zealand",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "thought",
+      "token_ids": "134"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fallen",
+      "token_ids": "137"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fall",
+      "token_ids": "36"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "falling",
+      "token_ids": "58"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fell",
+      "token_ids": "74"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "56"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "31"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t23_death_australian",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t23_fall_new_zealand",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

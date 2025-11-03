@@ -1,0 +1,197 @@
+{
+  "doc_id": "4_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "32"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "80"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "50"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "It",
+      "token_ids": "58"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "record - setting",
+      "token_ids": "72 73 74"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "achieved",
+      "token_ids": "91"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "success",
+      "token_ids": "93"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "snapped",
+      "token_ids": "107"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "86"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "54"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "confirmed",
+      "token_ids": "61"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "due to",
+      "token_ids": "100 101"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Dies",
+      "token_ids": "32"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "80"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "50"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "It",
+      "token_ids": "58"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "record - setting",
+      "token_ids": "72 73 74"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "achieved",
+      "token_ids": "91"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "success",
+      "token_ids": "93"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "snapped",
+      "token_ids": "107"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "86"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "54"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "7",
+      "label": "ACTION_REPORTING",
+      "span_text": "confirmed",
+      "token_ids": "61"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "due to",
+      "token_ids": "100 101"
+    }
+  ],
+  "edges": [
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}
