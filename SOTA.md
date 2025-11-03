@@ -188,53 +188,79 @@ ragtree/
 ├── docs/
 ├── ragtree/
 │   ├── __init__.py
-│   ├── config.py
-│   ├── logging_utils.py
-│   ├── utils/
+│   ├── core/
 │   │   ├── __init__.py
-│   │   ├── io.py
-│   │   ├── text.py
-│   │   └── alignment.py
-│   ├── datasets/
+│   │   ├── config.py        # load YAML, paths, k, model names
+│   │   ├── interfaces.py    # base interfaces (IRAGStrategy, IRetriever, ILLMClient)
+│   │   ├── registry.py      # name -> class factories
+│   │   └── types.py
+│   ├── datasets/            # NEW: step 7–18
 │   │   ├── __init__.py
 │   │   ├── base.py
 │   │   ├── causalbank.py
 │   │   ├── eventstoryline.py
 │   │   ├── maintdoc.py
 │   │   └── docred_causal.py
-│   ├── ontologies/
+│   ├── ontologies/          # NEW: step 19–25
 │   │   ├── __init__.py
 │   │   ├── loader.py
 │   │   ├── mapping.py
 │   │   └── constraints.py
-│   ├── retrievers/
+│   ├── preprocessing/
 │   │   ├── __init__.py
-│   │   ├── base.py
-│   │   ├── vector.py
-│   │   ├── graph.py
-│   │   └── kg.py
-│   ├── rags/
+│   │   ├── ingest/
+│   │   │   ├── loader.py
+│   │   │   └── clean.py
+│   │   ├── chunking/
+│   │   │   ├── structure_split.py
+│   │   │   └── token_split.py
+│   │   ├── indexing/
+│   │   │   ├── build_index.py
+│   │   │   ├── sparse.py
+│   │   │   └── dense.py
+│   │   └── nlp/
+│   │       ├── coref_norm.py
+│   │       └── entities.py   # can call spaCy NER here
+│   ├── processing/
 │   │   ├── __init__.py
-│   │   ├── base.py         # abstract RAG
-│   │   ├── flat_rag.py     # classic RAG
-│   │   ├── graph_rag.py    # GraphRAG
-│   │   ├── kg_rag.py       # KG-RAG
-│   │   └── onto_rag.py     # Ontology-RAG
-│   ├── models/
+│   │   ├── llm/
+│   │   │   ├── mock_client.py
+│   │   │   ├── ollama_client.py
+│   │   │   └── openrouter_client.py
+│   │   ├── retrieval/
+│   │   │   ├── bm25.py
+│   │   │   ├── dense.py
+│   │   │   ├── hybrid.py
+│   │   │   └── rerankers/
+│   │   │       ├── cross_encoder.py
+│   │   │       └── none.py
+│   │   ├── rag/
+│   │   │   ├── base_strategy.py
+│   │   │   └── strategies/
+│   │   │       ├── chunkrag.py
+│   │   │       ├── graphrag.py
+│   │   │       ├── crag.py
+│   │   │       ├── contextualrag.py
+│   │   │       ├── kg_rag.py       # NEW
+│   │   │       └── onto_rag.py     # NEW
+│   │   └── orchestrators/
+│   │       └── pipeline.py
+│   ├── postprocessing/
 │   │   ├── __init__.py
-│   │   ├── ner.py
-│   │   └── llm.py
-│   ├── pipelines/
+│   │   ├── eval.py          # calls evaluation/*
+│   │   ├── explain.py
+│   │   ├── export.py
+│   │   ├── prune.py
+│   │   └── viz.py
+│   ├── evaluation/          # NEW: step 54–68
 │   │   ├── __init__.py
-│   │   ├── preprocess.py   # steps 7–18
-│   │   ├── extract.py      # steps 44–53
-│   │   └── validate.py     # steps 54–68
-│   └── evaluation/
-│       ├── __init__.py
-│       ├── ner_eval.py
-│       ├── re_eval.py
-│       ├── alignment_eval.py
-│       └── report.py
+│   │   ├── ner_eval.py
+│   │   ├── re_eval.py
+│   │   └── alignment_eval.py
+│   └── utils/
+│       ├── io.py
+│       ├── logger.py
+│       └── timer.py
 ├── scripts/
 │   ├── run_preprocess.py
 │   ├── run_experiments.py

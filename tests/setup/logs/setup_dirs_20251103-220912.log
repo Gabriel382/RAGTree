@@ -1,0 +1,14 @@
+[2025-11-03 22:09:12,001] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\tests\setup\data\raw
+[2025-11-03 22:09:12,002] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\tests\setup\data\processed
+[2025-11-03 22:09:12,003] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\tests\setup\models
+[2025-11-03 22:09:12,004] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\tests\setup\data\kg
+[2025-11-03 22:09:12,005] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\tests\setup\results
+[2025-11-03 22:09:12,007] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\tests\setup\jsonresults
+[2025-11-03 22:09:12,007] INFO - setup_dirs: All folders created.
+[2025-11-03 22:11:31,246] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\data\raw
+[2025-11-03 22:11:31,247] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\data\processed
+[2025-11-03 22:11:31,251] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\models
+[2025-11-03 22:11:31,252] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\data\kg
+[2025-11-03 22:11:31,253] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\results
+[2025-11-03 22:11:31,255] INFO - setup_dirs: Ensured folder: C:\Users\henri\Documents\git\post-doc\ragtree\jsonresults
+[2025-11-03 22:11:31,255] INFO - setup_dirs: All folders created.
