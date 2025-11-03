@@ -1,0 +1,34 @@
+project:
+  name: ragtree
+  seed: 42
+  log_dir: logs
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  models: models
+  kg: data/kg
+  results: results
+  jsonresults: jsonresults
+
+datasets:
+  causalbank: data/raw/causalbank.jsonl
+  eventstoryline: data/raw/eventstoryline.jsonl
+  maintdoc: data/raw/maintdoc.jsonl
+  docred_causal: data/raw/docred_causal.jsonl
+
+rag:
+  retrieval_k: 5
+  strategy: flat    # flat | graphrag | kg | onto
+
+llm:
+  provider: openrouter    # or ollama, mock
+  model: qwen/qwen-2.5-coder-32b-instruct
+  temperature: 0.0
+  max_tokens: 512
+
+ontology:
+  causalbank: data/kg/conceptnet.ttl
+  eventstoryline: data/kg/framenet.ttl
+  maintdoc: data/kg/iso15926.ttl
+  docred_causal: data/kg/umls.rdf
