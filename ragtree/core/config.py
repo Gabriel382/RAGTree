@@ -1,16 +1,3 @@
-from pathlib import Path
-import yaml
-
-DEFAULT_CFG = Path(__file__).resolve().parents[2] / "configs" / "default.yaml"
-
-def load_config(path: str | None = None) -> dict:
-    cfg_path = Path(path) if path else DEFAULT_CFG
-    with cfg_path.open("r", encoding="utf-8") as f:
-        cfg = yaml.safe_load(f)
-
-    # resolve relative paths based on project root
-    root = DEFAULT_CFG.parents[1]  # points to .../ragtree/
-    for key, value in cfg.get("paths", {}).items():
-        cfg["paths"][key] = str((root / value).resolve())
-
-    return cfg
+version https://git-lfs.github.com/spec/v1
+oid sha256:74e13d8a3390718da39c2b84d79300498872f9ec9ee6e48804a455ad7d3e22c2
+size 557
