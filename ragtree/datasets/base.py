@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f64f74102d5728af4dbb38ef4c7499ba90d1108f7eabdcd29ca898f96384e4d9
-size 459
+# ragtree/datasets/base.py
+from abc import ABC, abstractmethod
+from typing import Iterable, Dict, Any
+
+class BaseDataset(ABC):
+    name: str = "base"
+
+    @abstractmethod
+    def load(self) -> Iterable[Dict[str, Any]]:
+        """
+        Should yield dicts like:
+        {
+          "doc_id": str,
+          "text": str,
+          "entities": [...],   # optional
+          "relations": [...]   # optional
+        }
+        """
+        ...

@@ -1,3 +1,84 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e6333eff4ddf90ecfd74a39d37a619be76a88435b000e0066da224fd2456fed
-size 2359
+project:
+  name: ragtree
+  seed: 42
+  log_dir: logs
+
+paths:
+  data_raw: data/raw
+  data_preprocessed: data/preprocessed
+  data_processed: data/processed
+  kg: data/kg
+  ontology: data/ontology
+  results: results
+  jsonresults: jsonresults
+  models: models
+
+datasets:
+  raw:                       # folders you already have
+    CausalBank:      data/raw/CausalBank
+    DocRED:          data/raw/DocRED
+    EventStoryLine:  data/raw/EventStoryLine
+    FinCausal:       data/raw/FinCausal
+    MAVEN_ERE:       data/raw/MAVEN_ERE
+
+  preprocessed:              # normalized JSONL targets
+    causalbank:     data/preprocessed/causalbank.jsonl
+    docred_causal:  data/preprocessed/docred_causal.jsonl
+    eventstoryline: data/preprocessed/eventstoryline.jsonl
+    fincausal:      data/preprocessed/fincausal.jsonl
+    maven_ere:      data/preprocessed/maven_ere.jsonl
+
+rag:
+  retrieval_k: 5
+  strategy: flat
+
+llm:
+  baseline:
+    default_backend: "vllm"
+
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 512
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:3b"
+        temperature: 0.0
+        max_tokens: 512
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 512
+
+    system_prompt_key: "causal_relations"
+
+prompts:
+  baseline:
+    causal_relations: |
+      You are an expert at extracting RELATIONS between entities.
+      ...
+      You must output ONLY valid JSON with this exact structure:
+      {
+        "<RELATION_TYPE_1>": [["EVENT_x", "EVENT_y"], ...],
+        "<RELATION_TYPE_2>": [],
+        ...
+      }
+      ...
+
+
+ontology:
+  causalbank:    data/ontology/COInd4/ContextOntology-COInd4.ttl
+  EventKG: data/ontology/EventKG/EventKGSchema.ttl
+  fibocore:     data/ontology/FIBO-Core/fibo-core.ttl
+  fibocoreplus:     data/ontology/FIBO-CorePlus/fibo-core-plus.ttl
+  framenet: data/ontology/framenet/framenet.ttl
+  owltime: data/ontology/OWLTime/time.ttl
+  propbank: data/ontology/PropBank/propbank.ttl
+  verbbank: data/ontology/VerbNet/verbnet.ttl
+  wordnet: data/ontology/WordNet/wnfull.ttl
+  wordnetsynset: data/ontology/Wordnet-Synset/wordnet-synset.ttl
+  wordnetfull: data/ontology/WordNet-Full/wordnet.ttl

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:397f0e34ee46edf7087c108c6af3c36f416e897903a57149b8789ccecbeb5586
-size 348
+# ragtree/preprocessing/ingest/converters/__init__.py
+
+# Import all converter modules so their @register decorators run
+from . import causalbank       # noqa: F401
+from . import eventstoryline   # noqa: F401
+from . import docred_causal    # noqa: F401
+from . import fincausal        # noqa: F401
+from . import maven_ere        # noqa: F401

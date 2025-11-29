@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0aa2e760dfab6b91e7406e6ba49ca6bc55075a3171612c14657df7b80860ac22
-size 213
+# Core
+pydantic>=2.7
+pyyaml>=6.0.1
+numpy>=1.26
+networkx>=3.2
+pandas>=2.2
+scikit-learn>=1.4
+rapidfuzz>=3.9
+tqdm>=4.66
+requests>=2.32
+rich>=13.7
+python-dotenv>=1.0
+
+# Optional but handy
+tiktoken>=0.7

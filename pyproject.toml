@@ -1,3 +1,103 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61fd05f94a15d41db0902249352edafd9ad91250f24210fa3809cda3e8f80cc3
-size 2907
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragtree"
+version = "0.1.0"
+description = "RAGTree: Retrieval-Augmented Generation benchmarking framework for causality tree extraction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Gabriel Henrique Alencar Medeiros" }
+]
+keywords = ["RAG", "LLM", "causality", "knowledge-graph", "benchmark", "retrieval", "reasoning"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+  "pydantic>=2.7",
+  "pyyaml>=6.0.1",
+  "numpy>=1.26",
+  "networkx>=3.2",
+  "pandas>=2.2",
+  "scikit-learn>=1.4",
+  "rapidfuzz>=3.9",
+  "tqdm>=4.66",
+  "requests>=2.32",
+  "rich>=13.7",
+  "python-dotenv>=1.0",
+  "tiktoken>=0.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/RAGTree"
+Repository = "https://github.com/yourname/RAGTree"
+Issues = "https://github.com/yourname/RAGTree/issues"
+
+# ---------- Optional extras you can install on demand ----------
+[project.optional-dependencies]
+# Vector DB / retrieval
+faiss = ["faiss-cpu>=1.8.0.post1"]  # or install faiss-gpu on CUDA machines
+qdrant = ["qdrant-client>=1.9.0"]
+elastic = ["elasticsearch>=8.13"]
+
+# Reranking / embedding models (requires PyTorch)
+reranker = [
+  "torch>=2.2; platform_system != 'Windows' or platform_machine != 'ARM64'",
+  "sentence-transformers>=3.0"
+]
+
+# Local LLMs via Ollama
+ollama = ["ollama>=0.3.0"]
+
+# OpenRouter (we use raw requests; no SDK needed). If you prefer OpenAI client compat:
+openrouter = ["openai>=1.40"]  # optional, only if you want the OpenAI-style client
+
+# Docs & notebooks
+docs = ["mkdocs>=1.6", "mkdocs-material>=9.5", "pymdown-extensions>=10.8"]
+notebooks = ["jupyter>=1.0", "ipykernel>=6.29"]
+
+# Dev & QA
+dev = [
+  "pytest>=8.2",
+  "pytest-cov>=5.0",
+  "ruff>=0.5",
+  "black>=24.4",
+  "mypy>=1.10",
+  "pre-commit>=3.7",
+]
+
+# ---------- Console entrypoints (CLI) ----------
+[project.scripts]
+ragtree-preprocess = "ragtree.cli.run_preprocess:main"
+ragtree-run        = "ragtree.cli.run_processing:main"
+ragtree-post       = "ragtree.cli.run_postprocess:main"
+ragtree-bench      = "ragtree.cli.bench_grid:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ragtree*"]
+
+# Optional tooling configs
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q --disable-warnings"
+testpaths = ["tests"]
