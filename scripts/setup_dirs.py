@@ -1,22 +1,3 @@
-# scripts/setup_dirs.py
-from pathlib import Path
-from ragtree.core.config import load_config
-from ragtree.utils.logger import get_logger
-from ragtree.utils.seed import set_seed
-
-def main():
-    cfg = load_config()
-    set_seed(cfg["project"]["seed"])
-    logger = get_logger("setup_dirs", cfg["project"]["log_dir"])
-
-    # collect all path-like entries
-    path_keys = ["data_raw", "data_processed", "models", "kg", "results", "jsonresults"]
-    for key in path_keys:
-        p = Path(cfg["paths"][key])
-        p.mkdir(parents=True, exist_ok=True)
-        logger.info("Ensured folder: %s", p.resolve())
-
-    logger.info("All folders created.")
-
-if __name__ == "__main__":
-    main()
+version https://git-lfs.github.com/spec/v1
+oid sha256:db0e9315d5876ccb05c51bd866eae092fcd742621f5c4438f978b43efb5b6499
+size 706
