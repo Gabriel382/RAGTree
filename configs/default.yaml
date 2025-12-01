@@ -18,7 +18,7 @@ datasets:
     CausalBank:      data/raw/CausalBank
     DocRED:          data/raw/DocRED
     EventStoryLine:  data/raw/EventStoryLine
-    FinCausal:       data/raw/FinCausal
+    FinCausal:       data/raw/FinCausal/data
     MAVEN_ERE:       data/raw/MAVEN_ERE
 
   preprocessed:              # normalized JSONL targets
