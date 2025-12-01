@@ -165,7 +165,7 @@ Now output ONLY the JSON object. Do not include any explanation or text outside 
         """.strip()
 
         user_msg = {"role": "user", "content": user_instructions}
-        print(user_msg)
+        #print(user_msg)
         return [system_msg, user_msg]
 
     # ------------------------------------------------------------------

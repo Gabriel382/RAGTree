@@ -6,7 +6,7 @@ from pathlib import Path
 import sys, os
 
 # point to your project root
-project_root = Path(r"C:\Users\henri\Documents\git\post-doc\ragtree")
+project_root = Path(r"/home/galencarmedeiro/git/postdoc/ragtree")
 
 def main(name: str):
     cfg = load_config()
