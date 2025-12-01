@@ -98,7 +98,9 @@ def _build_llm_config_from_yaml(
 
     model_name = model or backend_cfg.get("model")
     if not model_name:
-        raise ValueError(f"No model defined for backend '{backend_name}' and no --model override given.")
+        raise ValueError(
+            f"No model defined for backend '{backend_name}' and no --model override given."
+        )
 
     temperature = float(backend_cfg.get("temperature", 0.0))
     max_tokens = int(backend_cfg.get("max_tokens", 512))
@@ -147,8 +149,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
             "Single-LLM baseline for relation extraction, without RAG or ontology. "
-            "Reads a preprocessed JSONL and writes the same JSONL with an added "
-            "'pred_relations' field mirroring the 'relations' structure."
+            "Reads a preprocessed JSONL and writes predictions under 'pred_relations'."
         )
     )
 
@@ -169,7 +170,10 @@ def main() -> None:
         "--backend",
         type=str,
         default=None,
-        help="LLM backend to use (e.g. 'ollama', 'openrouter'). If omitted, use llm.baseline.default_backend.",
+        help=(
+            "LLM backend to use (e.g. 'vllm', 'ollama', 'openrouter'). "
+            "If omitted, use llm.baseline.default_backend."
+        ),
     )
 
     parser.add_argument(
@@ -188,6 +192,17 @@ def main() -> None:
             "(e.g. 'CAUSE,PRECONDITION'). "
             "If omitted, relation types are inferred from doc['relations'] or "
             f"fall back to '{DEFAULT_FALLBACK_RELATION_TYPE}'."
+        ),
+    )
+
+    parser.add_argument(
+        "--output-format",
+        choices=["full", "pred-only"],
+        default="pred-only",
+        help=(
+            "Control JSONL output structure:\n"
+            "  - 'full': keep the full original document and add a 'pred_relations' field.\n"
+            "  - 'pred-only': write only {document_id, pred_relations} per line."
         ),
     )
 
@@ -212,6 +227,7 @@ def main() -> None:
     print(f"[baseline] backend={llm_config.backend}, model={llm_config.model}")
     print(f"[baseline] input={input_path}")
     print(f"[baseline] output={output_path}")
+    print(f"[baseline] output-format={args.output_format}")
 
     # Parse CLI relation types list if provided
     cli_relation_types: Optional[List[str]] = None
@@ -244,10 +260,19 @@ def main() -> None:
                 relation_types=rel_types_for_doc,
             )
 
-            # Attach predictions using the same structure as 'relations'
-            doc["pred_relations"] = pred_relations
+            # Decide what to write based on output-format
+            if args.output_format == "pred-only":
+                # Minimal object: keep identifier + predictions only
+                out_obj: Dict[str, Any] = {
+                    "document_id": doc.get("document_id") or doc.get("id"),
+                    "pred_relations": pred_relations,
+                }
+            else:
+                # Default: keep full original doc and just add predictions
+                doc["pred_relations"] = pred_relations
+                out_obj = doc
 
-            fout.write(json.dumps(doc, ensure_ascii=False) + "\n")
+            fout.write(json.dumps(out_obj, ensure_ascii=False) + "\n")
             num_docs += 1
 
     print(f"[baseline] Done. Processed {num_docs} documents.")
