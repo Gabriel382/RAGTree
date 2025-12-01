@@ -145,6 +145,78 @@ def _determine_relation_types_for_doc(
     return [DEFAULT_FALLBACK_RELATION_TYPE]
 
 
+# --------- NEW: DocRED-specific helper to load rel_info.json ---------
+
+def _load_docred_rel_info(cfg: Dict[str, Any]) -> Dict[str, str]:
+    """
+    Load DocRED rel_info.json from datasets.raw.DocRED configured in default.yaml.
+
+    Expected config fragment:
+      datasets:
+        raw:
+          DocRED: data/raw/DocRED/DocRED
+
+    Returns: dict like {"P159": "headquarters location", ...}
+    """
+    try:
+        raw_cfg = cfg["datasets"]["raw"]
+    except KeyError as e:
+        raise KeyError(f"Config missing 'datasets.raw' section: {e}")
+
+    docred_path: Optional[Path] = None
+    for key, val in raw_cfg.items():
+        if key.lower() == "docred":
+            docred_path = Path(val)
+            break
+
+    if docred_path is None:
+        raise KeyError(
+            "Could not find a 'DocRED' entry under datasets.raw in the config."
+        )
+
+    rel_info_path = docred_path / "rel_info.json"
+    if not rel_info_path.exists():
+        raise FileNotFoundError(
+            f"DocRED rel_info.json not found at: {rel_info_path}"
+        )
+
+    with rel_info_path.open("r", encoding="utf-8") as f:
+        rel_info = json.load(f)
+
+    # rel_info is expected to be { "P159": "headquarters location", ... }
+    return rel_info
+
+
+def _augment_docred_relation_types(
+    relation_types_for_doc: List[str],
+    docred_rel_info: Dict[str, str],
+) -> List[str]:
+    """
+    Produce a full list of DocRED-style augmented relations:
+    "PID : description" for every entry in docred_rel_info,
+    and ensure all relations from relation_types_for_doc are included,
+    without duplicates.
+    """
+    augmented = set()
+
+    # Add every official relation type from DocRED mapping
+    for pid, desc in docred_rel_info.items():
+        augmented.add(f"{pid} : {desc}")
+
+    # Ensure all relations from the document are included too
+    for rt in relation_types_for_doc:
+        if " : " in rt:
+            augmented.add(rt)
+        else:
+            desc = docred_rel_info.get(rt)
+            if desc:
+                augmented.add(f"{rt} : {desc}")
+            else:
+                augmented.add(rt)
+
+    return sorted(augmented)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
@@ -163,7 +235,7 @@ def main() -> None:
     parser.add_argument(
         "--dataset-key",
         required=True,
-        help="Key under datasets.preprocessed in the config (e.g. 'maven_ere').",
+        help="Key under datasets.preprocessed in the config (e.g. 'maven_ere', 'docred_causal').",
     )
 
     parser.add_argument(
@@ -189,7 +261,7 @@ def main() -> None:
         default=None,
         help=(
             "Optional comma-separated list of relation types to enforce "
-            "(e.g. 'CAUSE,PRECONDITION'). "
+            "(e.g. 'CAUSE,PRECONDITION' or 'P17,P27'). "
             "If omitted, relation types are inferred from doc['relations'] or "
             f"fall back to '{DEFAULT_FALLBACK_RELATION_TYPE}'."
         ),
@@ -198,7 +270,7 @@ def main() -> None:
     parser.add_argument(
         "--output-format",
         choices=["full", "pred-only"],
-        default="pred-only",
+        default="full",
         help=(
             "Control JSONL output structure:\n"
             "  - 'full': keep the full original document and add a 'pred_relations' field.\n"
@@ -240,6 +312,16 @@ def main() -> None:
         if not cli_relation_types:
             cli_relation_types = None
 
+    # --------- NEW: load DocRED rel_info if this is a DocRED-based dataset ---------
+    docred_rel_info: Optional[Dict[str, str]] = None
+    if "docred_causal" in args.dataset_key.lower():
+        try:
+            docred_rel_info = _load_docred_rel_info(cfg)
+            print(f"[baseline] Loaded DocRED rel_info with {len(docred_rel_info)} entries.")
+        except Exception as e:
+            print(f"[baseline] Warning: could not load DocRED rel_info.json: {e}")
+            docred_rel_info = None
+    
     strategy = BaselineRelationStrategy(llm_config=llm_config)
 
     num_docs = 0
@@ -255,11 +337,21 @@ def main() -> None:
                 doc,
                 cli_relation_types=cli_relation_types,
             )
-            pred_relations = strategy.predict_relations(
-                doc,
-                relation_types=rel_types_for_doc,
-            )
 
+            # --------- NEW: augment DocRED relation types as "P159 : headquarters location" ---------
+            if docred_rel_info is not None:
+                rel_types_for_doc = _augment_docred_relation_types(
+                    rel_types_for_doc,
+                    docred_rel_info,
+                )
+
+            # Pseudocode logic
+            if "docred_causal" in args.dataset_key.lower() and docred_rel_info is not None:
+                pred_relations = strategy.predict_relations(doc, relation_types=rel_types_for_doc)
+            else:
+                rel_types = sorted(doc.get("relations", {}).keys())
+                pred_relations = strategy.predict_relations(doc, relation_types=rel_types)
+            
             # Decide what to write based on output-format
             if args.output_format == "pred-only":
                 # Minimal object: keep identifier + predictions only

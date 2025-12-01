@@ -16,7 +16,7 @@ paths:
 datasets:
   raw:                       # folders you already have
     CausalBank:      data/raw/CausalBank
-    DocRED:          data/raw/DocRED
+    DocRED:          data/raw/DocRED/DocRED
     EventStoryLine:  data/raw/EventStoryLine
     FinCausal:       data/raw/FinCausal/data
     MAVEN_ERE:       data/raw/MAVEN_ERE

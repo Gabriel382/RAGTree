@@ -73,7 +73,7 @@ class BaselineRelationStrategy(BaseRelationStrategy):
         if isinstance(entities, dict):
             for ent_id, ent in entities.items():
                 ent_type = ent.get("type", "")
-                mentions = ent.get("mentions", [])
+                mentions = ent.get("mentions", [])  # may be list or single item
 
                 # Normalize mentions to a list
                 if not isinstance(mentions, list):
@@ -133,9 +133,6 @@ class BaselineRelationStrategy(BaseRelationStrategy):
 
         entities_block = "\n".join(entity_lines) if entity_lines else "(no entities provided)"
 
-
-        entities_block = "\n".join(entity_lines) if entity_lines else "(no entities provided)"
-
         rel_types_str = ", ".join(relation_types) if relation_types else "(none)"
 
         user_instructions = f"""
@@ -165,11 +162,12 @@ Now output ONLY the JSON object. Do not include any explanation or text outside 
         """.strip()
 
         user_msg = {"role": "user", "content": user_instructions}
-        #print(user_msg)
+        # Uncomment for debugging:
+        # print(user_msg)
         return [system_msg, user_msg]
 
     # ------------------------------------------------------------------
-    # Output parsing
+    # Output parsing (with alias mapping)
     # ------------------------------------------------------------------
     def _parse_llm_output(
         self,
@@ -179,8 +177,12 @@ Now output ONLY the JSON object. Do not include any explanation or text outside 
         """
         Parse the JSON returned by the LLM into the normalized relation dict.
 
-        If parsing fails, returns an empty dict with all relation_types mapped
-        to [].
+        We also support alias keys from the LLM, e.g.:
+          - "P17"          -> "P17 : country"
+          - "country"      -> "P17 : country"
+          - "P17 : country" -> "P17 : country"
+
+        All aliases are merged into the canonical keys from `relation_types`.
         """
         try:
             data = json.loads(raw_text)
@@ -190,8 +192,56 @@ Now output ONLY the JSON object. Do not include any explanation or text outside 
             # In case of any error, fall back to empty lists for all types
             return {rtype: [] for rtype in relation_types}
 
-        # Use base helper to normalize structure and filter unknown keys
-        return self._normalize_relation_dict(data, relation_types)
+        # ------------------------------------------------------------------
+        # Build an alias map:
+        #   - canonical_key (e.g. "P17 : country") -> itself
+        #   - short code (e.g. "P17")             -> canonical_key
+        #   - label only (e.g. "country"/"Country")-> canonical_key
+        # ------------------------------------------------------------------
+        alias_map: Dict[str, str] = {}
+
+        for r in relation_types:
+            canonical = r
+            alias_map[canonical] = canonical  # full form
+
+            # If format looks like "P17 : country"
+            if ":" in r:
+                code_part, label_part = r.split(":", 1)
+                code = code_part.strip()
+                label = label_part.strip()
+
+                if code:
+                    alias_map[code] = canonical
+                if label:
+                    alias_map[label] = canonical
+                    alias_map[label.lower()] = canonical
+
+        # ------------------------------------------------------------------
+        # Remap LLM keys into canonical keys using alias_map
+        # ------------------------------------------------------------------
+        remapped: Dict[str, Any] = {}
+
+        for key, value in data.items():
+            if not isinstance(key, str):
+                continue
+
+            k_stripped = key.strip()
+            # Try exact, then lower-case
+            canonical = alias_map.get(k_stripped) or alias_map.get(k_stripped.lower())
+            if canonical is None:
+                # Unknown relation type from the model -> ignore
+                continue
+
+            # Only accept list-like values (list of pairs)
+            if not isinstance(value, list):
+                continue
+
+            # Merge values if multiple aliases map to same canonical key
+            existing = remapped.setdefault(canonical, [])
+            existing.extend(value)
+
+        # Finally, normalize structure and filter/complete with empty lists
+        return self._normalize_relation_dict(remapped, relation_types)
 
     # ------------------------------------------------------------------
     # Public API
@@ -215,6 +265,7 @@ Now output ONLY the JSON object. Do not include any explanation or text outside 
 
         messages = self._build_messages(doc, rel_types)
         raw = self._call_llm(messages)
+        
         return self._parse_llm_output(raw, rel_types)
 
 
