@@ -85,8 +85,39 @@ class CausalBankConverter(BaseConverter):
 
     drop_docs_without_causal: bool = True
 
-    def __init__(self, raw_dir: str | Path):
+    def __init__(
+        self,
+        raw_dir: str | Path,
+        truncate: bool = False,
+        start: int = 0,
+        distance: int | None = None,
+    ):
+        """
+        Parameters
+        ----------
+        raw_dir : str | Path
+            Root directory of CausalBank (contains because_mode/, therefore_mode/,
+            Lexical_Cause_Effect_Graph.txt, etc.).
+
+        truncate : bool, default False
+            If True, only a slice of lines per file is processed:
+            [start, start + distance).
+
+        start : int, default 0
+            0-based index of the first *valid* line (doc) to keep per file
+            when truncate=True.
+
+        distance : int | None, default None
+            Number of lines to keep per file starting from `start`. If None,
+            keeps from `start` to the end of each file.
+        """
         super().__init__(raw_dir)
+
+        # Store truncation parameters (only used for this converter)
+        self.truncate = truncate
+        self.start = max(0, start)
+        self.distance = distance if distance is None or distance > 0 else None
+
         self.lex_graph_path = self.raw_dir / "Lexical_Cause_Effect_Graph.txt"
 
         if not self.lex_graph_path.is_file():
@@ -101,6 +132,7 @@ class CausalBankConverter(BaseConverter):
             self.entity_lemmas,
             self.causal_pairs,
         ) = self._load_lexical_cause_effect_graph(self.lex_graph_path)
+
 
     # -------------------------------------------------------------------------
     # Normalization / Lemmatization
@@ -219,11 +251,23 @@ class CausalBankConverter(BaseConverter):
 
         Each line is assumed to be tab-separated:
 
-          connector <TAB> phrase1 <TAB> phrase2 [<TAB> ...]
+            connector <TAB> phrase1 <TAB> phrase2 [<TAB> ...]
 
         We construct:
-          text = f"{phrase1} {connector} {phrase2}"
+            text = f"{phrase1} {connector} {phrase2}"
+
+        When truncation is enabled (self.truncate=True), we only process
+        a slice of *valid* lines per file:
+
+            indices in [self.start, self.start + self.distance)
+
+        where indices are counted after filtering out empty/malformed lines.
         """
+        # Precompute max index per file when distance is given
+        max_index = None
+        if self.truncate and self.distance is not None:
+            max_index = self.start + self.distance
+
         for fp in mode_dir.iterdir():
             if not fp.is_file():
                 continue
@@ -231,6 +275,9 @@ class CausalBankConverter(BaseConverter):
             # connector name can be inferred from filename if needed
             connector_name = fp.name.replace("_", " ")
             doc_type = fp.name  # <-- use the file name as the 'type'
+
+            # Per-file logical doc index (after skipping malformed/empty lines)
+            local_idx = 0
 
             with fp.open("r", encoding="utf-8") as f:
                 for line_num, line in enumerate(f, start=1):
@@ -242,6 +289,19 @@ class CausalBankConverter(BaseConverter):
                     if len(cols) < 3:
                         # malformed line, skip
                         continue
+
+                    # At this point, this line corresponds to a "valid" doc index
+                    # for this file
+                    if self.truncate:
+                        # Skip until we reach the starting index
+                        if local_idx < self.start:
+                            local_idx += 1
+                            continue
+
+                        # If we have a finite window, stop once past it
+                        if max_index is not None and local_idx >= max_index:
+                            # Stop reading this file; move to next one
+                            break
 
                     connector = cols[0].strip() or connector_name
                     phrase1 = cols[1].strip()
@@ -274,30 +334,19 @@ class CausalBankConverter(BaseConverter):
                         lemma_mentions.setdefault(norm, []).append((idx, tok))
 
                     # Build entity structures with hashed IDs
-                    mention_counter = 0
-                    for lemma, occurrences in lemma_mentions.items():
-                        # Unique hash per (lemma, document text)
-                        hash_input = f"{lemma}|{text}"
-                        ent_hash = self._text_hash(hash_input)
-                        ent_id = f"EVENT_{ent_hash}"
+                    for lemma, mentions in lemma_mentions.items():
+                        ent_id = f"EVENT_{self._text_hash(lemma)}"
                         lemma_to_entid[lemma] = ent_id
-
-                        ent_mentions = []
-                        for pos, surface in occurrences:
-                            mention_id = f"m{mention_counter}"
-                            mention_counter += 1
-                            ent_mentions.append(
-                                {
-                                    "id": mention_id,
-                                    "trigger_word": surface,
-                                    "sent_id": 0,
-                                    "offset": [pos, pos + 1],
-                                }
-                            )
-
                         entities[ent_id] = {
-                            "type": "entity_type",
-                            "mentions": ent_mentions,
+                            "lemma": lemma,
+                            "mentions": [
+                                {
+                                    "sentence_id": 0,
+                                    "token_id": tok_idx,
+                                    "text": surface,
+                                }
+                                for tok_idx, surface in mentions
+                            ],
                         }
 
                     # ---------------- Relations via lexical pairs ----------------
@@ -327,8 +376,10 @@ class CausalBankConverter(BaseConverter):
                     # Optionally drop docs without any relations
                     if self.drop_docs_without_causal:
                         if not relations or not any(rel_list for rel_list in relations.values()):
+                            local_idx += 1
                             continue
 
+                    # Yield the final normalized document
                     yield {
                         "document_id": document_id,
                         "title": title,
@@ -339,3 +390,7 @@ class CausalBankConverter(BaseConverter):
                         "entities": entities,
                         "relations": relations,
                     }
+
+                    # Increase logical doc index for this file
+                    local_idx += 1
+

@@ -1,4 +1,3 @@
-# scripts/run_single_llm_baseline.py
 from __future__ import annotations
 
 import argparse
@@ -49,8 +48,6 @@ def _resolve_paths_and_config(
 
     processed_root.mkdir(parents=True, exist_ok=True)
 
-    # The backend is needed to form the default output name,
-    # but we don't know it yet; output filename will be finalized in main().
     return input_path, processed_root, cfg  # type: ignore[return-value]
 
 
@@ -131,7 +128,7 @@ def _determine_relation_types_for_doc(
     Decide which relation types to use for a single doc.
 
     Priority:
-      1. If CLI list provided (e.g. --relation-types CAUSE,PRECONDITION) -> use those.
+      1. If CLI list is provided (e.g. --relation-types CAUSE,PRECONDITION) -> use those.
       2. Else if doc["relations"] exists and is a dict -> use its keys (even if lists are empty).
       3. Else -> [DEFAULT_FALLBACK_RELATION_TYPE].
     """
@@ -145,7 +142,8 @@ def _determine_relation_types_for_doc(
     return [DEFAULT_FALLBACK_RELATION_TYPE]
 
 
-# --------- NEW: DocRED-specific helper to load rel_info.json ---------
+# --------- DocRED-specific helper to load rel_info.json ---------
+
 
 def _load_docred_rel_info(cfg: Dict[str, Any]) -> Dict[str, str]:
     """
@@ -183,7 +181,6 @@ def _load_docred_rel_info(cfg: Dict[str, Any]) -> Dict[str, str]:
     with rel_info_path.open("r", encoding="utf-8") as f:
         rel_info = json.load(f)
 
-    # rel_info is expected to be { "P159": "headquarters location", ... }
     return rel_info
 
 
@@ -278,6 +275,17 @@ def main() -> None:
         ),
     )
 
+    # NEW: filter by doc['type']
+    parser.add_argument(
+        "--doc-type",
+        type=str,
+        default="all",
+        help=(
+            "If not 'all', only process documents whose doc['type'] equals this value "
+            "(e.g. 'train', 'dev', 'test'). Default: 'all' (no filtering)."
+        ),
+    )
+
     args = parser.parse_args()
 
     input_path, processed_root, cfg = _resolve_paths_and_config(
@@ -300,6 +308,7 @@ def main() -> None:
     print(f"[baseline] input={input_path}")
     print(f"[baseline] output={output_path}")
     print(f"[baseline] output-format={args.output_format}")
+    print(f"[baseline] doc-type-filter={args.doc_type}")
 
     # Parse CLI relation types list if provided
     cli_relation_types: Optional[List[str]] = None
@@ -312,7 +321,7 @@ def main() -> None:
         if not cli_relation_types:
             cli_relation_types = None
 
-    # --------- NEW: load DocRED rel_info if this is a DocRED-based dataset ---------
+    # --------- load DocRED rel_info if this is a DocRED-based dataset ---------
     docred_rel_info: Optional[Dict[str, str]] = None
     if "docred_causal" in args.dataset_key.lower():
         try:
@@ -321,10 +330,12 @@ def main() -> None:
         except Exception as e:
             print(f"[baseline] Warning: could not load DocRED rel_info.json: {e}")
             docred_rel_info = None
-    
+
     strategy = BaselineRelationStrategy(llm_config=llm_config)
 
     num_docs = 0
+    num_skipped_type = 0
+
     with input_path.open("r", encoding="utf-8") as fin, \
          output_path.open("w", encoding="utf-8") as fout:
         for line in tqdm(fin):
@@ -333,25 +344,33 @@ def main() -> None:
                 continue
 
             doc = json.loads(line)
-            rel_types_for_doc = _determine_relation_types_for_doc(
+
+            # --------- filter by doc['type'] if requested ---------
+            if args.doc_type != "all":
+                doc_type = doc.get("type")
+                if doc_type != args.doc_type:
+                    num_skipped_type += 1
+                    continue
+
+            # Decide relation types for this doc (CLI override / doc / fallback)
+            relation_types_for_doc = _determine_relation_types_for_doc(
                 doc,
                 cli_relation_types=cli_relation_types,
             )
 
-            # --------- NEW: augment DocRED relation types as "P159 : headquarters location" ---------
-            if docred_rel_info is not None:
-                rel_types_for_doc = _augment_docred_relation_types(
-                    rel_types_for_doc,
+            # DocRED augmentation
+            if docred_rel_info is not None and "docred_causal" in args.dataset_key.lower():
+                relation_types_for_doc = _augment_docred_relation_types(
+                    relation_types_for_doc,
                     docred_rel_info,
                 )
 
-            # Pseudocode logic
-            if "docred_causal" in args.dataset_key.lower() and docred_rel_info is not None:
-                pred_relations = strategy.predict_relations(doc, relation_types=rel_types_for_doc)
-            else:
-                rel_types = sorted(doc.get("relations", {}).keys())
-                pred_relations = strategy.predict_relations(doc, relation_types=rel_types)
-            
+            # Predict relations with the final relation_types_for_doc
+            pred_relations = strategy.predict_relations(
+                doc,
+                relation_types=relation_types_for_doc,
+            )
+
             # Decide what to write based on output-format
             if args.output_format == "pred-only":
                 # Minimal object: keep identifier + predictions only
@@ -368,6 +387,8 @@ def main() -> None:
             num_docs += 1
 
     print(f"[baseline] Done. Processed {num_docs} documents.")
+    if args.doc_type != "all":
+        print(f"[baseline] Skipped {num_skipped_type} documents due to doc-type filter.")
 
 
 if __name__ == "__main__":
