@@ -1,110 +1,105 @@
-# scripts/run_single_llm_baseline.py
+# scripts/run_cot_baseline.py
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 
-from ragtree.processing.rag.strategies.baseline_relations import (
-    BaselineRelationStrategy,
-)
 from ragtree.processing.orchestrators.relations_runner import (
     RunnerLLMSections,
     run_relation_experiment,
 )
-
+from ragtree.processing.rag.strategies.chain_of_thought import (
+    ChainOfThoughtRelationStrategy,
+)
+from ragtree.processing.orchestrators.relations_runner import PreparedContext
 
 def _parse_cli_relation_types(arg: Optional[str]) -> Optional[List[str]]:
     if not arg:
         return None
     items = [x.strip() for x in arg.split(",")]
-    items = [x for x in items if x]
-    return items or None
+    return [x for x in items if x] or None
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description=(
-            "Single-LLM baseline for relation extraction, without RAG or ontology. "
-            "Reads a preprocessed JSONL and writes predictions under 'pred_relations'."
-        )
+        description="Chain-of-Thought baseline for relation extraction."
     )
 
     parser.add_argument(
         "--config",
         type=Path,
         default=None,
-        help="Path to default.yaml (or similar). If omitted, load_config() should resolve it.",
+        help="Path to default.yaml. If omitted, load_config() resolves it.",
     )
 
     parser.add_argument(
         "--dataset-key",
         required=True,
-        help="Key under datasets.preprocessed in the config (e.g. 'maven_ere', 'docred_causal').",
+        help="Key under datasets.preprocessed (e.g. 'docred_causal').",
     )
 
     parser.add_argument(
         "--backend",
         type=str,
         default=None,
-        help=(
-            "LLM backend to use (e.g. 'vllm', 'ollama', 'openrouter'). "
-            "If omitted, use llm.baseline.default_backend."
-        ),
+        help="Override backend (vllm/ollama/openrouter).",
     )
 
     parser.add_argument(
         "--model",
         type=str,
         default=None,
-        help="Optional model override for the chosen backend.",
+        help="Optional model override.",
     )
 
     parser.add_argument(
         "--relation-types",
         type=str,
         default=None,
-        help=(
-            "Optional comma-separated list of relation types to enforce "
-            "(e.g. 'CAUSE,PRECONDITION' or 'P17,P27'). "
-            "If omitted, relation types are inferred from doc['relations'] or "
-            "fall back to a single default label."
-        ),
+        help="Comma-separated list of relation types to enforce.",
     )
 
     parser.add_argument(
         "--output-format",
         choices=["full", "pred-only"],
         default="full",
-        help=(
-            "Control JSONL output structure:\n"
-            "  - 'full': keep the full original document and add a 'pred_relations' field.\n"
-            "  - 'pred-only': write only {document_id, pred_relations} per line."
-        ),
     )
 
     parser.add_argument(
         "--doc-type",
         type=str,
         default="all",
-        help=(
-            "If not 'all', only process documents whose doc['type'] equals this value "
-            "(e.g. 'train', 'dev', 'test'). Default: 'all' (no filtering)."
-        ),
+        help="Filter doc['type'] (train/dev/test/all).",
+    )
+
+    # 🔥 NEW FLAG
+    parser.add_argument(
+        "--print-cot",
+        action="store_true",
+        help="Print reasoning for each document. Default: off.",
     )
 
     args = parser.parse_args()
 
     cli_rel_types = _parse_cli_relation_types(args.relation_types)
 
+    # CoT uses the SAME config section as baseline
     sections = RunnerLLMSections(
         llm_section="baseline",
         prompt_section="baseline",
         system_prompt_key="causal_relations",
     )
 
+    def _prep(input_path: Path, cfg: Dict[str, Any]) -> PreparedContext:
+        return PreparedContext(
+            strategy_kwargs={},
+            predict_kwargs={"print_cot": args.print_cot},
+        )
+
+
     run_relation_experiment(
-        strategy_cls=BaselineRelationStrategy,
+        strategy_cls=ChainOfThoughtRelationStrategy,
         config_path=args.config,
         dataset_key=args.dataset_key,
         backend=args.backend,
@@ -113,7 +108,7 @@ def main() -> None:
         output_format=args.output_format,
         doc_type_filter=args.doc_type,
         sections=sections,
-        prepare_context_fn=None,
+        prepare_context_fn=lambda ip, cfg: _prep(ip, cfg),
     )
 
 
