@@ -86,7 +86,7 @@ def main() -> None:
 
     # CoT uses the SAME config section as baseline
     sections = RunnerLLMSections(
-        llm_section="baseline",
+        llm_section="cot",
         prompt_section="baseline",
         system_prompt_key="causal_relations",
     )

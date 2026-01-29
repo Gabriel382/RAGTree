@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Sequence, Union
 
 from ragtree.processing.rag.strategies.baseline_relations import (
     BaselineRelationStrategy,
@@ -20,6 +20,19 @@ def _parse_cli_relation_types(arg: Optional[str]) -> Optional[List[str]]:
     items = [x.strip() for x in arg.split(",")]
     items = [x for x in items if x]
     return items or None
+
+
+def _parse_doc_types(arg: str) -> Union[Sequence[str], str]:
+    """
+    '--doc-type "dev,test"' -> ["dev", "test"]
+    '--doc-type "test"'     -> ["test"]
+    '--doc-type "all"'      -> "all"
+    """
+    if not arg or arg == "all":
+        return "all"
+    items = [x.strip() for x in arg.split(",")]
+    items = [x for x in items if x]
+    return items or "all"
 
 
 def main() -> None:
@@ -88,14 +101,17 @@ def main() -> None:
         type=str,
         default="all",
         help=(
-            "If not 'all', only process documents whose doc['type'] equals this value "
-            "(e.g. 'train', 'dev', 'test'). Default: 'all' (no filtering)."
+            "Document type filter over doc['type'].\n"
+            "  - 'all' (default): process all documents\n"
+            "  - single value: e.g. 'test'\n"
+            "  - comma-separated list: e.g. 'dev,test'"
         ),
     )
 
     args = parser.parse_args()
 
     cli_rel_types = _parse_cli_relation_types(args.relation_types)
+    doc_type_filter = _parse_doc_types(args.doc_type)
 
     sections = RunnerLLMSections(
         llm_section="baseline",
@@ -111,7 +127,7 @@ def main() -> None:
         model=args.model,
         cli_relation_types=cli_rel_types,
         output_format=args.output_format,
-        doc_type_filter=args.doc_type,
+        doc_type_filter=doc_type_filter,
         sections=sections,
         prepare_context_fn=None,
     )
