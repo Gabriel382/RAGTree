@@ -33,6 +33,29 @@ rag:
   strategy: flat
 
 llm:
+  growlrag:
+    default_backend: "openrouter"
+
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+    system_prompt_key: "growlrag_docre"
+
   cot:
     default_backend: "vllm"
 
@@ -114,6 +137,32 @@ prompts:
       }
       ...
 
+  growlrag:
+    growlrag_docre: |
+      You are an expert at document-level relation extraction for knowledge graph construction.
+
+      You will be given:
+      - A document (title + sentences)
+      - A list of entities with IDs and mentions (token spans)
+      - Optional ontology links per entity (classes/datatypes)
+      - A retrieved ontology fragment (classes + properties + domain/range constraints)
+
+      Task:
+      1) Extract binary relations between the provided entity IDs ONLY.
+      2) Use ONLY the relation types provided (the keys of the relation schema).
+      3) Prefer relations that satisfy ontology constraints (domain/range compatibility).
+
+      Output format (JSON only):
+      {
+        "<RELATION_TYPE_1>": [["ENTITY_ID_A", "ENTITY_ID_B"], ...],
+        "<RELATION_TYPE_2>": [],
+        ...
+      }
+
+      Rules:
+      - Do NOT invent new relation types.
+      - Do NOT output any text outside the JSON.
+
 
 ontology:
   causalbank:    data/ontology/COInd4/ContextOntology-COInd4.ttl
@@ -127,3 +176,46 @@ ontology:
   wordnet: data/ontology/WordNet/wnfull.ttl
   wordnetsynset: data/ontology/Wordnet-Synset/wordnet-synset.ttl
   wordnetfull: data/ontology/WordNet-Full/wordnet.ttl
+  docredontology: data/ontology/DocREDOntology/ontology.ttl
+  
+ontology_linking:
+  default_method: llm_embedding
+
+  output:
+    # Only the folder is configured here.
+    # The code will generate the output filename from the input JSONL filename
+    # + the chosen method + ontology key + versioning if needed.
+    folder: data/preprocessed
+    write_field: "ontology_links"
+    overwrite: true
+
+  defaults:
+    top_k: 3
+    min_score: 0.3
+
+  methods:
+    llm_embedding:
+      kind: embedding
+      backend: ollama
+      top_k: 3
+      min_score: 0.3
+
+    growlrag_minilm:
+      kind: embedding_st
+      model: "all-MiniLM-L6-v2"
+      top_k: 3
+      min_score: 0.3
+
+
+growlrag:
+  ontology_key: docredontology
+  linking_method: llm_embedding
+
+  retrieval:
+    mode: domain_range_filter
+    include_unrestricted_properties: true
+    max_properties: 120
+    max_classes: 200
+
+  few_shot:
+    k: 0
