@@ -1,0 +1,307 @@
+{
+  "doc_id": "30_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drops",
+      "token_ids": "235"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "87"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "telecommunications",
+      "token_ids": "92"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "52"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "indicated",
+      "token_ids": "38"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "resulting",
+      "token_ids": "54"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "telecommunications",
+      "token_ids": "60"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "resulting",
+      "token_ids": "88"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cut",
+      "token_ids": "27"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loss",
+      "token_ids": "57"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loss",
+      "token_ids": "90"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "state - owned",
+      "token_ids": "138 139 140"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "responsible",
+      "token_ids": "145"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "233"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "Reports",
+      "token_ids": "34"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drops",
+      "token_ids": "235"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "87"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "telecommunications",
+      "token_ids": "92"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "52"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "indicated",
+      "token_ids": "38"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "resulting",
+      "token_ids": "54"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fixed line monopoly",
+      "token_ids": "141 142 143"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "telecommunications",
+      "token_ids": "60"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ADSL Internet connections",
+      "token_ids": "148 149 150"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "resulting",
+      "token_ids": "88"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cut",
+      "token_ids": "27"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loss",
+      "token_ids": "57"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loss",
+      "token_ids": "90"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "state - owned",
+      "token_ids": "138 139 140"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_STATE",
+      "span_text": "responsible",
+      "token_ids": "145"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "233"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "Reports",
+      "token_ids": "34"
+    }
+  ],
+  "edges": [
+    {
+      "source": "4",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "1",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

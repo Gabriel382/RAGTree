@@ -1,0 +1,443 @@
+{
+  "doc_id": "19_6ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "joined",
+      "token_ids": "55"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "vigil",
+      "token_ids": "60"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "81"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "vigil",
+      "token_ids": "271"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "devolved",
+      "token_ids": "273"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riot",
+      "token_ids": "276"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "322"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "324"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pointing",
+      "token_ids": "329"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "approached",
+      "token_ids": "337"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "protest",
+      "token_ids": "27"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "intervened",
+      "token_ids": "49"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_pointed_gun",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_riot",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_police_intervened",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_vigil",
+      "token_ids": ""
+    },
+    {
+      "id": "48",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_joined_vigil",
+      "token_ids": ""
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_turned_unpeaceful",
+      "token_ids": ""
+    },
+    {
+      "id": "15",
+      "label": "ACTION_STATE",
+      "span_text": "lockdown",
+      "token_ids": "25"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "341"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "wrote",
+      "token_ids": "280"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_REPORTING",
+      "span_text": "t19_police_said_about_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "35",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t19_following_vigil",
+      "token_ids": ""
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "joined",
+      "token_ids": "55"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "vigil",
+      "token_ids": "60"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "81"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "vigil",
+      "token_ids": "271"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "devolved",
+      "token_ids": "273"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riot",
+      "token_ids": "276"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "322"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "324"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "pointing",
+      "token_ids": "329"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "approached",
+      "token_ids": "337"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "protest",
+      "token_ids": "27"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "intervened",
+      "token_ids": "49"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_pointed_gun",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_riot",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_police_intervened",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_vigil",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_joined_vigil",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_turned_unpeaceful",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "lockdown",
+      "token_ids": "25"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "341"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "wrote",
+      "token_ids": "280"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_REPORTING",
+      "span_text": "t19_police_said_about_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "following",
+      "token_ids": "26"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t19_following_vigil",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "12",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

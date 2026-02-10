@@ -1,0 +1,173 @@
+{
+  "doc_id": "18_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shot",
+      "token_ids": "35"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shooting",
+      "token_ids": "38"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "63"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "searching",
+      "token_ids": "78"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "news",
+      "token_ids": "49"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "210"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "occurred",
+      "token_ids": "215"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "houses",
+      "token_ids": "189"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "believed",
+      "token_ids": "212"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "126"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "84"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_REPORTING",
+      "span_text": "t18_police_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shot",
+      "token_ids": "35"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shooting",
+      "token_ids": "38"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "63"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "searching",
+      "token_ids": "78"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "news",
+      "token_ids": "49"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "210"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "occurred",
+      "token_ids": "215"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t18_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "houses",
+      "token_ids": "189"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "believed",
+      "token_ids": "212"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "126"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "84"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_REPORTING",
+      "span_text": "t18_police_said",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

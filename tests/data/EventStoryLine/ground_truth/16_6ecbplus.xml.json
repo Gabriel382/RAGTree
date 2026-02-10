@@ -1,0 +1,425 @@
+{
+  "doc_id": "16_6ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "101"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "113"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "119"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "possession",
+      "token_ids": "125"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "30"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "78"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigating",
+      "token_ids": "86"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "94"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gets",
+      "token_ids": "24"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "26"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ordered",
+      "token_ids": "50"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "review",
+      "token_ids": "338"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "execution",
+      "token_ids": "51"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "56"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "347"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murdering",
+      "token_ids": "58"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "356"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_investigation",
+      "token_ids": ""
+    },
+    {
+      "id": "53",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_previous_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_convicted",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "102"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "circumstances",
+      "token_ids": "117"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "asked",
+      "token_ids": "336"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "boasting",
+      "token_ids": "344"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "101"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "113"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "119"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "possession",
+      "token_ids": "125"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "30"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "78"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigating",
+      "token_ids": "86"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "94"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gets",
+      "token_ids": "24"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "26"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "336"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ordered",
+      "token_ids": "50"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "review",
+      "token_ids": "338"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "execution",
+      "token_ids": "51"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "boasting",
+      "token_ids": "344"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "56"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "347"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murdering",
+      "token_ids": "58"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "356"
+    },
+    {
+      "id": "50",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_investigation",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_previous_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_convicted",
+      "token_ids": ""
+    },
+    {
+      "id": "59",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "guilty",
+      "token_ids": "102"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "circumstances",
+      "token_ids": "117"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "in connection",
+      "token_ids": "90 91"
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

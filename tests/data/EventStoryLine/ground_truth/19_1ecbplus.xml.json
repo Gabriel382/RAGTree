@@ -1,0 +1,279 @@
+{
+  "doc_id": "19_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "marching",
+      "token_ids": "96"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "splintered off",
+      "token_ids": "109 110"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drawing",
+      "token_ids": "112"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trashed",
+      "token_ids": "117"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "autopsy",
+      "token_ids": "137"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed",
+      "token_ids": "138"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "142"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Killed",
+      "token_ids": "36"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_autopsy",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_march",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "unruly",
+      "token_ids": "153"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "calm",
+      "token_ids": "127"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "Powder Keg'",
+      "token_ids": "32 33"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_STATE",
+      "span_text": "t19_choatic",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "marching",
+      "token_ids": "96"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "splintered off",
+      "token_ids": "109 110"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drawing",
+      "token_ids": "112"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trashed",
+      "token_ids": "117"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "autopsy",
+      "token_ids": "137"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "showed",
+      "token_ids": "138"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "142"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Killed",
+      "token_ids": "36"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_autopsy",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_march",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_STATE",
+      "span_text": "unruly",
+      "token_ids": "153"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_STATE",
+      "span_text": "calm",
+      "token_ids": "127"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_STATE",
+      "span_text": "Powder Keg'",
+      "token_ids": "32 33"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_STATE",
+      "span_text": "t19_choatic",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

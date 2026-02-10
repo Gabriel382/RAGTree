@@ -1,0 +1,231 @@
+{
+  "doc_id": "12_6ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "89"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Operation",
+      "token_ids": "30"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Interdicts",
+      "token_ids": "23"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "deployed",
+      "token_ids": "52"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "patrols",
+      "token_ids": "57"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "thwarting",
+      "token_ids": "83"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_operation",
+      "token_ids": ""
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_piracy",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_piracy_attack",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_deployed",
+      "token_ids": ""
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_patrols",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_thwarted",
+      "token_ids": ""
+    },
+    {
+      "id": "7",
+      "label": "ACTION_STATE",
+      "span_text": "under control",
+      "token_ids": "63 66"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_STATE",
+      "span_text": "t12_under_control",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "piracy",
+      "token_ids": "88"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attack",
+      "token_ids": "89"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Operation",
+      "token_ids": "30"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Interdicts",
+      "token_ids": "23"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "deployed",
+      "token_ids": "52"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "patrols",
+      "token_ids": "57"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "thwarting",
+      "token_ids": "83"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_operation",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_piracy",
+      "token_ids": ""
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_piracy_attack",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_deployed",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_patrols",
+      "token_ids": ""
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t12_thwarted",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_STATE",
+      "span_text": "under control",
+      "token_ids": "63 66"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_STATE",
+      "span_text": "t12_under_control",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "3",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

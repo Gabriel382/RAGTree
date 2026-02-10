@@ -1,0 +1,269 @@
+{
+  "doc_id": "41_11ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "air strike",
+      "token_ids": "53 54"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appeared",
+      "token_ids": "84"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "explosion",
+      "token_ids": "96"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wedged",
+      "token_ids": "116"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flying",
+      "token_ids": "128"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "three other explosions",
+      "token_ids": "143 144 145"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombs",
+      "token_ids": "29"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_bomb_wedged_side",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_explosion_was_heard",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_aircraft_flew_north",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "140"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "81"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_rcorresp_said_heard",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "93"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "saw",
+      "token_ids": "99"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_heard_explosion",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_saw_aircraft",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "air strike",
+      "token_ids": "53 54"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appeared",
+      "token_ids": "84"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "explosion",
+      "token_ids": "96"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wedged",
+      "token_ids": "116"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flying",
+      "token_ids": "128"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "three other explosions",
+      "token_ids": "143 144 145"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombs",
+      "token_ids": "29"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_bomb_wedged_side",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_explosion_was_heard",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "46",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_aircraft_flew_north",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_STATE",
+      "span_text": "north",
+      "token_ids": "129"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "140"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "81"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_rcorresp_said_heard",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "93"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "saw",
+      "token_ids": "99"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_heard_explosion",
+      "token_ids": ""
+    },
+    {
+      "id": "45",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_saw_aircraft",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "doc_id": "16_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "60"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "working",
+      "token_ids": "39"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "47"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knocked",
+      "token_ids": "51"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "104"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "came out",
+      "token_ids": "112 113"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shot",
+      "token_ids": "22"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Killed",
+      "token_ids": "24"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_working_on_case",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_knocking",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "67"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "108"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "130"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_REPORTING",
+      "span_text": "t15_authorities_said",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "t15_waldie_said",
+      "token_ids": ""
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "60"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "working",
+      "token_ids": "39"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "47"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "knocked",
+      "token_ids": "51"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "104"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "came out",
+      "token_ids": "112 113"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shot",
+      "token_ids": "22"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Killed",
+      "token_ids": "24"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_working_on_case",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t15_knocking",
+      "token_ids": ""
+    },
+    {
+      "id": "8",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "67"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "108"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "130"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_REPORTING",
+      "span_text": "t15_authorities_said",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "t15_waldie_said",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "31",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "doc_id": "22_13ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shots",
+      "token_ids": "90"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Murder",
+      "token_ids": "40"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "apprehended",
+      "token_ids": "212"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hid",
+      "token_ids": "217"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "228"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "233"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Charged",
+      "token_ids": "35"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gunned down",
+      "token_ids": "80 81"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leaving",
+      "token_ids": "85"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "88"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suspended",
+      "token_ids": "66"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "returned",
+      "token_ids": "76"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_suspended",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_returned",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_charged",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_wounded",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shots",
+      "token_ids": "90"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Murder",
+      "token_ids": "40"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "apprehended",
+      "token_ids": "212"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hid",
+      "token_ids": "217"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "228"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murder",
+      "token_ids": "233"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Charged",
+      "token_ids": "35"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gunned down",
+      "token_ids": "80 81"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "leaving",
+      "token_ids": "85"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wounded",
+      "token_ids": "88"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suspended",
+      "token_ids": "66"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "returned",
+      "token_ids": "76"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_suspended",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_returned",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_killing",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_charged",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_wounded",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_shooting",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "7",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "29",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

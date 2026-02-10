@@ -1,0 +1,465 @@
+{
+  "doc_id": "41_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "carried out",
+      "token_ids": "127 128"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "130"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "explosion",
+      "token_ids": "198"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flying",
+      "token_ids": "235"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "air strike",
+      "token_ids": "31 32"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "three further explosions",
+      "token_ids": "242 243 244"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombed",
+      "token_ids": "54"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wedged",
+      "token_ids": "223"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "threatening",
+      "token_ids": "64"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "raise",
+      "token_ids": "66"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_threaten",
+      "token_ids": ""
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_explosion_was_heard",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_bomb_wedged_side",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_sudan_strikes",
+      "token_ids": ""
+    },
+    {
+      "id": "61",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_raise_tensions",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_aircraft_flew_north",
+      "token_ids": ""
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "tensions",
+      "token_ids": "67"
+    },
+    {
+      "id": "62",
+      "label": "ACTION_STATE",
+      "span_text": "t41_tensions_bw_sudan_southsudan",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "accuses",
+      "token_ids": "28"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "62"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "239"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_south_sudan_accuses",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_officials_and_witnesses_say",
+      "token_ids": ""
+    },
+    {
+      "id": "11",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "195"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "saw",
+      "token_ids": "206"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_heard_explosion",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_saw_aircraft",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "violence - plagued",
+      "token_ids": "72 73 74"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "carried out",
+      "token_ids": "127 128"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "130"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "explosion",
+      "token_ids": "198"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flying",
+      "token_ids": "235"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "air strike",
+      "token_ids": "31 32"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "three further explosions",
+      "token_ids": "242 243 244"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bombed",
+      "token_ids": "54"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "wedged",
+      "token_ids": "223"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "threatening",
+      "token_ids": "64"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "raise",
+      "token_ids": "66"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_threaten",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_explosion_was_heard",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_bomb_wedged_side",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_drop_bombs_camp",
+      "token_ids": ""
+    },
+    {
+      "id": "62",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_sudan_strikes",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_raise_tensions",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t41_aircraft_flew_north",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_STATE",
+      "span_text": "tensions",
+      "token_ids": "67"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_STATE",
+      "span_text": "north",
+      "token_ids": "236"
+    },
+    {
+      "id": "64",
+      "label": "ACTION_STATE",
+      "span_text": "t41_tensions_bw_sudan_southsudan",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "accuses",
+      "token_ids": "28"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "62"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "239"
+    },
+    {
+      "id": "58",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_south_sudan_accuses",
+      "token_ids": ""
+    },
+    {
+      "id": "59",
+      "label": "ACTION_REPORTING",
+      "span_text": "t41_officials_and_witnesses_say",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "195"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "saw",
+      "token_ids": "206"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_heard_explosion",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "t41_rcorresp_saw_aircraft",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "13",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "33",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "42",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "38",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "38",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "25",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

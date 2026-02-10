@@ -1,0 +1,767 @@
+{
+  "doc_id": "8_3ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "104"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gets",
+      "token_ids": "127"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "die",
+      "token_ids": "31"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Riots",
+      "token_ids": "47"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "protest",
+      "token_ids": "106"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "torched",
+      "token_ids": "679"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cuts",
+      "token_ids": "112"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "57"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riots",
+      "token_ids": "36"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep",
+      "token_ids": "138"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "demanded",
+      "token_ids": "113"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attempted",
+      "token_ids": "610"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "152"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riots",
+      "token_ids": "694"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burning",
+      "token_ids": "676"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "break through",
+      "token_ids": "612 613"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "defaulting",
+      "token_ids": "141"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "691"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "chanted",
+      "token_ids": "602"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "guarding",
+      "token_ids": "618"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set on fire",
+      "token_ids": "155 158 159"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "chased",
+      "token_ids": "621"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drifted",
+      "token_ids": "640"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Violence",
+      "token_ids": "773"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "engulfed",
+      "token_ids": "59"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke out",
+      "token_ids": "775 776"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hurled",
+      "token_ids": "647"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tried",
+      "token_ids": "70"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "marched",
+      "token_ids": "790"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "storm",
+      "token_ids": "72"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "smashed",
+      "token_ids": "798"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hurled",
+      "token_ids": "75"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "torched",
+      "token_ids": "81"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "responded",
+      "token_ids": "85"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "extinguished",
+      "token_ids": "657"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blazes",
+      "token_ids": "658"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took to",
+      "token_ids": "97 98"
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bomb_attack_eallier",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_broke_window",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_cuts",
+      "token_ids": ""
+    },
+    {
+      "id": "103",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_demonstrations",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_rioting",
+      "token_ids": ""
+    },
+    {
+      "id": "109",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "114",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_torched",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fighting",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "687"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "set up",
+      "token_ids": "674 675"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set up",
+      "token_ids": "674 675"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "gets",
+      "token_ids": "127"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Riots",
+      "token_ids": "47"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "torched",
+      "token_ids": "679"
+    },
+    {
+      "id": "97",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "57"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keep",
+      "token_ids": "138"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attempted",
+      "token_ids": "610"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "152"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riots",
+      "token_ids": "694"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burning",
+      "token_ids": "676"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "break through",
+      "token_ids": "612 613"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "defaulting",
+      "token_ids": "141"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "691"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "chanted",
+      "token_ids": "602"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "guarding",
+      "token_ids": "618"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set on fire",
+      "token_ids": "155 158 159"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "chased",
+      "token_ids": "621"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drifted",
+      "token_ids": "640"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Violence",
+      "token_ids": "773"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "engulfed",
+      "token_ids": "59"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke out",
+      "token_ids": "775 776"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hurled",
+      "token_ids": "647"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tried",
+      "token_ids": "70"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "marched",
+      "token_ids": "790"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "storm",
+      "token_ids": "72"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "smashed",
+      "token_ids": "798"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hurled",
+      "token_ids": "75"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "torched",
+      "token_ids": "81"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "responded",
+      "token_ids": "85"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "extinguished",
+      "token_ids": "657"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "barrages",
+      "token_ids": "87"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blazes",
+      "token_ids": "658"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took to",
+      "token_ids": "97 98"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "strike",
+      "token_ids": "104"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "die",
+      "token_ids": "31"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "protest",
+      "token_ids": "106"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cuts",
+      "token_ids": "112"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riots",
+      "token_ids": "36"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "demanded",
+      "token_ids": "113"
+    },
+    {
+      "id": "98",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bomb_attack_eallier",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_broke_window",
+      "token_ids": ""
+    },
+    {
+      "id": "103",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_cuts",
+      "token_ids": ""
+    },
+    {
+      "id": "104",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_demonstrations",
+      "token_ids": ""
+    },
+    {
+      "id": "108",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_rioting",
+      "token_ids": ""
+    },
+    {
+      "id": "110",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "115",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_torched",
+      "token_ids": ""
+    },
+    {
+      "id": "117",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fighting",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "687"
+    }
+  ],
+  "edges": [
+    {
+      "source": "34",
+      "target": "37",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "27",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "33",
+      "target": "35",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "36",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "18",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "13",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "24",
+      "target": "27",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "97",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "31",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "23",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "26",
+      "target": "36",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "34",
+      "target": "38",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "35",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

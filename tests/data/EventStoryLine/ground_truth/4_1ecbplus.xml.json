@@ -1,0 +1,467 @@
+{
+  "doc_id": "4_1ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "career",
+      "token_ids": "93"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "World War II",
+      "token_ids": "179 180 181"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dies",
+      "token_ids": "39"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "became",
+      "token_ids": "171"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "starred",
+      "token_ids": "61"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals",
+      "token_ids": "67"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "75"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "88"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "led to",
+      "token_ids": "90 91"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "designed",
+      "token_ids": "101"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "106"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "125"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made",
+      "token_ids": "162"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "56"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "turned",
+      "token_ids": "42"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "turned",
+      "token_ids": "58"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experiences",
+      "token_ids": "84"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "61",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_starring",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_turned",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_designed",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_experiences_as_swimming_champion",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_swimming_skills",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_career",
+      "token_ids": ""
+    },
+    {
+      "id": "76",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_ww2",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "129"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "popular",
+      "token_ids": "164"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "popularity",
+      "token_ids": "185"
+    },
+    {
+      "id": "67",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_STATE",
+      "span_text": "t4_popularity",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "122"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "144"
+    },
+    {
+      "id": "71",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continued",
+      "token_ids": "186"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "career",
+      "token_ids": "93"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "World War II",
+      "token_ids": "179 180 181"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dies",
+      "token_ids": "39"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "became",
+      "token_ids": "171"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "starred",
+      "token_ids": "61"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "musicals",
+      "token_ids": "67"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "75"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "88"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "led to",
+      "token_ids": "90 91"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "designed",
+      "token_ids": "101"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "106"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "died",
+      "token_ids": "125"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "made",
+      "token_ids": "162"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "swimming",
+      "token_ids": "56"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "turned",
+      "token_ids": "42"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "turned",
+      "token_ids": "58"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experiences",
+      "token_ids": "84"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_musicals",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_dies",
+      "token_ids": ""
+    },
+    {
+      "id": "61",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_starring",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_turned",
+      "token_ids": ""
+    },
+    {
+      "id": "66",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_designed",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_experiences_as_swimming_champion",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_swimming_skills",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_career",
+      "token_ids": ""
+    },
+    {
+      "id": "76",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t4_ww2",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "sleep",
+      "token_ids": "129"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "popular",
+      "token_ids": "164"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_STATE",
+      "span_text": "popularity",
+      "token_ids": "185"
+    },
+    {
+      "id": "67",
+      "label": "ACTION_STATE",
+      "span_text": "t4_in_her_sleep",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_STATE",
+      "span_text": "t4_popularity",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "122"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "144"
+    },
+    {
+      "id": "71",
+      "label": "ACTION_REPORTING",
+      "span_text": "t4_harlan_boll_confirmed",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continued",
+      "token_ids": "186"
+    }
+  ],
+  "edges": [
+    {
+      "source": "17",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "47",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "18",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "45",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "23",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

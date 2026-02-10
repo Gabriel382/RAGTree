@@ -1,0 +1,121 @@
+{
+  "doc_id": "14_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "31"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "34"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "36"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "46"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_damaged",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_call_emergency_services",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "31"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "34"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "36"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "46"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_damaged",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_call_emergency_services",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

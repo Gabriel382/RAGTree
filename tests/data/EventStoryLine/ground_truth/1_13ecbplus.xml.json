@@ -1,0 +1,576 @@
+{
+  "doc_id": "1_13ecbplus.xml",
+  "nodes": [
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accept",
+      "token_ids": "98"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "81"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigate",
+      "token_ids": "146"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "given",
+      "token_ids": "153"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "crash",
+      "token_ids": "86"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "87"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "revealed",
+      "token_ids": "109"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "placement",
+      "token_ids": "100"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stint",
+      "token_ids": "73"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stint",
+      "token_ids": "47"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "needed",
+      "token_ids": "142"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "39 40"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "59 60"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "handed down",
+      "token_ids": "75 76"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "said",
+      "token_ids": "163"
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_given_may_10_deadline",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_car_accident",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "59",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_facility_not_revealed",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_placement_at_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_handed_down_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_approve_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_investigate_new_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_needed_more_time",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "saying",
+      "token_ids": "123"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "quoting",
+      "token_ids": "117"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "138"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "50"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "115"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_quoting_heller_facility_unapproved",
+      "token_ids": ""
+    },
+    {
+      "id": "62",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_heller_says_lohan_starts_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_prosecutor_told_judge_time_needed",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_heller_said_unapproved",
+      "token_ids": ""
+    },
+    {
+      "id": "76",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_associated_press",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "begin",
+      "token_ids": "65"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "begin",
+      "token_ids": "43"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "remains",
+      "token_ids": "92"
+    },
+    {
+      "id": "66",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_remains_unclear",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_begin_90_days",
+      "token_ids": ""
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accept",
+      "token_ids": "98"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentence",
+      "token_ids": "81"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigate",
+      "token_ids": "146"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "given",
+      "token_ids": "153"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "crash",
+      "token_ids": "86"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case",
+      "token_ids": "87"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "revealed",
+      "token_ids": "109"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "placement",
+      "token_ids": "100"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stint",
+      "token_ids": "73"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stint",
+      "token_ids": "47"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "needed",
+      "token_ids": "142"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checks into",
+      "token_ids": "39 40"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "checked into",
+      "token_ids": "59 60"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "handed down",
+      "token_ids": "75 76"
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "said",
+      "token_ids": "163"
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_given_may_10_deadline",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_car_accident",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_treatment",
+      "token_ids": ""
+    },
+    {
+      "id": "59",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_facility_not_revealed",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_placement_at_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_handed_down_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_approve_morningside",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_investigate_new_facility",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_drunk_driving_case",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_needed_more_time",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t1_checking_into_morningside_or_showing_up",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_REPORTING",
+      "span_text": "saying",
+      "token_ids": "123"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "quoting",
+      "token_ids": "117"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "told",
+      "token_ids": "138"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "50"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "115"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_quoting_heller_facility_unapproved",
+      "token_ids": ""
+    },
+    {
+      "id": "62",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_heller_says_lohan_starts_rehab",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_prosecutor_told_judge_time_needed",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_heller_said_unapproved",
+      "token_ids": ""
+    },
+    {
+      "id": "76",
+      "label": "ACTION_REPORTING",
+      "span_text": "t1_reported_associated_press",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "begin",
+      "token_ids": "65"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "begin",
+      "token_ids": "43"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "remains",
+      "token_ids": "92"
+    },
+    {
+      "id": "66",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_remains_unclear",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "t1_begin_90_days",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "15",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "45",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "43",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

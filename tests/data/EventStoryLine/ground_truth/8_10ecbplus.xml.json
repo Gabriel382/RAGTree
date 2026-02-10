@@ -1,0 +1,313 @@
+{
+  "doc_id": "8_10ecbplus.xml",
+  "nodes": [
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "79"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hurled",
+      "token_ids": "83"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burnt",
+      "token_ids": "102"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trapped",
+      "token_ids": "108"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trying",
+      "token_ids": "117"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flee",
+      "token_ids": "119"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "121"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broken out",
+      "token_ids": "122 123"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DIED",
+      "token_ids": "59"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "BLAZE",
+      "token_ids": "62"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke out",
+      "token_ids": "64 65"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_threw_fire_bomb",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fire_bank",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "DEAD",
+      "token_ids": "41"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_STATE",
+      "span_text": "t8_dead",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "reports",
+      "token_ids": "95"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "80"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "79"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hurled",
+      "token_ids": "83"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burnt",
+      "token_ids": "102"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trapped",
+      "token_ids": "108"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trying",
+      "token_ids": "117"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "flee",
+      "token_ids": "119"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "121"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broken out",
+      "token_ids": "122 123"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DIED",
+      "token_ids": "59"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "BLAZE",
+      "token_ids": "62"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "broke out",
+      "token_ids": "64 65"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_threw_fire_bomb",
+      "token_ids": ""
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_fire_bank",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t8_bank_workers_died",
+      "token_ids": ""
+    },
+    {
+      "id": "14",
+      "label": "ACTION_STATE",
+      "span_text": "DEAD",
+      "token_ids": "41"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_STATE",
+      "span_text": "t8_dead",
+      "token_ids": ""
+    },
+    {
+      "id": "13",
+      "label": "ACTION_REPORTING",
+      "span_text": "reports",
+      "token_ids": "95"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "started",
+      "token_ids": "80"
+    }
+  ],
+  "edges": [
+    {
+      "source": "14",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "7",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

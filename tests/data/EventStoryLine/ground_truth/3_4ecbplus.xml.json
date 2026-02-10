@@ -1,0 +1,779 @@
+{
+  "doc_id": "3_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentences",
+      "token_ids": "61"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "on foot",
+      "token_ids": "161 162"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Added",
+      "token_ids": "27"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "added",
+      "token_ids": "45"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "serving",
+      "token_ids": "58"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escaped",
+      "token_ids": "63"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "transport",
+      "token_ids": "67"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "80"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "produced",
+      "token_ids": "89"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fired",
+      "token_ids": "93"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "201"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took hostage",
+      "token_ids": "99 101"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "forced",
+      "token_ids": "103"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drive",
+      "token_ids": "106"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restrained",
+      "token_ids": "114"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took",
+      "token_ids": "124"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "136"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "believed",
+      "token_ids": "146"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fled",
+      "token_ids": "160"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stroke",
+      "token_ids": "152"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "165"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "173"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assault",
+      "token_ids": "177"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assault",
+      "token_ids": "183"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "conviction",
+      "token_ids": "196"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stabbed",
+      "token_ids": "204"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "visiting",
+      "token_ids": "212"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "custody",
+      "token_ids": "64"
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_convicted_99",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_stole_weapons",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_transport_to_beaumont",
+      "token_ids": ""
+    },
+    {
+      "id": "79",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_fired_gun",
+      "token_ids": ""
+    },
+    {
+      "id": "80",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_convicted_98",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_serving_98_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_wife_visiting",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_wife_attack",
+      "token_ids": ""
+    },
+    {
+      "id": "87",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_drive",
+      "token_ids": ""
+    },
+    {
+      "id": "88",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_aggravated_child_rape",
+      "token_ids": ""
+    },
+    {
+      "id": "89",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_escape_nov_30",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_life_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_forced_to_drive",
+      "token_ids": ""
+    },
+    {
+      "id": "98",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_added_to_most_wanted",
+      "token_ids": ""
+    },
+    {
+      "id": "99",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_1999_assault",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_STATE",
+      "span_text": "surprising",
+      "token_ids": "141"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_STATE",
+      "span_text": "paralyzed",
+      "token_ids": "149"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sentences",
+      "token_ids": "61"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "on foot",
+      "token_ids": "161 162"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Added",
+      "token_ids": "27"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "added",
+      "token_ids": "45"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "serving",
+      "token_ids": "58"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escaped",
+      "token_ids": "63"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "transport",
+      "token_ids": "67"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "80"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "produced",
+      "token_ids": "89"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fired",
+      "token_ids": "93"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "incident",
+      "token_ids": "201"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took hostage",
+      "token_ids": "99 101"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "forced",
+      "token_ids": "103"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "drive",
+      "token_ids": "106"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "restrained",
+      "token_ids": "114"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "took",
+      "token_ids": "124"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "136"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "believed",
+      "token_ids": "146"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fled",
+      "token_ids": "160"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stroke",
+      "token_ids": "152"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "escape",
+      "token_ids": "165"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "convicted",
+      "token_ids": "173"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assault",
+      "token_ids": "177"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assault",
+      "token_ids": "183"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "conviction",
+      "token_ids": "196"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stabbed",
+      "token_ids": "204"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "visiting",
+      "token_ids": "212"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "custody",
+      "token_ids": "64"
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_convicted_99",
+      "token_ids": ""
+    },
+    {
+      "id": "78",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_stole_weapons",
+      "token_ids": ""
+    },
+    {
+      "id": "81",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_transport_to_beaumont",
+      "token_ids": ""
+    },
+    {
+      "id": "82",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_fired_gun",
+      "token_ids": ""
+    },
+    {
+      "id": "83",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_convicted_98",
+      "token_ids": ""
+    },
+    {
+      "id": "84",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_serving_98_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "85",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_wife_visiting",
+      "token_ids": ""
+    },
+    {
+      "id": "86",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_wife_attack",
+      "token_ids": ""
+    },
+    {
+      "id": "90",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_drive",
+      "token_ids": ""
+    },
+    {
+      "id": "91",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_aggravated_child_rape",
+      "token_ids": ""
+    },
+    {
+      "id": "92",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_escape_nov_30",
+      "token_ids": ""
+    },
+    {
+      "id": "93",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_life_sentence",
+      "token_ids": ""
+    },
+    {
+      "id": "95",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_forced_to_drive",
+      "token_ids": ""
+    },
+    {
+      "id": "101",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_added_to_most_wanted",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t3_1999_assault",
+      "token_ids": ""
+    },
+    {
+      "id": "31",
+      "label": "ACTION_STATE",
+      "span_text": "surprising",
+      "token_ids": "141"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "paralyzed",
+      "token_ids": "149"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "following",
+      "token_ids": "150"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "following",
+      "token_ids": "163"
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "30",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "30",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "25",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "29",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "29",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "32",
+      "target": "20",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "32",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "30",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "25",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

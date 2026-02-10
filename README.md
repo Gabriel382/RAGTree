@@ -300,15 +300,23 @@ class HuggingFaceClient(LLMClient):
 
 ---
 
-## 📈 Roadmap
+Got it — let’s stage versions exactly in that order and keep each release laser-focused.
 
-| Phase   | Goal                                               |
-| ------- | -------------------------------------------------- |
-| ✅ v0.1  | Modular pipeline with 3-phase structure            |
-| ✅ v0.2  | Benchmark grid across RAG × LLM                    |
-| 🔜 v0.3 | Add ontology alignment (PropaPhen / ISO 14224)     |
-| 🔜 v0.4 | Streamlit dashboard for causal graph visualization |
-| 🔜 v0.5 | Public benchmark dataset release                   |
+## 🧭 Roadmap
+
+| Version   | RAG flavor (target)              | Scope (what’s added)                                                                                                                                                            | Definition of Done (artifacts)                                                                       |
+| --------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **v0.0**  | **LLM-only baseline**            | No retrieval. Single prompt → causal tree JSON parser + schema.                                                                                                                 | `trees/*.json`, `prompts/baseline.txt`, `metrics.csv` (node/edge F1, TED, latency).                  |
+| **v0.1**  | **Normal RAG**                   | Classic retrieve-then-generate over fixed chunks (BM25 or dense, optional rerank).                                                                                              | Configs `rag/normal.yaml`, reproducible run, Δ vs v0.0, per-edge evidence with quotes.               |
+| **v0.2**  | **GraphRAG**                     | Build local evidence graph (nodes=chunks/entities; edges=co-mention/links); summarize subgraphs → generation.                                                                   | `graphs/evidence/*.graphml`, ablation vs v0.1 on multi-hop cases, report memory/latency.             |
+| **v0.3**  | **OntoRAG**                      | Light ontology hooks in retrieval prompts (type constraints, synonyms from ontology, unit/role normalization), but **no KG build** yet.                                         | Ontology dictionary, type-aware retrieval, error analysis: ontology helps/hurts, Δ vs v0.2.          |
+| **v0.4**  | **KG-RAG**                       | Construct a per-situation **knowledge graph** (entities/relations from docs). Retrieval becomes **graph-aware** (walks/queries).                                                | `graphs/kg/*.graphml`, graph queries used in context, improved edge attribution on multi-doc chains. |
+| **v0.5**  | **OG-RAG (Ontology-Guided RAG)** | Ontology **constrains & validates** both retrieval and generation (allowed relations, role constraints, domain/range checks). Soft constraints become scores in edge weighting. | Constraint logs, invalid-edge pruning stats, Δ precision on edges & cite-rate.                       |
+| **v0.6**  | **GrOWL-RAG**                    | OWL reasoning in-loop: run DL reasoner (e.g., HermiT/ELK) over KG + ontology to infer/ban edges, detect cycles/inconsistencies before final tree.                               | Reasoner traces, before/after edge sets, fewer conflicting edges; stability across reruns.           |
+| **v0.7+** | **Other RAGs**                   | Add one per version (HyDE, Self-RAG, CRAG, Speculative, Parent-Doc, Adaptive, Agentic, Branched…). Keep KG/ontology toggles compatible.                                         | Each gets its own tag and Δ table vs latest stable (v0.6).                                           |
+| **v1.0**  | **Benchmark freeze**             | Lock datasets/splits/configs; release full comparison across v0.1→v0.7+.                                                                                                        | `benchmark/` with scripts, tables, and thesis chapter appendix.                                      |
+
+
 
 ---
 

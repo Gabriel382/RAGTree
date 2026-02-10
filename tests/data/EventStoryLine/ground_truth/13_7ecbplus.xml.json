@@ -1,0 +1,385 @@
+{
+  "doc_id": "13_7ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "75"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrived",
+      "token_ids": "137"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fight",
+      "token_ids": "139"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "141"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "extinguished",
+      "token_ids": "146"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assisting",
+      "token_ids": "174"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigation",
+      "token_ids": "177"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "183"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "191"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "193"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "call",
+      "token_ids": "195"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cause",
+      "token_ids": "180"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fire",
+      "token_ids": "37"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Destroys",
+      "token_ids": "38"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "69"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_called_emergency_services",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire_destroyed",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_firefighters_arrived",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_cause",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_extinguished",
+      "token_ids": ""
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "total loss",
+      "token_ids": "159 160"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "73"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "t13_reported_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "75"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrived",
+      "token_ids": "137"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fight",
+      "token_ids": "139"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "141"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "extinguished",
+      "token_ids": "146"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assisting",
+      "token_ids": "174"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigation",
+      "token_ids": "177"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "183"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "191"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "asked",
+      "token_ids": "193"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "call",
+      "token_ids": "195"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cause",
+      "token_ids": "180"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fire",
+      "token_ids": "37"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Destroys",
+      "token_ids": "38"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "69"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_called_emergency_services",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire_destroyed",
+      "token_ids": ""
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_firefighters_arrived",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_cause",
+      "token_ids": ""
+    },
+    {
+      "id": "41",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_extinguished",
+      "token_ids": ""
+    },
+    {
+      "id": "17",
+      "label": "ACTION_STATE",
+      "span_text": "total loss",
+      "token_ids": "159 160"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "73"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_REPORTING",
+      "span_text": "t13_reported_fire",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "7",
+      "target": "11",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

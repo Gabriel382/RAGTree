@@ -1,0 +1,245 @@
+{
+  "doc_id": "19_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Q&A",
+      "token_ids": "440"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riot",
+      "token_ids": "37"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "40"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "47"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "140"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "448"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reviewed",
+      "token_ids": "435"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "conducted",
+      "token_ids": "441"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_riot",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "56"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "152"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "claims",
+      "token_ids": "124"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Q&A",
+      "token_ids": "440"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "riot",
+      "token_ids": "37"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "40"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shot",
+      "token_ids": "47"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "140"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "448"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "reviewed",
+      "token_ids": "435"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "conducted",
+      "token_ids": "441"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_shot",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_riot",
+      "token_ids": ""
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t19_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "56"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "152"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "claims",
+      "token_ids": "124"
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "24",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "24",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "25",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

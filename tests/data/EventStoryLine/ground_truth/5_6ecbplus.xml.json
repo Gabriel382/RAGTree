@@ -1,0 +1,77 @@
+{
+  "doc_id": "5_6ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fired",
+      "token_ids": "283"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suit",
+      "token_ids": "301"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrian_sues_ohio",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "3",
+      "label": "ACTION_STATE",
+      "span_text": "seeking",
+      "token_ids": "289"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fired",
+      "token_ids": "283"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suit",
+      "token_ids": "301"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrian_sues_ohio",
+      "token_ids": ""
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "3",
+      "label": "ACTION_STATE",
+      "span_text": "seeking",
+      "token_ids": "289"
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

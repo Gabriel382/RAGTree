@@ -1,0 +1,181 @@
+{
+  "doc_id": "22_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "revealed",
+      "token_ids": "58"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Accused",
+      "token_ids": "21"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shooting",
+      "token_ids": "24"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "39"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "41"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "45"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_charged",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_accussed",
+      "token_ids": ""
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "7",
+      "label": "ACTION_STATE",
+      "span_text": "spiritual",
+      "token_ids": "66"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "t22_spritual",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "revealed",
+      "token_ids": "58"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Accused",
+      "token_ids": "21"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Shooting",
+      "token_ids": "24"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "39"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "41"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shooting",
+      "token_ids": "45"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_shooting",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_charged",
+      "token_ids": ""
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_accussed",
+      "token_ids": ""
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t22_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "7",
+      "label": "ACTION_STATE",
+      "span_text": "spiritual",
+      "token_ids": "66"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_STATE",
+      "span_text": "t22_spritual",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

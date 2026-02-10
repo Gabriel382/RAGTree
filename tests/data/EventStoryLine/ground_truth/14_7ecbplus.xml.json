@@ -1,0 +1,359 @@
+{
+  "doc_id": "14_7ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "67"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "contained",
+      "token_ids": "147"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "using",
+      "token_ids": "148"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "using",
+      "token_ids": "221"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "identify",
+      "token_ids": "226"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigation",
+      "token_ids": "230"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "156"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cause",
+      "token_ids": "233"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "under way",
+      "token_ids": "238 239"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "31"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "help",
+      "token_ids": "52"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fight",
+      "token_ids": "53"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blaze",
+      "token_ids": "56"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "65"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "144"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "236"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called in",
+      "token_ids": "49 50"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_damaged",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fight_blaze",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_call_emergency_services",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "67"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "contained",
+      "token_ids": "147"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "using",
+      "token_ids": "148"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "using",
+      "token_ids": "221"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "identify",
+      "token_ids": "226"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "investigation",
+      "token_ids": "230"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called",
+      "token_ids": "156"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "cause",
+      "token_ids": "233"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "under way",
+      "token_ids": "238 239"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "31"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "help",
+      "token_ids": "52"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fight",
+      "token_ids": "53"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "blaze",
+      "token_ids": "56"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "65"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "144"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "236"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "called in",
+      "token_ids": "49 50"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_damaged",
+      "token_ids": ""
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "40",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fight_blaze",
+      "token_ids": ""
+    },
+    {
+      "id": "43",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_call_emergency_services",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "12",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "1",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

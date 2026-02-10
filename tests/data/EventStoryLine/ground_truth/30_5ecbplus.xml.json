@@ -1,0 +1,559 @@
+{
+  "doc_id": "30_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going",
+      "token_ids": "114"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disrupts",
+      "token_ids": "21"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affected",
+      "token_ids": "309"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "telecom services",
+      "token_ids": "22 23"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Services",
+      "token_ids": "32"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disrupted",
+      "token_ids": "39"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experienced",
+      "token_ids": "53"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "\"downtime\"",
+      "token_ids": "59"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "face",
+      "token_ids": "73"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problems",
+      "token_ids": "75"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "78"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affected",
+      "token_ids": "100"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "103"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affected",
+      "token_ids": "139"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affect",
+      "token_ids": "143"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "communications",
+      "token_ids": "144"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fixed",
+      "token_ids": "167"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attributed",
+      "token_ids": "269"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problem",
+      "token_ids": "267"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "downtime",
+      "token_ids": "271"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experienced",
+      "token_ids": "272"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "owns",
+      "token_ids": "291"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "connections",
+      "token_ids": "56"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operates",
+      "token_ids": "293"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problem",
+      "token_ids": "20"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "connecting",
+      "token_ids": "300"
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "in",
+      "token_ids": "172"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_REPORTING",
+      "span_text": "According to",
+      "token_ids": "254 255"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "156"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "began",
+      "token_ids": "84"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continuing",
+      "token_ids": "71"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continues",
+      "token_ids": "141"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "going",
+      "token_ids": "114"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disrupts",
+      "token_ids": "21"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affected",
+      "token_ids": "309"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "telecom services",
+      "token_ids": "22 23"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Services",
+      "token_ids": "32"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "disrupted",
+      "token_ids": "39"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experienced",
+      "token_ids": "53"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "\"downtime\"",
+      "token_ids": "59"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "face",
+      "token_ids": "73"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problems",
+      "token_ids": "75"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "78"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affected",
+      "token_ids": "100"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damage",
+      "token_ids": "103"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affected",
+      "token_ids": "139"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "affect",
+      "token_ids": "143"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "communications",
+      "token_ids": "144"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fixed",
+      "token_ids": "167"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "attributed",
+      "token_ids": "269"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problem",
+      "token_ids": "267"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "downtime",
+      "token_ids": "271"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "experienced",
+      "token_ids": "272"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "owns",
+      "token_ids": "291"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "connections",
+      "token_ids": "56"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "operates",
+      "token_ids": "293"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "problem",
+      "token_ids": "20"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "connecting",
+      "token_ids": "300"
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_cable_break",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_affecting_services",
+      "token_ids": ""
+    },
+    {
+      "id": "77",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t30_egypt_communications_disrupted",
+      "token_ids": ""
+    },
+    {
+      "id": "32",
+      "label": "ACTION_STATE",
+      "span_text": "in",
+      "token_ids": "172"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_REPORTING",
+      "span_text": "According to",
+      "token_ids": "254 255"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "156"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "began",
+      "token_ids": "84"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continuing",
+      "token_ids": "71"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_ASPECTUAL",
+      "span_text": "continues",
+      "token_ids": "141"
+    }
+  ],
+  "edges": [
+    {
+      "source": "28",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "9",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "28",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "16",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "27",
+      "target": "8",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "10",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "27",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "19",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "5",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

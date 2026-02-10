@@ -1,0 +1,613 @@
+{
+  "doc_id": "37_4ecbplus.xml",
+  "nodes": [
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude earthquake",
+      "token_ids": "68 69 70 71 72 73"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "75"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "which",
+      "token_ids": "74"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "83"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "101"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "46"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "87"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "90"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "devastated",
+      "token_ids": "98"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "104"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "43"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude earthquake",
+      "token_ids": "48 49 50 51 52 53"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hits",
+      "token_ids": "54"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "major earthquake",
+      "token_ids": "411 412"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "418"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tremor",
+      "token_ids": "338"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "341"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "343"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "330"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quakes",
+      "token_ids": "332"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapsed",
+      "token_ids": "147"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "110"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "109"
+    },
+    {
+      "id": "57",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_devastated_by_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "63",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_earthquake_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_girl_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "67",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37b_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "69",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_injured_dozens",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_aceh_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "72",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_2004quake_before_tsunami",
+      "token_ids": ""
+    },
+    {
+      "id": "75",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_collapse_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "28",
+      "label": "ACTION_STATE",
+      "span_text": "panic",
+      "token_ids": "94"
+    },
+    {
+      "id": "61",
+      "label": "ACTION_STATE",
+      "span_text": "t37_panic",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "144"
+    },
+    {
+      "id": "68",
+      "label": "ACTION_REPORTING",
+      "span_text": "t37_usgs_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparking",
+      "token_ids": "93"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparked",
+      "token_ids": "339"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "triggered",
+      "token_ids": "103"
+    },
+    {
+      "id": "62",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_caused_by_2004quake",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_sparking_panic",
+      "token_ids": ""
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude earthquake",
+      "token_ids": "68 69 70 71 72 73"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "75"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "which",
+      "token_ids": "74"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "83"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "101"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dead",
+      "token_ids": "46"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "87"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroyed",
+      "token_ids": "90"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "devastated",
+      "token_ids": "98"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "104"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "43"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude earthquake",
+      "token_ids": "48 49 50 51 52 53"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hits",
+      "token_ids": "54"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "major earthquake",
+      "token_ids": "411 412"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "418"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tremor",
+      "token_ids": "338"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "341"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "343"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "330"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quakes",
+      "token_ids": "332"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapsed",
+      "token_ids": "147"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "110"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "109"
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_devastated_by_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "64",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_earthquake_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "65",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_girl_killed",
+      "token_ids": ""
+    },
+    {
+      "id": "68",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37b_04_quake",
+      "token_ids": ""
+    },
+    {
+      "id": "70",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_injured_dozens",
+      "token_ids": ""
+    },
+    {
+      "id": "71",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_aceh_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "73",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_2004quake_before_tsunami",
+      "token_ids": ""
+    },
+    {
+      "id": "76",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_collapse_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "29",
+      "label": "ACTION_STATE",
+      "span_text": "depth of just 10 kilometres ( 6 . 2 miles",
+      "token_ids": "117 118 119 120 121 122 123 124 125 126"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_STATE",
+      "span_text": "panic",
+      "token_ids": "94"
+    },
+    {
+      "id": "62",
+      "label": "ACTION_STATE",
+      "span_text": "t37_panic",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "144"
+    },
+    {
+      "id": "69",
+      "label": "ACTION_REPORTING",
+      "span_text": "t37_usgs_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparking",
+      "token_ids": "93"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparked",
+      "token_ids": "339"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "triggered",
+      "token_ids": "103"
+    },
+    {
+      "id": "63",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_caused_by_2004quake",
+      "token_ids": ""
+    },
+    {
+      "id": "74",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_sparking_panic",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "14",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "28",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

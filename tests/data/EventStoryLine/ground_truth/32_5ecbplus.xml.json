@@ -1,0 +1,805 @@
+{
+  "doc_id": "32_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "244"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "254"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "241"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bail",
+      "token_ids": "284"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suffering",
+      "token_ids": "270"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "plea",
+      "token_ids": "292"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "279"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "289"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "301"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "completed",
+      "token_ids": "319"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harm",
+      "token_ids": "394"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "SET",
+      "token_ids": "41"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "325"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "TRIAL",
+      "token_ids": "39"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harm",
+      "token_ids": "399"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "61"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DOUBLE MURDER",
+      "token_ids": "44 45"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "65"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "72"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "74"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charge",
+      "token_ids": "266"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "87"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "94"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "97"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appear",
+      "token_ids": "126"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "risk",
+      "token_ids": "143"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heard",
+      "token_ids": "164"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "172"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "175"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "196"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "215"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injuries\"",
+      "token_ids": "229"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "beaten",
+      "token_ids": "242"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "held",
+      "token_ids": "304"
+    },
+    {
+      "id": "101",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_bodies_found",
+      "token_ids": ""
+    },
+    {
+      "id": "102",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "105",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial_date_set",
+      "token_ids": ""
+    },
+    {
+      "id": "113",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_double_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "115",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_john_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "116",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_charges_of_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "42",
+      "label": "ACTION_STATE",
+      "span_text": "at risk",
+      "token_ids": "390 391"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "386"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_REPORTING",
+      "span_text": "according to",
+      "token_ids": "154 155"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "268"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "398"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "393"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "224"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "114"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "bail",
+      "token_ids": "284"
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "plea",
+      "token_ids": "292"
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "289"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "plea",
+      "token_ids": "297"
+    },
+    {
+      "id": "33",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "case management",
+      "token_ids": "299 300"
+    },
+    {
+      "id": "34",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "301"
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "completed",
+      "token_ids": "319"
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harm",
+      "token_ids": "394"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "SET",
+      "token_ids": "41"
+    },
+    {
+      "id": "37",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "325"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "TRIAL",
+      "token_ids": "39"
+    },
+    {
+      "id": "38",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "harm",
+      "token_ids": "399"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "61"
+    },
+    {
+      "id": "39",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "DOUBLE MURDER",
+      "token_ids": "44 45"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "65"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "accused",
+      "token_ids": "72"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killing",
+      "token_ids": "74"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charge",
+      "token_ids": "266"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "87"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "charged",
+      "token_ids": "94"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "murders",
+      "token_ids": "97"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "appear",
+      "token_ids": "126"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "risk",
+      "token_ids": "143"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "heard",
+      "token_ids": "164"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "trial",
+      "token_ids": "172"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "set",
+      "token_ids": "175"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "196"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hearing",
+      "token_ids": "215"
+    },
+    {
+      "id": "21",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injuries\"",
+      "token_ids": "229"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "beaten",
+      "token_ids": "242"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "held",
+      "token_ids": "304"
+    },
+    {
+      "id": "24",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "244"
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrested",
+      "token_ids": "254"
+    },
+    {
+      "id": "26",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "found",
+      "token_ids": "241"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "suffering",
+      "token_ids": "270"
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "death",
+      "token_ids": "279"
+    },
+    {
+      "id": "106",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_bodies_found",
+      "token_ids": ""
+    },
+    {
+      "id": "107",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_hearing",
+      "token_ids": ""
+    },
+    {
+      "id": "110",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial",
+      "token_ids": ""
+    },
+    {
+      "id": "112",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_trial_date_set",
+      "token_ids": ""
+    },
+    {
+      "id": "118",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_double_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "120",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_john_arrested",
+      "token_ids": ""
+    },
+    {
+      "id": "121",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t32_charges_of_murder",
+      "token_ids": ""
+    },
+    {
+      "id": "44",
+      "label": "ACTION_STATE",
+      "span_text": "provisional",
+      "token_ids": "171"
+    },
+    {
+      "id": "45",
+      "label": "ACTION_STATE",
+      "span_text": "\"severe",
+      "token_ids": "227"
+    },
+    {
+      "id": "46",
+      "label": "ACTION_STATE",
+      "span_text": "unnecessary",
+      "token_ids": "269"
+    },
+    {
+      "id": "47",
+      "label": "ACTION_STATE",
+      "span_text": "at risk",
+      "token_ids": "390 391"
+    },
+    {
+      "id": "42",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "386"
+    },
+    {
+      "id": "43",
+      "label": "ACTION_REPORTING",
+      "span_text": "according to",
+      "token_ids": "154 155"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "268"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "398"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "393"
+    },
+    {
+      "id": "40",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "224"
+    },
+    {
+      "id": "41",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "heard",
+      "token_ids": "114"
+    }
+  ],
+  "edges": [
+    {
+      "source": "12",
+      "target": "15",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "14",
+      "target": "17",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "22",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "20",
+      "target": "23",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "24",
+      "target": "77",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "29",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "26",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "30",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "31",
+      "target": "33",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "34",
+      "target": "19",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "28",
+      "target": "34",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "35",
+      "target": "34",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "36",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "19",
+      "target": "37",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "42",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "42",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "39",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "11",
+      "target": "14",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "15",
+      "target": "82",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "20",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "13",
+      "target": "21",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "24",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "25",
+      "target": "10",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "19",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "26",
+      "target": "25",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "10",
+      "target": "27",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "28",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "47",
+      "target": "36",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "47",
+      "target": "38",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

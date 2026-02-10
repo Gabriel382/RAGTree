@@ -1,0 +1,179 @@
+{
+  "doc_id": "14_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assess",
+      "token_ids": "68"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "work",
+      "token_ids": "71"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "needs",
+      "token_ids": "72"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "done",
+      "token_ids": "75"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "42"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Latest",
+      "token_ids": "38"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "55"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "57"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_damaged",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "59"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "assess",
+      "token_ids": "68"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "work",
+      "token_ids": "71"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "needs",
+      "token_ids": "72"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "done",
+      "token_ids": "75"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "42"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Latest",
+      "token_ids": "38"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "damaged",
+      "token_ids": "55"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "57"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_damaged",
+      "token_ids": ""
+    },
+    {
+      "id": "19",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t14_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "9",
+      "label": "ACTION_REPORTING",
+      "span_text": "says",
+      "token_ids": "59"
+    }
+  ],
+  "edges": [
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "2",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "8",
+      "target": "4",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

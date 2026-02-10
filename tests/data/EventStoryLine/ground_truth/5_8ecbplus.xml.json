@@ -1,0 +1,257 @@
+{
+  "doc_id": "5_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sued",
+      "token_ids": "52"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "terminated",
+      "token_ids": "57"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "filed",
+      "token_ids": "64"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "judgment",
+      "token_ids": "68"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dispute",
+      "token_ids": "82"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "constituted",
+      "token_ids": "85"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "breach",
+      "token_ids": "88"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "terminated",
+      "token_ids": "27"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loaned",
+      "token_ids": "45"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "position",
+      "token_ids": "30"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrian_sues_ohio",
+      "token_ids": ""
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_coaching_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "claiming",
+      "token_ids": "54"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_REPORTING",
+      "span_text": "disclosure",
+      "token_ids": "42"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "sued",
+      "token_ids": "52"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "terminated",
+      "token_ids": "57"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "filed",
+      "token_ids": "64"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "judgment",
+      "token_ids": "68"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "dispute",
+      "token_ids": "82"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "constituted",
+      "token_ids": "85"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "breach",
+      "token_ids": "88"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "terminated",
+      "token_ids": "27"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "loaned",
+      "token_ids": "45"
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "position",
+      "token_ids": "30"
+    },
+    {
+      "id": "29",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrian_sues_ohio",
+      "token_ids": ""
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "31",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_coaching_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "10",
+      "label": "ACTION_REPORTING",
+      "span_text": "claiming",
+      "token_ids": "54"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_REPORTING",
+      "span_text": "disclosure",
+      "token_ids": "42"
+    }
+  ],
+  "edges": [
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "12",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "22",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "21",
+      "target": "5",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

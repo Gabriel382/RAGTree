@@ -1,0 +1,113 @@
+{
+  "doc_id": "13_14ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "catch up",
+      "token_ids": "696 697"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "662"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burned",
+      "token_ids": "664"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "scandal",
+      "token_ids": "689"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "5",
+      "label": "ACTION_STATE",
+      "span_text": "new",
+      "token_ids": "684"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_STATE",
+      "span_text": "know",
+      "token_ids": "656"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "catch up",
+      "token_ids": "696 697"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "662"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burned",
+      "token_ids": "664"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "scandal",
+      "token_ids": "689"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "5",
+      "label": "ACTION_STATE",
+      "span_text": "new",
+      "token_ids": "684"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_STATE",
+      "span_text": "know",
+      "token_ids": "656"
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relation": "PRECONDITION"
+    }
+  ]
+}

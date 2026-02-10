@@ -1,0 +1,201 @@
+{
+  "doc_id": "5_10ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Hire",
+      "token_ids": "19"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "introduced",
+      "token_ids": "29"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "played",
+      "token_ids": "42"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "served",
+      "token_ids": "50"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "named",
+      "token_ids": "59"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "relieved",
+      "token_ids": "65"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "duties",
+      "token_ids": "69"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_played_for_sixers",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_made_new_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_coaching_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_served_as_assistant_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Hire",
+      "token_ids": "19"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "introduced",
+      "token_ids": "29"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "played",
+      "token_ids": "42"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "served",
+      "token_ids": "50"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "named",
+      "token_ids": "59"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "relieved",
+      "token_ids": "65"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "duties",
+      "token_ids": "69"
+    },
+    {
+      "id": "23",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_played_for_sixers",
+      "token_ids": ""
+    },
+    {
+      "id": "25",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_made_new_coach",
+      "token_ids": ""
+    },
+    {
+      "id": "27",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_obrien_relieved_of_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "28",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_coaching_duties",
+      "token_ids": ""
+    },
+    {
+      "id": "30",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t5_cheeks_served_as_assistant_coach",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

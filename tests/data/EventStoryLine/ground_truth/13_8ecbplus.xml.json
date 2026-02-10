@@ -1,0 +1,285 @@
+{
+  "doc_id": "13_8ecbplus.xml",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "131"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrived",
+      "token_ids": "147"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "150"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "survey",
+      "token_ids": "182"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keeping",
+      "token_ids": "194"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "196"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spreading",
+      "token_ids": "198"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stored",
+      "token_ids": "203"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "concern",
+      "token_ids": "192"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fire",
+      "token_ids": "28"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroys",
+      "token_ids": "29"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burned",
+      "token_ids": "70"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "77"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire_destroyed",
+      "token_ids": ""
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "129"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "188"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "saw",
+      "token_ids": "149"
+    },
+    {
+      "id": "1",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "131"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "arrived",
+      "token_ids": "147"
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "150"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "survey",
+      "token_ids": "182"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "keeping",
+      "token_ids": "194"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "196"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "spreading",
+      "token_ids": "198"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "stored",
+      "token_ids": "203"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "concern",
+      "token_ids": "192"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "Fire",
+      "token_ids": "28"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "destroys",
+      "token_ids": "29"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "burned",
+      "token_ids": "70"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "fire",
+      "token_ids": "77"
+    },
+    {
+      "id": "32",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire_destroyed",
+      "token_ids": ""
+    },
+    {
+      "id": "35",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_burned",
+      "token_ids": ""
+    },
+    {
+      "id": "36",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t13_fire",
+      "token_ids": ""
+    },
+    {
+      "id": "15",
+      "label": "ACTION_REPORTING",
+      "span_text": "reported",
+      "token_ids": "129"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "188"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_PERCEPTION",
+      "span_text": "saw",
+      "token_ids": "149"
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "15",
+      "target": "1",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "7",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "9",
+      "target": "6",
+      "relation": "FALLING_ACTION"
+    }
+  ]
+}

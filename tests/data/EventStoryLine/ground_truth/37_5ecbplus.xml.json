@@ -1,0 +1,443 @@
+{
+  "doc_id": "37_5ecbplus.xml",
+  "nodes": [
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "34"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude quake",
+      "token_ids": "36 37 38 39 40 41"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hits",
+      "token_ids": "42"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude earthquake",
+      "token_ids": "56 57 58 59 60 61"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapse",
+      "token_ids": "73"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "62"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injuring",
+      "token_ids": "75"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "82"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "83"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ran",
+      "token_ids": "181"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "195"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shook",
+      "token_ids": "196"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "214"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "213"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "222"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "224"
+    },
+    {
+      "id": "48",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_collapse_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "51",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_earthquake_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "53",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_shook_houses",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_injured_dozens",
+      "token_ids": ""
+    },
+    {
+      "id": "58",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_aceh_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "59",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_ran_out_of_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "in panic",
+      "token_ids": "185 186"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "112"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "209"
+    },
+    {
+      "id": "55",
+      "label": "ACTION_REPORTING",
+      "span_text": "t37_usgs_said",
+      "token_ids": ""
+    },
+    {
+      "id": "56",
+      "label": "ACTION_REPORTING",
+      "span_text": "t37_apf_journalist_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "70"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparking",
+      "token_ids": "220"
+    },
+    {
+      "id": "61",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_causing_buildings_collapse",
+      "token_ids": ""
+    },
+    {
+      "id": "3",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injured",
+      "token_ids": "34"
+    },
+    {
+      "id": "4",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude quake",
+      "token_ids": "36 37 38 39 40 41"
+    },
+    {
+      "id": "5",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hits",
+      "token_ids": "42"
+    },
+    {
+      "id": "6",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "6 . 1 - magnitude earthquake",
+      "token_ids": "56 57 58 59 60 61"
+    },
+    {
+      "id": "7",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "collapse",
+      "token_ids": "73"
+    },
+    {
+      "id": "8",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "62"
+    },
+    {
+      "id": "9",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "injuring",
+      "token_ids": "75"
+    },
+    {
+      "id": "10",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "82"
+    },
+    {
+      "id": "11",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "hit",
+      "token_ids": "83"
+    },
+    {
+      "id": "12",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "ran",
+      "token_ids": "181"
+    },
+    {
+      "id": "13",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "195"
+    },
+    {
+      "id": "14",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "shook",
+      "token_ids": "196"
+    },
+    {
+      "id": "15",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "struck",
+      "token_ids": "214"
+    },
+    {
+      "id": "16",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "quake",
+      "token_ids": "213"
+    },
+    {
+      "id": "17",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "tsunami",
+      "token_ids": "222"
+    },
+    {
+      "id": "18",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "killed",
+      "token_ids": "224"
+    },
+    {
+      "id": "49",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_collapse_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "52",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_earthquake_struck",
+      "token_ids": ""
+    },
+    {
+      "id": "54",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_shook_houses",
+      "token_ids": ""
+    },
+    {
+      "id": "55",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_injured_dozens",
+      "token_ids": ""
+    },
+    {
+      "id": "59",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_aceh_earthquake",
+      "token_ids": ""
+    },
+    {
+      "id": "60",
+      "label": "ACTION_OCCURRENCE",
+      "span_text": "t37_ran_out_of_buildings",
+      "token_ids": ""
+    },
+    {
+      "id": "21",
+      "label": "ACTION_STATE",
+      "span_text": "depth of just 10 kilometres",
+      "token_ids": "90 91 92 93 94"
+    },
+    {
+      "id": "22",
+      "label": "ACTION_STATE",
+      "span_text": "in panic",
+      "token_ids": "185 186"
+    },
+    {
+      "id": "19",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "112"
+    },
+    {
+      "id": "20",
+      "label": "ACTION_REPORTING",
+      "span_text": "said",
+      "token_ids": "209"
+    },
+    {
+      "id": "56",
+      "label": "ACTION_REPORTING",
+      "span_text": "t37_usgs_said",
+      "token_ids": ""
+    },
+    {
+      "id": "57",
+      "label": "ACTION_REPORTING",
+      "span_text": "t37_apf_journalist_said",
+      "token_ids": ""
+    },
+    {
+      "id": "1",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "causing",
+      "token_ids": "70"
+    },
+    {
+      "id": "2",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "sparking",
+      "token_ids": "220"
+    },
+    {
+      "id": "62",
+      "label": "ACTION_CAUSATIVE",
+      "span_text": "t37_causing_buildings_collapse",
+      "token_ids": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "21",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "6",
+      "target": "9",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "22",
+      "target": "13",
+      "relation": "FALLING_ACTION"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "relation": "PRECONDITION"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "relation": "PRECONDITION"
+    }
+  ]
+}
