@@ -33,6 +33,51 @@ rag:
   strategy: flat
 
 llm:
+  agentic_hybrid:
+    default_backend: vllm
+    system_prompt_key: agentic_hybrid_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+
+  kg_rag:
+    default_backend: "vllm"
+
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+    system_prompt_key: "kg_rag_docre"
+
   growlrag:
     default_backend: "openrouter"
 
@@ -163,6 +208,35 @@ prompts:
       - Do NOT invent new relation types.
       - Do NOT output any text outside the JSON.
 
+  kg_rag:
+    kg_rag_docre: |
+      You are an expert at document-level relation extraction.
+
+      You will be given:
+      - A document (title + sentences or text)
+      - A list of entities with canonical IDs
+      - A retrieved KG context (triples / paths / subgraph)
+
+      Task:
+      1) Extract relations ONLY between the PROVIDED entity IDs.
+      2) Output keys MUST match the allowed relation types exactly.
+      3) Output JSON only. No extra text.
+
+      Output format:
+      {
+        "<RELATION_TYPE_1>": [["ENTITY_ID_A","ENTITY_ID_B"], ...],
+        "<RELATION_TYPE_2>": [],
+        ...
+      }
+  
+  agentic_hybrid:
+    agentic_hybrid_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
 
 ontology:
   causalbank:    data/ontology/COInd4/ContextOntology-COInd4.ttl

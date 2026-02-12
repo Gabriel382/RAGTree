@@ -9,6 +9,33 @@ from typing import Any, Dict, List, Optional, Sequence
 from ragtree.core.config import load_config
 from ragtree.evaluation.relations.runner import evaluate_relations
 
+def resolve_preprocessed_path(cfg: Dict[str, Any], dataset_key: str) -> Path:
+    """
+    Resolve a dataset input path from config.
+
+    Priority:
+      1) cfg["datasets"]["preprocessed"][dataset_key]
+      2) cfg["paths"]["data_preprocessed"] / f"{dataset_key}.jsonl"  (fallback)
+
+    This allows passing derived artifact names without adding them to default.yaml.
+    """
+    ds_pre = cfg.get("datasets", {}).get("preprocessed", {}) or {}
+    if dataset_key in ds_pre:
+        return Path(ds_pre[dataset_key])
+
+    # Fallback: treat dataset_key as filename in data/preprocessed
+    pre_root = Path(cfg["paths"]["data_preprocessed"])
+    candidate = pre_root / f"{dataset_key}.jsonl"
+    if candidate.exists():
+        return candidate
+
+    available = ", ".join(sorted(ds_pre.keys()))
+    raise KeyError(
+        f"Unknown dataset key '{dataset_key}'. "
+        f"Available preprocessed datasets: {available}. "
+        f"Also tried file: {candidate} (not found)."
+    )
+
 
 def _parse_ignore_labels(arg: Optional[str]) -> List[str]:
     """
@@ -80,20 +107,8 @@ def main() -> None:
     # 1) Load config
     cfg = load_config(args.config)
 
-    # 2) Resolve gold path from datasets.preprocessed
-    try:
-        ds_pre = cfg["datasets"]["preprocessed"]
-    except KeyError as e:
-        raise KeyError(f"Config missing 'datasets.preprocessed' section: {e}")
-
-    if args.dataset_key not in ds_pre:
-        available = ", ".join(sorted(ds_pre.keys()))
-        raise KeyError(
-            f"Unknown dataset key '{args.dataset_key}'. "
-            f"Available preprocessed datasets: {available}"
-        )
-
-    gold_path = Path(ds_pre[args.dataset_key])
+    # 2) Resolve gold path (supports base dataset keys or derived artifact filenames)
+    gold_path = resolve_preprocessed_path(cfg, args.dataset_key)
 
     # 3) Resolve predictions path from paths.data_processed
     try:

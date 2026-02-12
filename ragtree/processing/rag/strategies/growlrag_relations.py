@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import re
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Set
 
 from ragtree.processing.rag.base_strategy import BaseRelationStrategy
 from ragtree.ontologies.retrieval.subontology import SubOntologyRetriever, SubOntologyFragment
@@ -21,6 +21,10 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
       - doc["entities"] (IDs + mentions)
       - doc["ontology_links"] (schema v1 recommended; legacy supported by retriever)
 
+    Optional few-shot:
+      - few_shots: list of docs, each should have gold doc["relations"] (dict)
+        If few_shots is None or empty -> zero-shot.
+
     External inputs (strategy-level):
       - SubOntologyRetriever (ontology TTL loaded/cached once)
 
@@ -29,8 +33,9 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
       - runner will write this to doc["pred_relations"]
 
     Notes:
-      - This strategy is *read-only* on doc; runner writes outputs.
+      - This strategy is read-only on doc; runner writes outputs.
       - Reuses BaseRelationStrategy._normalize_relation_dict for schema compliance.
+      - Applies endpoint normalization so evaluation compares entity IDs (Step 6).
     """
 
     def __init__(
@@ -43,6 +48,9 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
         include_ttl: bool = True,
         include_structured_fragment: bool = True,
         max_sentences_in_prompt: Optional[int] = None,
+        max_fewshot_sentences: int = 3,
+        max_fewshot_entities: int = 12,
+        max_fewshot_pairs_per_rel: int = 6,
     ) -> None:
         super().__init__(llm_config)
         self.retriever = retriever
@@ -51,6 +59,11 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
         self.include_ttl = include_ttl
         self.include_structured_fragment = include_structured_fragment
         self.max_sentences_in_prompt = max_sentences_in_prompt
+
+        # Few-shot formatting controls (budget)
+        self.max_fewshot_sentences = max_fewshot_sentences
+        self.max_fewshot_entities = max_fewshot_entities
+        self.max_fewshot_pairs_per_rel = max_fewshot_pairs_per_rel
 
     # ------------------------------------------------------------------
     # Relation type schema inference
@@ -64,6 +77,130 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
         return [DEFAULT_FALLBACK_RELATION_TYPE]
 
     # ------------------------------------------------------------------
+    # Few-shot formatting
+    # ------------------------------------------------------------------
+    def _format_entities_block(self, entities: Dict[str, Any], *, max_entities: int) -> str:
+        """
+        Format up to max_entities entity lines.
+        """
+        lines: List[str] = []
+        if not isinstance(entities, dict):
+            return "(no entities found)"
+
+        for ent_id, ent in entities.items():
+            ent_type = ent.get("type", "")
+            mentions = ent.get("mentions", [])
+            if not isinstance(mentions, list):
+                mentions = [mentions]
+
+            shown = 0
+            for m in mentions:
+                if not isinstance(m, dict):
+                    continue
+                trig = m.get("trigger_word") or m.get("text") or ""
+                sent_id = m.get("sent_id")
+                offset = m.get("offset") or m.get("span")
+                lines.append(
+                    f"{ent_id}\tTYPE={ent_type}\tTRIGGER={trig}\tSENT_ID={sent_id}\tOFFSET={offset}"
+                )
+                shown += 1
+                if shown >= 1:
+                    break
+
+            if len(lines) >= max_entities:
+                break
+
+        return "\n".join(lines) if lines else "(no entities found)"
+
+    def _format_gold_relations_block(
+        self,
+        relations: Dict[str, Any],
+        allowed_relation_types: Sequence[str],
+        *,
+        max_pairs_per_rel: int,
+    ) -> str:
+        """
+        Format gold relations into a JSON-like snippet that matches the output format.
+        We only include allowed_relation_types keys, and cap list sizes for prompt budget.
+        """
+        out: Dict[str, List[List[str]]] = {r: [] for r in allowed_relation_types}
+        if not isinstance(relations, dict):
+            return json.dumps(out, ensure_ascii=False)
+
+        for r in allowed_relation_types:
+            pairs = relations.get(r, [])
+            if not isinstance(pairs, list):
+                continue
+            kept: List[List[str]] = []
+            for pair in pairs:
+                if isinstance(pair, list) and len(pair) == 2 and all(isinstance(x, str) for x in pair):
+                    kept.append([pair[0], pair[1]])
+                if len(kept) >= max_pairs_per_rel:
+                    break
+            out[r] = kept
+
+        return json.dumps(out, ensure_ascii=False)
+
+    def _format_few_shots_block(
+        self,
+        few_shots: Sequence[Dict[str, Any]],
+        allowed_relation_types: Sequence[str],
+    ) -> str:
+        """
+        Create a compact few-shot section. Each example includes:
+          - short text (few sentences)
+          - entities (subset)
+          - gold relations (IDs-only pairs)
+
+        If no usable examples -> empty string.
+        """
+        blocks: List[str] = []
+        idx = 1
+
+        for ex in few_shots:
+            if not isinstance(ex, dict):
+                continue
+            rels = ex.get("relations")
+            if not isinstance(rels, dict) or not rels:
+                continue
+
+            title = ex.get("title", "")
+            sentences = ex.get("sentences")
+            if isinstance(sentences, list) and all(isinstance(s, str) for s in sentences):
+                sents = sentences[: self.max_fewshot_sentences]
+                ex_text = "\n".join(f"- {s}" for s in sents)
+            else:
+                ex_text = str(ex.get("text", ""))[:1000]
+
+            entities = ex.get("entities", {})
+            entities_block = self._format_entities_block(entities, max_entities=self.max_fewshot_entities)
+            rels_block = self._format_gold_relations_block(
+                rels,
+                allowed_relation_types,
+                max_pairs_per_rel=self.max_fewshot_pairs_per_rel,
+            )
+
+            blocks.append(
+                "\n".join(
+                    [
+                        f"### Example {idx}",
+                        f"Title: {title}",
+                        "Text:",
+                        ex_text,
+                        "",
+                        "Entities (use these IDs):",
+                        entities_block,
+                        "",
+                        "Gold output JSON:",
+                        rels_block,
+                    ]
+                )
+            )
+            idx += 1
+
+        return "\n\n".join(blocks).strip()
+
+    # ------------------------------------------------------------------
     # Prompt assembly
     # ------------------------------------------------------------------
     def _build_messages(
@@ -71,6 +208,8 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
         doc: Dict[str, Any],
         relation_types: Sequence[str],
         fragment: SubOntologyFragment,
+        *,
+        few_shots: Optional[Sequence[Dict[str, Any]]] = None,
     ) -> List[Dict[str, str]]:
         system_msg = {"role": "system", "content": self.llm_config.system_prompt}
 
@@ -122,9 +261,26 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
         if self.include_ttl:
             ttl_block = fragment.to_ttl()
 
+        # Few-shot block (optional)
+        fewshot_block = ""
+        if few_shots:
+            fewshot_block = self._format_few_shots_block(few_shots, relation_types)
+
         user_parts = [
             "You will extract document-level relations between the PROVIDED entity IDs only.",
+            "DO NOT output literal strings as endpoints. Always use entity IDs from the Entities section.",
             "",
+        ]
+
+        if fewshot_block:
+            user_parts += [
+                "## Few-shot examples (optional guidance)",
+                "Follow the pattern: output JSON with allowed relation types and ID pairs.",
+                fewshot_block,
+                "",
+            ]
+
+        user_parts += [
             "## Document",
             f"Title: {title}",
             "Text:",
@@ -197,50 +353,8 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
             return None
 
     # ------------------------------------------------------------------
-    # Main API
+    # Step 6 normalization helpers (entity IDs only)
     # ------------------------------------------------------------------
-    def predict_relations(
-        self,
-        doc: Dict[str, Any],
-        relation_types: Optional[Sequence[str]] = None,
-    ) -> Dict[str, List[List[str]]]:
-        # Determine schema
-        rel_types = list(relation_types) if relation_types else self._infer_relation_types_from_doc(doc)
-
-        # Need ontology_links to retrieve a fragment
-        ontology_links = doc.get("ontology_links")
-        if ontology_links is None:
-            # No linking artifact available ? return empty predictions under schema
-            return {r: [] for r in rel_types}
-
-        # Retrieve a compact subontology fragment
-        fragment = self.retriever.retrieve(
-            ontology_links=ontology_links,
-            method=self.linking_method,
-            params={},  # optionally pass linker params if you have them in doc["_meta"]
-        )
-
-        # Build prompt and call LLM
-        messages = self._build_messages(doc, rel_types, fragment)
-        raw = self._call_llm(messages)
-
-        parsed = self._extract_json_object(raw)
-        if not isinstance(parsed, dict):
-            return {r: [] for r in rel_types}
-
-        # Step 6: make evaluator-compatible (entity IDs only)
-        parsed_entity_only = self._normalize_pred_endpoints_to_entity_ids(
-            doc,
-            parsed,
-            rel_types,
-            keep_debug=True,
-        )
-
-        # Normalize output to canonical schema
-        normalized = self._normalize_relation_dict(parsed_entity_only, rel_types)
-        return normalized
-
-    
     def _build_literal_to_entity_index(self, doc: Dict[str, Any]) -> Dict[str, str]:
         """
         Build a deterministic lookup from normalized mention strings -> entity_id.
@@ -260,11 +374,9 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
             for m in mentions:
                 if not isinstance(m, dict):
                     continue
-                # Primary: trigger_word (your schema)
-                texts = []
+                texts: List[str] = []
                 if m.get("trigger_word"):
                     texts.append(str(m["trigger_word"]))
-                # Optional fallbacks (some datasets use 'text' or other fields)
                 if m.get("text"):
                     texts.append(str(m["text"]))
 
@@ -274,17 +386,13 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
                         continue
                     hits.setdefault(k, set()).add(ent_id)
 
-        # Keep only unambiguous mappings
         out: Dict[str, str] = {}
         for k, ids in hits.items():
             if len(ids) == 1:
                 out[k] = next(iter(ids))
         return out
 
-    def _maybe_map_literal_to_entity(self, doc: Dict[str, Any], lit: str, idx: Dict[str, str]) -> Optional[str]:
-        """
-        Map a literal string to an entity_id if unambiguous.
-        """
+    def _maybe_map_literal_to_entity(self, lit: str, idx: Dict[str, str]) -> Optional[str]:
         if not isinstance(lit, str):
             return None
         key = re.sub(r"\s+", " ", lit.strip().lower())
@@ -301,12 +409,8 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
         keep_debug: bool = True,
     ) -> Dict[str, Any]:
         """
-        Enforce evaluator compatibility:
-          - Keep only pairs where both endpoints are entity IDs present in doc['entities']
-          - If object endpoint is a literal, try to map it to a unique entity via mention strings.
-          - If mapping fails, drop that pair (and optionally log it into debug fields).
-
-        Returns a dict suitable for _normalize_relation_dict(...).
+        Keep only predicted pairs where both endpoints are entity IDs in doc['entities'].
+        If tail is a literal, map it to an entity ID using unique mention matching.
         """
         entities = doc.get("entities") or {}
         entity_ids = set(entities.keys()) if isinstance(entities, dict) else set()
@@ -324,26 +428,21 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
                 continue
 
             for pair in pairs:
-                if (
-                    not isinstance(pair, list)
-                    or len(pair) != 2
-                ):
+                if not isinstance(pair, list) or len(pair) != 2:
                     continue
 
                 h, t = pair[0], pair[1]
 
-                # Head must be an entity id
                 if not isinstance(h, str) or h not in entity_ids:
                     if keep_debug:
                         debug_dropped[r].append([h, t])
                     continue
 
-                # Tail: if entity id, keep; else try map literal -> entity id
                 if isinstance(t, str) and t in entity_ids:
                     out[r].append([h, t])
                     continue
 
-                mapped = self._maybe_map_literal_to_entity(doc, str(t), idx)
+                mapped = self._maybe_map_literal_to_entity(str(t), idx)
                 if mapped and mapped in entity_ids:
                     out[r].append([h, mapped])
                     if keep_debug:
@@ -352,7 +451,6 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
                     if keep_debug:
                         debug_dropped[r].append([h, t])
 
-        # Attach debug info (does not affect evaluator)
         if keep_debug:
             doc.setdefault("_debug", {})
             doc["_debug"]["growlrag_normalization"] = {
@@ -362,3 +460,46 @@ class GrowlRagRelationStrategy(BaseRelationStrategy):
 
         return out
 
+    # ------------------------------------------------------------------
+    # Main API
+    # ------------------------------------------------------------------
+    def predict_relations(
+        self,
+        doc: Dict[str, Any],
+        relation_types: Optional[Sequence[str]] = None,
+        *,
+        few_shots: Optional[List[Dict[str, Any]]] = None,
+    ) -> Dict[str, List[List[str]]]:
+        rel_types = list(relation_types) if relation_types else self._infer_relation_types_from_doc(doc)
+
+        ontology_links = doc.get("ontology_links")
+        if ontology_links is None:
+            return {r: [] for r in rel_types}
+
+        fragment = self.retriever.retrieve(
+            ontology_links=ontology_links,
+            method=self.linking_method,
+            params={},
+        )
+
+        messages = self._build_messages(
+            doc,
+            rel_types,
+            fragment,
+            few_shots=few_shots,
+        )
+        raw = self._call_llm(messages)
+
+        parsed = self._extract_json_object(raw)
+        if not isinstance(parsed, dict):
+            return {r: [] for r in rel_types}
+
+        parsed_entity_only = self._normalize_pred_endpoints_to_entity_ids(
+            doc,
+            parsed,
+            rel_types,
+            keep_debug=True,
+        )
+
+        normalized = self._normalize_relation_dict(parsed_entity_only, rel_types)
+        return normalized
