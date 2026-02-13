@@ -465,16 +465,26 @@ class LangGraphAgenticHybridRelationStrategy(BaseRelationStrategy):
         few_shots: Optional[List[Dict[str, Any]]] = None,
     ) -> List[Dict[str, str]]:
         system_msg = {"role": "system", "content": self.llm_config.system_prompt}
-
+    
         user_parts: List[str] = [
             "You will extract document-level relations between the PROVIDED entity IDs only.",
             "You MUST output ONLY valid JSON (no markdown, no explanations).",
             "You MUST use ONLY the PROVIDED entity IDs in output pairs (no literals).",
             "",
+            "CRITICAL CONSTRAINTS:",
+            "1) Output keys MUST match the allowed relation type strings EXACTLY (character-for-character).",
+            "2) DO NOT shorten relation keys. Example: if the allowed key is 'P127 : owned by', you MUST output exactly 'P127 : owned by' (not 'P127').",
+            "3) Every allowed relation type key MUST appear in the output JSON. If none found, output an empty list for that key.",
+            "",
         ]
 
         if few_shots:
             user_parts.append(self._few_shot_block(few_shots))
+            user_parts.append("")  # spacer
+
+        # Build a verbatim relation schema block to discourage shortening
+        # (quotes help LLM treat them as exact strings)
+        rel_schema_lines = "\n".join(f'- "{r}"' for r in relation_types)
 
         user_parts += [
             "## Document",
@@ -483,28 +493,37 @@ class LangGraphAgenticHybridRelationStrategy(BaseRelationStrategy):
             "## Entities (IDs are canonical  use them in output)",
             self._entities_block(doc),
             "",
-            "## Allowed relation types (output keys must match these exactly)",
-            self._relation_schema_block(relation_types),
+            "## Allowed relation types (output keys must match these EXACT strings)",
+            rel_schema_lines,
             "",
             "## Tool: Ontology context",
-            ontology_ctx,
+            ontology_ctx or "(no ontology context)",
             "",
             "## Tool: KG context",
-            kg_ctx,
+            kg_ctx or "(no KG context)",
             "",
             "## Tool: Internet context (optional)",
-            internet_ctx,
+            internet_ctx or "(no internet context)",
             "",
             "## Tool: Wikidata context (optional)",
-            wikidata_ctx,
+            wikidata_ctx or "(no wikidata context)",
             "",
             "## Output format (JSON only, no extra text)",
-            "Return a JSON object whose keys are the allowed relation types, and values are lists of [HEAD_ID, TAIL_ID] pairs.",
-            "Example:",
-            '{"REL_TYPE": [["E1","E2"]], "OTHER": []}',
+            "Return ONE JSON object.",
+            "Keys: exactly the allowed relation types listed above.",
+            "Values: lists of [HEAD_ID, TAIL_ID] pairs, where both are entity IDs from the Entities section.",
+            "If a relation type has no pairs, output an empty list.",
+            "",
+            "Example (structure only):",
+            '{'
+            '  "P127 : owned by": [["E1","E2"]],'
+            '  "P159 : headquarters location": [],'
+            '  "P17 : country": [["E3","E4"]]'
+            '}',
         ]
 
         return [system_msg, {"role": "user", "content": "\n".join(user_parts)}]
+
 
     # ----------------------------
     # Planner (rule or LLM)
@@ -578,6 +597,7 @@ class LangGraphAgenticHybridRelationStrategy(BaseRelationStrategy):
         }
 
         raw = self._call_llm([sys, user])
+
         llm_calls_used += 1
         obj = self._extract_json_object(raw) or {}
         do_web = bool(obj.get("do_web")) if self.params.enable_web else False
@@ -673,6 +693,7 @@ class LangGraphAgenticHybridRelationStrategy(BaseRelationStrategy):
                 few_shots=few_shots,
             )
             raw = self._call_llm(msgs)
+            
             used += 1
             state["llm_calls_used"] = used
 
@@ -741,6 +762,8 @@ class LangGraphAgenticHybridRelationStrategy(BaseRelationStrategy):
 
         out = self._graph.invoke(state)
         pred = out.get("pred_norm")
+        doc.setdefault("_debug", {})
+        doc["_debug"]["raw_llm_output"] = pred
         if isinstance(pred, dict):
             return pred
         return {r: [] for r in rel_types}
