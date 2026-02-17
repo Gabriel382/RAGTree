@@ -12,6 +12,8 @@ paths:
   results: results
   jsonresults: jsonresults
   models: models
+  indices: data/indices
+  kg_community_root: data/kg_community
 
 datasets:
   raw:                       # folders you already have
@@ -33,6 +35,85 @@ rag:
   strategy: flat
 
 llm:
+
+  triple_kg_rag:
+    default_backend: vllm
+    system_prompt_key: triple_kg_rag_docre
+    model: null
+    temperature: 0.0
+    max_tokens: 2048
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  community_kgrag:
+    default_backend: vllm
+    system_prompt_key: community_kgrag_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  chunk_orag:
+    default_backend: vllm
+    system_prompt_key: chunk_orag_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  ograg:
+    default_backend: vllm
+    system_prompt_key: ograg_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
 
   marag:
     default_backend: vllm
@@ -267,6 +348,41 @@ prompts:
       Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
       If unsure, output empty lists for those relation types.
 
+  ograg:
+    ograg_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  chunk_orag:
+    chunk_orag_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs (no literals).
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  community_kgrag:
+    community_kgrag_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs (no literals).
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  triple_kg_rag:
+    triple_kg_rag_docre: |
+      You are a strict information extraction system for Document-level Relation Extraction.
+      You ONLY output valid JSON.
+      You ONLY use the provided entity IDs.
+      You ONLY use the allowed relation types as JSON keys.
+      If unsure, output empty lists.
+
 ontology:
   causalbank:    data/ontology/COInd4/ContextOntology-COInd4.ttl
   EventKG: data/ontology/EventKG/EventKGSchema.ttl
@@ -322,3 +438,61 @@ growlrag:
 
   few_shot:
     k: 0
+
+
+ograg:
+  retrieval:
+    top_k_entities: 6
+    max_ontology_lines: 200
+    include_labels: true
+    include_comments: true
+    include_types: true
+
+
+# ----------------------------
+# Chunk-O-RAG method params
+# ----------------------------
+chunk_orag:
+  # Where ontology indices are stored (builder outputs under this root)
+  index_root: "${paths.indices}/chunk_orag"
+
+  # Default models for the ontology index / retrieval
+  embed_model: "BAAI/bge-m3"
+  use_reranker: false
+  reranker_model: "BAAI/bge-reranker-large"
+
+  # Index-building defaults (scripts/build_chunk_orag_index.py)
+  chunk_sizes: [2048, 512, 128]     # hierarchical; leaf is last by default
+  chunk_overlap: 128
+  leaf_level: null                 # null => last level
+  index_metric: "ip"               # "ip" (recommended with normalized embeddings) or "l2"
+
+  # Retrieval defaults (scripts/run_chunk_orag_relations.py)
+  top_k: 12
+  rerank_top_n: 6
+  auto_merge: true                 # merge leaf chunks to parents
+  max_ctx_chars: 8000              # cap injected ontology context
+  max_sentences_in_query: 3        # doc->query builder
+  max_entity_mentions_in_query: 6  # doc->query builder
+
+  community_kgrag:
+  node_embed_model: "BAAI/bge-m3"
+  query_embed_model: "BAAI/bge-m3"
+  sentence_embed_model: "BAAI/bge-m3"
+
+  # retrieval knobs (d, ?)
+  top_communities: 50
+  delta_percent: null          # e.g., 25.0
+  top_sentences: 12
+  lambda_percent: null         # e.g., 100.0
+
+  use_sentence_faiss: true
+  max_ctx_chars: 8000
+
+triple_kg_rag:
+  max_sentences_in_prompt: 40
+  max_triples_in_text: 80
+  retrieval:
+    max_hops: 1
+    max_triples: 80
+    include_in_edges: true
