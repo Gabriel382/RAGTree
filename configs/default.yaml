@@ -33,6 +33,26 @@ rag:
   strategy: flat
 
 llm:
+
+  marag:
+    default_backend: vllm
+    system_prompt_key: marag_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
   agentic_hybrid:
     default_backend: vllm
     system_prompt_key: agentic_hybrid_docre
@@ -231,6 +251,15 @@ prompts:
   
   agentic_hybrid:
     agentic_hybrid_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  marag:
+    marag_docre: |
       You are an expert at document-level relation extraction.
       You MUST output ONLY valid JSON (no markdown, no explanations).
       You MUST use ONLY the PROVIDED entity IDs in output pairs.
