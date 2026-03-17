@@ -36,6 +36,25 @@ rag:
 
 llm:
 
+  ograg:
+    default_backend: vllm
+    system_prompt_key: ograg_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
   triple_kg_rag:
     default_backend: vllm
     system_prompt_key: triple_kg_rag_docre
@@ -382,6 +401,15 @@ prompts:
       You ONLY use the provided entity IDs.
       You ONLY use the allowed relation types as JSON keys.
       If unsure, output empty lists.
+
+  ograg:
+    ograg_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
 
 ontology:
   causalbank:    data/ontology/COInd4/ContextOntology-COInd4.ttl

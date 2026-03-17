@@ -276,3 +276,214 @@ class OGRagRelationStrategy(BaseRelationStrategy):
             doc, parsed, rel_types, keep_debug=True
         )
         return self._normalize_relation_dict(parsed_entity_only, rel_types)
+    
+
+    def _doc_text_block(self, doc: Dict[str, Any]) -> str:
+        """Return a readable document text block for prompts."""
+        title = doc.get("title") or ""
+        # Common normalized form: list[str]
+        sentences = doc.get("sentences")
+        if isinstance(sentences, list) and all(isinstance(s, str) for s in sentences):
+            body = "\n".join(f"- {s}" for s in sentences)
+            return f"Title: {title}\nText:\n{body}".strip()
+
+        # DocRED raw form sometimes: sents = list[list[str]]
+        sents = doc.get("sents")
+        if isinstance(sents, list) and all(isinstance(s, list) for s in sents):
+            lines = []
+            for s in sents:
+                lines.append("- " + " ".join(str(w) for w in s))
+            body = "\n".join(lines)
+            return f"Title: {title}\nText:\n{body}".strip()
+
+        # Fallback
+        text = doc.get("text")
+        if not isinstance(text, str):
+            text = ""
+        return f"Title: {title}\nText:\n{text}".strip()
+
+
+    def _entities_block(self, doc: Dict[str, Any], *, max_mentions_per_entity: int = 2) -> str:
+        """Return a readable entities block (entity_id + type + a few mentions)."""
+        entities = doc.get("entities") or {}
+        lines: List[str] = []
+
+        if isinstance(entities, dict):
+            for ent_id, ent in entities.items():
+                if not isinstance(ent_id, str) or not isinstance(ent, dict):
+                    continue
+                ent_type = ent.get("type", "")
+                mentions = ent.get("mentions", [])
+                if not isinstance(mentions, list):
+                    mentions = [mentions]
+
+                shown = 0
+                if mentions:
+                    for m in mentions:
+                        if not isinstance(m, dict):
+                            continue
+                        trig = m.get("trigger_word") or m.get("text") or m.get("name") or ""
+                        sent_id = m.get("sent_id") or m.get("sentence_id")
+                        offset = m.get("offset") or m.get("span")
+                        lines.append(
+                            f"{ent_id}\tTYPE={ent_type}\tTRIGGER={trig}\tSENT_ID={sent_id}\tOFFSET={offset}"
+                        )
+                        shown += 1
+                        if shown >= max_mentions_per_entity:
+                            break
+                else:
+                    # still list entity if no mentions
+                    lines.append(f"{ent_id}\tTYPE={ent_type}")
+
+        return "\n".join(lines) if lines else "(no entities found)"
+
+
+    def _relation_schema_block(self, relation_types: Sequence[str]) -> str:
+        """Return allowed relation types as a bullet list."""
+        if not relation_types:
+            return "(no relation types provided)"
+        return "\n".join(f"- {r}" for r in relation_types)
+
+
+    def _few_shot_block(self, few_shots: List[Dict[str, Any]]) -> str:
+        """Optional few-shot demonstrations block (kept simple + robust)."""
+        if not few_shots:
+            return ""
+        parts: List[str] = ["## Few-shot demonstrations (gold)"]
+        for i, ex in enumerate(few_shots, start=1):
+            rels = ex.get("relations") if isinstance(ex.get("relations"), dict) else {}
+            parts += [
+                f"### Demo {i}",
+                "#### Document",
+                self._doc_text_block(ex),
+                "",
+                "#### Entities",
+                self._entities_block(ex),
+                "",
+                "#### Gold relations (JSON)",
+                json.dumps(rels, ensure_ascii=False),
+                "",
+            ]
+        return "\n".join(parts)
+
+    def _build_entity_surface_map(self, doc: Dict[str, Any]) -> Tuple[Dict[str, str], Dict[str, str]]:
+        """
+        Returns:
+        - ent_id_to_best_surface: entity_id -> best surface form (trigger/text)
+        - surface_to_ent_id: normalized surface -> entity_id
+        """
+        ent_id_to_best: Dict[str, str] = {}
+        surface_to_id: Dict[str, str] = {}
+
+        entities = doc.get("entities") or {}
+        if not isinstance(entities, dict):
+            return ent_id_to_best, surface_to_id
+
+        def norm(s: str) -> str:
+            return re.sub(r"\s+", " ", (s or "").strip().lower())
+
+        for ent_id, ent in entities.items():
+            if not isinstance(ent_id, str) or not isinstance(ent, dict):
+                continue
+            mentions = ent.get("mentions", [])
+            if not isinstance(mentions, list):
+                mentions = [mentions]
+
+            # pick first good surface
+            best = ""
+            for m in mentions:
+                if not isinstance(m, dict):
+                    continue
+                surf = m.get("trigger_word") or m.get("text") or m.get("name") or ""
+                surf = str(surf).strip()
+                if surf:
+                    best = surf
+                    break
+
+            if not best:
+                # fallback: sometimes entity has direct label/name
+                best = str(ent.get("text") or ent.get("name") or ent.get("label") or "").strip()
+
+            if best:
+                ent_id_to_best[ent_id] = best
+                surface_to_id.setdefault(norm(best), ent_id)
+
+        return ent_id_to_best, surface_to_id
+
+
+    def _match_to_entity_id(self, x: Any, surface_to_id: Dict[str, str]) -> Optional[str]:
+        """
+        Map a predicted endpoint (entity id or surface string) to a known entity id.
+        """
+        if x is None:
+            return None
+        if isinstance(x, str):
+            s = x.strip()
+            if not s:
+                return None
+            # direct ID match
+            if s in surface_to_id.values():
+                return s
+            # normalized surface match
+            key = re.sub(r"\s+", " ", s.lower())
+            if key in surface_to_id:
+                return surface_to_id[key]
+        return None
+
+
+    def _normalize_pred_endpoints_to_entity_ids(
+        self,
+        doc: Dict[str, Any],
+        pred: Dict[str, Any],
+        relation_types: Sequence[str],
+        *,
+        keep_debug: bool = False,
+    ) -> Dict[str, Any]:
+        """
+        Ensures:
+        - keys are restricted to relation_types
+        - each value is list of [HEAD_ID, TAIL_ID] where both are valid entity IDs in doc
+        """
+        _, surface_to_id = self._build_entity_surface_map(doc)
+
+        out: Dict[str, Any] = {}
+        debug: Dict[str, Any] = {"dropped": []} if keep_debug else {}
+
+        for r in relation_types:
+            pairs = pred.get(r, [])
+            if not isinstance(pairs, list):
+                pairs = []
+            norm_pairs: List[List[str]] = []
+
+            for item in pairs:
+                # allow ["E1","E2"] or {"head":..,"tail":..}
+                h_raw = t_raw = None
+                if isinstance(item, list) and len(item) >= 2:
+                    h_raw, t_raw = item[0], item[1]
+                elif isinstance(item, dict):
+                    h_raw = item.get("head") or item.get("h")
+                    t_raw = item.get("tail") or item.get("t")
+                else:
+                    if keep_debug:
+                        debug["dropped"].append({"rel": r, "reason": "bad_pair_format", "pair": item})
+                    continue
+
+                h = self._match_to_entity_id(h_raw, surface_to_id)
+                t = self._match_to_entity_id(t_raw, surface_to_id)
+                if h is None or t is None:
+                    if keep_debug:
+                        debug["dropped"].append({"rel": r, "reason": "unmatched_endpoint", "pair": [h_raw, t_raw]})
+                    continue
+                if h == t:
+                    # usually skip self-relations unless your datasets allow them
+                    if keep_debug:
+                        debug["dropped"].append({"rel": r, "reason": "self_relation", "pair": [h, t]})
+                    continue
+
+                norm_pairs.append([h, t])
+
+            out[r] = norm_pairs
+
+        if keep_debug:
+            out["_debug_normalize"] = debug
+        return out

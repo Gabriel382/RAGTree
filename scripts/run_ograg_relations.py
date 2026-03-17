@@ -114,7 +114,12 @@ def main() -> None:
         prompt_section="ograg",
         system_prompt_key="ograg_docre",
     )
-    llm_config = _build_llm_config_from_yaml(cfg, sections, args.backend, args.model)
+    llm_config = _build_llm_config_from_yaml(
+        cfg=cfg,
+        sections=sections,
+        backend_override=args.backend,
+        model_override=args.model,
+    )
 
     # Load ontology_links if provided
     docid_to_links: Dict[str, Any] = {}
