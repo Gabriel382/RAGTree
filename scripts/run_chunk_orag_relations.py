@@ -9,136 +9,228 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from tqdm import tqdm
 
-from ragtree.core.config import load_config
-from ragtree.processing.orchestrators.relations_runner import _build_llm_config_from_yaml, RunnerLLMSections
-from ragtree.ontologies.retrieval.chunk_orag_retriever import ChunkORAGRetriever
+from ragtree.processing.orchestrators.relations_runner import (
+    PreparedContext,
+    RunnerLLMSections,
+    run_relation_experiment,
+)
 from ragtree.processing.rag.strategies.chunk_orag_relations import ChunkORAGRelationStrategy, ChunkORAGParams
+from ragtree.ontologies.retrieval.chunk_orag_retriever import ChunkORAGRetriever
 
 
 def _parse_doc_types(arg: str) -> Sequence[str] | str:
+    """
+    '--doc-type-filter "dev,test"' -> ["dev", "test"]
+    '--doc-type-filter "all"'      -> "all"
+    """
     if not arg or arg == "all":
         return "all"
-    items = [x.strip() for x in arg.split(",") if x.strip()]
+    items = [x.strip() for x in arg.split(",")]
+    items = [x for x in items if x]
     return items or "all"
 
 
-def _resolve_input_path(cfg: Dict[str, Any], dataset_key: Optional[str], input_path: Optional[Path]) -> Path:
-    if input_path is not None:
-        return input_path
-    if not dataset_key:
-        raise ValueError("Provide --dataset-key or --input-path.")
-    ds_pre = cfg.get("datasets", {}).get("preprocessed", {})
-    if dataset_key not in ds_pre:
-        raise KeyError(f"Unknown dataset-key '{dataset_key}'. Available: {sorted(ds_pre.keys())}")
-    return Path(ds_pre[dataset_key])
+def _collect_few_shots(
+    input_path: Path,
+    *,
+    shot_type: str,
+    shot_num: int,
+    shot_skip: int = 0,
+    shot_limit: Optional[int] = None,
+) -> List[Dict[str, Any]]:
+    """
+    Collect few-shot examples from the same dataset JSONL.
 
+    Rules:
+      - Only docs where doc['type'] == shot_type
+      - Only docs with non-empty doc['relations'] dict
+      - Apply shot_skip / shot_limit AFTER type filter
+      - Stop when collected shot_num (if shot_num > 0)
+    """
+    if shot_num <= 0:
+        return []
 
-def main() -> None:
-    ap = argparse.ArgumentParser("Run Chunk-O-RAG relation extraction (ontology chunk retrieval + LLM).")
+    few_shots: List[Dict[str, Any]] = []
+    seen_after_type = 0
+    considered = 0
 
-    ap.add_argument("--config", type=Path, default=None)
-
-    # data
-    ap.add_argument("--dataset-key", default=None)
-    ap.add_argument("--input-path", type=Path, default=None)
-    ap.add_argument("--doc-types", default="all", help="all or comma-separated: train,dev,test")
-    ap.add_argument("--skip", type=int, default=0)
-    ap.add_argument("--limit", type=int, default=None)
-
-    # ontology / index
-    ap.add_argument("--ontology-key", required=True)
-    ap.add_argument("--index-dir", type=Path, required=True, help="Path produced by build_chunk_orag_index.py")
-
-    # LLM
-    ap.add_argument("--backend", type=str, default=None)
-    ap.add_argument("--model", type=str, default=None)
-
-    # retrieval knobs
-    ap.add_argument("--top-k", type=int, default=12)
-    ap.add_argument("--rerank-top-n", type=int, default=6)
-    ap.add_argument("--auto-merge", type=str, default="true", choices=["true", "false"])
-    ap.add_argument("--use-reranker", type=str, default="false", choices=["true", "false"])
-    ap.add_argument("--reranker-model", type=str, default="BAAI/bge-reranker-large")
-    ap.add_argument("--embed-model", type=str, default="BAAI/bge-m3")
-    ap.add_argument("--max-ctx-chars", type=int, default=8000)
-
-    # output
-    ap.add_argument("--output-format", choices=["full", "pred-only"], default="full")
-    ap.add_argument("--method", default="chunk_orag")
-
-    args = ap.parse_args()
-    cfg = load_config(args.config)
-
-    input_path = _resolve_input_path(cfg, args.dataset_key, args.input_path)
-
-    processed_root = Path(cfg["paths"]["data_processed"])
-    processed_root.mkdir(parents=True, exist_ok=True)
-
-    ds_label = args.dataset_key or input_path.stem
-    backend_label = args.backend or cfg.get("llm", {}).get("chunk_orag", {}).get("default_backend", "ollama")
-    output_path = processed_root / f"{ds_label}.{args.method}.{backend_label}.jsonl"
-
-    # LLM config
-    sections = RunnerLLMSections(
-        llm_section="chunk_orag",
-        prompt_section="chunk_orag",
-        system_prompt_key="chunk_orag_docre",
-    )
-    llm_config = _build_llm_config_from_yaml(cfg, sections, args.backend, args.model)
-
-    # Retriever
-    retriever = ChunkORAGRetriever(
-        args.index_dir,
-        embed_model=args.embed_model,
-        use_reranker=(args.use_reranker == "true"),
-        reranker_model=args.reranker_model,
-    )
-
-    params = ChunkORAGParams(
-        top_k=args.top_k,
-        rerank_top_n=args.rerank_top_n,
-        auto_merge=(args.auto_merge == "true"),
-        max_ctx_chars=args.max_ctx_chars,
-    )
-
-    strategy = ChunkORAGRelationStrategy(llm_config, retriever=retriever, params=params)
-
-    doc_type_filter = _parse_doc_types(args.doc_types)
-    allowed_types = set(doc_type_filter) if doc_type_filter != "all" else None
-
-    seen_after_filter = 0
-    wrote = 0
-
-    with input_path.open("r", encoding="utf-8") as fin, output_path.open("w", encoding="utf-8") as fout:
-        for line in tqdm(fin, desc=f"ChunkORAG on {ds_label}", unit="doc"):
+    with input_path.open("r", encoding="utf-8") as fin:
+        for line in tqdm(fin, desc=f"[chunk-orag] Collecting few-shots (type={shot_type})", unit="doc"):
             line = line.strip()
             if not line:
                 continue
             doc = json.loads(line)
 
-            if allowed_types is not None:
-                if doc.get("type") not in allowed_types:
-                    continue
-
-            if seen_after_filter < args.skip:
-                seen_after_filter += 1
+            if doc.get("type") != shot_type:
                 continue
-            if args.limit is not None and (seen_after_filter - args.skip) >= args.limit:
+
+            seen_after_type += 1
+
+            if shot_skip and seen_after_type <= shot_skip:
+                continue
+
+            if shot_limit is not None and considered >= shot_limit:
                 break
-            seen_after_filter += 1
 
-            pred = strategy.predict_relations(doc)
+            considered += 1
 
-            if args.output_format == "pred-only":
-                out_obj = {"document_id": doc.get("document_id"), "pred_relations": pred}
-            else:
-                doc["pred_relations"] = pred
-                out_obj = doc
+            rels = doc.get("relations")
+            if not isinstance(rels, dict) or not rels:
+                continue
 
-            fout.write(json.dumps(out_obj, ensure_ascii=False) + "\n")
-            wrote += 1
+            few_shots.append(doc)
+            if len(few_shots) >= shot_num:
+                break
 
-    print(f"[chunk-orag] wrote: {output_path} ({wrote} docs)")
+    print(
+        f"[chunk-orag] few-shots: requested={shot_num} collected={len(few_shots)} "
+        f"type={shot_type} shot_skip={shot_skip} shot_limit={shot_limit}"
+    )
+    return few_shots
+
+
+def prepare_chunk_orag_context(
+    input_path: Path,
+    cfg: Dict[str, Any],
+    *,
+    index_dir: Path,
+    embed_model: str,
+    device: str,
+    use_reranker: bool,
+    reranker_model: str,
+    top_k: int,
+    #rerank_top_n: int,
+    auto_merge: bool,
+    max_ctx_chars: int,
+    shot_type: str,
+    shot_num: int,
+    shot_skip: int,
+    shot_limit: Optional[int],
+) -> PreparedContext:
+    """
+    Prepare strategy-level dependencies once:
+      - ChunkORAGRetriever
+      - ChunkORAGParams
+      - Optional few_shots list
+    """
+    retriever = ChunkORAGRetriever(
+        index_dir,
+        embed_model=embed_model,
+        #use_reranker=use_reranker,
+        #reranker_model=reranker_model,
+        device=device,  # CPU-safe
+    )
+
+    params = ChunkORAGParams(
+        top_k=top_k,
+        #rerank_top_n=rerank_top_n,
+        #auto_merge=auto_merge,
+        max_ctx_chars=max_ctx_chars,
+    )
+
+    strategy_kwargs = {
+        "retriever": retriever,
+        "params": params,
+    }
+
+    few_shots = _collect_few_shots(
+        input_path,
+        shot_type=shot_type,
+        shot_num=shot_num,
+        shot_skip=shot_skip,
+        shot_limit=shot_limit,
+    )
+
+    predict_kwargs = {"few_shots": few_shots}
+    return PreparedContext(strategy_kwargs=strategy_kwargs, predict_kwargs=predict_kwargs)
+
+
+def main() -> None:
+    p = argparse.ArgumentParser(description="Run Chunk-O-RAG relation extraction.")
+
+    p.add_argument("--config", type=Path, default=None)
+
+    p.add_argument("--dataset-key", required=True)
+    p.add_argument("--backend", type=str, default=None)
+    p.add_argument("--model", type=str, default=None)
+
+    p.add_argument(
+        "--doc-type-filter",
+        type=str,
+        default="all",
+        help="Filter on doc['type'] (e.g. 'test' or 'dev,test') or 'all'. Default: 'all'.",
+    )
+
+    p.add_argument("--skip", type=int, default=0)
+    p.add_argument("--limit", type=int, default=None)
+
+    # index / retrieval
+    p.add_argument("--ontology-key", required=True)
+    p.add_argument("--index-dir", type=Path, required=True)
+
+    p.add_argument("--embed-model", type=str, default="BAAI/bge-m3")
+    p.add_argument("--device", type=str, default="cpu", choices=["cpu", "cuda"])
+
+    p.add_argument("--top-k", type=int, default=12)
+    p.add_argument("--rerank-top-n", type=int, default=6)
+    p.add_argument("--auto-merge", type=str, default="true", choices=["true", "false"])
+
+    p.add_argument("--use-reranker", type=str, default="false", choices=["true", "false"])
+    p.add_argument("--reranker-model", type=str, default="BAAI/bge-reranker-large")
+
+    p.add_argument("--max-ctx-chars", type=int, default=6000)
+
+    p.add_argument("--output-format", choices=["full", "pred-only"], default="full")
+
+    # Few-shot options
+    p.add_argument("--shot-type", type=str, default="train")
+    p.add_argument("--shot-num", type=int, default=0)
+    p.add_argument("--shot-skip", type=int, default=0)
+    p.add_argument("--shot-limit", type=int, default=None)
+
+    args = p.parse_args()
+
+    doc_type_filter = _parse_doc_types(args.doc_type_filter)
+
+    sections = RunnerLLMSections(
+        llm_section="chunk_orag",
+        prompt_section="chunk_orag",
+        system_prompt_key="chunk_orag_docre",
+    )
+
+    def _prep(input_path: Path, cfg: Dict[str, Any]) -> PreparedContext:
+        return prepare_chunk_orag_context(
+            input_path,
+            cfg,
+            index_dir=args.index_dir,
+            embed_model=args.embed_model,
+            device=args.device,
+            use_reranker=(args.use_reranker == "true"),
+            reranker_model=args.reranker_model,
+            top_k=args.top_k,
+            #rerank_top_n=args.rerank_top_n,
+            auto_merge=(args.auto_merge == "true"),
+            max_ctx_chars=args.max_ctx_chars,
+            shot_type=args.shot_type,
+            shot_num=args.shot_num,
+            shot_skip=args.shot_skip,
+            shot_limit=args.shot_limit,
+        )
+
+    run_relation_experiment(
+        strategy_cls=ChunkORAGRelationStrategy,
+        config_path=args.config,
+        dataset_key=args.dataset_key,
+        backend=args.backend,
+        model=args.model,
+        cli_relation_types=None,
+        output_format=args.output_format,
+        doc_type_filter=doc_type_filter,
+        skip=args.skip,
+        limit=args.limit,
+        sections=sections,
+        prepare_context_fn=_prep,
+    )
 
 
 if __name__ == "__main__":
