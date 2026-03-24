@@ -224,6 +224,12 @@ def main() -> None:
     p.add_argument("--shot-skip", type=int, default=0)
     p.add_argument("--shot-limit", type=int, default=None)
 
+    # add argparse flags
+    p.add_argument("--num-proposers", type=int, default=3)
+    p.add_argument("--max-reltypes", type=int, default=18)
+    p.add_argument("--no-reltype-selector", action="store_true")
+    p.add_argument("--no-verifier", action="store_true")
+    
     args = p.parse_args()
 
     cfg = load_config(args.config)
@@ -280,6 +286,8 @@ def main() -> None:
             pick="candidates",
         )
 
+
+    # when creating params
     params = MARAGParams(
         max_llm_calls=args.max_llm_calls,
         enable_planner=bool(args.enable_planner),
@@ -289,8 +297,10 @@ def main() -> None:
         enable_wikidata=bool(args.enable_wikidata),
         kg_max_triples=int(args.kg_max_triples),
         max_sentences_in_prompt=args.max_sentences_in_prompt,
-        include_ontology_structured=True if args.include_ontology_structured else True,
-        include_ontology_ttl=bool(args.include_ontology_ttl),
+        max_relation_types_in_prompt=int(args.max_reltypes),
+        num_proposers=int(args.num_proposers),
+        enable_relation_type_selector=(not args.no_reltype_selector),
+        enable_verifier=(not args.no_verifier),
         keep_debug=True,
         verbose=False,
     )
