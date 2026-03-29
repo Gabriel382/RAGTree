@@ -144,9 +144,9 @@ class MARagRelationStrategy(BaseRelationStrategy):
         external LLMConfig class implementation.
 
         Supported backends:
-          - ollama
-          - vllm (OpenAI-compatible /chat/completions)
-          - openrouter (OpenAI-compatible /chat/completions)
+        - ollama
+        - vllm (OpenAI-compatible /v1/chat/completions)
+        - openrouter (OpenAI-compatible /chat/completions with /api/v1 base)
         """
         backend = str(getattr(self.llm_config, "backend", "ollama") or "ollama").lower()
         model = str(getattr(self.llm_config, "model", "") or "").strip()
@@ -179,18 +179,25 @@ class MARagRelationStrategy(BaseRelationStrategy):
             )
             resp.raise_for_status()
             data = resp.json()
-            return str(data["message"]["content"])
 
-        # OpenAI-compatible API for vLLM / OpenRouter
+            message = data.get("message", {})
+            content = message.get("content")
+            if content is not None:
+                return str(content)
+
+            raise ValueError(f"No message content returned by backend '{backend}': {data}")
+
+        # OpenAI-compatible APIs
         if backend in {"vllm", "openrouter"}:
             if backend == "openrouter":
                 final_base_url = str(base_url or "https://openrouter.ai/api/v1").rstrip("/")
                 final_api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+                url = f"{final_base_url}/chat/completions"
             else:
                 final_base_url = str(base_url or "http://localhost:8000").rstrip("/")
                 final_api_key = api_key or "dummy"
+                url = f"{final_base_url}/v1/chat/completions"
 
-            url = f"{final_base_url}/chat/completions"
             headers = {
                 "Content-Type": "application/json",
                 "User-Agent": self.params.http_user_agent,
@@ -213,7 +220,51 @@ class MARagRelationStrategy(BaseRelationStrategy):
             )
             resp.raise_for_status()
             data = resp.json()
-            return str(data["choices"][0]["message"]["content"])
+
+            choices = data.get("choices", [])
+            if not choices:
+                raise ValueError(f"No choices returned by backend '{backend}': {data}")
+
+            choice0 = choices[0]
+            message = choice0.get("message", {}) or {}
+
+            # 1) Standard chat-completions content
+            content = message.get("content")
+            if content is not None:
+                if isinstance(content, str):
+                    return content
+                if isinstance(content, list):
+                    parts: List[str] = []
+                    for item in content:
+                        if isinstance(item, dict):
+                            txt = item.get("text")
+                            if txt:
+                                parts.append(str(txt))
+                        elif isinstance(item, str):
+                            parts.append(item)
+                    if parts:
+                        return "\n".join(parts)
+
+            # 2) Some servers/models expose reasoning separately
+            reasoning = message.get("reasoning")
+            if reasoning is not None:
+                return str(reasoning)
+
+            # 3) Extra fallbacks sometimes used by compatible servers
+            if "text" in choice0 and choice0["text"] is not None:
+                return str(choice0["text"])
+
+            delta = choice0.get("delta")
+            if isinstance(delta, dict):
+                delta_content = delta.get("content")
+                if delta_content is not None:
+                    return str(delta_content)
+
+            finish_reason = choice0.get("finish_reason")
+            raise ValueError(
+                f"No usable text returned by backend '{backend}'. "
+                f"finish_reason={finish_reason}, raw_response={data}"
+            )
 
         raise ValueError(f"Unsupported backend '{backend}' for MA-RAG")
 

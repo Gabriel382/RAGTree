@@ -24,10 +24,8 @@ class MARAGLLMConfig:
     """
     Minimal LLM config object for MA-RAG.
 
-    This replaces the missing:
-        from ragtree.processing.llm.llm import LLMConfig
-
-    It only contains the fields that the strategy needs.
+    This replaces the missing external LLMConfig dependency and only
+    contains the fields needed by MARagRelationStrategy.
     """
     backend: str
     model: str
@@ -39,9 +37,10 @@ class MARAGLLMConfig:
 
 
 # ----------------------------
-# helpers: parsing cli
+# Helpers
 # ----------------------------
 def _parse_types(arg: str) -> Sequence[str] | str:
+    """Parse comma-separated doc types or 'all'."""
     if not arg or arg == "all":
         return "all"
     items = [x.strip() for x in arg.split(",")]
@@ -50,12 +49,14 @@ def _parse_types(arg: str) -> Sequence[str] | str:
 
 
 def _should_keep_doc(doc: Dict[str, Any], doc_types: Sequence[str] | str) -> bool:
+    """Check whether a document matches the requested doc types."""
     if doc_types == "all":
         return True
     return doc.get("type") in set(doc_types)
 
 
 def _iter_jsonl(path: Path):
+    """Yield JSON objects from a JSONL file."""
     with path.open("r", encoding="utf-8") as fin:
         for line in fin:
             line = line.strip()
@@ -66,7 +67,9 @@ def _iter_jsonl(path: Path):
 
 def _load_ontology_links_map(path: Path) -> Dict[str, Any]:
     """
-    Expects JSONL with {document_id, ontology_links} OR full docs with ontology_links inside.
+    Expects JSONL with:
+      - {"document_id": ..., "ontology_links": {...}}
+    or full docs with ontology_links inside.
     """
     out: Dict[str, Any] = {}
     for obj in _iter_jsonl(path):
@@ -81,44 +84,161 @@ def _load_ontology_links_map(path: Path) -> Dict[str, Any]:
 
 def _load_kg_doc_triples(path: Path) -> Dict[str, List[List[str]]]:
     """
-    Supports:
-      - JSON (single file) from build_kg_from_preprocessed.py
-      - JSONL (one doc per line) if you ever output that format
+    Load KG artifact from either:
+      - JSONL: one JSON object per line
+      - JSON: a single dict/list stored in the file
+
+    Supported per-doc schemas:
+      - {"document_id": ..., "triples": [...]}
+      - {"document_id": ..., "kg_triples": [...]}
+      - {"document_id": ..., "edges": [...]}
+
+    Also supports top-level shapes like:
+      - {"doc_id": {"triples": [...]}, ...}
+      - {"docs": [{"document_id": ..., "triples": [...]} , ...]}
+      - [{"document_id": ..., "triples": [...]} , ...]
+
+    IMPORTANT:
+      If the file is a corpus-level graph export like:
+        {"dataset_key": ..., "graph": {"nodes": ..., "edges": ...}}
+      and there is no document_id -> triples mapping,
+      this function cannot reconstruct per-document triples automatically.
     """
-    if path.suffix.lower() == ".json":
-        obj = json.loads(path.read_text(encoding="utf-8"))
+    txt = path.read_text(encoding="utf-8").strip()
+    if not txt:
+        return {}
 
-        # Shape A: {"doc_triples": {"doc_id": [[h,r,t], ...]}}
-        if isinstance(obj, dict) and isinstance(obj.get("doc_triples"), dict):
-            return obj["doc_triples"]
-
-        # Shape B: {"docs": {"doc_id": {"triples": [...]}}}
-        if isinstance(obj, dict) and isinstance(obj.get("docs"), dict):
-            out: Dict[str, List[List[str]]] = {}
-            for doc_id, payload in obj["docs"].items():
-                if isinstance(payload, dict) and isinstance(payload.get("triples"), list):
-                    out[str(doc_id)] = payload["triples"]
-            return out
-
-        # Shape C: {"triples_by_doc": {...}}
-        if isinstance(obj, dict) and isinstance(obj.get("triples_by_doc"), dict):
-            return obj["triples_by_doc"]
-
-        raise ValueError(
-            f"Unrecognized KG JSON format in '{path}'. "
-            "Expected one of: doc_triples / docs[doc].triples / triples_by_doc."
-        )
-
-    # JSONL fallback
     out: Dict[str, List[List[str]]] = {}
-    for obj in _iter_jsonl(path):
+
+    def normalize_triples(triples: Any) -> List[List[str]]:
+        """Normalize triples to [[head, relation, tail], ...]."""
+        kept: List[List[str]] = []
+        if not isinstance(triples, list):
+            return kept
+
+        for t in triples:
+            if isinstance(t, (list, tuple)) and len(t) >= 3:
+                h, r, tail = t[0], t[1], t[2]
+                kept.append([str(h), str(r), str(tail)])
+            elif isinstance(t, dict):
+                h = t.get("h") or t.get("head")
+                r = t.get("r") or t.get("rel") or t.get("relation")
+                tail = t.get("t") or t.get("tail")
+                if h is not None and r is not None and tail is not None:
+                    kept.append([str(h), str(r), str(tail)])
+        return kept
+
+    def ingest_obj(obj: Any) -> None:
+        """Ingest a single object if it contains document-level triples."""
+        if not isinstance(obj, dict):
+            return
+
         doc_id = obj.get("document_id") or obj.get("id")
         if not doc_id:
+            return
+
+        triples = (
+            obj.get("triples")
+            or obj.get("kg_triples")
+            or obj.get("edges")
+            or obj.get("_kg_context", {}).get("triples")
+            or []
+        )
+        norm = normalize_triples(triples)
+        if norm:
+            out[str(doc_id)] = norm
+
+    # --- Try parse as single JSON first ---
+    try:
+        root = json.loads(txt)
+
+        # Case A: list of doc objects
+        if isinstance(root, list):
+            for item in root:
+                ingest_obj(item)
+            if out:
+                return out
+
+        # Case B: dict with "docs" as list
+        if isinstance(root, dict) and isinstance(root.get("docs"), list):
+            for item in root["docs"]:
+                ingest_obj(item)
+            if out:
+                return out
+
+        # Case C: dict with "docs" as mapping
+        if isinstance(root, dict) and isinstance(root.get("docs"), dict):
+            for doc_id, payload in root["docs"].items():
+                if isinstance(payload, dict):
+                    triples = payload.get("triples") or payload.get("kg_triples") or payload.get("edges") or []
+                    norm = normalize_triples(triples)
+                    if norm:
+                        out[str(doc_id)] = norm
+            if out:
+                return out
+
+        # Case D: direct doc object
+        if isinstance(root, dict) and ("document_id" in root or "id" in root):
+            ingest_obj(root)
+            if out:
+                return out
+
+        # Case E: top-level dict keyed by doc_id
+        if isinstance(root, dict):
+            for k, v in root.items():
+                if isinstance(v, dict):
+                    triples = v.get("triples") or v.get("kg_triples") or v.get("edges") or []
+                    norm = normalize_triples(triples)
+                    if norm:
+                        out[str(k)] = norm
+                elif isinstance(v, list):
+                    norm = normalize_triples(v)
+                    if norm:
+                        out[str(k)] = norm
+            if out:
+                return out
+
+        # Case F: corpus-level graph export
+        if isinstance(root, dict) and isinstance(root.get("graph"), dict):
+            raise ValueError(
+                f"KG file '{path}' appears to be a corpus-level graph export "
+                f"(contains top-level 'graph') and not a per-document triples artifact. "
+                f"MA-RAG needs document_id -> triples mapping."
+            )
+
+    except json.JSONDecodeError:
+        pass
+
+    # --- Fallback: JSONL ---
+    bad = 0
+    first_bad = None
+    for i, line in enumerate(txt.splitlines(), start=1):
+        line = line.strip()
+        if not line:
             continue
-        triples = obj.get("triples") or obj.get("_kg_context", {}).get("triples")
-        if isinstance(triples, list):
-            out[str(doc_id)] = triples
-    return out
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            bad += 1
+            if first_bad is None:
+                first_bad = (i, line[:200])
+            continue
+        ingest_obj(obj)
+
+    if out:
+        return out
+
+    if first_bad:
+        ln, preview = first_bad
+        raise ValueError(
+            f"KG file '{path}' could not be parsed as JSON or JSONL doc-triples. "
+            f"First invalid JSONL line #{ln}: {preview}"
+        )
+
+    raise ValueError(
+        f"KG file '{path}' could not be parsed into document_id -> triples. "
+        f"If this is a global graph export, MA-RAG cannot use it directly."
+    )
 
 
 def _build_llm_config(
@@ -129,11 +249,10 @@ def _build_llm_config(
     model_override: Optional[str],
 ) -> Tuple[MARAGLLMConfig, str]:
     """
-    Mirrors your existing config style:
-      cfg["llm"][section]["backends"][backend]
+    Build a lightweight LLM config from YAML.
 
-    Returns:
-      (MARAGLLMConfig, backend_name)
+    Expected config shape:
+      cfg["llm"][section]["backends"][backend]
     """
     llm_cfg = cfg["llm"][llm_section]
     default_backend = llm_cfg.get("default_backend", "ollama")
@@ -177,10 +296,10 @@ def _collect_few_shots(
 ) -> List[Dict[str, Any]]:
     """
     Collect few-shot examples where:
-      - doc['type'] == shot_type
-      - doc['relations'] is a non-empty dict
+      - doc["type"] == shot_type
+      - doc["relations"] is a non-empty dict
 
-    Applies doc_types filter FIRST, then skip/limit.
+    Applies doc-types filter first, then skip/limit.
     """
     if shot_num <= 0:
         return []
@@ -342,6 +461,23 @@ def main() -> None:
         shot_limit=args.shot_limit,
     )
 
+    # Pre-filter docs for prediction, then apply skip/limit on filtered docs
+    all_filtered_docs = [doc for doc in _iter_jsonl(input_path) if _should_keep_doc(doc, doc_types)]
+    filtered_docs = all_filtered_docs[args.skip:]
+    if args.limit is not None:
+        filtered_docs = filtered_docs[: args.limit]
+
+    print(f"[marag] input={input_path}")
+    print(f"[marag] output={out_path}")
+    print(f"[marag] ontology_artifact={args.ontology_links_path}")
+    print(f"[marag] kg_artifact={args.kg_path}")
+    print(f"[marag] predict doc-types={doc_types} skip={args.skip} limit={args.limit}")
+    print(f"[marag] backend={llm_config.backend} model={llm_config.model}")
+    print(f"[marag] docs matching filter before skip/limit: {len(all_filtered_docs)}")
+    print(f"[marag] docs to process after skip/limit: {len(filtered_docs)}")
+    if args.shot_num > 0:
+        print(f"[marag] few-shots collected: {len(few_shots)}")
+
     strat = MARagRelationStrategy(
         llm_config,
         params=params,
@@ -352,23 +488,9 @@ def main() -> None:
     )
 
     written = 0
-    seen_after_filter = 0
 
     with out_path.open("w", encoding="utf-8") as fout:
-        for doc in tqdm(list(_iter_jsonl(input_path)), desc=f"MA-RAG on {args.dataset_key}", unit="doc"):
-            if not _should_keep_doc(doc, doc_types):
-                continue
-
-            # skip/limit AFTER filtering
-            if seen_after_filter < args.skip:
-                seen_after_filter += 1
-                continue
-
-            if args.limit is not None and (seen_after_filter - args.skip) >= args.limit:
-                break
-
-            seen_after_filter += 1
-
+        for doc in tqdm(filtered_docs, desc=f"MA-RAG on {args.dataset_key}", unit="doc"):
             rel_types = (
                 list(doc.get("relations", {}).keys())
                 if isinstance(doc.get("relations"), dict) and doc.get("relations")
@@ -389,8 +511,8 @@ def main() -> None:
             fout.write(json.dumps(out_obj, ensure_ascii=False) + "\n")
             written += 1
 
+    print(f"[marag] done. predicted={written}")
     print(f"[marag] wrote: {out_path}")
-    print(f"[marag] docs_written: {written}")
 
 
 if __name__ == "__main__":
