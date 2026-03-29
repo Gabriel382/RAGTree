@@ -1,20 +1,41 @@
-# scripts/run_marag_relations.py
 from __future__ import annotations
 
 import argparse
 import json
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from tqdm import tqdm
 
 from ragtree.core.config import load_config
-from ragtree.processing.llm.llm import LLMConfig  # assumes you already have this
 from ragtree.processing.rag.strategies.marag_relations import (
     MARagRelationStrategy,
     MARAGParams,
 )
 from ragtree.ontologies.retrieval.subontology import SubOntologyRetriever
+
+
+# ----------------------------
+# Lightweight local config object
+# ----------------------------
+@dataclass
+class MARAGLLMConfig:
+    """
+    Minimal LLM config object for MA-RAG.
+
+    This replaces the missing:
+        from ragtree.processing.llm.llm import LLMConfig
+
+    It only contains the fields that the strategy needs.
+    """
+    backend: str
+    model: str
+    temperature: float = 0.0
+    max_tokens: int = 1024
+    base_url: Optional[str] = None
+    api_key: Optional[str] = None
+    system_prompt: str = ""
 
 
 # ----------------------------
@@ -54,7 +75,7 @@ def _load_ontology_links_map(path: Path) -> Dict[str, Any]:
             continue
         links = obj.get("ontology_links")
         if isinstance(links, dict):
-            out[doc_id] = links
+            out[str(doc_id)] = links
     return out
 
 
@@ -67,8 +88,7 @@ def _load_kg_doc_triples(path: Path) -> Dict[str, List[List[str]]]:
     if path.suffix.lower() == ".json":
         obj = json.loads(path.read_text(encoding="utf-8"))
 
-        # Try a few common shapes
-        # Shape A: {"doc_triples": {"doc_id": [[h,r,t],...]}}
+        # Shape A: {"doc_triples": {"doc_id": [[h,r,t], ...]}}
         if isinstance(obj, dict) and isinstance(obj.get("doc_triples"), dict):
             return obj["doc_triples"]
 
@@ -77,7 +97,7 @@ def _load_kg_doc_triples(path: Path) -> Dict[str, List[List[str]]]:
             out: Dict[str, List[List[str]]] = {}
             for doc_id, payload in obj["docs"].items():
                 if isinstance(payload, dict) and isinstance(payload.get("triples"), list):
-                    out[doc_id] = payload["triples"]
+                    out[str(doc_id)] = payload["triples"]
             return out
 
         # Shape C: {"triples_by_doc": {...}}
@@ -97,14 +117,23 @@ def _load_kg_doc_triples(path: Path) -> Dict[str, List[List[str]]]:
             continue
         triples = obj.get("triples") or obj.get("_kg_context", {}).get("triples")
         if isinstance(triples, list):
-            out[doc_id] = triples
+            out[str(doc_id)] = triples
     return out
 
 
-def _build_llm_config(cfg: Dict[str, Any], *, llm_section: str, backend_override: Optional[str], model_override: Optional[str]) -> Tuple[LLMConfig, str]:
+def _build_llm_config(
+    cfg: Dict[str, Any],
+    *,
+    llm_section: str,
+    backend_override: Optional[str],
+    model_override: Optional[str],
+) -> Tuple[MARAGLLMConfig, str]:
     """
-    Mirrors your style: cfg["llm"][section] with backends.
-    Returns (LLMConfig, backend_name).
+    Mirrors your existing config style:
+      cfg["llm"][section]["backends"][backend]
+
+    Returns:
+      (MARAGLLMConfig, backend_name)
     """
     llm_cfg = cfg["llm"][llm_section]
     default_backend = llm_cfg.get("default_backend", "ollama")
@@ -119,15 +148,13 @@ def _build_llm_config(cfg: Dict[str, Any], *, llm_section: str, backend_override
     if not model:
         raise KeyError(f"Missing model for backend '{backend_name}' in llm.{llm_section}.backends")
 
-    system_prompt_key = llm_cfg.get("system_prompt_key", "agentic_hybrid_docre")
+    system_prompt_key = llm_cfg.get("system_prompt_key", "marag_docre")
     prompt_bank = cfg.get("prompts", {}).get(llm_section, {}) or {}
     system_prompt = prompt_bank.get(system_prompt_key)
     if not system_prompt:
-        # allow fallback: cfg["prompts"]["agentic_hybrid"][...]
-        # but we keep strict to avoid silent mistakes
         raise KeyError(f"Missing prompts.{llm_section}.{system_prompt_key} in config")
 
-    llm_config = LLMConfig(
+    llm_config = MARAGLLMConfig(
         backend=backend_name,
         model=model,
         temperature=float(b.get("temperature", 0.0)),
@@ -152,6 +179,7 @@ def _collect_few_shots(
     Collect few-shot examples where:
       - doc['type'] == shot_type
       - doc['relations'] is a non-empty dict
+
     Applies doc_types filter FIRST, then skip/limit.
     """
     if shot_num <= 0:
@@ -197,9 +225,9 @@ def main() -> None:
     p.add_argument("--skip", type=int, default=0, help="Skip first N docs AFTER doc-types filtering.")
     p.add_argument("--limit", type=int, default=None, help="Process at most K docs AFTER doc-types filtering.")
 
-    # Artifact paths (your preference)
+    # Artifact paths
     p.add_argument("--ontology-links-path", type=Path, default=None, help="JSONL with ontology_links (optional).")
-    p.add_argument("--kg-path", type=Path, default=None, help="KG file path (.json from build_kg_from_preprocessed).")
+    p.add_argument("--kg-path", type=Path, default=None, help="KG file path (.json or .jsonl).")
 
     # Ontology retriever config
     p.add_argument("--ontology-key", type=str, default=None, help="Key under cfg['ontology'] for TTL path (optional).")
@@ -211,8 +239,8 @@ def main() -> None:
     p.add_argument("--enable-web", action="store_true", help="Allow web context tool (default off).")
     p.add_argument("--enable-wikidata", action="store_true", help="Allow wikidata context tool (default off).")
     p.add_argument("--kg-max-triples", type=int, default=40, help="Top-K KG triples in context.")
-    p.add_argument("--include-ontology-ttl", action="store_true", help="Include TTL in ontology context.")
-    p.add_argument("--include-ontology-structured", action="store_true", help="Include JSON structured fragment (default on).")
+    p.add_argument("--include-ontology-ttl", action="store_true", help="Kept for compatibility.")
+    p.add_argument("--include-ontology-structured", action="store_true", help="Kept for compatibility.")
     p.add_argument("--max-sentences-in-prompt", type=int, default=None)
 
     p.add_argument("--output-format", choices=["full", "pred-only"], default="full")
@@ -220,16 +248,16 @@ def main() -> None:
     # Few-shot
     p.add_argument("--shot-num", type=int, default=0, help="0 disables few-shot.")
     p.add_argument("--shot-type", type=str, default="train", help="Which doc['type'] provides few-shots.")
-    p.add_argument("--shot-doc-types", type=str, default="all", help="Doc-type filter for few-shot pool (all or dev,test,train).")
+    p.add_argument("--shot-doc-types", type=str, default="all", help="Doc-type filter for few-shot pool.")
     p.add_argument("--shot-skip", type=int, default=0)
     p.add_argument("--shot-limit", type=int, default=None)
 
-    # add argparse flags
+    # MA-RAG specific
     p.add_argument("--num-proposers", type=int, default=3)
     p.add_argument("--max-reltypes", type=int, default=18)
     p.add_argument("--no-reltype-selector", action="store_true")
     p.add_argument("--no-verifier", action="store_true")
-    
+
     args = p.parse_args()
 
     cfg = load_config(args.config)
@@ -276,6 +304,7 @@ def main() -> None:
         if args.ontology_key not in onto_paths:
             available = ", ".join(sorted(onto_paths.keys()))
             raise KeyError(f"Unknown ontology key '{args.ontology_key}'. Available: {available}")
+
         ttl_path = Path(onto_paths[args.ontology_key])
         retriever = SubOntologyRetriever(
             ontology_key=args.ontology_key,
@@ -286,8 +315,6 @@ def main() -> None:
             pick="candidates",
         )
 
-
-    # when creating params
     params = MARAGParams(
         max_llm_calls=args.max_llm_calls,
         enable_planner=bool(args.enable_planner),
@@ -305,7 +332,7 @@ def main() -> None:
         verbose=False,
     )
 
-    # Few-shot pool (optional)
+    # Few-shot pool
     few_shots = _collect_few_shots(
         input_path,
         shot_type=args.shot_type,
@@ -324,7 +351,6 @@ def main() -> None:
         kg_triples_by_docid=kg_triples_map,
     )
 
-    skipped = 0
     written = 0
     seen_after_filter = 0
 
@@ -343,11 +369,19 @@ def main() -> None:
 
             seen_after_filter += 1
 
-            rel_types = list(doc.get("relations", {}).keys()) if isinstance(doc.get("relations"), dict) and doc.get("relations") else None
+            rel_types = (
+                list(doc.get("relations", {}).keys())
+                if isinstance(doc.get("relations"), dict) and doc.get("relations")
+                else None
+            )
+
             pred = strat.predict_relations(doc, relation_types=rel_types, few_shots=few_shots)
 
             if args.output_format == "pred-only":
-                out_obj = {"document_id": doc.get("document_id"), "pred_relations": pred}
+                out_obj = {
+                    "document_id": doc.get("document_id") or doc.get("id"),
+                    "pred_relations": pred,
+                }
             else:
                 doc["pred_relations"] = pred
                 out_obj = doc

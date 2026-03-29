@@ -1,12 +1,11 @@
-# ragtree/processing/rag/strategies/marag_relations.py
 from __future__ import annotations
 
 import json
-import re
 import logging
-import time
+import os
+import re
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, Sequence, Set, TypedDict, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Set, TypedDict
 
 import requests
 
@@ -39,20 +38,20 @@ class MARAGParams:
     # Tool toggles
     enable_ontology: bool = True
     enable_kg: bool = True
-    enable_web: bool = True          # Wikipedia summary
-    enable_wikidata: bool = True     # wbsearchentities + short desc
+    enable_web: bool = True
+    enable_wikidata: bool = True
 
     # Prompt budget controls
     max_sentences_in_prompt: Optional[int] = None
-    max_relation_types_in_prompt: int = 18   # IMPORTANT: keep small
-    proposer_max_pairs_per_rel: int = 12     # cap verbosity per proposer
+    max_relation_types_in_prompt: int = 18
+    proposer_max_pairs_per_rel: int = 12
     kg_max_triples: int = 40
     web_max_chars: int = 1400
     wikidata_max_chars: int = 1400
 
     # Multi proposer
-    num_proposers: int = 3           # parameter you wanted
-    proposer_entity_overlap: int = 2 # slight overlap to reduce misses
+    num_proposers: int = 3
+    proposer_entity_overlap: int = 2
 
     # HTTP safety
     http_timeout_sec: float = 4.0
@@ -65,8 +64,8 @@ class MARAGParams:
 
 class MARAGState(TypedDict, total=False):
     doc: Dict[str, Any]
-    relation_types_all: List[str]        # full schema for output
-    relation_types_focus: List[str]      # shortlisted for LLM prompts
+    relation_types_all: List[str]
+    relation_types_focus: List[str]
     few_shots: List[Dict[str, Any]]
 
     # tool contexts
@@ -90,7 +89,7 @@ class MARAGState(TypedDict, total=False):
 
 class MARagRelationStrategy(BaseRelationStrategy):
     """
-    Strong MA-RAG (LangGraph) for DocRE:
+    Strong MA-RAG (LangGraph) for DocRE.
 
     Fan-out retrieval:
       - Ontology fragment from ontology_links (SubOntologyRetriever)
@@ -100,12 +99,10 @@ class MARagRelationStrategy(BaseRelationStrategy):
 
     Multi-agent reasoning:
       - Optional planner (LLM) decides which tools to trust/use
-      - Relation-type selector (LLM) reduces 90-rel schema to top-N
+      - Relation-type selector (LLM) reduces large schema to top-N
       - N proposer agents (LLM) each handles a slice of entity IDs
       - Verifier agent (LLM) prunes unsupported pairs using evidence
       - Final normalization enforces ID-only + full schema keys
-
-    This is intentionally slower but should beat single-agent hybrid on quality.
     """
 
     def __init__(
@@ -137,6 +134,88 @@ class MARagRelationStrategy(BaseRelationStrategy):
         # caches to avoid repeated HTTP calls
         self._cache_wikipedia: Dict[str, str] = {}
         self._cache_wikidata: Dict[str, str] = {}
+
+    # ----------------------------
+    # Local LLM caller
+    # ----------------------------
+    def _call_llm(self, messages: List[Dict[str, str]]) -> str:
+        """
+        Self-contained LLM caller so this strategy does not depend on an
+        external LLMConfig class implementation.
+
+        Supported backends:
+          - ollama
+          - vllm (OpenAI-compatible /chat/completions)
+          - openrouter (OpenAI-compatible /chat/completions)
+        """
+        backend = str(getattr(self.llm_config, "backend", "ollama") or "ollama").lower()
+        model = str(getattr(self.llm_config, "model", "") or "").strip()
+        temperature = float(getattr(self.llm_config, "temperature", 0.0) or 0.0)
+        max_tokens = int(getattr(self.llm_config, "max_tokens", 1024) or 1024)
+        base_url = getattr(self.llm_config, "base_url", None)
+        api_key = getattr(self.llm_config, "api_key", None)
+
+        if not model:
+            raise ValueError("llm_config.model is missing")
+
+        # Ollama
+        if backend == "ollama":
+            host = str(base_url or "http://localhost:11434").rstrip("/")
+            url = f"{host}/api/chat"
+            payload = {
+                "model": model,
+                "messages": messages,
+                "stream": False,
+                "options": {
+                    "temperature": temperature,
+                    "num_predict": max_tokens,
+                },
+            }
+            resp = requests.post(
+                url,
+                json=payload,
+                timeout=max(30.0, self.params.http_timeout_sec * 10),
+                headers={"User-Agent": self.params.http_user_agent},
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return str(data["message"]["content"])
+
+        # OpenAI-compatible API for vLLM / OpenRouter
+        if backend in {"vllm", "openrouter"}:
+            if backend == "openrouter":
+                final_base_url = str(base_url or "https://openrouter.ai/api/v1").rstrip("/")
+                final_api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+            else:
+                final_base_url = str(base_url or "http://localhost:8000").rstrip("/")
+                final_api_key = api_key or "dummy"
+
+            url = f"{final_base_url}/chat/completions"
+            headers = {
+                "Content-Type": "application/json",
+                "User-Agent": self.params.http_user_agent,
+            }
+            if final_api_key:
+                headers["Authorization"] = f"Bearer {final_api_key}"
+
+            payload = {
+                "model": model,
+                "messages": messages,
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+            }
+
+            resp = requests.post(
+                url,
+                json=payload,
+                headers=headers,
+                timeout=max(30.0, self.params.http_timeout_sec * 10),
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return str(data["choices"][0]["message"]["content"])
+
+        raise ValueError(f"Unsupported backend '{backend}' for MA-RAG")
 
     # ----------------------------
     # Basic blocks
@@ -201,27 +280,27 @@ class MARagRelationStrategy(BaseRelationStrategy):
             rels = ex.get("relations")
             if not isinstance(rels, dict) or not rels:
                 continue
+
             sents = ex.get("sentences")
             if isinstance(sents, list) and all(isinstance(s, str) for s in sents):
                 ex_text = "\n".join(f"- {s}" for s in sents[:3])
             else:
                 ex_text = str(ex.get("text", ""))[:900]
 
-            # entities (subset)
             ents = ex.get("entities") or {}
             ent_lines: List[str] = []
             if isinstance(ents, dict):
                 for ent_id, ent in list(ents.items())[:12]:
                     if not isinstance(ent, dict):
                         continue
-                    m0 = (ent.get("mentions") or [{}])[0]
+                    mentions = ent.get("mentions") or [{}]
+                    m0 = mentions[0] if isinstance(mentions, list) and mentions else {}
                     if isinstance(m0, dict):
                         trig = m0.get("trigger_word") or m0.get("text") or ""
-                        ent_lines.append(f"{ent_id}\tTYPE={ent.get('type','')}\tTRIGGER={trig}")
+                        ent_lines.append(f"{ent_id}\tTYPE={ent.get('type', '')}\tTRIGGER={trig}")
             if not ent_lines:
                 ent_lines = ["(no entities)"]
 
-            # gold json with allowed keys only
             out = {r: [] for r in allowed_relation_types}
             for r in allowed_relation_types:
                 pairs = rels.get(r, [])
@@ -433,7 +512,6 @@ class MARagRelationStrategy(BaseRelationStrategy):
             return "(no title)"
         if key in self._cache_wikipedia:
             return self._cache_wikipedia[key]
-        # Wikipedia REST summary endpoint
         url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + requests.utils.quote(title)
         obj = self._http_get_json(url)
         if not isinstance(obj, dict):
@@ -448,15 +526,15 @@ class MARagRelationStrategy(BaseRelationStrategy):
         return out
 
     def _wikidata_snippets_from_entities(self, doc: Dict[str, Any]) -> str:
-        # Use a few surface forms from entity mentions
         ents = doc.get("entities") or {}
         if not isinstance(ents, dict) or not ents:
             return "(no entities)"
         picks: List[str] = []
-        for ent_id, ent in ents.items():
+        for _, ent in ents.items():
             if not isinstance(ent, dict):
                 continue
-            m0 = (ent.get("mentions") or [{}])[0]
+            mentions = ent.get("mentions") or [{}]
+            m0 = mentions[0] if isinstance(mentions, list) and mentions else {}
             if isinstance(m0, dict):
                 trig = m0.get("trigger_word") or m0.get("text")
                 if trig:
@@ -542,7 +620,6 @@ class MARagRelationStrategy(BaseRelationStrategy):
         kg_ctx: str,
     ) -> List[Dict[str, str]]:
         system_msg = {"role": "system", "content": self.llm_config.system_prompt}
-        # Give the model the full list, but demand TOP-N only.
         user = "\n".join(
             [
                 "You are a schema selection agent for document-level relation extraction.",
@@ -704,14 +781,13 @@ class MARagRelationStrategy(BaseRelationStrategy):
         n = max(1, int(self.params.num_proposers))
         if n == 1 or len(ids) <= 4:
             return [set(ids)]
-        # chunk ids into n groups with slight overlap
+
         groups: List[Set[str]] = []
         size = max(1, len(ids) // n)
         for i in range(n):
             start = i * size
             end = len(ids) if i == n - 1 else (i + 1) * size
             g = set(ids[start:end])
-            # overlap with previous
             if self.params.proposer_entity_overlap > 0 and i > 0:
                 g |= set(ids[max(0, start - self.params.proposer_entity_overlap):start])
             groups.append(g)
@@ -723,27 +799,38 @@ class MARagRelationStrategy(BaseRelationStrategy):
     def _build_graph(self):
         g = StateGraph(MARAGState)
 
-        # --- nodes ---
         def node_plan(state: MARAGState) -> MARAGState:
             if not self.params.enable_planner:
-                state["plan"] = {"use_ontology": True, "use_kg": True, "use_web": self.params.enable_web, "use_wikidata": self.params.enable_wikidata}
+                state["plan"] = {
+                    "use_ontology": True,
+                    "use_kg": True,
+                    "use_web": self.params.enable_web,
+                    "use_wikidata": self.params.enable_wikidata,
+                }
                 return state
+
             if state.get("llm_calls_used", 0) >= self.params.max_llm_calls:
-                state["plan"] = {"use_ontology": True, "use_kg": True, "use_web": False, "use_wikidata": False, "notes": "budget_exhausted"}
+                state["plan"] = {
+                    "use_ontology": True,
+                    "use_kg": True,
+                    "use_web": False,
+                    "use_wikidata": False,
+                    "notes": "budget_exhausted",
+                }
                 return state
+
             msgs = self._build_planner_messages(state["doc"])
             raw = self._call_llm(msgs)
             state["llm_calls_used"] = state.get("llm_calls_used", 0) + 1
             parsed = self._extract_json_object(raw) or {}
-            # defaults
-            plan = {
+
+            state["plan"] = {
                 "use_ontology": bool(parsed.get("use_ontology", True)),
                 "use_kg": bool(parsed.get("use_kg", True)),
                 "use_web": bool(parsed.get("use_web", self.params.enable_web)),
                 "use_wikidata": bool(parsed.get("use_wikidata", self.params.enable_wikidata)),
                 "notes": str(parsed.get("notes", ""))[:200],
             }
-            state["plan"] = plan
             return state
 
         def node_onto(state: MARAGState) -> MARAGState:
@@ -767,8 +854,8 @@ class MARagRelationStrategy(BaseRelationStrategy):
             return state
 
         def node_select_reltypes(state: MARAGState) -> MARAGState:
-            # If disabled, just take a truncated slice to avoid 90-rel prompt explosions
             all_rel = state["relation_types_all"]
+
             if not self.params.enable_relation_type_selector:
                 state["relation_types_focus"] = list(all_rel)[: self.params.max_relation_types_in_prompt]
                 return state
@@ -787,17 +874,19 @@ class MARagRelationStrategy(BaseRelationStrategy):
             state["llm_calls_used"] = state.get("llm_calls_used", 0) + 1
             parsed = self._extract_json_object(raw) or {}
             sel = parsed.get("selected", [])
+
             if isinstance(sel, list):
                 sel = [x for x in sel if isinstance(x, str) and x in set(all_rel)]
             else:
                 sel = []
+
             if not sel:
                 sel = list(all_rel)[: self.params.max_relation_types_in_prompt]
+
             state["relation_types_focus"] = sel[: self.params.max_relation_types_in_prompt]
             return state
 
         def node_proposers(state: MARAGState) -> MARAGState:
-            # multi-proposer: each proposer gets one LLM call (if budget allows)
             focus = state["relation_types_focus"]
             doc = state["doc"]
 
@@ -807,6 +896,7 @@ class MARagRelationStrategy(BaseRelationStrategy):
             for i, subset in enumerate(groups):
                 if state.get("llm_calls_used", 0) >= self.params.max_llm_calls:
                     break
+
                 msgs = self._build_proposer_messages(
                     doc,
                     focus,
@@ -829,9 +919,8 @@ class MARagRelationStrategy(BaseRelationStrategy):
         def node_merge(state: MARAGState) -> MARAGState:
             focus = state["relation_types_focus"]
             merged: Dict[str, List[List[str]]] = {r: [] for r in focus}
-
-            # union (deduplicate pairs)
             seen = {r: set() for r in focus}
+
             for p in state.get("proposer_preds", []):
                 if not isinstance(p, dict):
                     continue
@@ -854,6 +943,7 @@ class MARagRelationStrategy(BaseRelationStrategy):
             if not self.params.enable_verifier:
                 state["pred_verified_raw"] = state.get("pred_merged_raw", {})
                 return state
+
             if state.get("llm_calls_used", 0) >= self.params.max_llm_calls:
                 state["pred_verified_raw"] = state.get("pred_merged_raw", {})
                 return state
@@ -880,15 +970,12 @@ class MARagRelationStrategy(BaseRelationStrategy):
             focus = state["relation_types_focus"]
             raw_pred = state.get("pred_verified_raw") or state.get("pred_merged_raw") or {}
 
-            # normalize ID-only on FULL schema
-            # first, ensure raw_pred has at least focus keys
             for r in focus:
                 raw_pred.setdefault(r, [])
 
             pred_ids_only = self._normalize_pred_endpoints_to_entity_ids(doc, raw_pred, focus)
             pred_focus_norm = self._normalize_relation_dict(pred_ids_only, focus)
 
-            # expand to full schema keys
             full_out: Dict[str, List[List[str]]] = {r: [] for r in all_rel}
             for r in focus:
                 full_out[r] = pred_focus_norm.get(r, [])
@@ -906,7 +993,6 @@ class MARagRelationStrategy(BaseRelationStrategy):
                 }
             return state
 
-        # --- wiring: fan-out retrieval then LLM pipeline ---
         g.add_node("plan", node_plan)
         g.add_node("onto", node_onto)
         g.add_node("kg", node_kg)
@@ -919,15 +1005,10 @@ class MARagRelationStrategy(BaseRelationStrategy):
         g.add_node("finalize", node_finalize)
 
         g.set_entry_point("plan")
-
-        # retrieval fan-out (still executed sequentially by default runtime,
-        # but logically separated & easy to parallelize later)
         g.add_edge("plan", "onto")
         g.add_edge("onto", "kg")
         g.add_edge("kg", "web")
         g.add_edge("web", "wikidata")
-
-        # reasoning
         g.add_edge("wikidata", "select_reltypes")
         g.add_edge("select_reltypes", "proposers")
         g.add_edge("proposers", "merge")
