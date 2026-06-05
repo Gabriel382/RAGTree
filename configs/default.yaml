@@ -12,6 +12,8 @@ paths:
   results: results
   jsonresults: jsonresults
   models: models
+  indices: data/indices
+  kg_community_root: data/kg_community
 
 datasets:
   raw:                       # folders you already have
@@ -33,6 +35,192 @@ rag:
   strategy: flat
 
 llm:
+
+  ograg:
+    default_backend: vllm
+    system_prompt_key: ograg_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  triple_kg_rag:
+    default_backend: vllm
+    system_prompt_key: triple_kg_rag_docre
+    model: null
+    temperature: 0.0
+    max_tokens: 2048
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  community_kgrag:
+    default_backend: vllm
+    system_prompt_key: community_kgrag_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  chunk_orag:
+    default_backend: vllm
+    system_prompt_key: chunk_orag_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  ograg:
+    default_backend: vllm
+    system_prompt_key: ograg_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  marag:
+    default_backend: vllm
+    system_prompt_key: marag_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+  agentic_hybrid:
+    default_backend: vllm
+    system_prompt_key: agentic_hybrid_docre
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+
+  kg_rag:
+    default_backend: "vllm"
+
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+    system_prompt_key: "kg_rag_docre"
+
+  growlrag:
+    default_backend: "openrouter"
+
+    backends:
+      vllm:
+        model: "openai/gpt-oss-20b"
+        temperature: 0.0
+        max_tokens: 1024
+        base_url: "http://localhost:8000"
+        api_key: "dummy"
+
+      ollama:
+        model: "qwen2.5:7b"
+        temperature: 0.0
+        max_tokens: 1024
+
+      openrouter:
+        model: "gpt-4.1-mini"
+        temperature: 0.0
+        max_tokens: 1024
+
+    system_prompt_key: "growlrag_docre"
+
   cot:
     default_backend: "vllm"
 
@@ -114,6 +302,114 @@ prompts:
       }
       ...
 
+  growlrag:
+    growlrag_docre: |
+      You are an expert at document-level relation extraction for knowledge graph construction.
+
+      You will be given:
+      - A document (title + sentences)
+      - A list of entities with IDs and mentions (token spans)
+      - Optional ontology links per entity (classes/datatypes)
+      - A retrieved ontology fragment (classes + properties + domain/range constraints)
+
+      Task:
+      1) Extract binary relations between the provided entity IDs ONLY.
+      2) Use ONLY the relation types provided (the keys of the relation schema).
+      3) Prefer relations that satisfy ontology constraints (domain/range compatibility).
+
+      Output format (JSON only):
+      {
+        "<RELATION_TYPE_1>": [["ENTITY_ID_A", "ENTITY_ID_B"], ...],
+        "<RELATION_TYPE_2>": [],
+        ...
+      }
+
+      Rules:
+      - Do NOT invent new relation types.
+      - Do NOT output any text outside the JSON.
+
+  kg_rag:
+    kg_rag_docre: |
+      You are an expert at document-level relation extraction.
+
+      You will be given:
+      - A document (title + sentences or text)
+      - A list of entities with canonical IDs
+      - A retrieved KG context (triples / paths / subgraph)
+
+      Task:
+      1) Extract relations ONLY between the PROVIDED entity IDs.
+      2) Output keys MUST match the allowed relation types exactly.
+      3) Output JSON only. No extra text.
+
+      Output format:
+      {
+        "<RELATION_TYPE_1>": [["ENTITY_ID_A","ENTITY_ID_B"], ...],
+        "<RELATION_TYPE_2>": [],
+        ...
+      }
+  
+  agentic_hybrid:
+    agentic_hybrid_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  marag:
+    marag_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  ograg:
+    ograg_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  chunk_orag:
+    chunk_orag_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs (no literals).
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  community_kgrag:
+    community_kgrag_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs (no literals).
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
+
+  triple_kg_rag:
+    triple_kg_rag_docre: |
+      You are a strict information extraction system for Document-level Relation Extraction.
+      You ONLY output valid JSON.
+      You ONLY use the provided entity IDs.
+      You ONLY use the allowed relation types as JSON keys.
+      If unsure, output empty lists.
+
+  ograg:
+    ograg_docre: |
+      You are an expert at document-level relation extraction.
+      You MUST output ONLY valid JSON (no markdown, no explanations).
+      You MUST use ONLY the PROVIDED entity IDs in output pairs.
+      Output keys MUST match the allowed relation types exactly.
+      Values MUST be lists of [HEAD_ID, TAIL_ID] pairs.
+      If unsure, output empty lists for those relation types.
 
 ontology:
   causalbank:    data/ontology/COInd4/ContextOntology-COInd4.ttl
@@ -127,3 +423,104 @@ ontology:
   wordnet: data/ontology/WordNet/wnfull.ttl
   wordnetsynset: data/ontology/Wordnet-Synset/wordnet-synset.ttl
   wordnetfull: data/ontology/WordNet-Full/wordnet.ttl
+  docredontology: data/ontology/DocREDOntology/ontology.ttl
+  
+ontology_linking:
+  default_method: llm_embedding
+
+  output:
+    # Only the folder is configured here.
+    # The code will generate the output filename from the input JSONL filename
+    # + the chosen method + ontology key + versioning if needed.
+    folder: data/preprocessed
+    write_field: "ontology_links"
+    overwrite: true
+
+  defaults:
+    top_k: 3
+    min_score: 0.3
+
+  methods:
+    llm_embedding:
+      kind: embedding
+      backend: ollama
+      top_k: 3
+      min_score: 0.3
+
+    growlrag_minilm:
+      kind: embedding_st
+      model: "all-MiniLM-L6-v2"
+      top_k: 3
+      min_score: 0.3
+
+
+growlrag:
+  ontology_key: docredontology
+  linking_method: llm_embedding
+
+  retrieval:
+    mode: domain_range_filter
+    include_unrestricted_properties: true
+    max_properties: 120
+    max_classes: 200
+
+  few_shot:
+    k: 0
+
+
+ograg:
+  retrieval:
+    top_k_entities: 6
+    max_ontology_lines: 200
+    include_labels: true
+    include_comments: true
+    include_types: true
+
+
+# ----------------------------
+# Chunk-O-RAG method params
+# ----------------------------
+chunk_orag:
+  # Where ontology indices are stored (builder outputs under this root)
+  index_root: "${paths.indices}/chunk_orag"
+
+  # Default models for the ontology index / retrieval
+  embed_model: "BAAI/bge-m3"
+  use_reranker: false
+  reranker_model: "BAAI/bge-reranker-large"
+
+  # Index-building defaults (scripts/build_chunk_orag_index.py)
+  chunk_sizes: [2048, 512, 128]     # hierarchical; leaf is last by default
+  chunk_overlap: 128
+  leaf_level: null                 # null => last level
+  index_metric: "ip"               # "ip" (recommended with normalized embeddings) or "l2"
+
+  # Retrieval defaults (scripts/run_chunk_orag_relations.py)
+  top_k: 12
+  rerank_top_n: 6
+  auto_merge: true                 # merge leaf chunks to parents
+  max_ctx_chars: 8000              # cap injected ontology context
+  max_sentences_in_query: 3        # doc->query builder
+  max_entity_mentions_in_query: 6  # doc->query builder
+
+  community_kgrag:
+  node_embed_model: "BAAI/bge-m3"
+  query_embed_model: "BAAI/bge-m3"
+  sentence_embed_model: "BAAI/bge-m3"
+
+  # retrieval knobs (d, ?)
+  top_communities: 50
+  delta_percent: null          # e.g., 25.0
+  top_sentences: 12
+  lambda_percent: null         # e.g., 100.0
+
+  use_sentence_faiss: true
+  max_ctx_chars: 8000
+
+triple_kg_rag:
+  max_sentences_in_prompt: 40
+  max_triples_in_text: 80
+  retrieval:
+    max_hops: 1
+    max_triples: 80
+    include_in_edges: true

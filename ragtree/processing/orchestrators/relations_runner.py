@@ -66,14 +66,25 @@ def _resolve_paths_and_config(
     except KeyError as e:
         raise KeyError(f"Config missing 'datasets.preprocessed' section: {e}")
 
-    if dataset_key not in ds_pre:
-        available = ", ".join(sorted(ds_pre.keys()))
-        raise KeyError(
-            f"Unknown dataset key '{dataset_key}'. "
-            f"Available preprocessed datasets: {available}"
-        )
+    if dataset_key in ds_pre:
+        input_path = Path(ds_pre[dataset_key])
+    else:
+        # Fallback: treat dataset_key as a filename stem living under paths.data_preprocessed
+        try:
+            pre_root = Path(cfg["paths"]["data_preprocessed"])
+        except KeyError as e:
+            raise KeyError(
+                f"Unknown dataset key '{dataset_key}' and config missing paths.data_preprocessed to resolve it."
+            ) from e
 
-    input_path = Path(ds_pre[dataset_key])
+        candidate = pre_root / f"{dataset_key}.jsonl"
+        if not candidate.exists():
+            available = ", ".join(sorted(ds_pre.keys()))
+            raise KeyError(
+                f"Unknown dataset key '{dataset_key}'. Available preprocessed datasets: {available}. "
+                f"Also tried file: {candidate} (not found)."
+            )
+        input_path = candidate
 
     try:
         processed_root = Path(cfg["paths"]["data_processed"])
@@ -285,6 +296,8 @@ def run_relation_experiment(
     cli_relation_types: Optional[List[str]],
     output_format: str,
     doc_type_filter: DocTypeFilter,
+    skip: int = 0,
+    limit: Optional[int] = None,
     sections: Optional[RunnerLLMSections] = None,
     prepare_context_fn: Optional[
         Callable[[Path, Dict[str, Any]], PreparedContext]
@@ -350,6 +363,8 @@ def run_relation_experiment(
     print(f"[runner] output={output_path}")
     print(f"[runner] output-format={output_format}")
     print(f"[runner] doc-type-filter={doc_type_filter}")
+    print(f"[runner] skip={skip}, limit={limit}")
+
 
     # Load DocRED rel_info if relevant
     docred_rel_info: Optional[Dict[str, str]] = None
@@ -369,6 +384,10 @@ def run_relation_experiment(
 
     num_docs = 0
     num_skipped_type = 0
+    
+    seen_after_type_filter = 0   # counts docs that pass doc-type filter
+    written = 0                 # counts docs actually processed/written
+
 
     with input_path.open("r", encoding="utf-8") as fin, \
          output_path.open("w", encoding="utf-8") as fout:
@@ -387,6 +406,15 @@ def run_relation_experiment(
             if not _doc_type_matches(doc, doc_type_filter):
                 num_skipped_type += 1
                 continue
+
+            # After type filter: apply skip/limit
+            seen_after_type_filter += 1
+
+            if skip and seen_after_type_filter <= skip:
+                continue
+
+            if limit is not None and written >= limit:
+                break
 
             # Determine relation types for this doc
             relation_types_for_doc = _determine_relation_types_for_doc(
@@ -425,8 +453,10 @@ def run_relation_experiment(
 
             fout.write(json.dumps(out_obj, ensure_ascii=False) + "\n")
             num_docs += 1
+            written += 1
 
-    print(f"[runner] Done. Processed {num_docs} documents.")
+    print(f"[runner] Done. Processed {written} documents.")
+    print(f"[runner] docs_after_type_filter={seen_after_type_filter}, skip={skip}, limit={limit}")
     if isinstance(doc_type_filter, str):
         if doc_type_filter != "all":
             print(f"[runner] Skipped {num_skipped_type} documents due to doc-type filter.")
