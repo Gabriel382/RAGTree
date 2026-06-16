@@ -1,31 +1,4 @@
-# RAGTree
-
-<div align="center">
-  <img src="docs/assets/ragtree-icon.png" alt="RAGTree icon" width="135" />
-
-  <h3>Professional Semantic RAG Framework</h3>
-
-  <p>
-    Build, evaluate, and benchmark grounded AI pipelines over complex documents.
-  </p>
-
-  <p>
-    <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-blue">
-    <img alt="Status" src="https://img.shields.io/badge/status-research%20workbench%20%E2%86%92%20professional%20library-orange">
-    <img alt="Focus" src="https://img.shields.io/badge/focus-Semantic%20RAG-0f766e">
-    <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
-  </p>
-</div>
-
----
-
-## Overview
-
-**RAGTree** is a Semantic RAG framework for building, comparing, and evaluating grounded AI pipelines over complex documents.
-
-The project currently contains a research workbench for relation extraction benchmarks, ontology-guided retrieval, knowledge-graph RAG, agentic RAG, runtime analysis, and evaluation. Its professional direction is broader: RAGTree is being shaped into a reusable library for **true RAG tasks**, including question answering, relation extraction, claim verification, summarization, ontology linking, graph construction, and evidence selection.
-
-The guiding idea is simple:
+# 🌳 RAGTree
 
 > RAGTree treats RAG as an end-to-end semantic processing architecture, not as a single retrieval call before a prompt.
 
@@ -357,4 +330,9 @@ Interview summary:
 
 ## License
 
-MIT.
+  * continue GrowL-RAG
+  * add KG-RAG
+  * extend evaluation
+  * reproduce runs
+* Nothing important is erased
+* Vision + reality are aligned
