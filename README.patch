@@ -1,6 +1,6 @@
 --- a/README.md
 +++ b/README.md
-@@ -1,284 +1,360 @@
+@@ -1,284 +1,467 @@
 -You’re 100% right to call this out — thanks for pasting the **full original README**.
 -What I did before was **over-specialize** on the current “relations extraction” slice and **collapsed your broader RAGTree vision**, which you explicitly **do not want**. That’s on me.
 -
@@ -289,16 +289,17 @@
 +<div align="center">
 +  <img src="docs/assets/ragtree-icon.png" alt="RAGTree icon" width="135" />
 +
-+  <h3>Professional Semantic RAG Framework</h3>
++  <h3>A bring-your-own-stack framework for Semantic RAG</h3>
 +
 +  <p>
-+    Build, evaluate, and benchmark grounded AI pipelines over complex documents.
++    Build, run, evaluate, and integrate grounded AI pipelines over complex documents.
 +  </p>
 +
 +  <p>
 +    <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-blue">
-+    <img alt="Status" src="https://img.shields.io/badge/status-research%20workbench%20%E2%86%92%20professional%20library-orange">
++    <img alt="Status" src="https://img.shields.io/badge/status-alpha-orange">
 +    <img alt="Focus" src="https://img.shields.io/badge/focus-Semantic%20RAG-0f766e">
++    <img alt="Architecture" src="https://img.shields.io/badge/architecture-bring--your--own--stack-1f2937">
 +    <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
 +  </p>
 +</div>
@@ -307,102 +308,199 @@
 +
 +## Overview
 +
-+**RAGTree** is a Semantic RAG framework for building, comparing, and evaluating grounded AI pipelines over complex documents.
++**RAGTree** is a bring-your-own-stack framework for **Semantic Retrieval-Augmented Generation** over complex documents.
 +
-+The project currently contains a research workbench for relation extraction benchmarks, ontology-guided retrieval, knowledge-graph RAG, agentic RAG, runtime analysis, and evaluation. Its professional direction is broader: RAGTree is being shaped into a reusable library for **true RAG tasks**, including question answering, relation extraction, claim verification, summarization, ontology linking, graph construction, and evidence selection.
++It is designed to separate the stable RAG contracts from the stack used to execute them. The core should remain small and predictable, while integrations such as **LLM providers**, **embedding models**, **vector stores**, **knowledge graphs**, **ontology resources**, **FastAPI**, **Streamlit**, **Neo4j**, and **Docker-based deployments** are installed only when needed.
 +
-+The guiding idea is simple:
++The current repository already contains a research workbench for relation extraction benchmarks, ontology-guided retrieval, KG-RAG, agentic RAG, runtime analysis, and evaluation. The library direction is broader: RAGTree should support several grounded AI tasks through the same contracts, including question answering, relation extraction, claim verification, summarization, ontology linking, graph construction, and evidence selection.
 +
-+> RAGTree treats RAG as an end-to-end semantic processing architecture, not as a single retrieval call before a prompt.
-+
-+---
-+
-+## Why RAGTree exists
-+
-+Many RAG prototypes are difficult to evaluate, reproduce, and integrate. They often hide retrieval quality, lack structured outputs, and depend on one specific provider or experiment script.
-+
-+RAGTree is designed to make RAG systems more serious and auditable by combining:
-+
-+- **retrieval**, to collect relevant evidence;
-+- **semantic grounding**, to connect documents with ontologies and knowledge graphs;
-+- **generation**, to produce answers or structured outputs;
-+- **reasoning**, to support more complex workflows such as CoT and agentic RAG;
-+- **evaluation**, to measure outputs instead of only displaying them;
-+- **reproducibility**, to keep datasets, configs, runs, and artifacts traceable.
++RAGTree is not a single app, not a single retriever, and not a wrapper around one model provider. It is an integration-oriented RAG architecture.
 +
 +---
 +
-+## What RAGTree is
++## Design goals
 +
-+RAGTree is not only a relation extraction repository. Relation extraction is the first flagship benchmark task, but the architecture is intended to support several Semantic RAG tasks through shared components.
++RAGTree is organized around six design goals.
 +
-+| Task family | Typical input | Typical output |
++1. **Bring your own stack**  
++   Users should be able to choose their LLM provider, embedding model, vector store, graph store, ontology loader, UI layer, API layer, and deployment mode.
++
++2. **Keep the core stable**  
++   The core package should define schemas, protocols, configuration, run metadata, and evaluation contracts. External tools should be connected through adapters.
++
++3. **Treat RAG as a semantic pipeline**  
++   Retrieval, evidence grounding, reasoning, generation, structured output, validation, and evaluation are separate stages.
++
++4. **Support multiple task families**  
++   Relation extraction is the first flagship benchmark task, but the architecture should also support QA, summarization, claim verification, ontology linking, graph construction, and evidence selection.
++
++5. **Preserve research compatibility**  
++   Existing experiment scripts, datasets, outputs, and evaluation workflows should remain usable while the repository is progressively cleaned.
++
++6. **Make installation explicit**  
++   Heavy integrations should be optional extras, not unconditional dependencies.
++
++---
++
++## Layered architecture
++
++RAGTree is structured as a set of layers connected by explicit protocols.
++
++```text
++Applications
++  CLI | Python API | notebooks | FastAPI | Streamlit | batch jobs | Docker
++        |
++        v
++Core Kernel
++  schemas | protocols | config | registry | run metadata | errors
++        |
++        v
++Task Layer
++  question answering | relation extraction | claim verification | summarization
++  ontology linking | graph construction | evidence selection
++        |
++        v
++Pipeline Layer
++  ingest | chunk | index | retrieve | rerank | reason | generate | validate | evaluate | export
++        |
++        v
++Adapter Layer
++  LLM providers | embedding models | vector stores | graph stores | ontology loaders
++  evaluators | exporters | observability backends
++        |
++        v
++External Stack
++  OpenAI-compatible APIs | Ollama | LiteLLM | Chroma | Qdrant | FAISS | Neo4j
++  RDFLib | FastAPI | Streamlit | Docker | cloud or on-prem infrastructure
++```
++
++The main rule is:
++
++> RAGTree core code depends on protocols. Provider-specific code lives in optional adapters.
++
++---
++
++## Protocols between layers
++
++The project should expose stable protocols between layers. These protocols are the contract that makes the library extensible.
++
++| Protocol | Connects | Responsibility |
 +|---|---|---|
-+| Question answering | Query + corpus | Grounded answer + citations |
-+| Relation extraction | Document + relation schema | Typed relations + evidence |
-+| Claim verification | Claim + corpus | Supported, refuted, or insufficient evidence |
-+| Summarization | Document or corpus | Faithful summary + source references |
-+| Ontology linking | Mentions + ontology resources | Ranked concept candidates |
-+| Graph construction | Corpus + schema | Nodes, relations, evidence, graph exports |
-+| Evidence selection | Query or task request | Ranked evidence passages |
++| `ConfigProtocol` | config files -> runtime objects | Load and validate reproducible pipeline configuration. |
++| `DocumentProtocol` | datasets -> pipelines | Normalize input documents, metadata, and source identifiers. |
++| `ChunkingProtocol` | documents -> chunks | Split documents into retrievable units with traceable provenance. |
++| `EmbeddingProtocol` | chunks/query -> vectors | Convert text into embeddings without binding the core to one model. |
++| `VectorStoreProtocol` | vectors -> indexed store | Add, persist, and search chunks using a chosen vector backend. |
++| `GraphStoreProtocol` | triples/entities -> graph backend | Store and query graph context through Neo4j, NetworkX, RDF, or custom stores. |
++| `OntologyProtocol` | ontology files -> semantic resources | Load classes, relations, labels, definitions, and constraints. |
++| `RetrieverProtocol` | query/task -> evidence | Return ranked evidence chunks, triples, paths, or ontology fragments. |
++| `RerankerProtocol` | evidence list -> ordered evidence | Improve ranking and reduce irrelevant context. |
++| `GeneratorProtocol` | context -> answer/output | Call an LLM or local generator and return structured generation artifacts. |
++| `AgentProtocol` | state -> next action | Orchestrate multi-step retrieval, reasoning, tool use, and validation. |
++| `TaskProtocol` | user objective -> pipeline request | Define task-specific inputs, outputs, validation, and evaluation requirements. |
++| `EvaluatorProtocol` | predictions + references -> metrics | Compute gold-based, no-gold, faithfulness, or runtime metrics. |
++| `ExporterProtocol` | run artifacts -> external formats | Export JSONL, CSV, reports, graphs, dashboards, or API responses. |
++| `ApplicationProtocol` | app layer -> library | Expose the same core through CLI, Python API, FastAPI, Streamlit, or notebooks. |
 +
 +---
 +
-+## Core capabilities
++## Supported task families
 +
-+| Area | Capability |
-+|---|---|
-+| **Semantic retrieval** | Dense, sparse, hybrid, ontology-guided, KG-guided, chunk-level, community-level, and triple-level retrieval strategies. |
-+| **Grounded generation** | Answers and structured outputs that preserve evidence and provenance. |
-+| **Ontology and KG integration** | Reusable semantic resources for concept linking, retrieval expansion, and graph-aware reasoning. |
-+| **Reasoning strategies** | Baseline prompting, in-context learning, chain-of-thought, ontology-guided RAG, KG-RAG, and agentic RAG. |
-+| **Evaluation** | Gold-based metrics, relation metrics, evidence faithfulness, runtime tracking, and CO2 estimation. |
-+| **Experiment compatibility** | Existing benchmark scripts remain usable while the library is progressively professionalized. |
-+| **Portfolio value** | Demonstrates applied GenAI engineering, RAG architecture, semantic technologies, evaluation, and research-to-product thinking. |
-+
-+---
-+
-+## Current implementation status
-+
-+RAGTree should be read as a project with two layers.
-+
-+### Implemented research workbench
-+
-+The current codebase already contains runnable or partially runnable experiment families for:
-+
-+- single-pass LLM baselines;
-+- in-context learning;
-+- chain-of-thought prompting;
-+- ontology linking;
-+- GrOWL-RAG;
-+- KG-RAG;
-+- OG-RAG;
-+- Chunk-ORAG;
-+- Community KG-RAG;
-+- Triple KG-RAG;
-+- Agentic RAG;
-+- LangGraph-based agentic variants;
-+- MARAG;
-+- relation evaluation;
-+- runtime and CO2 analysis.
-+
-+### Professional library direction
-+
-+The target library layer is being structured around:
-+
-+- stable schemas and task contracts;
-+- provider-agnostic adapters;
-+- reusable retrieval and generation components;
-+- reproducible configuration and run artifacts;
-+- typed evaluation outputs;
-+- documented CLI and Python API entry points;
-+- tests for schemas, metrics, adapters, CLI commands, and regression runs.
-+
-+This distinction is intentional. RAGTree keeps its research depth while moving toward a clean, production-quality software identity.
++| Task | Input | Output | Evaluation |
++|---|---|---|---|
++| Question answering | Query + corpus | Answer + citations | exact match, semantic similarity, evidence faithfulness |
++| Relation extraction | Document + schema | Typed relations + evidence | micro F1, macro F1, per-label metrics |
++| Claim verification | Claim + corpus | supported/refuted/insufficient + evidence | accuracy, evidence precision, judge agreement |
++| Summarization | Document or corpus | Summary + citations | coverage, compression, faithfulness |
++| Ontology linking | Mentions + ontology | Concept candidates | Hits@k, MRR, calibration |
++| Graph construction | Corpus + schema | Nodes, edges, evidence | triple F1, graph consistency, coverage |
++| Evidence selection | Query/task + corpus | Ranked evidence | recall@k, precision@k, nDCG |
 +
 +---
 +
-+## Supported experiment families
++## Installation
++
++### Base installation
++
++Install only the lightweight core:
++
++```bash
++pip install ragtree
++```
++
++For local development from the repository:
++
++```bash
++git clone https://github.com/<your-org-or-user>/RAGTree.git
++cd RAGTree
++python -m venv .venv
++source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
++pip install -e .
++```
++
++### Optional integrations
++
++Install only the adapters you need.
++
++```bash
++pip install "ragtree[llm-openai]"
++pip install "ragtree[llm-ollama]"
++pip install "ragtree[llm-litellm]"
++pip install "ragtree[embeddings]"
++pip install "ragtree[vector-chroma]"
++pip install "ragtree[vector-qdrant]"
++pip install "ragtree[vector-faiss]"
++pip install "ragtree[neo4j]"
++pip install "ragtree[rdf]"
++pip install "ragtree[api]"
++pip install "ragtree[ui]"
++pip install "ragtree[notebooks]"
++pip install "ragtree[docs]"
++pip install "ragtree[dev]"
++```
++
++Install a combined local stack:
++
++```bash
++pip install -e ".[llm-litellm,embeddings,vector-chroma,neo4j,rdf,api,ui,dev]"
++```
++
++Install the full research and demo stack:
++
++```bash
++pip install -e ".[all]"
++```
++
++---
++
++## Addon matrix
++
++| Extra | Purpose | Example stack |
++|---|---|---|
++| `llm-openai` | OpenAI-compatible client support | OpenAI, OpenRouter-compatible APIs |
++| `llm-ollama` | Local model execution | Ollama |
++| `llm-litellm` | Multi-provider LLM routing | LiteLLM |
++| `embeddings` | Local embedding and reranking models | sentence-transformers, torch |
++| `vector-faiss` | Local vector search | FAISS CPU |
++| `vector-chroma` | Local persistent vector DB | Chroma |
++| `vector-qdrant` | Vector DB service integration | Qdrant |
++| `vector-elastic` | Search and hybrid retrieval | Elasticsearch |
++| `graph` | In-memory graph processing | NetworkX |
++| `neo4j` | Graph database integration | Neo4j |
++| `rdf` | RDF and ontology processing | RDFLib, Owlready2 |
++| `api` | HTTP service layer | FastAPI, Uvicorn |
++| `ui` | Interactive demo layer | Streamlit, Plotly |
++| `notebooks` | Research and reproducibility notebooks | Jupyter, ipykernel |
++| `docs` | Documentation site | MkDocs, Material theme |
++| `dev` | Testing and code quality | pytest, ruff, mypy, pre-commit |
++| `ops` | Deployment helpers | Docker SDK, gunicorn |
++| `all` | Full demo and research stack | All major optional integrations |
++
++---
++
++## Current experiment families
++
++The current codebase already contains or targets the following experiment families.
 +
 +| Family | Representative entry points |
 +|---|---|
@@ -417,61 +515,16 @@
 +| Community KG-RAG | `scripts/run_community_kgrag_relations.py` |
 +| Triple KG-RAG | `scripts/run_triple_kg_rag_relations.py` |
 +| Agentic RAG | `scripts/run_agentic_hybrid_relations.py` |
-+| LangGraph Agentic RAG | `scripts/run_langgraph_agentic_simple_relations.py`, `scripts/run_langgraph_agentic_hybrid_relations.py` |
++| LangGraph agentic RAG | `scripts/run_langgraph_agentic_simple_relations.py`, `scripts/run_langgraph_agentic_hybrid_relations.py` |
 +| MARAG | `scripts/run_marag_relations.py` |
 +| Evaluation | `scripts/eval_relations.py`, `scripts/eval_relations_docred.py` |
 +| Runtime and CO2 | `scripts/run_supplementary_runtime_co2_v4.py` and related scripts |
 +
 +---
 +
-+## Architecture
++## Quickstart: current workflows
 +
-+RAGTree follows a layered architecture.
-+
-+```text
-+Applications
-+  CLI | Python API | notebooks | future API/UI
-+        |
-+        v
-+RAGTree Core
-+  schemas | configs | run metadata | registries | interfaces
-+        |
-+        v
-+Task Layer
-+  QA | extraction | verification | summarization | ontology linking | graph construction
-+        |
-+        v
-+Pipeline Layer
-+  retrieve | rerank | reason | generate | validate | evaluate | export
-+        |
-+        v
-+Adapters
-+  LLM providers | retrievers | vector stores | graph stores | ontology resources | evaluators
-+```
-+
-+The design rule is:
-+
-+> The core should depend on stable contracts, not on a specific LLM provider, vector database, graph backend, or UI.
-+
-+---
-+
-+## Installation
-+
-+Create an environment and install dependencies:
-+
-+```bash
-+python -m venv .venv
-+source .venv/bin/activate  # Windows: .venv\Scripts\activate
-+pip install -r requirements.txt
-+```
-+
-+During the transition toward a fully packaged library, most workflows are executed through scripts.
-+
-+---
-+
-+## Quickstart: current benchmark workflows
-+
-+Run a single-pass LLM baseline:
++Run a single-pass baseline:
 +
 +```bash
 +python scripts/run_single_llm_baseline.py \
@@ -480,7 +533,7 @@
 +  --doc-type all
 +```
 +
-+Run an ICL baseline:
++Run ICL:
 +
 +```bash
 +python scripts/run_icl_baseline.py \
@@ -491,7 +544,7 @@
 +  --icl-train-num 3
 +```
 +
-+Run a CoT baseline:
++Run CoT:
 +
 +```bash
 +python scripts/run_cot_baseline.py \
@@ -519,26 +572,69 @@
 +
 +---
 +
++## CLI direction
++
++The installable package exposes a base CLI:
++
++```bash
++ragtree --help
++ragtree version
++ragtree doctor
++ragtree addons
++```
++
++The first CLI commands should be conservative. They should verify the installation, show available extras, and avoid hiding the fact that current experiments still live in `scripts/`.
++
++Future commands can wrap the existing research scripts:
++
++```bash
++ragtree run relation-extraction --method single-llm --dataset maven_ere
++ragtree run relation-extraction --method kg-rag --dataset docred_causal
++ragtree evaluate relations --dataset maven_ere --method single_llm
++ragtree serve api --config configs/default.yaml
++ragtree serve ui --config configs/default.yaml
++```
++
++---
++
++## Application integrations
++
++RAGTree should expose the same core through several application surfaces.
++
++| Surface | Role | Installation |
++|---|---|---|
++| CLI | Batch experiments, diagnostics, reproducibility | base package |
++| Python API | Library usage inside other projects | base package |
++| Notebooks | Research workflows and examples | `ragtree[notebooks]` |
++| FastAPI | HTTP service integration | `ragtree[api]` |
++| Streamlit | Interactive exploration and demos | `ragtree[ui]` |
++| Docker | Reproducible deployment envelope | Dockerfile / compose files |
++| Neo4j | Graph storage and graph retrieval | `ragtree[neo4j]` |
++
++---
++
 +## Target Python API
 +
-+The intended professional API should eventually look like this:
++The library should eventually expose task-oriented usage like this:
 +
 +```python
 +from ragtree import RAGTree
 +from ragtree.tasks import QuestionAnsweringTask
-+from ragtree.retrievers import HybridRetriever
-+from ragtree.llms import LLMProvider
++from ragtree.adapters.llms import LiteLLMProvider
++from ragtree.adapters.vectorstores import ChromaVectorStore
++from ragtree.adapters.graphstores import Neo4jGraphStore
 +
 +app = RAGTree(
-+    retriever=HybridRetriever(),
-+    llm=LLMProvider.from_config("configs/default.yaml"),
++    llm=LiteLLMProvider(model="openai/gpt-4o-mini"),
++    vector_store=ChromaVectorStore(collection="ragtree-demo"),
++    graph_store=Neo4jGraphStore(uri="bolt://localhost:7687"),
 +)
 +
 +result = app.run(
 +    task=QuestionAnsweringTask(
 +        question="What evidence explains the observed failure?"
 +    ),
-+    documents=documents,
++    corpus="data/demo",
 +)
 +
 +print(result.answer)
@@ -546,7 +642,7 @@
 +print(result.metrics)
 +```
 +
-+This API is a target interface. The current repository still exposes most functionality through experiment scripts.
++This is the target API. Current workflows remain script-based while the library contracts are stabilized.
 +
 +---
 +
@@ -554,90 +650,101 @@
 +
 +```text
 +RAGTree/
-+├── configs/                 # Configuration files
-+├── ragtree/                 # Library modules
-+│   ├── core/                # Config, interfaces, registry, core types
-+│   ├── datasets/            # Dataset loaders and adapters
-+│   ├── evaluation/          # Metrics and evaluation helpers
-+│   ├── kg/                  # KG retrieval and graph store utilities
-+│   ├── ontologies/          # Ontology loading, mapping, retrieval, linking
-+│   ├── postprocessing/      # Export, pruning, explanation, visualization
-+│   ├── preprocessing/       # Ingestion, chunking, indexing
-+│   └── processing/          # Prompts, RAG strategies, orchestration
-+├── scripts/                 # Runnable experiment entry points
-+├── docs/assets/             # Project images and documentation assets
++├── configs/                  # Reproducible configuration files
++├── ragtree/                  # Python package
++│   ├── core/                 # Schemas, protocols, config, registry, run metadata
++│   ├── datasets/             # Dataset loaders and normalized dataset adapters
++│   ├── preprocessing/        # Ingestion, cleaning, chunking, indexing
++│   ├── processing/           # LLM calls, RAG methods, prompts, orchestration
++│   ├── ontologies/           # Ontology loading, mapping, linking, retrieval
++│   ├── kg/                   # Graph stores, KG construction, graph retrieval
++│   ├── evaluation/           # Metrics, gold/no-gold evaluation, reports
++│   ├── postprocessing/       # Export, pruning, explanation, visualization
++│   └── cli/                  # Installable command-line interface
++├── scripts/                  # Current experiment entry points
++├── apps/
++│   ├── api/                  # Future FastAPI app
++│   └── streamlit/            # Future Streamlit app
++├── docker/                   # Future deployment recipes
++├── docs/                     # Documentation and design documents
++├── tests/                    # Unit, smoke, regression, integration tests
 +├── pyproject.toml
-+├── requirements.txt
 +└── README.md
 +```
 +
 +---
 +
-+## Semantic resources
++## Testing strategy
 +
-+RAGTree is designed to use reusable semantic resources such as:
++RAGTree needs tests across the library core, current experiments, and optional integrations.
 +
-+- WordNet;
-+- FrameNet;
-+- VerbNet;
-+- OWL-Time;
-+- EventKG;
-+- PropBank;
-+- FIBO;
-+- custom domain ontologies;
-+- custom knowledge graphs.
++| Test layer | Purpose |
++|---|---|
++| Unit tests | Validate schemas, normalization, metrics, config loading, and utility functions. |
++| Protocol tests | Ensure adapters satisfy the expected interface. |
++| Smoke tests | Verify imports, CLI help, and minimal demo execution. |
++| Regression tests | Compare small fixed gold/prediction fixtures to expected metrics. |
++| Integration tests | Run optional adapters such as Chroma, Qdrant, Neo4j, FastAPI, and Streamlit behind opt-in markers. |
++| Experiment tests | Confirm existing scripts keep producing compatible JSONL outputs. |
++| Docker tests | Build the image and run `ragtree doctor` inside the container. |
 +
-+These resources are part of the project identity. RAGTree is positioned as a Semantic RAG framework, not a generic prompt orchestration wrapper.
++Recommended markers:
++
++```bash
++pytest -m "not integration"
++pytest -m neo4j
++pytest -m api
++pytest -m ui
++pytest -m docker
++```
 +
 +---
 +
-+## Evaluation philosophy
++## Docker direction
 +
-+RAGTree treats evaluation as a first-class component.
++Docker should be treated as a deployment and reproducibility layer, not as a replacement for the Python package.
 +
-+A serious RAG pipeline should answer questions such as:
++A minimal image should support:
 +
-+- Did the system retrieve the right evidence?
-+- Is the generated output supported by retrieved evidence?
-+- Are structured predictions valid and comparable?
-+- How does the method behave across datasets?
-+- What is the runtime cost?
-+- What is the estimated energy or CO2 footprint?
-+- Which method is more robust under the same evaluation protocol?
++```bash
++docker build -t ragtree:local .
++docker run --rm ragtree:local ragtree doctor
++```
 +
-+For relation extraction, this currently includes micro metrics, per-label analysis, predicted relation files, and benchmark reports. The same philosophy should extend to all future Semantic RAG tasks.
++A local integration stack can later include:
++
++- RAGTree API service;
++- Streamlit workbench;
++- Neo4j;
++- Qdrant or Chroma persistence;
++- mounted datasets and output artifacts.
++
++---
++
++## Compatibility promise
++
++The transition toward a cleaner package should preserve current work.
++
++- Existing datasets should remain loadable.
++- Existing scripts should keep working or receive equivalent wrappers.
++- Existing output fields such as `id`, `document_id`, `type`, `relations`, and `pred_relations` should remain valid.
++- Existing evaluation outputs should remain comparable.
++- Current method names should remain visible in reports.
++- Notebooks should be converted progressively into smoke tests, examples, or documentation.
 +
 +---
 +
 +## Roadmap
 +
-+| Phase | Goal |
-+|---|---|
-+| **0. Identity cleanup** | Present RAGTree as a serious Semantic RAG framework. |
-+| **1. Stabilization** | Fix packaging, imports, CLI entry points, and minimal runnable examples. |
-+| **2. Core contracts** | Define stable schemas for documents, chunks, evidence, tasks, outputs, and runs. |
-+| **3. Experiment wrappers** | Preserve current scripts while wrapping them in cleaner APIs and commands. |
-+| **4. True RAG demo** | Add a minimal QA or grounded generation demo independent of relation extraction. |
-+| **5. Test suite** | Add unit, smoke, regression, adapter, and CLI tests. |
-+| **6. Alpha release** | Publish a portfolio-ready release with docs, examples, and reproducible workflows. |
-+
-+---
-+
-+## Portfolio positioning
-+
-+RAGTree is designed to demonstrate:
-+
-+- professional Python engineering;
-+- advanced RAG system design;
-+- ontology and knowledge graph integration;
-+- relation extraction and document intelligence;
-+- evaluation methodology;
-+- agentic and multi-step retrieval workflows;
-+- research-to-product transformation.
-+
-+Interview summary:
-+
-+> RAGTree started as a research benchmark for relation extraction with LLMs, ontologies, KG-RAG, and agentic RAG. I am evolving it into a professional Semantic RAG framework with reusable tasks, grounded outputs, evaluation, semantic resources, and production-oriented architecture.
++| Phase | Goal | Outcome |
++|---|---|---|
++| 0 | Identity and packaging reset | README, design document, icon, optional extras, installable CLI skeleton |
++| 1 | Core stabilization | Schemas, protocols, config, imports, doctor command, base tests |
++| 2 | Adapter layer | LLM, embeddings, vector stores, Neo4j, RDF, FastAPI, Streamlit behind extras |
++| 3 | Experiment preservation | Existing scripts wrapped with stable commands and run manifests |
++| 4 | True RAG demo | Minimal QA / evidence-grounded generation demo independent of relation extraction |
++| 5 | Integration tests | Optional test markers for Neo4j, API, UI, Docker, vector stores |
++| 6 | Alpha release | Tag, changelog, CI, docs, installation matrix, portfolio-ready examples |
 +
 +---
 +

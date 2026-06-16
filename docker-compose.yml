@@ -1,0 +1,21 @@
+services:
+  ragtree:
+    build: .
+    command: ["ragtree", "doctor"]
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+
+  neo4j:
+    image: neo4j:5-community
+    profiles: ["neo4j"]
+    environment:
+      NEO4J_AUTH: neo4j/password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  neo4j_data:
