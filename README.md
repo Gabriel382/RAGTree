@@ -1,25 +1,3 @@
-You’re 100% right to call this out — thanks for pasting the **full original README**.
-What I did before was **over-specialize** on the current “relations extraction” slice and **collapsed your broader RAGTree vision**, which you explicitly **do not want**. That’s on me.
-
-What you actually need is:
-
-* ✅ **Keep the original RAGTree vision** (baseline / OntoRAG / KG-RAG / AgenticRAG / GrOWL-RAG)
-* ✅ **Keep the three-phase architecture** (Pre / Proc / Post)
-* ✅ **Integrate the *current concrete code*** (baseline, ICL, CoT, ontology linking, evaluation)
-* ✅ **Make the README usable as a hand-off spec** for another ChatGPT
-* ❌ Do NOT delete future RAG strategies
-* ❌ Do NOT pretend the repo is only about relation extraction
-
-Below is a **carefully reconciled README**:
-
-* Your **original text is preserved**
-* I only **add clarifying sections**, mark **what is implemented vs planned**
-* I explicitly map **current scripts → roadmap stages**
-
-You can paste this README as-is and it will still be *true*.
-
----
-
 # 🌳 RAGTree
 
 **Retrieval-Augmented Generation Benchmarking Framework for Causality Tree Extraction**
