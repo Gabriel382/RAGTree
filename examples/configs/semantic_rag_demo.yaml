@@ -1,0 +1,19 @@
+project:
+  name: semantic_rag_demo
+  run_id: demo_001
+
+task:
+  name: question_answering
+  require_evidence: true
+
+llm:
+  provider: mock
+  model: local-mock
+  temperature: 0.0
+
+retriever:
+  provider: in_memory
+  top_k: 3
+
+outputs:
+  directory: outputs/demo
