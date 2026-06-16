@@ -1,0 +1,29 @@
+site_name: RAGTree
+site_description: Professional Semantic RAG framework for grounded document AI.
+repo_url: https://github.com/Gabriel382/RAGTree
+nav:
+  - Home: README.md
+  - Vision: docs/vision.md
+  - Architecture: docs/architecture.md
+  - Core concepts: docs/core-concepts.md
+  - Task model: docs/task-model.md
+  - API design: docs/api-design.md
+  - Configuration: docs/configuration.md
+  - Experiments: docs/experiments.md
+  - Evaluation: docs/evaluation.md
+  - Semantic resources: docs/semantic-resources.md
+  - Testing: docs/testing.md
+  - Roadmap: docs/roadmap.md
+  - Portfolio: docs/portfolio.md
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
