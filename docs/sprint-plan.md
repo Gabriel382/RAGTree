@@ -67,4 +67,4 @@ Goal: design §13.1 release checklist satisfied; `v0.1.0-alpha` tagged.
 
 ## 4. Guardrails
 
-`xquality` branch is read-only reference. Dataset keys and `pred_relations` output fields stay stable (design §11.1). Core never imports optional SDKs — enforced by a unit test that imports every `src/ragtree/core|tasks|retrieval|evaluation` module
+`xquality` branch is read-only reference. Dataset keys and `pred_relations` output fields stay stable (design §11.1). Core never imports optional SDKs — enforced by a unit test that imports every `src/ragtree/core|tasks|retrieval|evaluation` module with extras absent. Wrap first, extract later (roadmap rule): no strategy rewrites during migration.
