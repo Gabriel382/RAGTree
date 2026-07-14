@@ -1,0 +1,6 @@
+{"id": "maint-001", "title": "Pump P-102 failure report", "text": "Pump P-102 failed on 12 March because the mechanical seal wore out after prolonged dry running. The seal had not been replaced since installation."}
+{"id": "maint-002", "title": "June maintenance log", "text": "Routine maintenance was performed in June on all centrifugal pumps. Lubrication levels were checked and two couplings were realigned."}
+{"id": "maint-003", "title": "Alarm event 7741", "text": "Alarm 7741 was triggered by a pressure spike in line L-3 following a rapid valve closure. The spike exceeded the 16 bar threshold for four seconds."}
+{"id": "maint-004", "title": "Compressor C-2 inspection", "text": "The quarterly inspection of compressor C-2 found no anomalies. Vibration readings stayed within tolerance across all measurement points."}
+{"id": "maint-005", "title": "Seal replacement procedure", "text": "Mechanical seal replacement requires draining the casing, removing the coupling guard, and verifying shaft runout before installing the new seal."}
+{"id": "maint-006", "title": "Operator note", "text": "Night shift reported intermittent noise near the discharge line of pump P-102 two weeks before the failure. No work order was raised at the time."}
