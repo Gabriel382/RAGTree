@@ -1,6 +1,6 @@
 # Sprint plan: BYOS migration
 
-Operationalizes `RAGTree_Extended_BYOS_Installable_Architecture_Design.docx` (and condenses `docs/roadmap.md`) into the fewest sprints that still cover the whole design. Each sprint lands on its own branch: `sprint-1/installable-core` (**✅ done**), `sprint-2/task-layer-adapters`, `sprint-3/surfaces-alpha`. `xquality` is never touched.
+Operationalizes `RAGTree_Extended_BYOS_Installable_Architecture_Design.docx` (and condenses `docs/roadmap.md`) into the fewest sprints that still cover the whole design. Each sprint lands on its own branch: `sprint-1/installable-core` (**✅ done**), `sprint-2/task-layer-adapters` (**✅ done**), `sprint-3/surfaces-alpha`. `xquality` is never touched.
 
 ## 1. Where the code stands today
 
@@ -44,7 +44,9 @@ Goal: `pip install -e .` from clean env; core imports never fail; test skeleton 
 - First tests: unit (schemas, config, registry) + shared contract-test bases for LLMProvider/VectorStore/Retriever, run against mock implementations.
 - DoD (= design Sprint 1+2): clean-env install, `ragtree doctor`, `pytest tests/unit tests/contract` pass with zero extras installed; CI green.
 
-### Sprint 2 — Task layer + adapters ported from existing code, tiny-dataset harness
+### Sprint 2 — Task layer + adapters ported from existing code, tiny-dataset harness ✅ (branch `sprint-2/task-layer-adapters`)
+
+> Scope note (delivered): protocol-level ontology/KG retrievers wrap OntologyStore/GraphStore; the index-based research retrievers (chunk-ORAG, community-KG, triple-KG) stay under the research layers for scripts and are wrapped in sprint 3 alongside the experiment wrappers.
 
 Goal: the BYOS example from design §17.3 runs end to end; RAG works for more than relations.
 
@@ -67,4 +69,4 @@ Goal: design §13.1 release checklist satisfied; `v0.1.0-alpha` tagged.
 
 ## 4. Guardrails
 
-`xquality` branch is read-only reference. Dataset keys and `pred_relations` output fields stay stable (design §11.1). Core never imports optional SDKs — enforced by a unit test that imports every `src/ragtree/core|tasks|retrieval|evaluation` module with extras absent. Wrap first, extract later (roadmap rule): no strategy rewrites during migration.
+`xquality` branch is read-only reference. Dataset keys and `pred_relations` output fields stay stable (design §11.1). Core never imports optional SDKs — enforced by a unit test that imports every `src/ragtree/core|tasks|retrieval|evaluation` module
