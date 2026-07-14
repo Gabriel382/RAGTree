@@ -1,0 +1,36 @@
+@prefix : <http://ragtree.example.org/maintenance#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+: a owl:Ontology ;
+    rdfs:label "RAGTree tiny maintenance ontology (test fixture)" .
+
+:Pump a owl:Class ;
+    rdfs:label "Pump" ;
+    rdfs:comment "Rotating equipment that moves fluid through a system." ;
+    skos:altLabel "centrifugal pump" .
+
+:MechanicalSeal a owl:Class ;
+    rdfs:label "Mechanical seal" ;
+    rdfs:comment "Sealing device preventing leakage along the pump shaft." ;
+    skos:altLabel "seal" .
+
+:Failure a owl:Class ;
+    rdfs:label "Failure" ;
+    rdfs:comment "Loss of the ability of an item to perform its required function." ;
+    skos:altLabel "breakdown" .
+
+:Maintenance a owl:Class ;
+    rdfs:label "Maintenance" ;
+    rdfs:comment "Actions intended to retain or restore an item to working order." ;
+    skos:altLabel "servicing" .
+
+:Alarm a owl:Class ;
+    rdfs:label "Alarm" ;
+    rdfs:comment "Signal announcing an abnormal process condition." .
+
+:PressureSpike a owl:Class ;
+    rdfs:label "Pressure spike" ;
+    rdfs:comment "Sudden short-lived increase of pressure above the threshold." ;
+    skos:altLabel "pressure surge" .

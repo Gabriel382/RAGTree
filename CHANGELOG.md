@@ -2,6 +2,43 @@
 
 All notable changes to RAGTree should be documented here.
 
+## Unreleased — sprint-2/task-layer-adapters
+
+### Added
+
+- Task layer (`ragtree.tasks`): `BaseTask`, `QuestionAnsweringTask`,
+  `RelationExtractionTask` (generic prompt mode + `results_from_strategy`
+  running the 12 benchmark strategies unchanged), `SummarizationTask`,
+  `ClaimVerificationTask`.
+- `RAGTreePipeline` (`ragtree.core.pipeline`): retrieve → generate → parse →
+  evaluate → export over protocols only; exported as `ragtree.RAGTreePipeline`.
+- Integrations (`ragtree.integrations`), all lazy-importing:
+  llms (Mock, Ollama, OpenRouter, vLLM, LiteLLM), embedders (Hashing,
+  SentenceTransformers), vectorstores (InMemory, Qdrant incl. `:memory:`,
+  Chroma), graphstores (Local wrapping `kg.local_graphstore`, Neo4j),
+  ontologies (Rdflib wrapping `ontologies.loader`), exporters (Json, Jsonl,
+  Csv, GraphCsv).
+- Retrieval layer (`ragtree.retrieval`): Dense, Hybrid (RRF),
+  OntologyGuided, KGGuided.
+- `RelationEvaluator` wrapping the historical relation metrics
+  (`evaluation.relations.metrics`) behind the Evaluator protocol.
+- `ragtree.generation.json_utils`: robust JSON extraction + relation
+  normalization shared by tasks.
+- Tiny-dataset harness: committed fixture slices of CausalBank,
+  DocRED-causal, EventStoryLine and FinCausal plus a QA corpus and a tiny
+  ontology TTL; parametrized e2e suite with gold-echo (F1=1.0) and
+  empty (F1=0.0) golden metrics; integration tests for Qdrant (in-process),
+  Chroma, Neo4j, LiteLLM and the rdflib ontology store.
+- Runnable zero-extras demo: `examples/semantic_rag_demo.py`.
+- CI: e2e suite + demo in the core job; new `integration-light` job
+  (qdrant + rdf extras); strict lint extended to the new packages.
+
+### Changed
+
+- `tests/contract/fakes.py` now aliases the shipped in-memory adapters —
+  the reference implementations graduated into `ragtree.integrations`.
+- pytest markers extended: `qdrant`, `chroma`, `rdf`.
+
 ## Unreleased — sprint-1/installable-core
 
 ### Added

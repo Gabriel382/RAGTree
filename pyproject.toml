@@ -157,6 +157,9 @@ addopts = "-q --disable-warnings"
 testpaths = ["tests"]
 markers = [
   "integration: tests requiring external services",
+  "qdrant: tests requiring the qdrant-client extra",
+  "chroma: tests requiring the chromadb extra",
+  "rdf: tests requiring the rdf extra",
   "api: tests requiring FastAPI extras",
   "ui: tests requiring Streamlit extras",
   "neo4j: tests requiring Neo4j",

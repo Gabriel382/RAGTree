@@ -43,35 +43,45 @@ Users bring their own:
 ## What works today
 
 ```bash
-pip install -e .        # lightweight core: schemas, protocols, config, registry, CLI
-ragtree doctor          # check the install and see which optional extras are present
-pytest tests/unit tests/contract
+pip install -e .                   # lightweight core + task layer + in-memory stack
+ragtree doctor                     # see which optional extras are present
+python examples/semantic_rag_demo.py
+pytest tests/unit tests/contract tests/e2e
 ```
 
-The core contracts are importable with zero optional dependencies:
+A full BYOS pipeline runs with zero optional extras:
 
 ```python
-from ragtree import Document, Chunk, RAGTask, RAGResult, require_extra
-from ragtree.core.protocols import LLMProvider, VectorStore, Retriever
+from ragtree import RAGTreePipeline
+from ragtree.core.schemas import Chunk
+from ragtree.integrations.llms import MockLLMProvider      # swap: LiteLLMProvider, OllamaProvider, ...
+from ragtree.integrations.vectorstores import InMemoryVectorStore  # swap: Qdrant, Chroma
+from ragtree.retrieval import DenseRetriever               # or Hybrid / OntologyGuided / KGGuided
+from ragtree.tasks import QuestionAnsweringTask            # or RelationExtraction / Summarization / ClaimVerification
 
-# Any object with the right methods satisfies a protocol — no inheritance needed.
-class MyProvider:
-    def complete(self, messages: list[dict[str, str]], **kwargs) -> str:
-        return "your stack answers here"
+store = InMemoryVectorStore()
+store.add_chunks([Chunk(id="c1", document_id="d1", text="The pump failed because the seal wore out.")])
 
-assert isinstance(MyProvider(), LLMProvider)
+pipeline = RAGTreePipeline(retriever=DenseRetriever(store), generator=MockLLMProvider())
+result = pipeline.run(QuestionAnsweringTask("Why did the pump fail?"))
+print(result.output, result.evidence)
 ```
 
-Adapter authors validate implementations against the shared contract suite in
-`tests/contract/bases.py`; the in-memory reference implementations in
-`tests/contract/fakes.py` show the minimum an adapter must do.
+Swap any component by installing an extra and changing one constructor — the
+pipeline code stays identical. Any object with the right methods satisfies a
+protocol (no inheritance needed), and every adapter is validated against the
+shared contract suite in `tests/contract/bases.py`.
 
 ## Repository layout
 
 ```text
 RAGTree/
 ├── src/ragtree/
-│   ├── core/                  # schemas, protocols, config, registry, errors  ← stable
+│   ├── core/                  # schemas, protocols, pipeline, config, registry, errors  ← stable
+│   ├── tasks/                 # QA, relation extraction, summarization, claim verification
+│   ├── retrieval/             # dense, hybrid, ontology-guided, KG-guided retrievers
+│   ├── integrations/          # llms, embedders, vectorstores, graphstores, ontologies, exporters
+│   ├── generation/            # robust JSON extraction and normalization
 │   ├── cli/                   # lightweight CLI (doctor, addons, version)
 │   ├── datasets/              # dataset loaders (research layer)
 │   ├── evaluation/            # relation metrics (research layer)
@@ -95,9 +105,11 @@ RAGTree/
 └── docs/                      # architecture, design, sprint plan
 ```
 
-The research layers are ported behind the core protocols sprint by sprint
-(`docs/sprint-plan.md`); `tasks/`, `retrieval/`, `integrations/` and `apps/`
-join the tree in sprint 2–3.
+The research layers are being ported behind the core protocols sprint by
+sprint (`docs/sprint-plan.md`); `apps/` (FastAPI, Streamlit) joins in sprint 3.
+The heavyweight index-based research retrievers (chunk-ORAG, community-KG,
+triple-KG) remain available to the benchmark scripts under `processing/`,
+`ontologies/` and `kg/`; their protocol-level counterparts live in `retrieval/`.
 
 ## Core protocol rule
 
@@ -167,12 +179,14 @@ pip install -e ".[llm-litellm,vector-chroma,neo4j]"
 | `tests/unit/` | Yes | Pure logic: schemas, config, registry, errors, CLI, import guard. |
 | `tests/contract/` | Yes | Protocol conformance; reusable bases for every future adapter. |
 | `tests/integration/` | No (markers) | Real optional integrations (Chroma, Qdrant, Neo4j, FastAPI, ...). |
-| `tests/e2e/` | Selected | Tiny full pipeline runs with fixture data and a mock LLM. |
+| `tests/e2e/` | Yes | Full pipelines over tiny fixture slices of CausalBank, DocRED, EventStoryLine and FinCausal, plus a QA corpus — deterministic mock LLM, golden metrics. |
 | `tests/regression/` | Yes | Protects `pred_relations` and current experiment output formats. |
 | `tests/fixtures/` | Data only | Tiny committed datasets (exempt from the repo `*.json`/`*.jsonl` ignore). |
 
 ```bash
-pytest tests/unit tests/contract        # fast, no extras required
+pytest tests/unit tests/contract tests/e2e   # fast, no extras required
+pip install -e ".[dev,vector-qdrant,rdf]"
+pytest tests/integration                     # real adapters (qdrant runs in-process)
 ```
 
 ## Current experiment compatibility
@@ -200,7 +214,7 @@ Three sprints, one branch each (details in `docs/sprint-plan.md`):
 | Sprint | Branch | Goal | Status |
 |---|---|---|---|
 | 1 | `sprint-1/installable-core` | src/ layout, core schemas + protocols, errors, test skeleton, CI. | ✅ done |
-| 2 | `sprint-2/*` | Task layer, adapters ported from existing code, tiny-dataset e2e harness. | planned |
+| 2 | `sprint-2/task-layer-adapters` | Task layer, adapters ported from existing code, tiny-dataset e2e harness. | ✅ done |
 | 3 | `sprint-3/*` | FastAPI/Streamlit surfaces, Docker profiles, experiment wrappers, `v0.1.0-alpha`. | planned |
 
 ## Design rule summary
