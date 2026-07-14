@@ -7,6 +7,7 @@ section 4.1). Everything importable from here works on a bare
 """
 
 from .config import load_config
+from .pipeline import RAGTreePipeline
 from .errors import (
     ConfigurationError,
     MissingDependencyError,
@@ -54,7 +55,8 @@ __all__ = [
     "OntologyStore",
     "Evaluator",
     "Exporter",
-    # config / registry / errors
+    # pipeline / config / registry / errors
+    "RAGTreePipeline",
     "load_config",
     "register",
     "build",
