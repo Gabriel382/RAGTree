@@ -135,8 +135,11 @@ all = [
 [project.scripts]
 ragtree = "ragtree.cli.main:app"
 
+[tool.setuptools]
+package-dir = { "" = "src" }
+
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 include = ["ragtree*"]
 
 [tool.black]

@@ -1,3 +1,17 @@
 data/
 *.jsonl
 *.json
+
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+
+# committed test fixtures are exempt from the json/jsonl rules
+!tests/fixtures/**
