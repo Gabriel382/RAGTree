@@ -1,6 +1,6 @@
 # Sprint plan: BYOS migration
 
-Operationalizes `RAGTree_Extended_BYOS_Installable_Architecture_Design.docx` (and condenses `docs/roadmap.md`) into the fewest sprints that still cover the whole design. Branch: `feat/src-testable-byos-architecture` (already named in `BRANCH.txt`). `xquality` is never touched.
+Operationalizes `RAGTree_Extended_BYOS_Installable_Architecture_Design.docx` (and condenses `docs/roadmap.md`) into the fewest sprints that still cover the whole design. Each sprint lands on its own branch: `sprint-1/installable-core` (**✅ done**), `sprint-2/task-layer-adapters`, `sprint-3/surfaces-alpha`. `xquality` is never touched.
 
 ## 1. Where the code stands today
 
@@ -33,7 +33,7 @@ Three categories, verified file by file:
 
 ## 3. The three sprints
 
-### Sprint 1 — Installable core with contracts
+### Sprint 1 — Installable core with contracts ✅ (branch `sprint-1/installable-core`)
 
 Goal: `pip install -e .` from clean env; core imports never fail; test skeleton green in CI.
 
@@ -67,4 +67,4 @@ Goal: design §13.1 release checklist satisfied; `v0.1.0-alpha` tagged.
 
 ## 4. Guardrails
 
-`xquality` branch is read-only reference. Dataset keys and `pred_relations` output fields stay stable (design §11.1). Core never imports optional SDKs — enforced by a unit test that imports every `src/ragtree/core|tasks|retrieval|evaluation` module with extras absent. Wrap first, extract later (roadmap rule): no strategy rewrites during migration.
+`xquality` branch is read-only reference. Dataset keys and `pred_relations` output fields stay stable (design §11.1). Core never imports optional SDKs — enforced by a unit test that imports every `src/ragtree/core|tasks|retrieval|evaluation` module

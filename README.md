@@ -23,13 +23,13 @@
 
 **RAGTree** is a bring-your-own-stack framework for Semantic RAG pipelines.
 
-The project is designed around a simple rule:
+The project is built around a simple rule:
 
 > The core defines contracts. Integrations implement contracts. Tests verify contracts.
 
-RAGTree started as a research workbench for relation extraction, ontology-guided retrieval, KG-RAG, agentic RAG, evaluation, runtime analysis and CO2 estimation. The next architecture keeps those experiments runnable while moving the repository toward an installable library with a clear source layout, optional addons and explicit test layers.
+RAGTree started as a research workbench for relation extraction, ontology-guided retrieval, KG-RAG, agentic RAG, evaluation, runtime analysis and CO2 estimation. It is now an installable library with a `src/` layout, a dependency-light core of stable schemas and protocols, layered tests, and optional addons — while all research experiments remain runnable.
 
-The goal is not to force users into one stack. Users should be able to bring their own:
+Users bring their own:
 
 - LLM provider;
 - embedding model;
@@ -40,335 +40,168 @@ The goal is not to force users into one stack. Users should be able to bring the
 - exporter;
 - API or UI layer.
 
----
+## What works today
 
-## Why this repository is structured this way
+```bash
+pip install -e .        # lightweight core: schemas, protocols, config, registry, CLI
+ragtree doctor          # check the install and see which optional extras are present
+pytest tests/unit tests/contract
+```
 
-RAG projects become difficult to maintain when research scripts, provider SDKs, APIs, dashboards and tests live in the same layer.
+The core contracts are importable with zero optional dependencies:
 
-RAGTree separates them:
+```python
+from ragtree import Document, Chunk, RAGTask, RAGResult, require_extra
+from ragtree.core.protocols import LLMProvider, VectorStore, Retriever
 
-| Layer | Role |
-|---|---|
-| `src/ragtree/core/` | Stable schemas, protocols, config, registry, errors and pipeline contracts. |
-| `src/ragtree/tasks/` | Task definitions such as question answering, relation extraction, summarization and verification. |
-| `src/ragtree/retrieval/` | Retrieval orchestration independent of a specific vector database. |
-| `src/ragtree/generation/` | Prompting, structured generation, JSON repair and generator contracts. |
-| `src/ragtree/evaluation/` | Metrics, reports, faithfulness, runtime and CO2 analysis. |
-| `src/ragtree/integrations/` | Optional adapters for external libraries and services. |
-| `src/ragtree/apps/` | Optional FastAPI and Streamlit surfaces. |
-| `tests/` | Unit, contract, integration, end-to-end and regression tests. |
-| `experiments/` | Reproducible benchmark workflows and preserved research scripts. |
+# Any object with the right methods satisfies a protocol — no inheritance needed.
+class MyProvider:
+    def complete(self, messages: list[dict[str, str]], **kwargs) -> str:
+        return "your stack answers here"
 
----
+assert isinstance(MyProvider(), LLMProvider)
+```
 
-## Target repository layout
+Adapter authors validate implementations against the shared contract suite in
+`tests/contract/bases.py`; the in-memory reference implementations in
+`tests/contract/fakes.py` show the minimum an adapter must do.
+
+## Repository layout
 
 ```text
 RAGTree/
-├── src/
-│   └── ragtree/
-│       ├── core/
-│       │   ├── schemas.py
-│       │   ├── protocols.py
-│       │   ├── config.py
-│       │   ├── pipeline.py
-│       │   ├── registry.py
-│       │   └── errors.py
-│       ├── tasks/
-│       │   ├── base.py
-│       │   ├── question_answering.py
-│       │   ├── relation_extraction.py
-│       │   ├── summarization.py
-│       │   ├── claim_verification.py
-│       │   └── graph_construction.py
-│       ├── retrieval/
-│       │   ├── base.py
-│       │   ├── dense.py
-│       │   ├── hybrid.py
-│       │   ├── ontology_guided.py
-│       │   └── kg_guided.py
-│       ├── generation/
-│       │   ├── base.py
-│       │   ├── prompts.py
-│       │   ├── structured.py
-│       │   └── repair.py
-│       ├── evaluation/
-│       │   ├── metrics.py
-│       │   ├── relation_metrics.py
-│       │   ├── faithfulness.py
-│       │   └── reports.py
-│       ├── integrations/
-│       │   ├── llms/
-│       │   ├── vectorstores/
-│       │   ├── graphstores/
-│       │   ├── ontologies/
-│       │   └── agents/
-│       ├── apps/
-│       │   ├── api/
-│       │   └── streamlit/
-│       └── cli/
-│           └── main.py
+├── src/ragtree/
+│   ├── core/                  # schemas, protocols, config, registry, errors  ← stable
+│   ├── cli/                   # lightweight CLI (doctor, addons, version)
+│   ├── datasets/              # dataset loaders (research layer)
+│   ├── evaluation/            # relation metrics (research layer)
+│   ├── kg/                    # KG stores and retrievers (research layer)
+│   ├── ontologies/            # ontology loading, linking, retrieval (research layer)
+│   ├── preprocessing/         # dataset converters (research layer)
+│   ├── processing/            # RAG strategies and orchestrators (research layer)
+│   ├── services/              # LLM clients: ollama, openrouter, vllm, mock
+│   └── vendor/                # vendored third-party graph code
 ├── tests/
-│   ├── unit/
-│   ├── contract/
-│   ├── integration/
-│   ├── e2e/
-│   ├── regression/
-│   └── fixtures/
-├── examples/
-├── experiments/
-├── scripts/
-├── docs/
-├── pyproject.toml
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
+│   ├── unit/                  # pure core logic (no extras)
+│   ├── contract/              # protocol conformance bases + fakes
+│   ├── integration/           # real optional stacks (arrives with adapters)
+│   ├── e2e/                   # tiny full pipelines (arrives with the task layer)
+│   ├── regression/            # protects experiment output formats
+│   └── fixtures/              # tiny committed datasets
+├── experiments/               # research notebooks and benchmark data
+├── scripts/                   # current benchmark entry points (preserved)
+├── examples/                  # example configs
+├── configs/                   # research configuration
+└── docs/                      # architecture, design, sprint plan
 ```
 
----
+The research layers are ported behind the core protocols sprint by sprint
+(`docs/sprint-plan.md`); `tasks/`, `retrieval/`, `integrations/` and `apps/`
+join the tree in sprint 2–3.
 
 ## Core protocol rule
 
-Core modules must not import optional integration SDKs directly.
+Core modules never import optional integration SDKs. This is enforced by a
+unit test (`tests/unit/test_optional_import_guard.py`), not just by convention.
 
-This means:
-
-```text
-core/ does not import Chroma, Qdrant, Neo4j, FastAPI, Streamlit, LangGraph or LiteLLM.
-```
-
-Instead, the core defines protocols:
+The core defines protocols (see `src/ragtree/core/protocols.py`):
 
 ```python
-from typing import Protocol
+from typing import Any, Protocol
 
 class LLMProvider(Protocol):
-    def complete(self, prompt: str, **kwargs) -> str:
-        ...
+    def complete(self, messages: list[dict[str, str]], **kwargs: Any) -> str: ...
 
 class VectorStore(Protocol):
-    def add_documents(self, documents: list[str], metadatas: list[dict] | None = None) -> None:
-        ...
-
-    def search(self, query: str, top_k: int = 5) -> list[dict]:
-        ...
+    def add_chunks(self, chunks: list[Chunk], embeddings: list[list[float]] | None = None) -> None: ...
+    def search(self, query: str, top_k: int = 5, **filters: Any) -> list[EvidenceSpan]: ...
 ```
 
-And integrations implement them:
+Missing optional dependencies raise a helpful error instead of an import crash:
 
-```text
-src/ragtree/integrations/llms/litellm.py
-src/ragtree/integrations/vectorstores/chroma.py
-src/ragtree/integrations/vectorstores/qdrant.py
-src/ragtree/integrations/graphstores/neo4j.py
-src/ragtree/integrations/agents/langgraph.py
+```python
+from ragtree import require_extra
+
+require_extra("chromadb", "vector-chroma")
+# MissingDependencyError: This feature requires the 'vector-chroma' extra.
+# Install it with: pip install 'ragtree[vector-chroma]'
 ```
-
----
 
 ## Installation
 
-### Lightweight install
-
-The default install should stay small:
+Lightweight install (schemas, protocols, config, registry, CLI):
 
 ```bash
-pip install ragtree
+pip install -e .
 ```
 
-For local development from source:
+Development install:
 
 ```bash
 pip install -e ".[dev]"
 ```
 
-### Optional addons
+Optional addons, by category (names match `pyproject.toml`):
 
-Install only the integrations you need:
-
-```bash
-pip install "ragtree[litellm]"
-pip install "ragtree[chroma]"
-pip install "ragtree[qdrant]"
-pip install "ragtree[faiss]"
-pip install "ragtree[pgvector]"
-pip install "ragtree[neo4j]"
-pip install "ragtree[ontology]"
-pip install "ragtree[langgraph]"
-pip install "ragtree[api]"
-pip install "ragtree[streamlit]"
-```
-
-For a complete local stack:
+| Extra | Purpose |
+|---|---|
+| `llm-openai`, `llm-ollama`, `llm-litellm` | LLM provider clients. |
+| `embeddings` | sentence-transformers embedding backend. |
+| `vector-faiss`, `vector-chroma`, `vector-qdrant`, `vector-elastic` | Vector stores. |
+| `graph`, `neo4j` | Graph processing and Neo4j store/export. |
+| `rdf` | RDF / OWL ontology support (rdflib, owlready2). |
+| `api`, `ui` | FastAPI service and Streamlit workbench surfaces. |
+| `notebooks`, `docs`, `ops`, `dev` | Tooling. |
+| `all` | Everything, for a full local showcase. |
 
 ```bash
-pip install "ragtree[all]"
+pip install -e ".[llm-litellm,vector-chroma,neo4j]"
 ```
 
----
+`ragtree addons` prints this table with live install status.
 
-## Addon map
-
-| Extra | Purpose | Typical modules |
-|---|---|---|
-| `litellm` | Multi-provider LLM and embedding calls. | `integrations/llms/litellm.py` |
-| `chroma` | Local vector store demos. | `integrations/vectorstores/chroma.py` |
-| `qdrant` | Vector search service integration. | `integrations/vectorstores/qdrant.py` |
-| `faiss` | Local vector index. | `integrations/vectorstores/faiss.py` |
-| `pgvector` | PostgreSQL vector search. | `integrations/vectorstores/pgvector.py` |
-| `neo4j` | Knowledge graph export or graph store integration. | `integrations/graphstores/neo4j.py` |
-| `ontology` | RDF and OWL resources. | `integrations/ontologies/` |
-| `langgraph` | Agentic workflows. | `integrations/agents/langgraph.py` |
-| `api` | FastAPI application surface. | `apps/api/` |
-| `streamlit` | Demo and inspection UI. | `apps/streamlit/` |
-
----
-
-## Testing strategy
-
-RAGTree uses separate test layers because not all tests have the same cost.
+## Testing
 
 | Test folder | Runs by default | Purpose |
 |---|---:|---|
-| `tests/unit/` | Yes | Pure logic: schemas, config, metrics, parsing and serialization. |
-| `tests/contract/` | Yes | Protocol conformance for adapters. |
-| `tests/integration/` | No | Real optional integrations such as Chroma, Qdrant, Neo4j, LiteLLM, FastAPI and Streamlit. |
-| `tests/e2e/` | Selected | Tiny full pipeline tests with local fixtures. |
-| `tests/regression/` | Yes | Protect current experiment outputs and relation evaluation formats. |
-| `tests/fixtures/` | Data only | Tiny documents, predictions, gold labels and config files. |
-
-Default test command:
+| `tests/unit/` | Yes | Pure logic: schemas, config, registry, errors, CLI, import guard. |
+| `tests/contract/` | Yes | Protocol conformance; reusable bases for every future adapter. |
+| `tests/integration/` | No (markers) | Real optional integrations (Chroma, Qdrant, Neo4j, FastAPI, ...). |
+| `tests/e2e/` | Selected | Tiny full pipeline runs with fixture data and a mock LLM. |
+| `tests/regression/` | Yes | Protects `pred_relations` and current experiment output formats. |
+| `tests/fixtures/` | Data only | Tiny committed datasets (exempt from the repo `*.json`/`*.jsonl` ignore). |
 
 ```bash
-pytest tests/unit tests/contract tests/regression
+pytest tests/unit tests/contract        # fast, no extras required
 ```
-
-Integration tests:
-
-```bash
-pip install -e ".[dev,chroma,qdrant,neo4j,api,streamlit]"
-pytest tests/integration
-```
-
-Docker-based integration tests:
-
-```bash
-docker compose up -d qdrant neo4j
-pytest tests/integration -m docker
-```
-
----
-
-## Suggested pytest markers
-
-```toml
-[tool.pytest.ini_options]
-markers = [
-    "unit: pure unit tests with no optional dependencies",
-    "contract: protocol conformance tests shared by adapters",
-    "integration: tests requiring optional integrations",
-    "e2e: tiny end-to-end pipeline tests",
-    "regression: tests that protect experiment output formats",
-    "docker: tests requiring docker compose services",
-    "slow: tests that are allowed to take longer",
-]
-testpaths = ["tests"]
-```
-
----
 
 ## Current experiment compatibility
 
-The existing experiments should not be deleted during the migration. They should be preserved and gradually wrapped by the package.
+The research workbench is preserved, not rewritten. Scripts under `scripts/`
+keep working; benchmark results live on the `xquality` branch and are never
+modified. Migration targets:
 
 | Current family | Migration target |
 |---|---|
-| Single-pass LLM | `RelationExtractionTask` + baseline generator. |
-| ICL baseline | `RelationExtractionTask` + few-shot method. |
-| CoT baseline | `RelationExtractionTask` + reasoning generator. |
-| GrOWL-RAG | Ontology-guided retrieval integration. |
-| KG-RAG | KG-guided retrieval integration. |
-| OG-RAG | Ontology-grounded retrieval method. |
-| Community KG-RAG | Graph community retrieval method. |
-| Triple KG-RAG | Triple-level graph retrieval method. |
-| Agentic RAG | Agent runner protocol. |
-| MARAG | Multi-agent workflow integration. |
-| Relation evaluation | `evaluation/relation_metrics.py` and regression tests. |
-| Runtime / CO2 | Evaluation report extension. |
+| Single-pass LLM / ICL / CoT baselines | `RelationExtractionTask` methods. |
+| GrOWL-RAG, OG-RAG, Chunk-O-RAG | Ontology-guided retrieval behind `Retriever`. |
+| KG-RAG, Triple KG-RAG, Community KG-RAG | KG-guided retrieval behind `Retriever`. |
+| Agentic hybrid, LangGraph agents, MARAG | Agent integrations. |
+| Relation evaluation | `evaluation/` + regression tests. |
+| Runtime / CO2 scripts | Supplementary benchmark artifacts. |
 
----
-
-## Example target API
-
-```python
-from ragtree import RAGTreePipeline
-from ragtree.tasks import RelationExtractionTask
-from ragtree.integrations.llms import LiteLLMProvider
-from ragtree.integrations.vectorstores import ChromaVectorStore
-from ragtree.evaluation import RelationEvaluator
-
-llm = LiteLLMProvider(model="openai/gpt-4o-mini")
-vector_store = ChromaVectorStore(
-    collection_name="demo_relations",
-    persist_directory="./.chroma",
-)
-
-task = RelationExtractionTask(
-    relation_schema=["CAUSES", "TREATS", "ASSOCIATED_WITH"],
-)
-
-pipeline = RAGTreePipeline(
-    llm=llm,
-    vector_store=vector_store,
-    evaluator=RelationEvaluator(),
-)
-
-pipeline.index_documents([
-    "Smoking is associated with lung cancer.",
-    "Aspirin treats fever and pain.",
-])
-
-result = pipeline.run(task)
-print(result.predictions)
-print(result.evaluation)
-```
-
----
-
-## CI model
-
-The CI should be split into fast default jobs and optional integration jobs.
-
-```text
-PR default:
-  - install package with dev extras
-  - run unit tests
-  - run contract tests
-  - run regression tests
-  - run ruff
-
-Optional integration jobs:
-  - Chroma
-  - Qdrant with Docker
-  - Neo4j with Docker
-  - FastAPI smoke test
-  - Streamlit smoke test
-  - LangGraph workflow smoke test
-```
-
----
+Compatibility contracts: dataset keys stay stable, `pred_relations` outputs
+stay readable, evaluation accepts old outputs and new `RAGResult` exports.
 
 ## Roadmap
 
-| Sprint | Goal | Deliverables |
-|---|---|---|
-| 1 | Installable structure | `src/` layout, `tests/`, README, pyproject, CLI doctor. |
-| 2 | Core protocols | schemas, protocols, task model, run manifest, config. |
-| 3 | Adapters and apps | in-memory, LiteLLM, Chroma, FastAPI smoke, Streamlit smoke, Docker compose. |
-| 4 | Experiment preservation | wrappers for current scripts, regression fixtures, CI, alpha tag. |
+Three sprints, one branch each (details in `docs/sprint-plan.md`):
 
----
+| Sprint | Branch | Goal | Status |
+|---|---|---|---|
+| 1 | `sprint-1/installable-core` | src/ layout, core schemas + protocols, errors, test skeleton, CI. | ✅ done |
+| 2 | `sprint-2/*` | Task layer, adapters ported from existing code, tiny-dataset e2e harness. | planned |
+| 3 | `sprint-3/*` | FastAPI/Streamlit surfaces, Docker profiles, experiment wrappers, `v0.1.0-alpha`. | planned |
 
 ## Design rule summary
 
@@ -380,9 +213,7 @@ examples demonstrate protocols
 experiments preserve benchmark protocols
 ```
 
-This is the structure that lets RAGTree grow without becoming a monolith.
-
----
+Full architecture rationale: `docs/DESIGN.md` and the BYOS design document.
 
 ## License
 
