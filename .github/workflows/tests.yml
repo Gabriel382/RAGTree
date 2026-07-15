@@ -16,12 +16,15 @@ jobs:
         run: pip install -e ".[dev]"
       - name: Check CLI
         run: ragtree doctor
-      - name: Run unit, contract and e2e tests
-        run: pytest tests/unit tests/contract tests/e2e
-      - name: Run demo example
-        run: python examples/semantic_rag_demo.py
-      - name: Lint core and tests (strict)
-        run: ruff check src/ragtree/core src/ragtree/cli src/ragtree/tasks src/ragtree/retrieval src/ragtree/generation src/ragtree/integrations tests
+      - name: Run unit, contract, e2e and regression tests
+        run: pytest tests/unit tests/contract tests/e2e tests/regression
+      - name: Run demos
+        run: |
+          python examples/semantic_rag_demo.py
+          ragtree demo semantic-rag
+          ragtree demo relation-extraction
+      - name: Lint packaged code and tests (strict)
+        run: ruff check src/ragtree/core src/ragtree/cli src/ragtree/tasks src/ragtree/retrieval src/ragtree/generation src/ragtree/integrations src/ragtree/apps tests
       - name: Lint research layers (advisory)
         run: ruff check src scripts || true
 
@@ -36,3 +39,15 @@ jobs:
         run: pip install -e ".[dev,vector-qdrant,rdf]"
       - name: Run integration tests (qdrant in-process, rdflib)
         run: pytest tests/integration -m integration
+
+  optional-surfaces:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package with api and ui extras
+        run: pip install -e ".[dev,api,ui]" httpx
+      - name: Run surface integration tests
+        run: pytest tests/integration -m "api or ui"

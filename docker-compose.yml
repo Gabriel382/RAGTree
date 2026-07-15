@@ -1,14 +1,32 @@
+# RAGTree deployment profiles (design doc, section 12).
+#
+#   docker compose --profile api up          # minimal API (in-memory retrieval)
+#   docker compose --profile qdrant up -d    # vector store only
+#   docker compose --profile neo4j up -d     # graph store only
+#   docker compose --profile full up         # API + Qdrant + Neo4j showcase
+#
+# Integration tests against these services:
+#   docker compose --profile neo4j up -d
+#   NEO4J_URI=bolt://localhost:7687 pytest tests/integration -m neo4j
+
 services:
-  ragtree:
+  api:
     build: .
-    command: ["ragtree", "doctor"]
+    command: ["ragtree", "serve", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    profiles: ["api", "full"]
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
     volumes:
-      - ./data:/app/data
-      - ./outputs:/app/outputs
+      - qdrant_data:/qdrant/storage
+    profiles: ["qdrant", "full"]
 
   neo4j:
     image: neo4j:5-community
-    profiles: ["neo4j"]
     environment:
       NEO4J_AUTH: neo4j/password
     ports:
@@ -16,6 +34,8 @@ services:
       - "7687:7687"
     volumes:
       - neo4j_data:/data
+    profiles: ["neo4j", "full"]
 
 volumes:
+  qdrant_data:
   neo4j_data:
