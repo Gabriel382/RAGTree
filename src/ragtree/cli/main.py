@@ -77,5 +77,18 @@ def doctor() -> None:
     console.print("\nBase CLI is available. Current benchmark workflows remain under scripts/.")
 
 
+# Register user-facing commands (demo, run, evaluate, export, serve, workbench).
+from ragtree.cli import commands as _commands  # noqa: E402
+
+for _command in (
+    _commands.demo,
+    _commands.run,
+    _commands.evaluate,
+    _commands.export,
+    _commands.serve,
+    _commands.workbench,
+):
+    app.command()(_command)
+
 if __name__ == "__main__":
     app()

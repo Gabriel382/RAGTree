@@ -1,19 +1,25 @@
+# Declarative run config for `ragtree run --config ...`
+# Executed against the tiny committed QA corpus; swap llm.provider to
+# litellm/ollama/openrouter/vllm to use a real model (same pipeline).
 project:
   name: semantic_rag_demo
   run_id: demo_001
 
 task:
   name: question_answering
+  question: "Why did pump P-102 fail?"
   require_evidence: true
 
 llm:
   provider: mock
-  model: local-mock
-  temperature: 0.0
+  reply: "The pump failed because its mechanical seal wore out [maint-001/maint-001-c0]."
 
 retriever:
   provider: in_memory
   top_k: 3
+
+documents:
+  path: ../../tests/fixtures/qa/tiny_documents.jsonl
 
 outputs:
   directory: outputs/demo

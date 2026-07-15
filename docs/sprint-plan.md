@@ -1,6 +1,6 @@
 # Sprint plan: BYOS migration
 
-Operationalizes `RAGTree_Extended_BYOS_Installable_Architecture_Design.docx` (and condenses `docs/roadmap.md`) into the fewest sprints that still cover the whole design. Each sprint lands on its own branch: `sprint-1/installable-core` (**✅ done**), `sprint-2/task-layer-adapters` (**✅ done**), `sprint-3/surfaces-alpha`. `xquality` is never touched.
+Operationalizes `RAGTree_Extended_BYOS_Installable_Architecture_Design.docx` (and condenses `docs/roadmap.md`) into the fewest sprints that still cover the whole design. Each sprint lands on its own branch: `sprint-1/installable-core` (**✅ done**), `sprint-2/task-layer-adapters` (**✅ done**), `sprint-3/surfaces-alpha` (**✅ done — v0.1.0-alpha**). `xquality` is never touched.
 
 ## 1. Where the code stands today
 
@@ -57,7 +57,9 @@ Goal: the BYOS example from design §17.3 runs end to end; RAG works for more th
 - Automatic tests on small datasets: commit tiny fixture slices (5–10 docs) produced by the existing converters — causalbank, docred_causal, eventstoryline, fincausal — plus a tiny QA corpus and `tiny_ontology.ttl`. One parametrized e2e suite runs each task on each applicable fixture with the mock LLM and asserts golden metrics. Contract tests run per adapter; integration tests gated by markers/extras.
 - DoD (= design Sprint 3 core): §17.3 example runs; `pytest` passes core-only; `pytest -m integration` passes with extras; every fixture dataset exercised in CI.
 
-### Sprint 3 — Surfaces, experiment preservation, alpha release
+### Sprint 3 — Surfaces, experiment preservation, alpha release ✅ (branch `sprint-3/surfaces-alpha`, tag `v0.1.0-alpha`)
+
+> Scope note (delivered): scripts already delegate to package modules, so "wrapping" is enforced by regression tests (import resolution + golden metrics on legacy outputs) rather than rewriting 30 entry points; the experiment CLI passthrough can follow post-alpha without breaking anything.
 
 Goal: design §13.1 release checklist satisfied; `v0.1.0-alpha` tagged.
 

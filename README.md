@@ -43,10 +43,12 @@ Users bring their own:
 ## What works today
 
 ```bash
-pip install -e .                   # lightweight core + task layer + in-memory stack
-ragtree doctor                     # see which optional extras are present
-python examples/semantic_rag_demo.py
-pytest tests/unit tests/contract tests/e2e
+pip install -e .                     # lightweight core + task layer + in-memory stack
+ragtree doctor                       # see which optional extras are present
+ragtree demo semantic-rag            # deterministic QA demo, zero extras
+ragtree demo relation-extraction     # RE demo with micro P/R/F1 against gold
+ragtree run --config examples/configs/semantic_rag_demo.yaml
+pytest tests/unit tests/contract tests/e2e tests/regression
 ```
 
 A full BYOS pipeline runs with zero optional extras:
@@ -82,7 +84,8 @@ RAGTree/
 │   ├── retrieval/             # dense, hybrid, ontology-guided, KG-guided retrievers
 │   ├── integrations/          # llms, embedders, vectorstores, graphstores, ontologies, exporters
 │   ├── generation/            # robust JSON extraction and normalization
-│   ├── cli/                   # lightweight CLI (doctor, addons, version)
+│   ├── apps/                  # config runner, FastAPI service, Streamlit workbench
+│   ├── cli/                   # doctor, addons, version, demo, run, evaluate, export, serve, workbench
 │   ├── datasets/              # dataset loaders (research layer)
 │   ├── evaluation/            # relation metrics (research layer)
 │   ├── kg/                    # KG stores and retrievers (research layer)
@@ -105,11 +108,46 @@ RAGTree/
 └── docs/                      # architecture, design, sprint plan
 ```
 
-The research layers are being ported behind the core protocols sprint by
-sprint (`docs/sprint-plan.md`); `apps/` (FastAPI, Streamlit) joins in sprint 3.
 The heavyweight index-based research retrievers (chunk-ORAG, community-KG,
 triple-KG) remain available to the benchmark scripts under `processing/`,
 `ontologies/` and `kg/`; their protocol-level counterparts live in `retrieval/`.
+
+## CLI, API service and workbench
+
+The full command set (design doc, section 8.1):
+
+```bash
+ragtree doctor | addons | version
+ragtree demo semantic-rag | relation-extraction
+ragtree run --config examples/configs/semantic_rag_demo.yaml
+ragtree evaluate --gold gold.jsonl --pred predictions.jsonl [--ignore-label null]
+ragtree export --input result.json --format jsonl|csv|graph-csv --output out.csv
+ragtree serve --host 0.0.0.0 --port 8000     # extra: api
+ragtree workbench                            # extra: ui (Streamlit)
+```
+
+`ragtree run` executes declarative YAML configs (documents + task + llm +
+retriever), writes `results.jsonl`, `metrics.json` and a reproducibility
+`manifest.json`. `ragtree evaluate` runs the historical benchmark metrics
+over legacy `pred_relations` outputs — old result files evaluate unchanged.
+
+The FastAPI surface (`pip install -e ".[api]"`, then `ragtree serve`):
+
+```text
+GET  /health   GET  /version
+POST /retrieve            # rank evidence over posted documents
+POST /runs                # execute a task spec; returns run_id + RAGResult
+GET  /runs/{run_id}
+POST /evaluate            # relation metrics for predictions vs reference
+```
+
+Docker profiles (design doc, section 12):
+
+```bash
+docker compose --profile api up        # minimal API
+docker compose --profile full up       # API + Qdrant + Neo4j showcase
+docker compose --profile neo4j up -d && NEO4J_URI=bolt://localhost:7687 pytest -m neo4j
+```
 
 ## Core protocol rule
 
@@ -178,9 +216,9 @@ pip install -e ".[llm-litellm,vector-chroma,neo4j]"
 |---|---:|---|
 | `tests/unit/` | Yes | Pure logic: schemas, config, registry, errors, CLI, import guard. |
 | `tests/contract/` | Yes | Protocol conformance; reusable bases for every future adapter. |
-| `tests/integration/` | No (markers) | Real optional integrations (Chroma, Qdrant, Neo4j, FastAPI, ...). |
+| `tests/integration/` | No (markers) | Real optional stacks: Qdrant (in-process), Chroma, Neo4j, FastAPI TestClient, Streamlit, LiteLLM, rdflib. |
 | `tests/e2e/` | Yes | Full pipelines over tiny fixture slices of CausalBank, DocRED, EventStoryLine and FinCausal, plus a QA corpus — deterministic mock LLM, golden metrics. |
-| `tests/regression/` | Yes | Protects `pred_relations` and current experiment output formats. |
+| `tests/regression/` | Yes | Golden-metric protection of the legacy `pred_relations` format, legacy-runner/new-evaluator agreement, and script import preservation. |
 | `tests/fixtures/` | Data only | Tiny committed datasets (exempt from the repo `*.json`/`*.jsonl` ignore). |
 
 ```bash
@@ -215,7 +253,7 @@ Three sprints, one branch each (details in `docs/sprint-plan.md`):
 |---|---|---|---|
 | 1 | `sprint-1/installable-core` | src/ layout, core schemas + protocols, errors, test skeleton, CI. | ✅ done |
 | 2 | `sprint-2/task-layer-adapters` | Task layer, adapters ported from existing code, tiny-dataset e2e harness. | ✅ done |
-| 3 | `sprint-3/*` | FastAPI/Streamlit surfaces, Docker profiles, experiment wrappers, `v0.1.0-alpha`. | planned |
+| 3 | `sprint-3/surfaces-alpha` | CLI command set, FastAPI/Streamlit surfaces, Docker profiles, regression layer, `v0.1.0-alpha`. | ✅ done |
 
 ## Design rule summary
 

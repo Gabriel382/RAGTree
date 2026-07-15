@@ -5,9 +5,12 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-COPY pyproject.toml README.md /app/
-COPY ragtree /app/ragtree
+COPY pyproject.toml README.md LICENSE /app/
+COPY src /app/src
 
-RUN pip install --no-cache-dir -e ".[api]"
+RUN pip install --no-cache-dir ".[api]"
 
-CMD ["ragtree", "doctor"]
+EXPOSE 8000
+
+# Default: serve the FastAPI surface; override with `ragtree doctor`, etc.
+CMD ["ragtree", "serve", "--host", "0.0.0.0", "--port", "8000"]
