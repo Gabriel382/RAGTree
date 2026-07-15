@@ -2,7 +2,46 @@
 
 All notable changes to RAGTree should be documented here.
 
-## Unreleased — sprint-2/task-layer-adapters
+## v0.1.0-alpha — 2026-07-15
+
+First public alpha of the bring-your-own-stack architecture: installable
+core with stable schemas and protocols, task layer, adapter integrations,
+retrieval layer, application surfaces (CLI, FastAPI, Streamlit), Docker
+profiles and a five-layer test suite — with every research experiment
+preserved. Delivered over three branches, detailed below.
+
+## sprint-3/surfaces-alpha
+
+### Added
+
+- CLI command set (design §8.1): `ragtree demo semantic-rag|relation-extraction`,
+  `ragtree run --config <yaml>` (writes results.jsonl, metrics.json and a
+  reproducibility manifest.json), `ragtree evaluate --gold --pred`
+  (historical benchmark metrics over legacy `pred_relations` outputs),
+  `ragtree export --format jsonl|csv|graph-csv`, `ragtree serve`,
+  `ragtree workbench`.
+- `ragtree.apps.runner`: declarative config/spec -> provider, task,
+  retriever, full runs; shared by CLI, API and UI. Example configs rewritten
+  to be executable against the committed tiny fixtures.
+- FastAPI surface (design §8.2): /health, /version, /retrieve, /runs,
+  /runs/{id}, /evaluate; run registry; MissingDependencyError -> 400 with
+  the pip extra named.
+- Streamlit workbench: interactive QA over a pasted corpus with provider
+  switching (mock/litellm/ollama).
+- Regression layer: golden-metric protection of the legacy
+  `pred_relations` format (full and ignore-null), proof that the legacy
+  runner and the new `RelationEvaluator` agree, benchmark script import
+  preservation and `__main__`-guard checks (design §11).
+- Docker (design §12): compose profiles `api`, `qdrant`, `neo4j`, `full`.
+- CI: regression suite + CLI demos in the core job; new `optional-surfaces`
+  job (api + ui extras).
+
+### Fixed
+
+- Dockerfile broken by the src/ move (`COPY ragtree` -> `COPY src`); image
+  now installs `.[api]` and serves the API by default.
+
+## sprint-2/task-layer-adapters
 
 ### Added
 
@@ -39,7 +78,7 @@ All notable changes to RAGTree should be documented here.
   the reference implementations graduated into `ragtree.integrations`.
 - pytest markers extended: `qdrant`, `chroma`, `rdf`.
 
-## Unreleased — sprint-1/installable-core
+## sprint-1/installable-core
 
 ### Added
 
@@ -83,10 +122,3 @@ All notable changes to RAGTree should be documented here.
   `ragtree.core.schemas.RelationPrediction`).
 - Runtime and CO2 experiment scripts.
 - Benchmark results on the `xquality` branch (untouched).
-
-## v0.1.0-alpha - Planned
-
-- Task layer (question answering + relation extraction over the same core).
-- Adapters: LLM providers, in-memory + Chroma/Qdrant vector stores, Neo4j export.
-- Tiny-dataset e2e harness (causalbank, docred_causal, eventstoryline, fincausal).
-- FastAPI and Streamlit surfaces, Docker profiles, experiment wrappers.
