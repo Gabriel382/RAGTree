@@ -1,0 +1,49 @@
+schema_version: 1
+branch_from: xquality
+journal_manuscript: KNOSYS-D-26-17743
+historical_protocol: legacy_xquality
+revised_protocol: controlled_revision_v2
+methods: [baseline, icl, cot, growlrag, ograg, chunk_orag, kg_rag, community_kgrag, triple_kg_rag, agentic_hybrid, langgraph_agentic_simple, marag]
+datasets: [maven_ere, eventstoryline, fincausal, docred_causal, causalbank]
+robust_methods: [baseline, growlrag, kg_rag, agentic_hybrid]
+robust_datasets: [maven_ere, docred_causal, causalbank]
+budget_methods: [growlrag, community_kgrag, langgraph_agentic_simple]
+budget_datasets: [maven_ere, docred_causal, causalbank]
+sensitivity_methods: [chunk_orag, community_kgrag, triple_kg_rag]
+sensitivity_datasets: [maven_ere, docred_causal, causalbank]
+repeat_methods: [agentic_hybrid, langgraph_agentic_simple]
+repeat_datasets: [maven_ere, docred_causal, causalbank]
+expected_records:
+  maven_ere: 3516
+  eventstoryline: 443
+  fincausal: 967
+  docred_causal: 998
+  causalbank: 1080
+max_errors: 3
+max_api_retries: 2
+max_shard_seconds: 86400
+# Budget-matched external evidence requires explicit strategy-specific evidence
+# boundaries. Without them, the phase is blocked (not silently approximated).
+blocked_phases: []
+profiles:
+  local:
+    mode: sequential
+    workers: 1
+    api_base: http://localhost:8000/v1
+    api_key_env: VLLM_API_KEY
+    models:
+      gpt_oss_20b: openai/openai/gpt-oss-20b
+      qwen3_30b_a3b: openai/qwen/qwen3-30b-a3b-instruct-2507
+  openrouter:
+    mode: parallel
+    workers: 5
+    api_base: null
+    api_key_env: OPENROUTER_API_KEY
+    models:
+      gpt_oss_20b: openrouter/openai/gpt-oss-20b
+      qwen3_30b_a3b: openrouter/qwen/qwen3-30b-a3b-instruct-2507
+# Edit to your actual purchase quotes; do not assume these prices are current.
+price_per_million_usd:
+  gpt_oss_20b: {input: null, output: null}
+  qwen3_30b_a3b: {input: null, output: null}
+contingency_fraction: 0.30

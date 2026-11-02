@@ -1,0 +1,7 @@
+data/
+*.jsonl
+*.json
+
+# KBS Journal generated checkpoints, full prompts, API traces and experiment logs
+results/kbs_journal/
+.kbs_patch_backups/

@@ -1,0 +1,4 @@
+# Install together with the upstream RAGTree dependencies, not instead of them.
+LiteLLM>=1.50,<2
+PyYAML>=6.0
+pytest>=8
