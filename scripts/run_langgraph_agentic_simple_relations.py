@@ -1,5 +1,6 @@
 # scripts/run_langgraph_agentic_simple_relations.py
 from __future__ import annotations
+from ragtree.experiments.kbs import runtime as kbs_runtime
 
 import argparse
 import json
@@ -227,11 +228,14 @@ def main() -> None:
                 break
             num_seen_after_type += 1
 
+            if not kbs_runtime.should_process(doc):
+                continue
+
             relation_types_for_doc = _determine_relation_types_for_doc(doc, cli_relation_types=None)
             if docred_rel_info is not None and "docred" in str(args.dataset_key).lower():
                 relation_types_for_doc = _augment_docred_relation_types(relation_types_for_doc, docred_rel_info)
 
-            pred_relations = strategy.predict_relations(
+            pred_relations = kbs_runtime.invoke(strategy.predict_relations, 
                 doc,
                 relation_types=relation_types_for_doc,
                 few_shots=few_shots,

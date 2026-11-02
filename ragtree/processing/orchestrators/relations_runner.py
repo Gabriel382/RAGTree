@@ -17,6 +17,7 @@ from typing import (
 )
 
 from tqdm import tqdm
+from ragtree.experiments.kbs import runtime as kbs_runtime
 
 from ragtree.core.config import load_config
 from ragtree.processing.rag.base_strategy import BaseRelationStrategy, LLMBackendConfig
@@ -416,6 +417,9 @@ def run_relation_experiment(
             if limit is not None and written >= limit:
                 break
 
+            if not kbs_runtime.should_process(doc):
+                continue
+
             # Determine relation types for this doc
             relation_types_for_doc = _determine_relation_types_for_doc(
                 doc,
@@ -433,8 +437,8 @@ def run_relation_experiment(
                 )
 
             # Predict relations with the final relation_types_for_doc
-            pred_relations = strategy.predict_relations(
-                doc,
+            pred_relations = kbs_runtime.invoke(
+                strategy.predict_relations, doc,
                 relation_types=relation_types_for_doc,
                 **predict_kwargs,
             )

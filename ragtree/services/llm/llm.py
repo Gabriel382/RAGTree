@@ -6,9 +6,6 @@ from typing import Dict, Optional, Tuple, List
 import os
 
 from ragtree.services.llm.mock_client import BaseLLMClient
-from ragtree.services.llm.ollama_client import OllamaClient
-from ragtree.services.llm.openrouter_client import OpenRouterClient
-from ragtree.services.llm.vllm_client import VLLMClient
 
 
 # Cache one client per (backend, chat_model, embed_model) triple
@@ -87,17 +84,23 @@ def get_llm_client(
 
     # Instantiate appropriate client
     if backend_name == "ollama":
+        from ragtree.services.llm.ollama_client import OllamaClient
         client: BaseLLMClient = OllamaClient(
             chat_model=chat_name,
             embed_model=embed_name,
         )
     elif backend_name == "openrouter":
+        from ragtree.services.llm.openrouter_client import OpenRouterClient
         client = OpenRouterClient(
             chat_model=chat_name,
             embed_model=embed_name,
         )
     
+    elif backend_name == "litellm":
+        from ragtree.experiments.kbs.gateway import LiteLLMClient
+        client = LiteLLMClient(chat_model=chat_name, embed_model=embed_name)
     elif backend_name == "vllm":
+        from ragtree.services.llm.vllm_client import VLLMClient
         client = VLLMClient(
             chat_model=chat_name,
             embed_model=embed_name,

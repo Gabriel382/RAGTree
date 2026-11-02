@@ -1,5 +1,6 @@
 # scripts/run_ograg_relations.py
 from __future__ import annotations
+from ragtree.experiments.kbs import runtime as kbs_runtime
 
 import argparse
 import json
@@ -182,8 +183,11 @@ def main() -> None:
                 break
             seen_after_filter += 1
 
+            if not kbs_runtime.should_process(doc):
+                continue
+
             rel_types = cli_rel_types  # may be None => infer per doc
-            pred = strategy.predict_relations(doc, relation_types=rel_types)
+            pred = kbs_runtime.invoke(strategy.predict_relations, doc, relation_types=rel_types)
 
             if args.output_format == "pred-only":
                 out_obj = {"document_id": doc.get("document_id"), "pred_relations": pred}

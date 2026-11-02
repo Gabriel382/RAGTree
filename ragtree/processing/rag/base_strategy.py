@@ -67,7 +67,16 @@ class BaseRelationStrategy(ABC):
         Adapt this if your LLM interface differs.
         """
         # Common simple pattern: client.chat(messages) -> str
-        result = self.llm_client.chat(messages)  # type: ignore[attr-defined]
+        # KBS controlled executions explicitly forward decoded generation settings.
+        # Legacy xquality runs retain the original historical call contract.
+        from ragtree.experiments.kbs.runtime import active as kbs_active
+        if kbs_active():
+            result = self.llm_client.chat(
+                messages, temperature=self.llm_config.temperature,
+                max_tokens=self.llm_config.max_tokens,
+            )
+        else:
+            result = self.llm_client.chat(messages)  # type: ignore[attr-defined]
 
         if isinstance(result, str):
             return result
@@ -122,6 +131,13 @@ class BaseRelationStrategy(ABC):
 
             normalized[rtype] = pairs
 
+        from ragtree.experiments.kbs.runtime import trace_event, active as kbs_active
+        if kbs_active():
+            trace_event('normalization', {
+                'before':raw,
+                'after':normalized,
+                'allowed_types':list(relation_types),
+            })
         return normalized
 
     # ------------------------------------------------------------------

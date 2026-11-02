@@ -159,6 +159,10 @@ class MARagRelationStrategy(BaseRelationStrategy):
         if not model:
             raise ValueError("llm_config.model is missing")
 
+        if backend == "litellm":
+            return self.llm_client.chat(messages, temperature=temperature, max_tokens=max_tokens)
+
+
         # Ollama
         if backend == "ollama":
             host = str(base_url or "http://localhost:11434").rstrip("/")

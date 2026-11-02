@@ -1,5 +1,6 @@
 # scripts/run_agentic_hybrid_relations.py
 from __future__ import annotations
+from ragtree.experiments.kbs import runtime as kbs_runtime
 
 import argparse
 import json
@@ -438,6 +439,9 @@ def main() -> None:
                 break
             num_seen_after_type += 1
 
+            if not kbs_runtime.should_process(doc):
+                continue
+
             doc_id = str(doc.get("document_id") or doc.get("id") or "")
 
             # inject ontology_links if missing
@@ -453,7 +457,7 @@ def main() -> None:
             if docred_rel_info is not None and "docred_causal" in str(args.dataset_key).lower():
                 relation_types_for_doc = _augment_docred_relation_types(relation_types_for_doc, docred_rel_info)
 
-            pred_relations = strategy.predict_relations(
+            pred_relations = kbs_runtime.invoke(strategy.predict_relations, 
                 doc,
                 relation_types=relation_types_for_doc,
                 few_shots=few_shots,

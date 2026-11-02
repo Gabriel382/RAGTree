@@ -1,4 +1,5 @@
 from __future__ import annotations
+from ragtree.experiments.kbs import runtime as kbs_runtime
 
 import argparse
 import json
@@ -450,13 +451,15 @@ def main() -> None:
 
     with out_path.open("w", encoding="utf-8") as fout:
         for doc in tqdm(filtered_docs, desc=f"MA-RAG on {args.dataset_key}", unit="doc"):
+            if not kbs_runtime.should_process(doc):
+                continue
             rel_types = (
                 list(doc.get("relations", {}).keys())
                 if isinstance(doc.get("relations"), dict) and doc.get("relations")
                 else None
             )
 
-            pred = strat.predict_relations(doc, relation_types=rel_types, few_shots=few_shots)
+            pred = kbs_runtime.invoke(strat.predict_relations, doc, relation_types=rel_types, few_shots=few_shots)
 
             if args.output_format == "pred-only":
                 out_obj = {
