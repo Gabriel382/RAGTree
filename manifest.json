@@ -1,0 +1,182 @@
+{
+  "name": "RAGTree KBS Journal patch",
+  "base_export": "RAGTree-xquality.zip",
+  "branch_target": "kbs-journal",
+  "total_files": 29,
+  "files": [
+    {
+      "path": ".gitignore",
+      "original_sha256": "e32fb237712be1a067fdbd580b00c4c62a1a34de0b8f95b5761f69b4958e1e07",
+      "patched_sha256": "2a9f125e9949c886d4459cb25321fc28d387066fbbeacaf7275609e0ade69bad",
+      "bytes": 145
+    },
+    {
+      "path": "configs/experiments/kbs_journal/protocol.yaml",
+      "original_sha256": null,
+      "patched_sha256": "e1aa02d2df029b55ade695b4f78504b6a4f40a4be999d143118460ecbd1771c1",
+      "bytes": 1903
+    },
+    {
+      "path": "configs/experiments/kbs_journal/recipes.json",
+      "original_sha256": null,
+      "patched_sha256": "0075e319e5fc415e5649765c415390bcc1a8835585da1af074f5b4536b6f37c7",
+      "bytes": 29521
+    },
+    {
+      "path": "docs/KBS_EXPERIMENT_PROTOCOL.md",
+      "original_sha256": null,
+      "patched_sha256": "e791e0329fd5150fe85a12ae139b6c99b67778b3cfe603419b64da708da3ff6e",
+      "bytes": 13757
+    },
+    {
+      "path": "docs/KBS_VALIDATION_REPORT.md",
+      "original_sha256": null,
+      "patched_sha256": "5579a3a834ff500658bce0b01847d4c8e99f910a76f9f4ce43129f63bcb80f03",
+      "bytes": 2754
+    },
+    {
+      "path": "ragtree/experiments/__init__.py",
+      "original_sha256": null,
+      "patched_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "ragtree/experiments/kbs/__init__.py",
+      "original_sha256": null,
+      "patched_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "ragtree/experiments/kbs/cli.py",
+      "original_sha256": null,
+      "patched_sha256": "b7821d0a86af1219812029aec5b2a41fe7fe163ccdc2a03ce640f5d58f73cf2e",
+      "bytes": 11374
+    },
+    {
+      "path": "ragtree/experiments/kbs/context_budget.py",
+      "original_sha256": null,
+      "patched_sha256": "f2c292d1e38c55418456caa2699e205edd48d256b29e5cc8d5bf3ca66b5901a6",
+      "bytes": 3188
+    },
+    {
+      "path": "ragtree/experiments/kbs/engine.py",
+      "original_sha256": null,
+      "patched_sha256": "f69bd76cf5b3591996731ad58d62aea874a533186d0cc676915609c4a838daa4",
+      "bytes": 14972
+    },
+    {
+      "path": "ragtree/experiments/kbs/estimate.py",
+      "original_sha256": null,
+      "patched_sha256": "9bdcb356c9b506280c04dc7bd7cdac98654b9a06a4e1f5d91e86651e8ffa2162",
+      "bytes": 7840
+    },
+    {
+      "path": "ragtree/experiments/kbs/gateway.py",
+      "original_sha256": null,
+      "patched_sha256": "651ae407b40da14c3df767343e7398c7fd06fba7b6b073ca8625b24e91fe717a",
+      "bytes": 3930
+    },
+    {
+      "path": "ragtree/experiments/kbs/protocol.py",
+      "original_sha256": null,
+      "patched_sha256": "58dc10fa4cf5c64031d37c2ad014a939fd6e6988d37d9c49d0cdd0776cad34a2",
+      "bytes": 5316
+    },
+    {
+      "path": "ragtree/experiments/kbs/report.py",
+      "original_sha256": null,
+      "patched_sha256": "bdd124a5bacd038a77a57f0666ed62154ee2aa2cf2da3f0722c14ba2242d5a2e",
+      "bytes": 10660
+    },
+    {
+      "path": "ragtree/experiments/kbs/runtime.py",
+      "original_sha256": null,
+      "patched_sha256": "8fc13d5bae8caff8933ae28ed7a00644eb4fc80d2452b98eb49b8e91f7af7ee7",
+      "bytes": 8925
+    },
+    {
+      "path": "ragtree/processing/orchestrators/relations_runner.py",
+      "original_sha256": "c016ebb7b4341beceb855c3581b21c7bed6377811f10cf19f037b93c38bea1f1",
+      "patched_sha256": "18dca63a14311e3ea4646a70d55913290576ec01e2ded7d432981b0afa494eb3",
+      "bytes": 15149
+    },
+    {
+      "path": "ragtree/processing/rag/base_strategy.py",
+      "original_sha256": "72d3677916e4c8e96a08f2f8b4fe72bf2413d008114c1061d1b0226eef68ae96",
+      "patched_sha256": "ffe674fd277349f4ed2fcff9d1766f9224df2b95caba7e6036438133fad9d08e",
+      "bytes": 5811
+    },
+    {
+      "path": "ragtree/processing/rag/strategies/marag_relations.py",
+      "original_sha256": "3c57d4a1a39d3e5a7f66884c811e88d6572f256c59acadcca104ed44f77b026e",
+      "patched_sha256": "0ba993d8a445dfe8d945638fab7259235ecd8908033b0dd9f75e529f8e4d0a02",
+      "bytes": 39943
+    },
+    {
+      "path": "ragtree/services/llm/llm.py",
+      "original_sha256": "555c9ba6c8b6452fbc0aa06fa2fb7c324e969ea375aea40fc954f1710396fb99",
+      "patched_sha256": "54b384c638ce764788ad2d826484c25a8caec9c7df102f6e59c1e9789fa5a974",
+      "bytes": 3920
+    },
+    {
+      "path": "requirements-kbs.txt",
+      "original_sha256": null,
+      "patched_sha256": "706dd37b96324968b5f6bc1870833010571700a710f1bf2fd927c7a08fc8f41b",
+      "bytes": 119
+    },
+    {
+      "path": "scripts/kbs_protocol.py",
+      "original_sha256": null,
+      "patched_sha256": "4d313d4aac7560e711400fe6d6a41591846377744f309f454944356d97753719",
+      "bytes": 288
+    },
+    {
+      "path": "scripts/run_agentic_hybrid_relations.py",
+      "original_sha256": "a15be3a0449e7900ab48b06af2e29f0721eef8920e04c1f7816a70fe03803057",
+      "patched_sha256": "d988b452b63de4d48cae578b42e435ba2434b83b35746b8f53d0bf9256974db1",
+      "bytes": 17193
+    },
+    {
+      "path": "scripts/run_langgraph_agentic_hybrid_relations.py",
+      "original_sha256": "3c23e25020a3ce861bb08da44d7f3480e59bfde39c1d060b25fbcd2e23f32b6a",
+      "patched_sha256": "bf6eba6c3aed6812e5ca4745973f859d7b0c935709c562e783609efd29dd7fa9",
+      "bytes": 15792
+    },
+    {
+      "path": "scripts/run_langgraph_agentic_simple_relations.py",
+      "original_sha256": "5afca625964285e56af65087cdf8b7d5c2c5c9c780d47bc85f068044a93cd2ce",
+      "patched_sha256": "2bf6e7f884215ea332e59627e5813164ac586e497ea1d79dc6ef68b9da0fb21c",
+      "bytes": 10644
+    },
+    {
+      "path": "scripts/run_marag_relations.py",
+      "original_sha256": "8a09629097231f72739cdc20aacf943dc380265331b78a61aba34800333a9c53",
+      "patched_sha256": "aae6208d3370523f8688d9245332ede257afc4627b6e7336d92dd8678cb8402b",
+      "bytes": 16344
+    },
+    {
+      "path": "scripts/run_ograg_relations.py",
+      "original_sha256": "b58d373dc2963551b0bca5ea63cdfcbe71b7016ebaf6b207b0d241bc348b034e",
+      "patched_sha256": "be7105fc1690465119440e515c0d8f8cd0336405285aadcfd2a220505c24090b",
+      "bytes": 8227
+    },
+    {
+      "path": "tests/kbs/fixtures/fake_litellm/litellm.py",
+      "original_sha256": null,
+      "patched_sha256": "45a2dc2655a49fa64a935b21fec052d348e10322bfe1153b4925ab86e6f90d44",
+      "bytes": 657
+    },
+    {
+      "path": "tests/kbs/test_protocol_engine.py",
+      "original_sha256": null,
+      "patched_sha256": "d5c3a203dc774eb3c6d209ff48a814409a3d9914138340ccbfd88cfa0e3c0025",
+      "bytes": 5914
+    },
+    {
+      "path": "tests/kbs/test_subprocess.py",
+      "original_sha256": null,
+      "patched_sha256": "cc750c43366551566e8c4b4f49fca09678d5e73fd4e01f7b5d839109a8713851",
+      "bytes": 3220
+    }
+  ]
+}
