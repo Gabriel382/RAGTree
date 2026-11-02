@@ -1,0 +1,64 @@
+--- a/ragtree/experiments/kbs/gateway.py
++++ b/ragtree/experiments/kbs/gateway.py
+@@ -39,25 +39,44 @@
+             trace_event('matched_external_evidence',measure)
+         start=time.monotonic()
+         request={'model':model,'messages':list(messages),'parameters': {k:v for k,v in data.items() if k!='api_key'}}
++        payload = None
+         try:
+-            result = litellm.completion(model=model,messages=list(messages),**data)
+-            payload = result.model_dump() if hasattr(result,'model_dump') else dict(result)
+-            price = getattr(result,'_hidden_params',{}) or {}
+-            price = price.get('response_cost')
+-            if price is not None:
+-                payload['kbs_litellm_reported_cost_usd']=price
+-            trace_call(request,payload,time.monotonic()-start)
+-            choice = result.choices[0].message
+-            content = getattr(choice,'content',None)
+-            if isinstance(content,str):
+-                if not content.strip():raise ValueError('LLM returned empty content (possibly consumed by reasoning tokens)')
+-                return content
+-            if isinstance(content,list):
+-                text='\n'.join(str(x.get('text','')) for x in content if isinstance(x,dict))
+-                if text.strip():return text
+-            raise ValueError('LLM returned no usable completion text')
++            result = litellm.completion(model=model, messages=list(messages), **data)
++            payload = result.model_dump() if hasattr(result, 'model_dump') else dict(result)
++            hidden = getattr(result, '_hidden_params', {}) or {}
++            cost = hidden.get('response_cost')
++            if cost is not None:
++                payload['kbs_litellm_reported_cost_usd'] = cost
++            choices = getattr(result, 'choices', [])
++            choice = choices[0] if choices else None
++            message = getattr(choice, 'message', None)
++            content = getattr(message, 'content', None)
++            if isinstance(content, str) and content.strip():
++                text = content
++            elif isinstance(content, list):
++                text = '\n'.join(str(x.get('text', '')) for x in content if isinstance(x, dict))
++            else:
++                text = ''
++            if not text.strip():
++                usage = payload.get('usage') or {}
++                details = usage.get('completion_tokens_details') or {}
++                finish = getattr(choice, 'finish_reason', None)
++                # Do not mistake reasoning text for the final extraction answer.
++                raise ValueError(
++                    'LLM returned no usable final-answer text: '
++                    f'finish_reason={finish!r}, '
++                    f'completion_tokens={usage.get("completion_tokens")!r}, '
++                    f'reasoning_tokens={details.get("reasoning_tokens")!r}, '
++                    f'configured_max_tokens={data.get("max_tokens")!r}. '
++                    'Inspect the saved response trace before changing the protocol.'
++                )
++            trace_call(request, payload, time.monotonic() - start)
++            return text
+         except Exception as exc:
+-            trace_call(request,None,time.monotonic()-start,repr(exc))
++            # Exactly one trace per API call. If the model returned reasoning-only
++            # content, preserve the billed response instead of recording a second
++            # artificial failed call (which would distort call-count estimates).
++            trace_call(request, payload, time.monotonic() - start, repr(exc))
+             raise
+ 
+     def embed(self,text: str):
