@@ -235,7 +235,7 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
     processes=[]
     try:
         for index in range(workers):
-            path=output_config(job,root,profile,index)
+            path=output_config(job,root,profile,index,protocol_mode=protocol_mode)
             command=_prep_command(job,path,profile)
             log_path=root/'logs'/f'shard_{index}.log';log_path.parent.mkdir(parents=True,exist_ok=True)
             log=log_path.open('a',encoding='utf8')
@@ -248,6 +248,13 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
                'KBS_METHOD':job.method,
                'KBS_API_RETRIES':str(load_protocol()['max_api_retries']),
                'PYTHONPATH':str(ROOT)+os.pathsep+env.get('PYTHONPATH','')})
+            # Do not modify xquality generation behavior or use untracked
+            # inherited settings in controlled runs.
+            env.pop('KBS_REASONING_EFFORT', None)
+            if protocol_mode=='controlled_revision_v2':
+                generation=load_protocol().get('generation',{}).get(job.model,{})
+                if generation.get('reasoning_effort'):
+                    env['KBS_REASONING_EFFORT']=str(generation['reasoning_effort'])
             if job.phase=='budget_control':env['KBS_EVIDENCE_BUDGET_TOKENS']='2048'
             if selected_file:env['KBS_SELECTED_IDS']=str(selected_file.resolve())
             if protocol_mode=='controlled_revision_v2':

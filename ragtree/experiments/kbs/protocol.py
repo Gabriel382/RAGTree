@@ -99,19 +99,21 @@ def select_jobs(jobs,phase=None,method=None,dataset=None,model=None,maximum=None
     return out[:maximum] if maximum is not None else out
 
 
-def output_config(job:Job,run_root:Path,profile:dict,shard:int=0):
+def output_config(job:Job,run_root:Path,profile:dict,shard:int=0,protocol_mode:str="legacy_xquality"):
     """Write a derived YAML, never alter xquality's original configs/default.yaml."""
     cfg=yaml.safe_load((ROOT/'configs/default.yaml').read_text(encoding='utf8'))
     cfg['paths']['data_processed']=str((run_root/'legacy_shards'/f'{shard}').resolve())
     cfg['paths']['results']=str((run_root/'legacy_shards'/f'{shard}'/'results').resolve())
     model_id=profile['models'][job.model]
+    generation = (load_protocol().get('generation', {}).get(job.model, {})
+                  if protocol_mode=='controlled_revision_v2' else {})
     for llm_section,value in cfg.get('llm',{}).items():
         if not isinstance(value,dict) or 'backends' not in value: continue
         default=value['backends'].get('vllm',{})
         value['backends']['litellm']={
            'model':model_id,
-           'temperature':default.get('temperature',0.0),
-           'max_tokens':default.get('max_tokens',1024)}
+           'temperature':generation.get('temperature',default.get('temperature',0.0)),
+           'max_tokens':generation.get('max_tokens',default.get('max_tokens',1024))}
     if job.variant.startswith('prompt_v'):
         suffix=('\nReturn only a machine-readable relation object.' if job.variant=='prompt_v1'
                  else '\nCheck each proposed relation against the document before producing the final JSON.')

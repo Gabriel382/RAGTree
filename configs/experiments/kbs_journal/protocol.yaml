@@ -21,6 +21,16 @@ expected_records:
   causalbank: 1080
 max_errors: 3
 max_api_retries: 2
+# Applies to controlled_revision_v2 only. Historical xquality limits remain
+# unchanged in legacy_xquality. Generation is tracked in run fingerprints.
+generation:
+  gpt_oss_20b:
+    temperature: 0.0
+    max_tokens: 4096
+    reasoning_effort: low
+  qwen3_30b_a3b:
+    temperature: 0.0
+    max_tokens: 4096
 max_shard_seconds: 86400
 # Budget-matched external evidence requires explicit strategy-specific evidence
 # boundaries. Without them, the phase is blocked (not silently approximated).

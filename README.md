@@ -1,56 +1,32 @@
-# KBS smoke diagnostics: FinCausal IDs + empty GPT-OSS completion
+# KBS GPT-OSS-20B generation fix (2026-11-02)
 
-Use in the existing RAGTree `kbs` branch. Do not use `--force` or clear checkpoints.
+This is a **controlled-revision-only** generation settings change. The original
+`configs/default.yaml` and algorithms are unchanged. For the revised scientific
+benchmark we configure `max_tokens: 4096` and `reasoning_effort: low` for
+GPT-OSS-20B, and `max_tokens: 4096` for the second backbone, in
+`configs/experiments/kbs_journal/protocol.yaml`. The controlled-run overlay
+uses these settings, and the LiteLLM gateway forwards `reasoning_effort`.
 
-## 1. Check why the baseline failed (read-only)
-
-```bash
-python inspect_llm_trace.py --repo .
-```
-
-The original gateway archives the full provider response **before** reporting the failure. Look at `finish_reason`, `completion_tokens`, `reasoning_tokens`, and `configured_max_tokens`. If `finish_reason=length` and output tokens are nearly all reasoning tokens, that strongly suggests exhaustion of the output allowance before the final answer. It is **not guaranteed** without inspecting the trace.
-
-Probe the same original prompt **once** through the local vLLM endpoint (not saved as an experimental result):
-
-```bash
-python probe_saved_prompt.py --repo . --max-tokens 4096 --reasoning-effort low
-```
-
-If the probe returns a valid final answer, we should put a documented `reasoning_effort=low` and sufficient output cap **in the frozen protocol**, update fingerprints, and compare legacy versus revised scores. Do not introduce implicit retries with different settings; that would contaminate run provenance.
-
-## 2. Correct FinCausal checkpoint IDs without deleting or merging records
-
-First dry-run:
+## Apply
+From the RAGTree Git repository, after applying the earlier gateway diagnostic
+patch (the one with improved failure tracing):
 
 ```bash
-python rekey_fincausal.py --repo .
-```
-
-Create the derived JSONL, mapping CSV and update the one FinCausal input path in `configs/default.yaml` (original preserved and config backup saved):
-
-```bash
-python rekey_fincausal.py --repo . --apply --update-config
-```
-
-All 967 records remain present, with the original `relations`, `text`, `entities`, and `title`. For collision groups, only the **document identity** changes; the old value is stored in `kbs_original_document_id`, and a stable source line index distinguishes otherwise equal records. Noncollision identities are left unchanged. The journal's original configuration is still documented; do not apply the derived source globally without recording the difference.
-
-Re-run smoke:
-
-```bash
-python scripts/kbs_protocol.py smoke --profile local --mode sequential \
-  --method baseline --dataset fincausal --max-errors 3
-```
-
-**Note:** This script updates `configs/default.yaml` when `--update-config` is requested, so subsequent non-KBS runs will also see the derived path until you revert that one config line. Consider using a KBS-specific config override in a future orchestrator version.
-
-## 3. Gateway trace fix
-
-`gateway.patch` changes only the KBS LiteLLM adapter: one trace per physical API request, and a more informative error message. It **does not change model prompts, generation settings, or algorithms**.
-
-```bash
-git apply --check gateway.patch
-git apply gateway.patch
+git apply --check /path/to/kbs_generation_hotfix.patch
+git apply /path/to/kbs_generation_hotfix.patch
 python -m pytest -q tests/kbs
+python scripts/kbs_protocol.py smoke --profile local --mode sequential \
+  --method baseline --dataset maven_ere \
+  --protocol controlled_revision_v2 --max-errors 3
 ```
 
-Changing code changes new KBS run fingerprints; existing checkpointed successes remain present under their earlier run ID. Existing failed checkpoints remain in SQLite and can be inspected.
+### Warnings
+- **Do not** use `--allow-unverified` by default.
+- Results under `controlled_revision_v2` are *new* and not guaranteed to
+  reproduce the original historical journal numerical values.
+- The original legacy/controlled protocols have separate identities, and the
+  changed source/manifest hashes produce new checkpoint identities.
+- Test the exact LiteLLM stack with real vLLM. The earlier successful
+  diagnostic called vLLM directly, not LiteLLM.
+- FinCausal ID rekeying is a separate already completed operation.
+- Historical configuration gaps remain blocked until reviewed.

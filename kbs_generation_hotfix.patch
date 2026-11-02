@@ -1,0 +1,82 @@
+--- a/configs/experiments/kbs_journal/protocol.yaml
++++ b/configs/experiments/kbs_journal/protocol.yaml
+@@ -21,6 +21,16 @@
+   causalbank: 1080
+ max_errors: 3
+ max_api_retries: 2
++# Applies to controlled_revision_v2 only. Historical xquality limits remain
++# unchanged in legacy_xquality. Generation is tracked in run fingerprints.
++generation:
++  gpt_oss_20b:
++    temperature: 0.0
++    max_tokens: 4096
++    reasoning_effort: low
++  qwen3_30b_a3b:
++    temperature: 0.0
++    max_tokens: 4096
+ max_shard_seconds: 86400
+ # Budget-matched external evidence requires explicit strategy-specific evidence
+ # boundaries. Without them, the phase is blocked (not silently approximated).
+--- a/ragtree/experiments/kbs/protocol.py
++++ b/ragtree/experiments/kbs/protocol.py
+@@ -99,19 +99,21 @@
+     return out[:maximum] if maximum is not None else out
+ 
+ 
+-def output_config(job:Job,run_root:Path,profile:dict,shard:int=0):
++def output_config(job:Job,run_root:Path,profile:dict,shard:int=0,protocol_mode:str="legacy_xquality"):
+     """Write a derived YAML, never alter xquality's original configs/default.yaml."""
+     cfg=yaml.safe_load((ROOT/'configs/default.yaml').read_text(encoding='utf8'))
+     cfg['paths']['data_processed']=str((run_root/'legacy_shards'/f'{shard}').resolve())
+     cfg['paths']['results']=str((run_root/'legacy_shards'/f'{shard}'/'results').resolve())
+     model_id=profile['models'][job.model]
++    generation = (load_protocol().get('generation', {}).get(job.model, {})
++                  if protocol_mode=='controlled_revision_v2' else {})
+     for llm_section,value in cfg.get('llm',{}).items():
+         if not isinstance(value,dict) or 'backends' not in value: continue
+         default=value['backends'].get('vllm',{})
+         value['backends']['litellm']={
+            'model':model_id,
+-           'temperature':default.get('temperature',0.0),
+-           'max_tokens':default.get('max_tokens',1024)}
++           'temperature':generation.get('temperature',default.get('temperature',0.0)),
++           'max_tokens':generation.get('max_tokens',default.get('max_tokens',1024))}
+     if job.variant.startswith('prompt_v'):
+         suffix=('\nReturn only a machine-readable relation object.' if job.variant=='prompt_v1'
+                  else '\nCheck each proposed relation against the document before producing the final JSON.')
+--- a/ragtree/experiments/kbs/engine.py
++++ b/ragtree/experiments/kbs/engine.py
+@@ -235,7 +235,7 @@
+     processes=[]
+     try:
+         for index in range(workers):
+-            path=output_config(job,root,profile,index)
++            path=output_config(job,root,profile,index,protocol_mode=protocol_mode)
+             command=_prep_command(job,path,profile)
+             log_path=root/'logs'/f'shard_{index}.log';log_path.parent.mkdir(parents=True,exist_ok=True)
+             log=log_path.open('a',encoding='utf8')
+@@ -248,6 +248,13 @@
+                'KBS_METHOD':job.method,
+                'KBS_API_RETRIES':str(load_protocol()['max_api_retries']),
+                'PYTHONPATH':str(ROOT)+os.pathsep+env.get('PYTHONPATH','')})
++            # Do not modify xquality generation behavior or use untracked
++            # inherited settings in controlled runs.
++            env.pop('KBS_REASONING_EFFORT', None)
++            if protocol_mode=='controlled_revision_v2':
++                generation=load_protocol().get('generation',{}).get(job.model,{})
++                if generation.get('reasoning_effort'):
++                    env['KBS_REASONING_EFFORT']=str(generation['reasoning_effort'])
+             if job.phase=='budget_control':env['KBS_EVIDENCE_BUDGET_TOKENS']='2048'
+             if selected_file:env['KBS_SELECTED_IDS']=str(selected_file.resolve())
+             if protocol_mode=='controlled_revision_v2':
+--- a/ragtree/experiments/kbs/gateway.py
++++ b/ragtree/experiments/kbs/gateway.py
+@@ -23,6 +23,8 @@
+         data.setdefault('max_tokens',int(os.environ.get('KBS_MAX_TOKENS','1024')))
+         data.setdefault('timeout',int(os.environ.get('KBS_LLM_TIMEOUT','240')))
+         data.setdefault('num_retries',int(os.environ.get('KBS_API_RETRIES','2')))
++        if os.environ.get('KBS_REASONING_EFFORT'):
++            data.setdefault('reasoning_effort',os.environ['KBS_REASONING_EFFORT'])
+         if os.environ.get('KBS_LITELLM_API_BASE'):
+             data['api_base'] = os.environ['KBS_LITELLM_API_BASE']
+         if os.environ.get('KBS_LITELLM_API_KEY'):

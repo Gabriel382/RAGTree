@@ -23,6 +23,8 @@ class LiteLLMClient(BaseLLMClient):
         data.setdefault('max_tokens',int(os.environ.get('KBS_MAX_TOKENS','1024')))
         data.setdefault('timeout',int(os.environ.get('KBS_LLM_TIMEOUT','240')))
         data.setdefault('num_retries',int(os.environ.get('KBS_API_RETRIES','2')))
+        if os.environ.get('KBS_REASONING_EFFORT'):
+            data.setdefault('reasoning_effort',os.environ['KBS_REASONING_EFFORT'])
         if os.environ.get('KBS_LITELLM_API_BASE'):
             data['api_base'] = os.environ['KBS_LITELLM_API_BASE']
         if os.environ.get('KBS_LITELLM_API_KEY'):
