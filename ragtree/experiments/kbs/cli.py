@@ -117,7 +117,7 @@ def main(argv=None):
                 print(f'[{index}/{len(jobs)}] BLOCKED {job.method}/{job.dataset}: {reasons}',flush=True)
                 continue
             try:
-                population=sum(1 for _ in filtered_docs(job))
+                population=sum(1 for _ in filtered_docs(job,args.protocol,root))
                 if population==0:
                     results.append({'job':job.identity,'status':'blocked','reasons':['no evaluation records']})
                     continue
@@ -128,8 +128,8 @@ def main(argv=None):
                     print(f'[{index}/{len(jobs)}] BLOCKED: record mismatch {population} != {expected}',flush=True)
                     continue
                 selected=None
-                if args.command=='smoke':selected=sample_ids(job,min(args.documents,population))
-                elif args.command=='estimate':selected=sample_ids(job,min(args.samples_per_cell,population))
+                if args.command=='smoke':selected=sample_ids(job,min(args.documents,population),protocol_mode=args.protocol,results_root=root)
+                elif args.command=='estimate':selected=sample_ids(job,min(args.samples_per_cell,population),protocol_mode=args.protocol,results_root=root)
                 item=execute_job(job,profile_name=args.profile,mode=args.mode,workers=args.workers,
                     max_errors=args.max_errors,session_id=session,selected_ids=selected,
                     retry_failed=args.retry_failed,allow_unverified=args.allow_unverified,
@@ -149,7 +149,7 @@ def main(argv=None):
                             if avg is not None and avg>0 and hi is not None and (hi/avg-1)<=args.target_relative_halfwidth:
                                 break
                             n=min(n+6,args.sample_cap,population)
-                            selected=sample_ids(job,n)
+                            selected=sample_ids(job,n,protocol_mode=args.protocol,results_root=root)
                             item=execute_job(job,profile_name=args.profile,mode=args.mode,workers=args.workers,
                                 max_errors=args.max_errors,session_id=session,selected_ids=selected,
                                 retry_failed=args.retry_failed,allow_unverified=args.allow_unverified,

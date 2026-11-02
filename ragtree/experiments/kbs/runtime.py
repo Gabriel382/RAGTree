@@ -15,6 +15,7 @@ import tempfile
 import time
 import traceback
 from typing import Any, Callable
+from .record_identity import UID_KEY, checkpoint_id
 
 ACTIVE_DOC: contextvars.ContextVar[str | None] = contextvars.ContextVar('kbs_active_doc', default=None)
 
@@ -22,10 +23,7 @@ def active() -> bool:
     return os.environ.get('KBS_ACTIVE') == '1'
 
 def doc_id(doc: dict) -> str:
-    value = doc.get('document_id') or doc.get('id')
-    if value is None:
-        raise ValueError('KBS requires a stable document_id or id; refusing to infer an unstable ID')
-    return str(value)
+    return checkpoint_id(doc)
 
 def _digest(value: str) -> str:
     return hashlib.sha256(value.encode('utf8')).hexdigest()[:24]
@@ -142,6 +140,7 @@ def invoke(fn: Callable, doc: dict, *args, **kwargs):
     if os.environ.get('KBS_PROTOCOL_MODE') == 'controlled_revision_v2':
         safe_doc = dict(doc)
         safe_doc.pop('relations', None)
+        safe_doc.pop(UID_KEY, None)  # private checkpoint metadata never reaches the LLM
         doc = doc  # original remains the immutable output/evaluation reference
         kwargs = dict(kwargs)
         args = tuple(args)
@@ -163,8 +162,10 @@ def invoke(fn: Callable, doc: dict, *args, **kwargs):
             raise TypeError(f'expected dict of relations, got {type(result).__name__}')
         elapsed = time.monotonic() - start
         trace_event('final_prediction',{'relation_counts':{k:len(v) if isinstance(v,list) else None for k,v in result.items()}})
+        clean_source = dict(doc)
+        clean_source.pop(UID_KEY, None)
         record = {'run_id': run_id, 'document_id': identifier, 'elapsed_sec': elapsed,
-                  'pred_relations': result, 'source_document': doc, 'status': 'done',
+                  'pred_relations': result, 'source_document': clean_source, 'status': 'done',
                   'timestamp': time.time()}
         atomic_json(record_path(_root(), identifier), record)
         with _connect() as c:

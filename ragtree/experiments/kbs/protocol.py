@@ -99,9 +99,17 @@ def select_jobs(jobs,phase=None,method=None,dataset=None,model=None,maximum=None
     return out[:maximum] if maximum is not None else out
 
 
-def output_config(job:Job,run_root:Path,profile:dict,shard:int=0,protocol_mode:str="legacy_xquality"):
+def output_config(job:Job,run_root:Path,profile:dict,shard:int=0,protocol_mode:str="legacy_xquality",
+                  prepared_source:Path|None=None):
     """Write a derived YAML, never alter xquality's original configs/default.yaml."""
     cfg=yaml.safe_load((ROOT/'configs/default.yaml').read_text(encoding='utf8'))
+    if prepared_source is not None and protocol_mode == 'controlled_revision_v2':
+        # Redirect ONLY this job's data input; never change global default.yaml.
+        args=list(job.arguments)
+        if '--dataset-key' not in args:
+            raise ValueError(f'Missing --dataset-key in {job.method}/{job.dataset}')
+        dataset_key=args[args.index('--dataset-key')+1]
+        cfg.setdefault('datasets',{}).setdefault('preprocessed',{})[dataset_key]=str(prepared_source)
     cfg['paths']['data_processed']=str((run_root/'legacy_shards'/f'{shard}').resolve())
     cfg['paths']['results']=str((run_root/'legacy_shards'/f'{shard}'/'results').resolve())
     model_id=profile['models'][job.model]

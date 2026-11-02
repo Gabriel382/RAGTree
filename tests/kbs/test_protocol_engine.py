@@ -125,3 +125,43 @@ def test_sample_nested(monkeypatch):
     a=sample_ids(None,6);b=sample_ids(None,18)
     assert b[:6]==a
     assert len(set(b))==18
+
+
+def test_duplicate_checkpoint_identity_keeps_original_ids_and_annotations(tmp_path):
+    from ragtree.experiments.kbs.record_identity import build_input_cache, checkpoint_id, UID_KEY
+    source=tmp_path/'mixed.jsonl'
+    records=[
+        {'document_id':'duplicate','title':'A','type':'test','relations':{'CAUSE':[['e1','e2']]}},
+        {'document_id':'unique','title':'U','type':'test','relations':{'CAUSE':[]}},
+        {'document_id':'duplicate','title':'B','type':'test','relations':{'CAUSE':[['e4','e5']]}},
+    ]
+    source.write_text(''.join(json.dumps(x)+'\n' for x in records),encoding='utf8')
+    cache=build_input_cache(source,tmp_path/'cache')
+    assert cache!=source
+    derived=[json.loads(s) for s in cache.read_text().splitlines()]
+    assert [x['document_id'] for x in derived]==['duplicate','unique','duplicate']
+    assert len({checkpoint_id(x) for x in derived})==3
+    assert UID_KEY not in derived[1]
+    assert [{k:v for k,v in x.items() if k!=UID_KEY} for x in derived]==records
+    assert build_input_cache(source,tmp_path/'cache')==cache
+    assert source.read_text().count('duplicate')==2
+    source.write_text(source.read_text()+json.dumps({'document_id':'next'})+'\n')
+    assert build_input_cache(source,tmp_path/'cache')!=cache
+
+
+def test_checkpoint_uid_never_reaches_model(checkpoint_env,monkeypatch):
+    from ragtree.experiments.kbs.record_identity import UID_KEY
+    root,db=checkpoint_env
+    monkeypatch.setenv('KBS_PROTOCOL_MODE','controlled_revision_v2')
+    (root/'schema.json').write_text('["CAUSE"]')
+    monkeypatch.setenv('KBS_SCHEMA_FILE',str(root/'schema.json'))
+    doc={'document_id':'shared',UID_KEY:'checkpoint-2','text':'original','relations':{'CAUSE':[]}}
+    def predictor(safe_doc,relation_types):
+        assert safe_doc == {'document_id':'shared','text':'original'}
+        assert relation_types==['CAUSE']
+        return {'CAUSE':[]}
+    runtime.invoke(predictor,doc,relation_types=['CAUSE'])
+    saved=json.loads(runtime.record_path(root,'checkpoint-2').read_text())
+    assert saved['document_id']=='checkpoint-2'
+    assert saved['source_document']=={'document_id':'shared','text':'original','relations':{'CAUSE':[]}}
+    assert not runtime.should_process(doc)

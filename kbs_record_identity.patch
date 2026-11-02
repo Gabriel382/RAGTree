@@ -1,0 +1,440 @@
+diff --git a/ragtree/experiments/kbs/cli.py b/ragtree/experiments/kbs/cli.py
+index 3c19583..e624239 100644
+--- a/ragtree/experiments/kbs/cli.py
++++ b/ragtree/experiments/kbs/cli.py
+@@ -117,7 +117,7 @@ def main(argv=None):
+                 print(f'[{index}/{len(jobs)}] BLOCKED {job.method}/{job.dataset}: {reasons}',flush=True)
+                 continue
+             try:
+-                population=sum(1 for _ in filtered_docs(job))
++                population=sum(1 for _ in filtered_docs(job,args.protocol,root))
+                 if population==0:
+                     results.append({'job':job.identity,'status':'blocked','reasons':['no evaluation records']})
+                     continue
+@@ -128,8 +128,8 @@ def main(argv=None):
+                     print(f'[{index}/{len(jobs)}] BLOCKED: record mismatch {population} != {expected}',flush=True)
+                     continue
+                 selected=None
+-                if args.command=='smoke':selected=sample_ids(job,min(args.documents,population))
+-                elif args.command=='estimate':selected=sample_ids(job,min(args.samples_per_cell,population))
++                if args.command=='smoke':selected=sample_ids(job,min(args.documents,population),protocol_mode=args.protocol,results_root=root)
++                elif args.command=='estimate':selected=sample_ids(job,min(args.samples_per_cell,population),protocol_mode=args.protocol,results_root=root)
+                 item=execute_job(job,profile_name=args.profile,mode=args.mode,workers=args.workers,
+                     max_errors=args.max_errors,session_id=session,selected_ids=selected,
+                     retry_failed=args.retry_failed,allow_unverified=args.allow_unverified,
+@@ -149,7 +149,7 @@ def main(argv=None):
+                             if avg is not None and avg>0 and hi is not None and (hi/avg-1)<=args.target_relative_halfwidth:
+                                 break
+                             n=min(n+6,args.sample_cap,population)
+-                            selected=sample_ids(job,n)
++                            selected=sample_ids(job,n,protocol_mode=args.protocol,results_root=root)
+                             item=execute_job(job,profile_name=args.profile,mode=args.mode,workers=args.workers,
+                                 max_errors=args.max_errors,session_id=session,selected_ids=selected,
+                                 retry_failed=args.retry_failed,allow_unverified=args.allow_unverified,
+diff --git a/ragtree/experiments/kbs/engine.py b/ragtree/experiments/kbs/engine.py
+index 7a44ccf..7d3f3c7 100644
+--- a/ragtree/experiments/kbs/engine.py
++++ b/ragtree/experiments/kbs/engine.py
+@@ -15,6 +15,7 @@ import uuid
+ from typing import Any
+ from .protocol import Job, ROOT, load_protocol, output_config, profile_config
+ from .runtime import init_db, atomic_json, status_counts
++from .record_identity import build_input_cache, checkpoint_id
+ 
+ OUT=ROOT/'results/kbs_journal'
+ 
+@@ -76,8 +77,16 @@ def doc_type(job:Job):
+     return _arg(job.arguments,'doc_types',_arg(job.arguments,'doc_type_filter',_arg(job.arguments,'doc_type',_arg(job.arguments,'icl_predict_types','all'))))
+ 
+ 
+-def filtered_docs(job:Job):
+-    source=input_path(job)
++def prepared_input_path(job: Job, protocol_mode: str = 'controlled_revision_v2', results_root: Path = OUT) -> Path:
++    """Return a non-destructive annotated JSONL for controlled KBS jobs only."""
++    source = input_path(job)
++    if protocol_mode != 'controlled_revision_v2':
++        return source
++    return build_input_cache(source, Path(results_root)/'input_cache')
++
++
++def filtered_docs(job:Job, protocol_mode: str = 'controlled_revision_v2', results_root: Path = OUT):
++    source=prepared_input_path(job, protocol_mode, results_root)
+     types=doc_type(job)
+     accepted=None if not types or types=='all' else set(types.split(','))
+     seen=set()
+@@ -85,9 +94,7 @@ def filtered_docs(job:Job):
+         for n,line in enumerate(f,start=1):
+             if not line.strip():continue
+             obj=json.loads(line)
+-            identifier=obj.get('document_id') or obj.get('id')
+-            if identifier is None:raise ValueError(f'{source}:{n} missing document ID')
+-            identifier=str(identifier)
++            identifier=checkpoint_id(obj)
+             if identifier in seen:raise ValueError(f'{source}:{n} duplicate ID {identifier!r}')
+             seen.add(identifier)
+             if accepted and obj.get('type') not in accepted:continue
+@@ -201,6 +208,7 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
+     if not 0<=max_errors<=9999:raise ValueError('max_errors must be nonnegative')
+     session_id=session_id or uuid.uuid4().hex
+     rid,fingerprint=run_id(job,profile_name,protocol_mode)
++    prepared_source=prepared_input_path(job,protocol_mode,Path(results_root))
+     root=Path(results_root)/profile_name/job.phase/job.method/job.dataset/rid
+     root.mkdir(parents=True,exist_ok=True)
+     db=Path(results_root)/'checkpoints.sqlite'
+@@ -217,8 +225,8 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
+     schema_labels=set()
+     if protocol_mode=='controlled_revision_v2':
+         import yaml
+-        all_docs=list(filtered_docs(job))
+-        eval_ids=[str(d.get('document_id') or d.get('id')) for d in all_docs]
++        all_docs=list(filtered_docs(job,protocol_mode,Path(results_root)))
++        eval_ids=[checkpoint_id(d) for d in all_docs]
+         for d in all_docs:
+             if isinstance(d.get('relations'),dict):schema_labels.update(d['relations'])
+         if job.dataset=='docred_causal':
+@@ -235,7 +243,8 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
+     processes=[]
+     try:
+         for index in range(workers):
+-            path=output_config(job,root,profile,index,protocol_mode=protocol_mode)
++            path=output_config(job,root,profile,index,protocol_mode=protocol_mode,
++                               prepared_source=prepared_source)
+             command=_prep_command(job,path,profile)
+             log_path=root/'logs'/f'shard_{index}.log';log_path.parent.mkdir(parents=True,exist_ok=True)
+             log=log_path.open('a',encoding='utf8')
+@@ -298,7 +307,7 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
+         # A previous job's failure must not mark this job as failed, and a
+         # previously failed/skipped document must not make smoke report success.
+         expected_ids = set(selected_ids) if selected_ids is not None else {
+-            str(doc.get('document_id') or doc.get('id')) for doc in filtered_docs(job)
++            checkpoint_id(doc) for doc in filtered_docs(job,protocol_mode,Path(results_root))
+         }
+         with sqlite3.connect(db, timeout=30) as c:
+             state = dict(c.execute('SELECT doc_id,status FROM records WHERE run_id=?',(rid,)))
+diff --git a/ragtree/experiments/kbs/estimate.py b/ragtree/experiments/kbs/estimate.py
+index dac9690..47ee32e 100644
+--- a/ragtree/experiments/kbs/estimate.py
++++ b/ragtree/experiments/kbs/estimate.py
+@@ -7,6 +7,7 @@ from pathlib import Path
+ import random
+ import statistics
+ from .engine import filtered_docs
++from .record_identity import checkpoint_id
+ from .protocol import load_protocol
+ 
+ 
+@@ -17,9 +18,13 @@ def _gold_density(doc):
+     rel=doc.get('relations',{})
+     return sum(len(x) for x in rel.values() if isinstance(x,list)) if isinstance(rel,dict) else 0
+ 
+-def sample_ids(job,count=6,seed=42):
++def sample_ids(job,count=6,seed=42,protocol_mode=None,results_root=None):
+     """Deterministic length/density strata; nesting guaranteed for expanding n."""
+-    docs=list(filtered_docs(job))
++    if protocol_mode is None:
++        docs=list(filtered_docs(job))
++    else:
++        from .engine import OUT
++        docs=list(filtered_docs(job, protocol_mode, results_root or OUT))
+     if not docs:return []
+     docs=sorted(docs,key=lambda d:(_length(d),_gold_density(d),str(d.get('document_id') or d.get('id'))))
+     # Round-robin over length terciles, ordered by density within each.
+@@ -33,7 +38,7 @@ def sample_ids(job,count=6,seed=42):
+     while any(groups):
+         for g in groups:
+             if g:ordering.append(g.pop())
+-    return [str(d.get('document_id') or d.get('id')) for d in ordering[:count]]
++    return [checkpoint_id(d) for d in ordering[:count]]
+ 
+ 
+ def scan_records(run_root:Path):
+diff --git a/ragtree/experiments/kbs/protocol.py b/ragtree/experiments/kbs/protocol.py
+index 308d74d..8902433 100644
+--- a/ragtree/experiments/kbs/protocol.py
++++ b/ragtree/experiments/kbs/protocol.py
+@@ -99,9 +99,17 @@ def select_jobs(jobs,phase=None,method=None,dataset=None,model=None,maximum=None
+     return out[:maximum] if maximum is not None else out
+ 
+ 
+-def output_config(job:Job,run_root:Path,profile:dict,shard:int=0,protocol_mode:str="legacy_xquality"):
++def output_config(job:Job,run_root:Path,profile:dict,shard:int=0,protocol_mode:str="legacy_xquality",
++                  prepared_source:Path|None=None):
+     """Write a derived YAML, never alter xquality's original configs/default.yaml."""
+     cfg=yaml.safe_load((ROOT/'configs/default.yaml').read_text(encoding='utf8'))
++    if prepared_source is not None and protocol_mode == 'controlled_revision_v2':
++        # Redirect ONLY this job's data input; never change global default.yaml.
++        args=list(job.arguments)
++        if '--dataset-key' not in args:
++            raise ValueError(f'Missing --dataset-key in {job.method}/{job.dataset}')
++        dataset_key=args[args.index('--dataset-key')+1]
++        cfg.setdefault('datasets',{}).setdefault('preprocessed',{})[dataset_key]=str(prepared_source)
+     cfg['paths']['data_processed']=str((run_root/'legacy_shards'/f'{shard}').resolve())
+     cfg['paths']['results']=str((run_root/'legacy_shards'/f'{shard}'/'results').resolve())
+     model_id=profile['models'][job.model]
+diff --git a/ragtree/experiments/kbs/record_identity.py b/ragtree/experiments/kbs/record_identity.py
+new file mode 100644
+index 0000000..19e281f
+--- /dev/null
++++ b/ragtree/experiments/kbs/record_identity.py
+@@ -0,0 +1,98 @@
++"""Non-destructive, deterministic KBS record identities for JSONL datasets.
++
++This module exists exclusively for KBS journal checkpointing. It leaves all
++original ``document_id`` values intact so KG and ontology lookups are unchanged.
++When duplicate IDs exist, a derived *input cache* annotates only colliding rows
++with ``__kbs_record_uid``. That private field must be removed before LLM calls.
++"""
++from __future__ import annotations
++
++from collections import Counter
++import hashlib
++import json
++import os
++from pathlib import Path
++import tempfile
++
++UID_KEY = '__kbs_record_uid'
++
++
++def checkpoint_id(document: dict) -> str:
++    original = document.get('document_id') or document.get('id')
++    if original is None:
++        raise ValueError('KBS needs document_id or id for every record')
++    return str(document.get(UID_KEY) or original)
++
++
++def build_input_cache(source: Path, cache_root: Path) -> Path:
++    """Copy the JSONL only if IDs collide, preserving all rows and original IDs.
++
++    The content-derived cache filename makes concurrent launch safe and ensures
++    changed input bytes cannot silently reuse old checkpoint identities.
++    Construction uses an atomic rename; no originals are ever modified.
++    """
++    source = Path(source)
++    cache_root = Path(cache_root)
++    hasher = hashlib.sha256()
++    identifiers = []
++    rows = 0
++    with source.open('rb') as f:
++        for number, line in enumerate(f, 1):
++            hasher.update(line)
++            if not line.strip():
++                continue
++            row = json.loads(line)
++            identifier = row.get('document_id') or row.get('id')
++            if identifier is None:
++                raise ValueError(f'{source}:{number}: missing document ID')
++            if UID_KEY in row:
++                raise ValueError(f'{source}:{number}: {UID_KEY} is reserved by KBS')
++            identifiers.append(str(identifier))
++            rows += 1
++    counts = Counter(identifiers)
++    collision_rows = sum(v for v in counts.values() if v > 1)
++    if not collision_rows:
++        return source
++
++    # Filename depends on file bytes AND source location, not only basename.
++    full_sha = hasher.hexdigest()
++    path_sha = hashlib.sha256(str(source.resolve()).encode()).hexdigest()[:10]
++    target = cache_root / (f'{source.stem}-{path_sha}-{full_sha[:24]}.kbs.jsonl')
++    if target.is_file():
++        return target
++
++    cache_root.mkdir(parents=True, exist_ok=True)
++    seen = set()
++    actual = 0
++    tmp = None
++    try:
++        with tempfile.NamedTemporaryFile('w', encoding='utf8', dir=cache_root,
++                                         prefix='.kbs-', suffix='.jsonl', delete=False) as output:
++            tmp = Path(output.name)
++            with source.open(encoding='utf8') as original:
++                for number, line in enumerate(original, 1):
++                    if not line.strip():
++                        continue
++                    row = json.loads(line)
++                    identifier = str(row.get('document_id') or row.get('id'))
++                    if counts[identifier] > 1:
++                        # Original ID remains unchanged; use an unambiguous row key
++                        # based on source line. It is stable while source bytes are.
++                        row[UID_KEY] = f'kbs-dup:{full_sha[:12]}:{number}'
++                    uid = checkpoint_id(row)
++                    if uid in seen:
++                        raise ValueError(f'{source}:{number}: non-unique generated checkpoint ID {uid}')
++                    seen.add(uid)
++                    actual += 1
++                    output.write(json.dumps(row, ensure_ascii=False, separators=(',', ':'))+'\n')
++            output.flush()
++            os.fsync(output.fileno())
++        if actual != rows or len(seen) != rows:
++            raise AssertionError(f'KBS cache count mismatch ({actual} != {rows})')
++        # Rename after fully verifying. Another process may create the same
++        # byte-equivalent cache; the first/last complete file is still valid.
++        os.replace(tmp, target)
++        return target
++    finally:
++        if tmp is not None and tmp.exists():
++            tmp.unlink()
+diff --git a/ragtree/experiments/kbs/report.py b/ragtree/experiments/kbs/report.py
+index 1a4f62d..7ddacb3 100644
+--- a/ragtree/experiments/kbs/report.py
++++ b/ragtree/experiments/kbs/report.py
+@@ -10,6 +10,7 @@ from .engine import filtered_docs, OUT
+ from .protocol import load_protocol
+ from .estimate import scan_records, calls_for, cost_per_record
+ from .runtime import atomic_json
++from .record_identity import checkpoint_id
+ from ragtree.evaluation.relations.metrics import RelationEvalAggregator, relations_to_triples
+ 
+ 
+@@ -33,11 +34,14 @@ def _bootstrap_ci(docs:list[tuple[dict,dict]], n=250,seed=42):
+ 
+ def evaluate_run(job,run_root:Path):
+     cache={r['document_id']:r for r in scan_records(run_root)}
++    manifest_path=run_root/'manifest.json'
++    manifest=json.loads(manifest_path.read_text(encoding='utf8')) if manifest_path.exists() else {}
++    protocol_mode=manifest.get('protocol_mode','legacy_xquality')
+     agg=RelationEvalAggregator(ignore_labels={'null'})
+     observations=[]
+     missing=[]
+-    for doc in filtered_docs(job):
+-        identifier=str(doc.get('document_id') or doc.get('id'))
++    for doc in filtered_docs(job,protocol_mode,run_root.parents[4]):
++        identifier=checkpoint_id(doc)
+         rec=cache.get(identifier)
+         if rec is None:missing.append(identifier)
+         pred=rec.get('pred_relations',{}) if rec else {}
+diff --git a/ragtree/experiments/kbs/runtime.py b/ragtree/experiments/kbs/runtime.py
+index 16fb37f..15a42d5 100644
+--- a/ragtree/experiments/kbs/runtime.py
++++ b/ragtree/experiments/kbs/runtime.py
+@@ -15,6 +15,7 @@ import tempfile
+ import time
+ import traceback
+ from typing import Any, Callable
++from .record_identity import UID_KEY, checkpoint_id
+ 
+ ACTIVE_DOC: contextvars.ContextVar[str | None] = contextvars.ContextVar('kbs_active_doc', default=None)
+ 
+@@ -22,10 +23,7 @@ def active() -> bool:
+     return os.environ.get('KBS_ACTIVE') == '1'
+ 
+ def doc_id(doc: dict) -> str:
+-    value = doc.get('document_id') or doc.get('id')
+-    if value is None:
+-        raise ValueError('KBS requires a stable document_id or id; refusing to infer an unstable ID')
+-    return str(value)
++    return checkpoint_id(doc)
+ 
+ def _digest(value: str) -> str:
+     return hashlib.sha256(value.encode('utf8')).hexdigest()[:24]
+@@ -142,6 +140,7 @@ def invoke(fn: Callable, doc: dict, *args, **kwargs):
+     if os.environ.get('KBS_PROTOCOL_MODE') == 'controlled_revision_v2':
+         safe_doc = dict(doc)
+         safe_doc.pop('relations', None)
++        safe_doc.pop(UID_KEY, None)  # private checkpoint metadata never reaches the LLM
+         doc = doc  # original remains the immutable output/evaluation reference
+         kwargs = dict(kwargs)
+         args = tuple(args)
+@@ -163,8 +162,10 @@ def invoke(fn: Callable, doc: dict, *args, **kwargs):
+             raise TypeError(f'expected dict of relations, got {type(result).__name__}')
+         elapsed = time.monotonic() - start
+         trace_event('final_prediction',{'relation_counts':{k:len(v) if isinstance(v,list) else None for k,v in result.items()}})
++        clean_source = dict(doc)
++        clean_source.pop(UID_KEY, None)
+         record = {'run_id': run_id, 'document_id': identifier, 'elapsed_sec': elapsed,
+-                  'pred_relations': result, 'source_document': doc, 'status': 'done',
++                  'pred_relations': result, 'source_document': clean_source, 'status': 'done',
+                   'timestamp': time.time()}
+         atomic_json(record_path(_root(), identifier), record)
+         with _connect() as c:
+diff --git a/tests/kbs/test_protocol_engine.py b/tests/kbs/test_protocol_engine.py
+index 71d9fa2..3873084 100644
+--- a/tests/kbs/test_protocol_engine.py
++++ b/tests/kbs/test_protocol_engine.py
+@@ -125,3 +125,43 @@ def test_sample_nested(monkeypatch):
+     a=sample_ids(None,6);b=sample_ids(None,18)
+     assert b[:6]==a
+     assert len(set(b))==18
++
++
++def test_duplicate_checkpoint_identity_keeps_original_ids_and_annotations(tmp_path):
++    from ragtree.experiments.kbs.record_identity import build_input_cache, checkpoint_id, UID_KEY
++    source=tmp_path/'mixed.jsonl'
++    records=[
++        {'document_id':'duplicate','title':'A','type':'test','relations':{'CAUSE':[['e1','e2']]}},
++        {'document_id':'unique','title':'U','type':'test','relations':{'CAUSE':[]}},
++        {'document_id':'duplicate','title':'B','type':'test','relations':{'CAUSE':[['e4','e5']]}},
++    ]
++    source.write_text(''.join(json.dumps(x)+'\n' for x in records),encoding='utf8')
++    cache=build_input_cache(source,tmp_path/'cache')
++    assert cache!=source
++    derived=[json.loads(s) for s in cache.read_text().splitlines()]
++    assert [x['document_id'] for x in derived]==['duplicate','unique','duplicate']
++    assert len({checkpoint_id(x) for x in derived})==3
++    assert UID_KEY not in derived[1]
++    assert [{k:v for k,v in x.items() if k!=UID_KEY} for x in derived]==records
++    assert build_input_cache(source,tmp_path/'cache')==cache
++    assert source.read_text().count('duplicate')==2
++    source.write_text(source.read_text()+json.dumps({'document_id':'next'})+'\n')
++    assert build_input_cache(source,tmp_path/'cache')!=cache
++
++
++def test_checkpoint_uid_never_reaches_model(checkpoint_env,monkeypatch):
++    from ragtree.experiments.kbs.record_identity import UID_KEY
++    root,db=checkpoint_env
++    monkeypatch.setenv('KBS_PROTOCOL_MODE','controlled_revision_v2')
++    (root/'schema.json').write_text('["CAUSE"]')
++    monkeypatch.setenv('KBS_SCHEMA_FILE',str(root/'schema.json'))
++    doc={'document_id':'shared',UID_KEY:'checkpoint-2','text':'original','relations':{'CAUSE':[]}}
++    def predictor(safe_doc,relation_types):
++        assert safe_doc == {'document_id':'shared','text':'original'}
++        assert relation_types==['CAUSE']
++        return {'CAUSE':[]}
++    runtime.invoke(predictor,doc,relation_types=['CAUSE'])
++    saved=json.loads(runtime.record_path(root,'checkpoint-2').read_text())
++    assert saved['document_id']=='checkpoint-2'
++    assert saved['source_document']=={'document_id':'shared','text':'original','relations':{'CAUSE':[]}}
++    assert not runtime.should_process(doc)
+diff --git a/tests/kbs/test_subprocess.py b/tests/kbs/test_subprocess.py
+index 02a0b7d..92a4187 100644
+--- a/tests/kbs/test_subprocess.py
++++ b/tests/kbs/test_subprocess.py
+@@ -52,3 +52,37 @@ def test_threshold_abort(tmp_path):
+         assert errors==4 and completed==0
+     finally:
+         data.unlink(missing_ok=True)
++
++
++def test_duplicates_end_to_end_controlled_without_merging(tmp_path):
++    """Use fake LiteLLM and six duplicate-ID rows; no external inference."""
++    from ragtree.experiments.kbs.record_identity import UID_KEY
++    data=ROOT/'data/preprocessed/maven_ere.jsonl'
++    if data.exists():
++        pytest.skip('preserve user dataset; integration tests require synthetic data')
++    data.parent.mkdir(parents=True, exist_ok=True)
++    original=[
++        {'document_id':'same','type':'test','title':f'row-{i}',
++         'sentences':['a causes b'],'entities':{},'relations':{'CAUSE':[]}}
++        for i in range(6)]
++    try:
++        data.write_text(''.join(json.dumps(x)+'\n' for x in original),encoding='utf8')
++        env=os.environ.copy()
++        env['PYTHONPATH']=str(ROOT/'tests/kbs/fixtures/fake_litellm')+os.pathsep+str(ROOT)+os.pathsep+env.get('PYTHONPATH','')
++        cmd=[sys.executable,str(ROOT/'scripts/kbs_protocol.py'),'run','--phase','main_gpt','--method','baseline',
++             '--dataset','maven_ere','--profile','local','--results-root',str(tmp_path),
++             '--protocol','controlled_revision_v2','--mode','parallel','--workers','5',
++             '--max-shard-seconds','30','--allow-count-mismatch']
++        for _ in range(2):
++            r=subprocess.run(cmd,cwd=ROOT,env=env,capture_output=True,text=True,timeout=40)
++            assert r.returncode==0,(r.stdout,r.stderr)
++        import sqlite3
++        with sqlite3.connect(tmp_path/'checkpoints.sqlite') as c:
++            assert c.execute('SELECT COUNT(DISTINCT doc_id) FROM records WHERE status="done"').fetchone()[0]==6
++        records=list(tmp_path.rglob('records/*.json'))
++        assert len(records)==6
++        assert {json.loads(p.read_text())['source_document']['title'] for p in records} == {f'row-{i}' for i in range(6)}
++        assert all(UID_KEY not in json.loads(p.read_text())['source_document'] for p in records)
++        assert len(list(tmp_path.rglob('calls/*/*.json')))==6
++    finally:
++        data.unlink(missing_ok=True)

@@ -52,3 +52,37 @@ def test_threshold_abort(tmp_path):
         assert errors==4 and completed==0
     finally:
         data.unlink(missing_ok=True)
+
+
+def test_duplicates_end_to_end_controlled_without_merging(tmp_path):
+    """Use fake LiteLLM and six duplicate-ID rows; no external inference."""
+    from ragtree.experiments.kbs.record_identity import UID_KEY
+    data=ROOT/'data/preprocessed/maven_ere.jsonl'
+    if data.exists():
+        pytest.skip('preserve user dataset; integration tests require synthetic data')
+    data.parent.mkdir(parents=True, exist_ok=True)
+    original=[
+        {'document_id':'same','type':'test','title':f'row-{i}',
+         'sentences':['a causes b'],'entities':{},'relations':{'CAUSE':[]}}
+        for i in range(6)]
+    try:
+        data.write_text(''.join(json.dumps(x)+'\n' for x in original),encoding='utf8')
+        env=os.environ.copy()
+        env['PYTHONPATH']=str(ROOT/'tests/kbs/fixtures/fake_litellm')+os.pathsep+str(ROOT)+os.pathsep+env.get('PYTHONPATH','')
+        cmd=[sys.executable,str(ROOT/'scripts/kbs_protocol.py'),'run','--phase','main_gpt','--method','baseline',
+             '--dataset','maven_ere','--profile','local','--results-root',str(tmp_path),
+             '--protocol','controlled_revision_v2','--mode','parallel','--workers','5',
+             '--max-shard-seconds','30','--allow-count-mismatch']
+        for _ in range(2):
+            r=subprocess.run(cmd,cwd=ROOT,env=env,capture_output=True,text=True,timeout=40)
+            assert r.returncode==0,(r.stdout,r.stderr)
+        import sqlite3
+        with sqlite3.connect(tmp_path/'checkpoints.sqlite') as c:
+            assert c.execute('SELECT COUNT(DISTINCT doc_id) FROM records WHERE status="done"').fetchone()[0]==6
+        records=list(tmp_path.rglob('records/*.json'))
+        assert len(records)==6
+        assert {json.loads(p.read_text())['source_document']['title'] for p in records} == {f'row-{i}' for i in range(6)}
+        assert all(UID_KEY not in json.loads(p.read_text())['source_document'] for p in records)
+        assert len(list(tmp_path.rglob('calls/*/*.json')))==6
+    finally:
+        data.unlink(missing_ok=True)

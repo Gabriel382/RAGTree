@@ -7,6 +7,7 @@ from pathlib import Path
 import random
 import statistics
 from .engine import filtered_docs
+from .record_identity import checkpoint_id
 from .protocol import load_protocol
 
 
@@ -17,9 +18,13 @@ def _gold_density(doc):
     rel=doc.get('relations',{})
     return sum(len(x) for x in rel.values() if isinstance(x,list)) if isinstance(rel,dict) else 0
 
-def sample_ids(job,count=6,seed=42):
+def sample_ids(job,count=6,seed=42,protocol_mode=None,results_root=None):
     """Deterministic length/density strata; nesting guaranteed for expanding n."""
-    docs=list(filtered_docs(job))
+    if protocol_mode is None:
+        docs=list(filtered_docs(job))
+    else:
+        from .engine import OUT
+        docs=list(filtered_docs(job, protocol_mode, results_root or OUT))
     if not docs:return []
     docs=sorted(docs,key=lambda d:(_length(d),_gold_density(d),str(d.get('document_id') or d.get('id'))))
     # Round-robin over length terciles, ordered by density within each.
@@ -33,7 +38,7 @@ def sample_ids(job,count=6,seed=42):
     while any(groups):
         for g in groups:
             if g:ordering.append(g.pop())
-    return [str(d.get('document_id') or d.get('id')) for d in ordering[:count]]
+    return [checkpoint_id(d) for d in ordering[:count]]
 
 
 def scan_records(run_root:Path):

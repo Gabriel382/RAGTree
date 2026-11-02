@@ -10,6 +10,7 @@ from .engine import filtered_docs, OUT
 from .protocol import load_protocol
 from .estimate import scan_records, calls_for, cost_per_record
 from .runtime import atomic_json
+from .record_identity import checkpoint_id
 from ragtree.evaluation.relations.metrics import RelationEvalAggregator, relations_to_triples
 
 
@@ -33,11 +34,14 @@ def _bootstrap_ci(docs:list[tuple[dict,dict]], n=250,seed=42):
 
 def evaluate_run(job,run_root:Path):
     cache={r['document_id']:r for r in scan_records(run_root)}
+    manifest_path=run_root/'manifest.json'
+    manifest=json.loads(manifest_path.read_text(encoding='utf8')) if manifest_path.exists() else {}
+    protocol_mode=manifest.get('protocol_mode','legacy_xquality')
     agg=RelationEvalAggregator(ignore_labels={'null'})
     observations=[]
     missing=[]
-    for doc in filtered_docs(job):
-        identifier=str(doc.get('document_id') or doc.get('id'))
+    for doc in filtered_docs(job,protocol_mode,run_root.parents[4]):
+        identifier=checkpoint_id(doc)
         rec=cache.get(identifier)
         if rec is None:missing.append(identifier)
         pred=rec.get('pred_relations',{}) if rec else {}

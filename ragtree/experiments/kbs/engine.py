@@ -15,6 +15,7 @@ import uuid
 from typing import Any
 from .protocol import Job, ROOT, load_protocol, output_config, profile_config
 from .runtime import init_db, atomic_json, status_counts
+from .record_identity import build_input_cache, checkpoint_id
 
 OUT=ROOT/'results/kbs_journal'
 
@@ -76,8 +77,16 @@ def doc_type(job:Job):
     return _arg(job.arguments,'doc_types',_arg(job.arguments,'doc_type_filter',_arg(job.arguments,'doc_type',_arg(job.arguments,'icl_predict_types','all'))))
 
 
-def filtered_docs(job:Job):
-    source=input_path(job)
+def prepared_input_path(job: Job, protocol_mode: str = 'controlled_revision_v2', results_root: Path = OUT) -> Path:
+    """Return a non-destructive annotated JSONL for controlled KBS jobs only."""
+    source = input_path(job)
+    if protocol_mode != 'controlled_revision_v2':
+        return source
+    return build_input_cache(source, Path(results_root)/'input_cache')
+
+
+def filtered_docs(job:Job, protocol_mode: str = 'controlled_revision_v2', results_root: Path = OUT):
+    source=prepared_input_path(job, protocol_mode, results_root)
     types=doc_type(job)
     accepted=None if not types or types=='all' else set(types.split(','))
     seen=set()
@@ -85,9 +94,7 @@ def filtered_docs(job:Job):
         for n,line in enumerate(f,start=1):
             if not line.strip():continue
             obj=json.loads(line)
-            identifier=obj.get('document_id') or obj.get('id')
-            if identifier is None:raise ValueError(f'{source}:{n} missing document ID')
-            identifier=str(identifier)
+            identifier=checkpoint_id(obj)
             if identifier in seen:raise ValueError(f'{source}:{n} duplicate ID {identifier!r}')
             seen.add(identifier)
             if accepted and obj.get('type') not in accepted:continue
@@ -201,6 +208,7 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
     if not 0<=max_errors<=9999:raise ValueError('max_errors must be nonnegative')
     session_id=session_id or uuid.uuid4().hex
     rid,fingerprint=run_id(job,profile_name,protocol_mode)
+    prepared_source=prepared_input_path(job,protocol_mode,Path(results_root))
     root=Path(results_root)/profile_name/job.phase/job.method/job.dataset/rid
     root.mkdir(parents=True,exist_ok=True)
     db=Path(results_root)/'checkpoints.sqlite'
@@ -217,8 +225,8 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
     schema_labels=set()
     if protocol_mode=='controlled_revision_v2':
         import yaml
-        all_docs=list(filtered_docs(job))
-        eval_ids=[str(d.get('document_id') or d.get('id')) for d in all_docs]
+        all_docs=list(filtered_docs(job,protocol_mode,Path(results_root)))
+        eval_ids=[checkpoint_id(d) for d in all_docs]
         for d in all_docs:
             if isinstance(d.get('relations'),dict):schema_labels.update(d['relations'])
         if job.dataset=='docred_causal':
@@ -235,7 +243,8 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
     processes=[]
     try:
         for index in range(workers):
-            path=output_config(job,root,profile,index,protocol_mode=protocol_mode)
+            path=output_config(job,root,profile,index,protocol_mode=protocol_mode,
+                               prepared_source=prepared_source)
             command=_prep_command(job,path,profile)
             log_path=root/'logs'/f'shard_{index}.log';log_path.parent.mkdir(parents=True,exist_ok=True)
             log=log_path.open('a',encoding='utf8')
@@ -298,7 +307,7 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
         # A previous job's failure must not mark this job as failed, and a
         # previously failed/skipped document must not make smoke report success.
         expected_ids = set(selected_ids) if selected_ids is not None else {
-            str(doc.get('document_id') or doc.get('id')) for doc in filtered_docs(job)
+            checkpoint_id(doc) for doc in filtered_docs(job,protocol_mode,Path(results_root))
         }
         with sqlite3.connect(db, timeout=30) as c:
             state = dict(c.execute('SELECT doc_id,status FROM records WHERE run_id=?',(rid,)))
