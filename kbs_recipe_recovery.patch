@@ -1,0 +1,341 @@
+--- a/configs/experiments/kbs_journal/recipes.json
++++ b/configs/experiments/kbs_journal/recipes.json
+@@ -26,10 +26,10 @@
+       "--doc-type",
+       "all"
+     ],
+-    "source": "inferred from the baseline pattern because eventstoryline is present for CoT/ICL/RAG methods",
+-    "provenance": "inferred",
++    "source": "tests/postprocessing/postprocessing_maven_ere.ipynb cell 3 (evaluation only); scripts/run_supplementary_runtime_co2_v4.py (inferred run command)",
++    "provenance": "documented_inference",
+     "paper_f1": 7.31,
+-    "note": "EventStoryLine baseline is inferred for method/dataset completeness. Remove it with --no-inferred-baseline-eventstoryline if strict notebook-only execution is needed."
++    "note": "Evaluation shown, but original generation command not archived. Source script reconstructs --doc-type all. Not proof of the exact historical final journal run."
+   },
+   {
+     "method": "baseline",
+@@ -954,10 +954,10 @@
+       "--max-llm-calls",
+       "1"
+     ],
+-    "source": "agentic.ipynb",
+-    "provenance": "unverified_mapping",
++    "source": "tests/processing/agentic.ipynb cell 40; scripts/run_agentic_runtime_co2_n_docs.py (ARAG mapping and dataset-specific commands)",
++    "provenance": "source_documented",
+     "paper_f1": 6.44,
+-    "note": "ARAG → agentic_hybrid mapping not confirmed."
++    "note": "ARAG -> agentic_hybrid explicitly mapped by author runtime script; invocation documented in notebook. Historical final journal run parameters and score are not independently proven."
+   },
+   {
+     "method": "agentic_hybrid",
+@@ -984,10 +984,10 @@
+       "--max-llm-calls",
+       "1"
+     ],
+-    "source": "agentic.ipynb",
+-    "provenance": "unverified_mapping",
++    "source": "tests/processing/agentic.ipynb cell 22; scripts/run_agentic_runtime_co2_n_docs.py (ARAG mapping and dataset-specific commands)",
++    "provenance": "source_documented",
+     "paper_f1": 7.45,
+-    "note": "ARAG → agentic_hybrid mapping not confirmed."
++    "note": "ARAG -> agentic_hybrid explicitly mapped by author runtime script; invocation documented in notebook. Historical final journal run parameters and score are not independently proven."
+   },
+   {
+     "method": "agentic_hybrid",
+@@ -1014,10 +1014,10 @@
+       "--max-llm-calls",
+       "1"
+     ],
+-    "source": "agentic.ipynb",
+-    "provenance": "unverified_mapping",
++    "source": "tests/processing/agentic.ipynb cell 31; scripts/run_agentic_runtime_co2_n_docs.py (ARAG mapping and dataset-specific commands)",
++    "provenance": "source_documented",
+     "paper_f1": 97.09,
+-    "note": "ARAG → agentic_hybrid mapping not confirmed."
++    "note": "ARAG -> agentic_hybrid explicitly mapped by author runtime script; invocation documented in notebook. Historical final journal run parameters and score are not independently proven."
+   },
+   {
+     "method": "agentic_hybrid",
+@@ -1044,10 +1044,10 @@
+       "--max-llm-calls",
+       "1"
+     ],
+-    "source": "agentic.ipynb",
+-    "provenance": "unverified_mapping",
++    "source": "tests/processing/agentic.ipynb cell 10; scripts/run_agentic_runtime_co2_n_docs.py (ARAG mapping and dataset-specific commands)",
++    "provenance": "source_documented",
+     "paper_f1": 25.77,
+-    "note": "ARAG → agentic_hybrid mapping not confirmed."
++    "note": "ARAG -> agentic_hybrid explicitly mapped by author runtime script; invocation documented in notebook. Historical final journal run parameters and score are not independently proven."
+   },
+   {
+     "method": "agentic_hybrid",
+@@ -1074,10 +1074,10 @@
+       "--max-llm-calls",
+       "1"
+     ],
+-    "source": "agentic.ipynb",
+-    "provenance": "unverified_mapping",
++    "source": "tests/processing/agentic.ipynb cell 49; scripts/run_agentic_runtime_co2_n_docs.py (ARAG mapping and dataset-specific commands)",
++    "provenance": "source_documented",
+     "paper_f1": 41.37,
+-    "note": "ARAG → agentic_hybrid mapping not confirmed."
++    "note": "ARAG -> agentic_hybrid explicitly mapped by author runtime script; invocation documented in notebook. Historical final journal run parameters and score are not independently proven."
+   },
+   {
+     "method": "langgraph_agentic_simple",
+@@ -1212,12 +1212,12 @@
+       "--shot-num",
+       "3",
+       "--shot-type",
+-      "all"
+-    ],
+-    "source": "Proposed extrapolation from MARAG DocRED + agentic_hybrid maven_ere",
+-    "provenance": "unverified",
++      "train"
++    ],
++    "source": "scripts/run_agentic_runtime_co2_n_docs.py DatasetSpec; scripts/run_missing_marag_runtime_co2.py MISSING_MARAG_SPECS (explicitly inferred)",
++    "provenance": "documented_inference",
+     "paper_f1": 6.93,
+-    "note": "NOT established by xquality notebooks. Requires review and approval before publication."
++    "note": "Documented author-side supplementary reconstruction, not an archived full journal execution. Shot type follows the supplementary scripts, not the earlier guess all. Compare to final original server outputs if retained."
+   },
+   {
+     "method": "marag",
+@@ -1242,12 +1242,12 @@
+       "--shot-num",
+       "3",
+       "--shot-type",
+-      "all"
+-    ],
+-    "source": "Proposed extrapolation from MARAG DocRED + agentic_hybrid eventstoryline",
+-    "provenance": "unverified",
++      "full"
++    ],
++    "source": "scripts/run_agentic_runtime_co2_n_docs.py DatasetSpec; scripts/run_missing_marag_runtime_co2.py MISSING_MARAG_SPECS (explicitly inferred)",
++    "provenance": "documented_inference",
+     "paper_f1": 7.31,
+-    "note": "NOT established by xquality notebooks. Requires review and approval before publication."
++    "note": "Documented author-side supplementary reconstruction, not an archived full journal execution. Shot type follows the supplementary scripts, not the earlier guess all. Compare to final original server outputs if retained."
+   },
+   {
+     "method": "marag",
+@@ -1272,12 +1272,12 @@
+       "--shot-num",
+       "3",
+       "--shot-type",
+-      "all"
+-    ],
+-    "source": "Proposed extrapolation from MARAG DocRED + agentic_hybrid fincausal",
+-    "provenance": "unverified",
++      "train.csv"
++    ],
++    "source": "scripts/run_agentic_runtime_co2_n_docs.py DatasetSpec; scripts/run_missing_marag_runtime_co2.py MISSING_MARAG_SPECS (explicitly inferred)",
++    "provenance": "documented_inference",
+     "paper_f1": 97.12,
+-    "note": "NOT established by xquality notebooks. Requires review and approval before publication."
++    "note": "Documented author-side supplementary reconstruction, not an archived full journal execution. Shot type follows the supplementary scripts, not the earlier guess all. Compare to final original server outputs if retained."
+   },
+   {
+     "method": "marag",
+@@ -1332,11 +1332,11 @@
+       "--shot-num",
+       "3",
+       "--shot-type",
+-      "all"
+-    ],
+-    "source": "Proposed extrapolation from MARAG DocRED + agentic_hybrid causalbank",
+-    "provenance": "unverified",
++      "resulted_from"
++    ],
++    "source": "scripts/run_agentic_runtime_co2_n_docs.py DatasetSpec; scripts/run_missing_marag_runtime_co2.py MISSING_MARAG_SPECS (explicitly inferred)",
++    "provenance": "documented_inference",
+     "paper_f1": 27.71,
+-    "note": "NOT established by xquality notebooks. Requires review and approval before publication."
++    "note": "Documented author-side supplementary reconstruction, not an archived full journal execution. Shot type follows the supplementary scripts, not the earlier guess all. Compare to final original server outputs if retained."
+   }
+ ]
+--- a/ragtree/experiments/kbs/protocol.py
++++ b/ragtree/experiments/kbs/protocol.py
+@@ -37,6 +37,19 @@
+ 
+ def recipes():
+     return json.loads((CFG_DIR/'recipes.json').read_text(encoding='utf8'))
++
++
++# Historical evidence levels are intentionally distinct from run eligibility.
++# Only reconstructed notebook commands are allowed for strict legacy runs.
++# The controlled revision may execute explicitly documented reconstructions,
++# which remain labelled as inferences in every run manifest and report.
++def recipe_authorized(provenance: str, protocol_mode: str, allow_unverified: bool=False) -> bool:
++    if allow_unverified:
++        return True
++    if provenance == 'reconstructed':
++        return True
++    return (protocol_mode == 'controlled_revision_v2'
++            and provenance in {'source_documented', 'documented_inference'})
+ 
+ 
+ def _override_args(base: list[str], keys: dict[str,str]):
+--- a/ragtree/experiments/kbs/cli.py
++++ b/ragtree/experiments/kbs/cli.py
+@@ -8,7 +8,7 @@
+ import time
+ import uuid
+ from .engine import OUT, execute_job, campaign_lock, filtered_docs, preflight, run_id, summarize_campaign
+-from .protocol import job_matrix, select_jobs, load_protocol
++from .protocol import job_matrix, select_jobs, load_protocol, recipe_authorized
+ from .runtime import init_db, status_counts, atomic_json
+ from .estimate import sample_ids, estimate_run, projected_campaign
+ from .report import report_one, report_campaign
+@@ -62,6 +62,8 @@
+         from collections import Counter
+         data={'jobs':len(jobs),'by_phase':dict(Counter(j.phase for j in jobs)),
+               'historical_unverified':sum(j.provenance!='reconstructed' for j in jobs),
++              'provenance_counts':dict(Counter(j.provenance for j in jobs)),
++              'controlled_revision_eligible':sum(recipe_authorized(j.provenance,'controlled_revision_v2') for j in jobs),
+               'blocked_by_design':sum(j.phase in load_protocol()['blocked_phases'] for j in jobs),
+               'items':[{'id':j.identity,'phase':j.phase,'method':j.method,'dataset':j.dataset,
+                         'model':j.model,'variant':j.variant,'provenance':j.provenance} for j in jobs]}
+@@ -109,9 +111,9 @@
+         init_db(root/'checkpoints.sqlite')
+         for index,job in enumerate(jobs,1):
+             issue=preflight(job)
+-            if issue['issues'] or (job.provenance!='reconstructed' and not args.allow_unverified):
++            if issue['issues'] or not recipe_authorized(job.provenance,args.protocol,args.allow_unverified):
+                 reasons=list(issue['issues'])
+-                if job.provenance!='reconstructed' and not args.allow_unverified:reasons.append('historical recipe requires --allow-unverified')
++                if not recipe_authorized(job.provenance,args.protocol,args.allow_unverified):reasons.append('recipe provenance not authorized for '+args.protocol+'; --allow-unverified required')
+                 item={'job':job.identity,'status':'blocked','reasons':reasons,'method':job.method,'dataset':job.dataset,'phase':job.phase}
+                 results.append(item)
+                 print(f'[{index}/{len(jobs)}] BLOCKED {job.method}/{job.dataset}: {reasons}',flush=True)
+--- a/ragtree/experiments/kbs/engine.py
++++ b/ragtree/experiments/kbs/engine.py
+@@ -13,7 +13,7 @@
+ import time
+ import uuid
+ from typing import Any
+-from .protocol import Job, ROOT, load_protocol, output_config, profile_config
++from .protocol import Job, ROOT, load_protocol, output_config, profile_config, recipe_authorized
+ from .runtime import init_db, atomic_json, status_counts
+ from .record_identity import build_input_cache, checkpoint_id
+ 
+@@ -195,8 +195,8 @@
+     pf=preflight(job)
+     if pf['issues']:
+         return {'job':job.identity,'status':'blocked','reasons':pf['issues'],'warnings':pf['warnings']}
+-    if job.provenance in ('unverified','unverified_mapping','inferred') and not allow_unverified:
+-        return {'job':job.identity,'status':'blocked','reasons':['unverified source recipe; --allow-unverified required'], 'warnings':pf['warnings']}
++    if not recipe_authorized(job.provenance,protocol_mode,allow_unverified):
++        return {'job':job.identity,'status':'blocked','reasons':['recipe provenance not authorized for '+protocol_mode+'; --allow-unverified required'], 'warnings':pf['warnings']}
+     if protocol_mode not in ("legacy_xquality","controlled_revision_v2"):
+         raise ValueError("unknown protocol mode")
+     profile=profile_config(profile_name)
+--- /dev/null
++++ b/tests/kbs/test_recipe_recovery.py
+@@ -0,0 +1,49 @@
++"""Source-derived command reconstruction: never conflate historical proof and usability."""
++from collections import Counter
++from ragtree.experiments.kbs.protocol import recipes, job_matrix, recipe_authorized
++
++
++def test_provenance_counts_and_matrix():
++    entries=recipes()
++    assert len(entries)==60
++    assert Counter(r['provenance'] for r in entries)=={
++        'reconstructed':50,'source_documented':5,'documented_inference':5}
++    assert len(job_matrix())==192
++    assert sum(recipe_authorized(r['provenance'],'legacy_xquality') for r in entries)==50
++    assert sum(recipe_authorized(r['provenance'],'controlled_revision_v2') for r in entries)==60
++
++
++def test_inference_never_passes_strict_legacy_check():
++    for status in ('source_documented','documented_inference','unverified','unverified_mapping','inferred'):
++        assert not recipe_authorized(status,'legacy_xquality')
++    for status in ('unverified','unverified_mapping','inferred','unknown'):
++        assert not recipe_authorized(status,'controlled_revision_v2')
++    assert recipe_authorized('documented_inference','legacy_xquality',True)
++
++
++def test_arag_mapping_documented_and_commands_preserved():
++    rows=[r for r in recipes() if r['method']=='agentic_hybrid']
++    assert len(rows)==5
++    for r in rows:
++        assert r['provenance']=='source_documented'
++        assert '--max-llm-calls' in r['args']
++        assert r['args'][r['args'].index('--max-llm-calls')+1]=='1'
++        assert 'run_agentic_runtime_co2_n_docs.py' in r['source']
++
++
++def test_marag_supplementary_shot_types_are_not_mislabeled_historical():
++    expected={'maven_ere':'train','eventstoryline':'full',
++              'fincausal':'train.csv','causalbank':'resulted_from'}
++    rows=[r for r in recipes() if r['method']=='marag' and r['dataset'] in expected]
++    assert len(rows)==4
++    for r in rows:
++        assert r['provenance']=='documented_inference'
++        assert r['args'][r['args'].index('--shot-type')+1]==expected[r['dataset']]
++        assert 'run_missing_marag_runtime_co2.py' in r['source']
++
++
++def test_eventstoryline_baseline_evaluation_is_not_generation_proof():
++    r=next(r for r in recipes() if r['method']=='baseline' and r['dataset']=='eventstoryline')
++    assert r['provenance']=='documented_inference'
++    assert r['args'][r['args'].index('--doc-type')+1]=='all'
++    assert 'evaluation only' in r['source']
+--- /dev/null
++++ b/docs/KBS_RECIPE_RECOVERY.md
+@@ -0,0 +1,53 @@
++# Recovery of the ten previously blocked KBS configurations
++
++This is a **source-based reconstruction**, not an assertion that the exact final journal executions were recovered. All source paths below refer to the supplied historical `RAGTree-xquality.zip`.
++
++## Evidence and decisions
++
++| Configuration(s) | Decision for controlled revision | Evidence | Historical certainty |
++|---|---|---|---|
++| ARAG (five datasets) | `agentic_hybrid`; preserve original 5 notebook commands; `max_llm_calls=1` | `scripts/run_agentic_runtime_co2_n_docs.py`, header, `METHOD_DISPLAY`, `build_method_command`; `tests/processing/agentic.ipynb` cells 10, 22, 31, 40, 49 | **Method mapping and commands documented**; final journal run provenance unconfirmed |
++| Baseline / EventStoryLine | `run_single_llm_baseline.py --dataset-key eventstoryline --backend vllm --doc-type all` | `tests/postprocessing/postprocessing_maven_ere.ipynb` cell 3 evaluates baseline; `scripts/run_supplementary_runtime_co2_v4.py` reconstructs command, marks it inferred | **Inferred run command** |
++| MARAG / MAVEN-ERE | 3 shots from `train`; ontology EventKG; KG from train | `scripts/run_agentic_runtime_co2_n_docs.py` `DATASETS`; `scripts/run_missing_marag_runtime_co2.py` `MISSING_MARAG_SPECS` | **Author-documented inference**, not original journal run |
++| MARAG / EventStoryLine | 3 shots from `full`; ontology owltime; KG artifact with limit=10 | Same two supplementary scripts | **Author-documented inference**; overlap/resource issue remains |
++| MARAG / FinCausal | 3 shots from `train.csv`; ontology fibocoreplus; KG train.csv | Same two supplementary scripts | **Author-documented inference** |
++| MARAG / CausalBank | 3 shots from `resulted_from`; ontology wordnetfull; KG resulted_from | Same two supplementary scripts | **Author-documented inference** |
++
++For the four MARAG reconstructions, the supplementary source explicitly labels them **inferred**. Their `--shot-type` values used to be guessed as `all` in the first KBS patch; this patch corrects them to the explicitly documented values `train`, `full`, `train.csv`, `resulted_from`. All other MARAG settings remain as before, including 10 maximum LLM calls, web/Wikidata, and 3 examples.
++
++## Access policy
++
++- `--protocol legacy_xquality`: **only 50 directly notebook-reconstructed recipes run** by default. The other ten stay blocked, protecting strict historical claims.
++- `--protocol controlled_revision_v2`: all **60 recipes may run without `--allow-unverified`** because the missing ten have explicit source references. Their manifests retain `source_documented` or `documented_inference`, so results cannot be presented as recovered historical executions.
++- Truly unverified/new recipe categories remain blocked in v2 unless explicitly overridden.
++
++This patch modifies only the KBS recipe registry, provenance gate, and tests. It does **not** change algorithms, original notebooks, datasets, resources, metrics, or existing checkpoints. Changed recipes get changed run fingerprints and therefore new independent checkpoints.
++
++## Outstanding scientific validation before production
++
++1. Compare original server `data/processed/*.agentic_hybrid.vllm.jsonl` and `*.marag.vllm.jsonl` with submitted 60-cell results, if still retained; notebook outputs alone cannot establish exact journal production settings.
++2. Validate source KG artifacts (EventStoryLine `limit=10`) and ontology joins keyed on colliding original document IDs.
++3. Audit few-shot overlap and correct source-pool separation; e.g. `full`, `resulted_from`, or `dev` may be part of evaluation set. **A passing one-record smoke does not establish no leakage.**
++4. Model/provider changes and `4096` token/low-reasoning settings can alter F1. A controlled v2 result need not equal legacy or submitted paper values.
++5. Full-run successes and reviewer-ready metrics still require actual 5-dataset execution and complete trace/output validation.
++
++## Install
++
++From repository root:
++
++```bash
++unzip RAGTree_KBS_Recipe_Recovery_20261102.zip -d /tmp/kbs-recipes
++# Inspect before applying:
++git apply --check /tmp/kbs-recipes/kbs_recipe_recovery.patch
++git apply /tmp/kbs-recipes/kbs_recipe_recovery.patch
++python -m pytest -q tests/kbs
++python scripts/kbs_protocol.py plan | head -30
++```
++
++Then locally smoke the ten previously blocked configurations individually or run the complete smoke:
++
++```bash
++python scripts/kbs_protocol.py smoke --profile local --mode sequential --protocol controlled_revision_v2 --max-errors 3
++```
++
++Do not use `--allow-unverified` for that command. A run may still fail for actual model, resource, or agent network errors; this patch only resolves source-configuration gatekeeping.
