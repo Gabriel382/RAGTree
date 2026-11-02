@@ -1,0 +1,75 @@
+        # An empty final answer after length termination can mean GPT-OSS used
+        # its entire generation allowance in the reasoning channel. At most one
+        # extra request is permitted, and only under a versioned KBS protocol.
+        initial_cap = int(data['max_tokens'])
+        fallback_enabled = (
+            os.environ.get('KBS_PROTOCOL_MODE') == 'controlled_revision_v2'
+            and os.environ.get('KBS_EMPTY_LENGTH_FALLBACK') == '1'
+        )
+        fallback_cap = int(os.environ.get('KBS_FALLBACK_MAX_TOKENS', '8192')) if fallback_enabled else initial_cap
+        if fallback_enabled and fallback_cap <= initial_cap:
+            raise ValueError('KBS fallback max_tokens must exceed initial max_tokens')
+
+        for attempt in range(2 if fallback_enabled else 1):
+            attempt_data = dict(data)
+            attempt_data['max_tokens'] = initial_cap if attempt == 0 else fallback_cap
+            request = {
+                'model': model,
+                'messages': list(messages),
+                'parameters': {k: v for k, v in attempt_data.items() if k != 'api_key'},
+                'kbs_generation_attempt': attempt + 1,
+            }
+            started = time.monotonic()
+            payload = None
+            recorded = False
+            try:
+                response = litellm.completion(model=model, messages=list(messages), **attempt_data)
+                payload = response.model_dump() if hasattr(response, 'model_dump') else dict(response)
+                hidden = getattr(response, '_hidden_params', {}) or {}
+                if hidden.get('response_cost') is not None:
+                    payload['kbs_litellm_reported_cost_usd'] = hidden['response_cost']
+                choices = getattr(response, 'choices', [])
+                choice = choices[0] if choices else None
+                content = getattr(getattr(choice, 'message', None), 'content', None)
+                if isinstance(content, str):
+                    answer = content
+                elif isinstance(content, list):
+                    answer = '\n'.join(str(x.get('text', '')) for x in content if isinstance(x, dict))
+                else:
+                    answer = ''
+                finish_reason = getattr(choice, 'finish_reason', None)
+                if answer.strip():
+                    trace_call(request, payload, time.monotonic() - started)
+                    recorded = True
+                    return answer
+
+                usage = payload.get('usage') or {}
+                details = usage.get('completion_tokens_details') or {}
+                failure = ValueError(
+                    'LLM returned no usable final-answer text: '
+                    f'finish_reason={finish_reason!r}, '
+                    f'completion_tokens={usage.get("completion_tokens")!r}, '
+                    f'reasoning_tokens={details.get("reasoning_tokens")!r}, '
+                    f'configured_max_tokens={attempt_data["max_tokens"]!r}'
+                )
+                # Preserve this billed but unsuccessful response exactly once.
+                trace_call(request, payload, time.monotonic() - started, repr(failure))
+                recorded = True
+                should_retry = (attempt == 0 and fallback_enabled and finish_reason == 'length')
+                if should_retry:
+                    trace_event('generation_fallback', {
+                        'reason': 'empty_final_answer_and_finish_length',
+                        'initial_max_tokens': initial_cap,
+                        'fallback_max_tokens': fallback_cap,
+                        'max_extra_attempts': 1,
+                    })
+                    continue
+                raise failure
+            except Exception as exc:
+                # Never miscount a returned response as two API calls, even if
+                # the caller raises after detecting an empty final answer.
+                if not recorded:
+                    trace_call(request, payload, time.monotonic() - started, repr(exc))
+                raise
+        raise RuntimeError('KBS generation fallback exhausted unexpectedly')
+

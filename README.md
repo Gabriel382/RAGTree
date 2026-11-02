@@ -1,93 +1,61 @@
-# KBS controlled-revision — bounded GPT-OSS-20B generation fallback
+# KBS GPT-OSS-20B bounded fallback — compatibility installer
 
-## Observed evidence
-Three *exact* saved DocRED prompts that returned no final text at the 4,096-token
-output cap were replayed once with 8,192. All finished normally with
-structurally valid relation JSON (1,577 / 6,649 / 542 completion tokens).
-This is a diagnostic result, not a claim that their official evaluation has passed.
+This is a replacement for `git apply kbs_bounded_fallback.patch` **when the patch fails at `gateway.py:39`**. The original `.patch` expects one exact intermediate revision of the KBS gateway and cannot be applied reliably to different Windows/Linux checkouts.
 
-## Apply
-From your **current** KBS branch on IMMOTEP, after all earlier hotfixes:
+## Purpose
+
+- Only in `controlled_revision_v2`, with the GPT-OSS-20B configured generation policy:
+  - Initial `max_tokens=4096`, `reasoning_effort=low`.
+  - If the final answer is empty and the response ends with `finish_reason=length`, retry that call once with `max_tokens=8192`.
+  - Log both requests and token usage separately. No infinite fallback loop.
+- Preserve the original RAG strategy algorithms, historical protocol, and datasets.
+- Handle different earlier KBS gateway revisions (original, diagnostic hotfix, or already patched).
+- Refuse unknown code variants instead of forcing a patch. Create a separate `.before_kbs_fallback.bak` copy of every modified file.
+
+## Windows PowerShell
+
+Extract the whole ZIP, including `gateway_retry_block.txt`, to a folder, such as `C:\Users\henri\Downloads\KBS_Fallback_Compat`. Then from the RAGTree root:
+
+```powershell
+cd C:\Users\henri\Documents\git\postdoc\RAGTree
+
+git branch --show-current
+git status --short
+
+# Dry-run: validate all four files, change nothing.
+python C:\Users\henri\Downloads\KBS_Fallback_Compat\install_compatible.py --repo .
+
+# Apply if and only if the above succeeds.
+python C:\Users\henri\Downloads\KBS_Fallback_Compat\install_compatible.py --repo . --apply
+
+# Optional: add the isolated fallback regression tests.
+Copy-Item C:\Users\henri\Downloads\KBS_Fallback_Compat\test_generation_fallback.py tests\kbs\test_generation_fallback.py
+python -m pytest -q tests/kbs
+
+git diff --stat
+```
+
+The script does not delete any pre-existing results/checkpoints. Because source files and the protocol YAML are hashed into run IDs, the new protocol creates separate run identities and **may not reuse prior successful checkpoints**. Do not rerun the complete estimator solely because this patch has been installed.
+
+### After validating and committing on Windows
+
+Commit only the intended source/config/test files (do not commit `.before_kbs_fallback.bak` copies), push the correct branch, and `git pull` that branch on IMMOTEP **only if you want to synchronize the two machines**. You can alternatively run this compatibility installer directly against the IMMOTEP checkout, after testing and committing any existing work there.
+
+## Linux
 
 ```bash
 cd ~/git/postdoc/ragtree
-git status --short
-git apply --check /path/to/kbs_bounded_fallback.patch
-git apply /path/to/kbs_bounded_fallback.patch
-python -m pytest -q tests/kbs
+python3 /path/to/KBS_Fallback_Compat/install_compatible.py --repo .
+python3 /path/to/KBS_Fallback_Compat/install_compatible.py --repo . --apply
+python3 -m pytest -q tests/kbs
 ```
 
-The patch changes ONLY the KBS LiteLLM gateway, KBS campaign environment,
-KBS protocol YAML, and one new test file. Existing RAG strategies are untouched.
+## What was verified
 
-## Policy (controlled_revision_v2, gpt_oss_20b only)
+- Compatibility dry-run/application/idempotence against three reconstructible KBS versions: base, pre-fallback, and already patched.
+- Full KBS offline suite on a reconstructed full repository after installing this script: **21 passed, 4 skipped**.
+- `verify_three_failed_docred.py` is included for targeted live testing, but **no live Windows inference** has been performed. It is only needed on the machine that has the original failed checkpoints and local LLM endpoint.
 
-1. Run the same prompt with 4,096 maximum completion tokens and low reasoning effort.
-2. If **and only if** the provider returns **no final-answer text** and
-   `finish_reason=length`, make exactly **one** additional API call on the
-   same prompt/messages with `max_tokens=8192`.
-3. If retry succeeds, return the answer; if not, fail the record normally.
-4. Both completed API attempts are independently traced with usage and cost
-   (if available); a `generation_fallback` event identifies the reason.
-5. Legacy xquality never enables this fallback; the Qwen model does not
-   automatically use a GPT-OSS-specific recovery rule.
-6. API/network-level retries remain separately capped by the current LiteLLM configuration.
+## Troubleshooting
 
-## Verify on IMMOTEP
-
-```bash
-python scripts/kbs_protocol.py smoke \
-  --profile local --mode sequential \
-  --protocol controlled_revision_v2 \
-  --method baseline --dataset docred_causal --max-errors 3
-
-python scripts/kbs_protocol.py smoke \
-  --profile local --mode sequential \
-  --protocol controlled_revision_v2 \
-  --method langgraph_agentic_simple --dataset docred_causal --max-errors 3
-```
-
-These smoke commands select a small document sample; they do **not** target the
-three failed pilot documents or establish that all original failures are resolved
-in the checkpoint database. The 3/3 successful exact-prompt diagnostic replays
-are stored separately and must not be imported as canonical experiment outputs.
-
-## Critical checkpoint warning
-The existing KBS engine fingerprints all Python source plus protocol.yaml. This
-patch **will change run identities**. Old results remain intact but will not be
-silently reused as the same scientific run. Do not rerun the entire `estimate`
-command merely to clear three historical failures. Keep its token/budget report
-and account for unsuccessful calls and the extra fallbacks when finalizing costs.
-When launching revised production, treat it as a newly versioned protocol.
-
-## Limits
-The fallback solves only the specific no-final-text/length case. It does NOT
-retry malformed relation JSON, missing entities, network outages, or prediction
-validation failures, and no extended LLM experiments were run during packaging.
-
-## Tests
-Eight isolated gateway tests exercise: first-call success, first-call content
-with length finish, one bounded retry, both-attempt billing traces, no retry on
-stop/empty or provider failure, failure on second attempt, and legacy isolation.
-Run full `tests/kbs` suite locally before real inference.
-
-## Precisely targeted end-to-end verification (recommended)
-
-The ZIP also includes `verify_three_failed_docred.py`. Copy it into the
-RAGTree repository root. Its default invocation is read-only:
-
-```bash
-python verify_three_failed_docred.py
-```
-
-If all three original document IDs are found exactly once, execute only those
-three evaluations through the real RAGTree runner and checkpoint manager:
-
-```bash
-python verify_three_failed_docred.py --execute --profile local --max-errors 3
-```
-
-It creates/reuses the **new versioned** run ID, leaves all previous estimate
-artifacts intact, and explicitly checks all three selected checkpoint statuses.
-Each agentic document may make multiple LLM calls; the script does not limit it
-to three *API requests*.
+If the installer says `NOT APPLIED: incompatible ...`, it has made no changes. Do not use `git apply --force`, delete your file, or overwrite it with a generic template. Share your current `gateway.py`, `engine.py`, and `protocol.py` (or their relevant diff) for a specifically targeted patch.
