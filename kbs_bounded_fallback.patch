@@ -1,0 +1,271 @@
+--- a/ragtree/experiments/kbs/gateway.py
++++ b/ragtree/experiments/kbs/gateway.py
+@@ -39,47 +39,80 @@
+                 return max(0,litellm.token_counter(model=model, messages=[{'role':'user','content':text}]) - litellm.token_counter(model=model,messages=[{'role':'user','content':''}]))
+             messages,measure = enforce_external_evidence_budget(list(messages),method,int(evidence_budget),token_counter)
+             trace_event('matched_external_evidence',measure)
+-        start=time.monotonic()
+-        request={'model':model,'messages':list(messages),'parameters': {k:v for k,v in data.items() if k!='api_key'}}
+-        payload = None
+-        try:
+-            result = litellm.completion(model=model, messages=list(messages), **data)
+-            payload = result.model_dump() if hasattr(result, 'model_dump') else dict(result)
+-            hidden = getattr(result, '_hidden_params', {}) or {}
+-            cost = hidden.get('response_cost')
+-            if cost is not None:
+-                payload['kbs_litellm_reported_cost_usd'] = cost
+-            choices = getattr(result, 'choices', [])
+-            choice = choices[0] if choices else None
+-            message = getattr(choice, 'message', None)
+-            content = getattr(message, 'content', None)
+-            if isinstance(content, str) and content.strip():
+-                text = content
+-            elif isinstance(content, list):
+-                text = '\n'.join(str(x.get('text', '')) for x in content if isinstance(x, dict))
+-            else:
+-                text = ''
+-            if not text.strip():
++        # An empty final answer after length termination can mean GPT-OSS used
++        # its entire generation allowance in the reasoning channel. At most one
++        # extra request is permitted, and only under a versioned KBS protocol.
++        initial_cap = int(data['max_tokens'])
++        fallback_enabled = (
++            os.environ.get('KBS_PROTOCOL_MODE') == 'controlled_revision_v2'
++            and os.environ.get('KBS_EMPTY_LENGTH_FALLBACK') == '1'
++        )
++        fallback_cap = int(os.environ.get('KBS_FALLBACK_MAX_TOKENS', '8192')) if fallback_enabled else initial_cap
++        if fallback_enabled and fallback_cap <= initial_cap:
++            raise ValueError('KBS fallback max_tokens must exceed initial max_tokens')
++
++        for attempt in range(2 if fallback_enabled else 1):
++            attempt_data = dict(data)
++            attempt_data['max_tokens'] = initial_cap if attempt == 0 else fallback_cap
++            request = {
++                'model': model,
++                'messages': list(messages),
++                'parameters': {k: v for k, v in attempt_data.items() if k != 'api_key'},
++                'kbs_generation_attempt': attempt + 1,
++            }
++            started = time.monotonic()
++            payload = None
++            recorded = False
++            try:
++                response = litellm.completion(model=model, messages=list(messages), **attempt_data)
++                payload = response.model_dump() if hasattr(response, 'model_dump') else dict(response)
++                hidden = getattr(response, '_hidden_params', {}) or {}
++                if hidden.get('response_cost') is not None:
++                    payload['kbs_litellm_reported_cost_usd'] = hidden['response_cost']
++                choices = getattr(response, 'choices', [])
++                choice = choices[0] if choices else None
++                content = getattr(getattr(choice, 'message', None), 'content', None)
++                if isinstance(content, str):
++                    answer = content
++                elif isinstance(content, list):
++                    answer = '\n'.join(str(x.get('text', '')) for x in content if isinstance(x, dict))
++                else:
++                    answer = ''
++                finish_reason = getattr(choice, 'finish_reason', None)
++                if answer.strip():
++                    trace_call(request, payload, time.monotonic() - started)
++                    recorded = True
++                    return answer
++
+                 usage = payload.get('usage') or {}
+                 details = usage.get('completion_tokens_details') or {}
+-                finish = getattr(choice, 'finish_reason', None)
+-                # Do not mistake reasoning text for the final extraction answer.
+-                raise ValueError(
++                failure = ValueError(
+                     'LLM returned no usable final-answer text: '
+-                    f'finish_reason={finish!r}, '
++                    f'finish_reason={finish_reason!r}, '
+                     f'completion_tokens={usage.get("completion_tokens")!r}, '
+                     f'reasoning_tokens={details.get("reasoning_tokens")!r}, '
+-                    f'configured_max_tokens={data.get("max_tokens")!r}. '
+-                    'Inspect the saved response trace before changing the protocol.'
++                    f'configured_max_tokens={attempt_data["max_tokens"]!r}'
+                 )
+-            trace_call(request, payload, time.monotonic() - start)
+-            return text
+-        except Exception as exc:
+-            # Exactly one trace per API call. If the model returned reasoning-only
+-            # content, preserve the billed response instead of recording a second
+-            # artificial failed call (which would distort call-count estimates).
+-            trace_call(request, payload, time.monotonic() - start, repr(exc))
+-            raise
++                # Preserve this billed but unsuccessful response exactly once.
++                trace_call(request, payload, time.monotonic() - started, repr(failure))
++                recorded = True
++                should_retry = (attempt == 0 and fallback_enabled and finish_reason == 'length')
++                if should_retry:
++                    trace_event('generation_fallback', {
++                        'reason': 'empty_final_answer_and_finish_length',
++                        'initial_max_tokens': initial_cap,
++                        'fallback_max_tokens': fallback_cap,
++                        'max_extra_attempts': 1,
++                    })
++                    continue
++                raise failure
++            except Exception as exc:
++                # Never miscount a returned response as two API calls, even if
++                # the caller raises after detecting an empty final answer.
++                if not recorded:
++                    trace_call(request, payload, time.monotonic() - started, repr(exc))
++                raise
++        raise RuntimeError('KBS generation fallback exhausted unexpectedly')
+ 
+     def embed(self,text: str):
+         try:
+--- a/ragtree/experiments/kbs/engine.py
++++ b/ragtree/experiments/kbs/engine.py
+@@ -259,11 +259,19 @@
+                'PYTHONPATH':str(ROOT)+os.pathsep+env.get('PYTHONPATH','')})
+             # Do not modify xquality generation behavior or use untracked
+             # inherited settings in controlled runs.
+-            env.pop('KBS_REASONING_EFFORT', None)
++            for key in ('KBS_REASONING_EFFORT', 'KBS_EMPTY_LENGTH_FALLBACK',
++                        'KBS_FALLBACK_MAX_TOKENS'):
++                env.pop(key, None)
+             if protocol_mode=='controlled_revision_v2':
+                 generation=load_protocol().get('generation',{}).get(job.model,{})
+                 if generation.get('reasoning_effort'):
+                     env['KBS_REASONING_EFFORT']=str(generation['reasoning_effort'])
++                fallback_cap=generation.get('empty_length_fallback_max_tokens')
++                if fallback_cap is not None:
++                    if int(fallback_cap)<=int(generation.get('max_tokens', 0)):
++                        raise ValueError('KBS fallback cap must exceed primary generation cap')
++                    env['KBS_EMPTY_LENGTH_FALLBACK']='1'
++                    env['KBS_FALLBACK_MAX_TOKENS']=str(int(fallback_cap))
+             if job.phase=='budget_control':env['KBS_EVIDENCE_BUDGET_TOKENS']='2048'
+             if selected_file:env['KBS_SELECTED_IDS']=str(selected_file.resolve())
+             if protocol_mode=='controlled_revision_v2':
+--- a/configs/experiments/kbs_journal/protocol.yaml
++++ b/configs/experiments/kbs_journal/protocol.yaml
+@@ -28,6 +28,9 @@
+     temperature: 0.0
+     max_tokens: 4096
+     reasoning_effort: low
++    # Only retry when finish_reason=length AND no final-answer text.
++    # One extra billed request; both attempts appear in LLM call traces.
++    empty_length_fallback_max_tokens: 8192
+   qwen3_30b_a3b:
+     temperature: 0.0
+     max_tokens: 4096
+--- /dev/null
++++ b/tests/kbs/test_generation_fallback.py
+@@ -0,0 +1,115 @@
++"""Regression tests: bounded empty-length retry never alters legacy behavior."""
++from types import SimpleNamespace
++import sys
++import pytest
++
++from ragtree.experiments.kbs import gateway
++
++
++def _response(text, finish, output_tokens=4096, cost=0.03):
++    obj = SimpleNamespace(
++        choices=[SimpleNamespace(message=SimpleNamespace(content=text), finish_reason=finish)],
++        _hidden_params={'response_cost': cost},
++    )
++    obj.model_dump = lambda: {
++        'choices': [{'message': {'content': text}, 'finish_reason': finish}],
++        'usage': {'prompt_tokens': 900, 'completion_tokens': output_tokens,
++                  'completion_tokens_details': {'reasoning_tokens': output_tokens if text is None else 2}},
++    }
++    return obj
++
++
++@pytest.fixture
++def mock_gateway(monkeypatch):
++    calls, traces, events = [], [], []
++    pending = []
++    def completion(**kwargs):
++        calls.append(kwargs)
++        item = pending.pop(0)
++        if isinstance(item, Exception):
++            raise item
++        return item
++    monkeypatch.setitem(sys.modules, 'litellm', SimpleNamespace(completion=completion))
++    monkeypatch.setattr(gateway, 'trace_call', lambda request, response, elapsed, error=None:
++                        traces.append((request, response, error)))
++    monkeypatch.setattr(gateway, 'trace_event', lambda name, data: events.append((name, data)))
++    monkeypatch.setenv('KBS_PROTOCOL_MODE','controlled_revision_v2')
++    monkeypatch.setenv('KBS_EMPTY_LENGTH_FALLBACK','1')
++    monkeypatch.setenv('KBS_FALLBACK_MAX_TOKENS','8192')
++    monkeypatch.setenv('KBS_REASONING_EFFORT','low')
++    return gateway.LiteLLMClient('openai/openai/gpt-oss-20b'), pending, calls, traces, events
++
++
++def _call(client):
++    return client.chat([{'role': 'user', 'content': 'Return JSON'}], temperature=0.0, max_tokens=4096)
++
++
++def test_fallback_one_additional_attempt_and_separate_billed_traces(mock_gateway):
++    client, pending, calls, traces, events = mock_gateway
++    pending.extend([_response(None, 'length'), _response('{"CAUSE": []}', 'stop', 99)])
++    assert _call(client) == '{"CAUSE": []}'
++    assert [c['max_tokens'] for c in calls] == [4096, 8192]
++    assert all(c['reasoning_effort'] == 'low' for c in calls)
++    assert len(traces) == 2
++    assert traces[0][2] and traces[1][2] is None
++    assert traces[0][1]['usage']['completion_tokens'] == 4096
++    assert traces[1][1]['usage']['completion_tokens'] == 99
++    assert traces[0][1]['kbs_litellm_reported_cost_usd'] == 0.03
++    assert len(events) == 1 and events[0][0] == 'generation_fallback'
++
++
++def test_success_does_not_retry_even_if_finish_length(mock_gateway):
++    client, pending, calls, traces, events = mock_gateway
++    pending.append(_response('{"CAUSE": []}', 'length'))
++    assert _call(client) == '{"CAUSE": []}'
++    assert len(calls) == len(traces) == 1
++    assert not events
++
++
++def test_stop_with_empty_answer_fails_without_fallback(mock_gateway):
++    client, pending, calls, traces, events = mock_gateway
++    pending.append(_response(None, 'stop'))
++    with pytest.raises(ValueError, match='no usable final-answer'):_call(client)
++    assert len(calls) == len(traces) == 1
++    assert not events
++
++
++def test_two_length_empty_responses_terminate(mock_gateway):
++    client, pending, calls, traces, events = mock_gateway
++    pending.extend([_response(None, 'length'), _response(None, 'length', 8192)])
++    with pytest.raises(ValueError, match='configured_max_tokens=8192'):_call(client)
++    assert [c['max_tokens'] for c in calls] == [4096,8192]
++    assert len(traces) == 2 and all(t[2] for t in traces)
++    assert len(events) == 1
++
++
++def test_transport_error_no_fallback(mock_gateway):
++    client, pending, calls, traces, events = mock_gateway
++    pending.append(ConnectionError('simulated provider failure'))
++    with pytest.raises(ConnectionError):_call(client)
++    assert len(calls) == len(traces) == 1
++    assert traces[0][1] is None
++    assert not events
++
++
++def test_second_attempt_transport_error_stays_bounded(mock_gateway):
++    client, pending, calls, traces, events = mock_gateway
++    pending.extend([_response(None,'length'),TimeoutError('simulated timeout')])
++    with pytest.raises(TimeoutError):_call(client)
++    assert len(calls) == len(traces) == 2
++    assert traces[0][1] is not None and traces[1][1] is None
++
++
++def test_legacy_protocol_never_uses_fallback(mock_gateway,monkeypatch):
++    client, pending, calls, traces, events = mock_gateway
++    monkeypatch.setenv('KBS_PROTOCOL_MODE','legacy_xquality')
++    pending.append(_response(None,'length'))
++    with pytest.raises(ValueError):_call(client)
++    assert len(calls) == 1
++
++
++def test_invalid_fallback_cap_fails_before_api(mock_gateway,monkeypatch):
++    client, pending, calls, traces, events = mock_gateway
++    monkeypatch.setenv('KBS_FALLBACK_MAX_TOKENS','4096')
++    with pytest.raises(ValueError, match='fallback max_tokens'): _call(client)
++    assert not calls

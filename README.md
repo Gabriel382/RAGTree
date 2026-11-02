@@ -1,53 +1,93 @@
-# Recovery of the ten previously blocked KBS configurations
+# KBS controlled-revision — bounded GPT-OSS-20B generation fallback
 
-This is a **source-based reconstruction**, not an assertion that the exact final journal executions were recovered. All source paths below refer to the supplied historical `RAGTree-xquality.zip`.
+## Observed evidence
+Three *exact* saved DocRED prompts that returned no final text at the 4,096-token
+output cap were replayed once with 8,192. All finished normally with
+structurally valid relation JSON (1,577 / 6,649 / 542 completion tokens).
+This is a diagnostic result, not a claim that their official evaluation has passed.
 
-## Evidence and decisions
-
-| Configuration(s) | Decision for controlled revision | Evidence | Historical certainty |
-|---|---|---|---|
-| ARAG (five datasets) | `agentic_hybrid`; preserve original 5 notebook commands; `max_llm_calls=1` | `scripts/run_agentic_runtime_co2_n_docs.py`, header, `METHOD_DISPLAY`, `build_method_command`; `tests/processing/agentic.ipynb` cells 10, 22, 31, 40, 49 | **Method mapping and commands documented**; final journal run provenance unconfirmed |
-| Baseline / EventStoryLine | `run_single_llm_baseline.py --dataset-key eventstoryline --backend vllm --doc-type all` | `tests/postprocessing/postprocessing_maven_ere.ipynb` cell 3 evaluates baseline; `scripts/run_supplementary_runtime_co2_v4.py` reconstructs command, marks it inferred | **Inferred run command** |
-| MARAG / MAVEN-ERE | 3 shots from `train`; ontology EventKG; KG from train | `scripts/run_agentic_runtime_co2_n_docs.py` `DATASETS`; `scripts/run_missing_marag_runtime_co2.py` `MISSING_MARAG_SPECS` | **Author-documented inference**, not original journal run |
-| MARAG / EventStoryLine | 3 shots from `full`; ontology owltime; KG artifact with limit=10 | Same two supplementary scripts | **Author-documented inference**; overlap/resource issue remains |
-| MARAG / FinCausal | 3 shots from `train.csv`; ontology fibocoreplus; KG train.csv | Same two supplementary scripts | **Author-documented inference** |
-| MARAG / CausalBank | 3 shots from `resulted_from`; ontology wordnetfull; KG resulted_from | Same two supplementary scripts | **Author-documented inference** |
-
-For the four MARAG reconstructions, the supplementary source explicitly labels them **inferred**. Their `--shot-type` values used to be guessed as `all` in the first KBS patch; this patch corrects them to the explicitly documented values `train`, `full`, `train.csv`, `resulted_from`. All other MARAG settings remain as before, including 10 maximum LLM calls, web/Wikidata, and 3 examples.
-
-## Access policy
-
-- `--protocol legacy_xquality`: **only 50 directly notebook-reconstructed recipes run** by default. The other ten stay blocked, protecting strict historical claims.
-- `--protocol controlled_revision_v2`: all **60 recipes may run without `--allow-unverified`** because the missing ten have explicit source references. Their manifests retain `source_documented` or `documented_inference`, so results cannot be presented as recovered historical executions.
-- Truly unverified/new recipe categories remain blocked in v2 unless explicitly overridden.
-
-This patch modifies only the KBS recipe registry, provenance gate, and tests. It does **not** change algorithms, original notebooks, datasets, resources, metrics, or existing checkpoints. Changed recipes get changed run fingerprints and therefore new independent checkpoints.
-
-## Outstanding scientific validation before production
-
-1. Compare original server `data/processed/*.agentic_hybrid.vllm.jsonl` and `*.marag.vllm.jsonl` with submitted 60-cell results, if still retained; notebook outputs alone cannot establish exact journal production settings.
-2. Validate source KG artifacts (EventStoryLine `limit=10`) and ontology joins keyed on colliding original document IDs.
-3. Audit few-shot overlap and correct source-pool separation; e.g. `full`, `resulted_from`, or `dev` may be part of evaluation set. **A passing one-record smoke does not establish no leakage.**
-4. Model/provider changes and `4096` token/low-reasoning settings can alter F1. A controlled v2 result need not equal legacy or submitted paper values.
-5. Full-run successes and reviewer-ready metrics still require actual 5-dataset execution and complete trace/output validation.
-
-## Install
-
-From repository root:
+## Apply
+From your **current** KBS branch on IMMOTEP, after all earlier hotfixes:
 
 ```bash
-unzip RAGTree_KBS_Recipe_Recovery_20261102.zip -d /tmp/kbs-recipes
-# Inspect before applying:
-git apply --check /tmp/kbs-recipes/kbs_recipe_recovery.patch
-git apply /tmp/kbs-recipes/kbs_recipe_recovery.patch
+cd ~/git/postdoc/ragtree
+git status --short
+git apply --check /path/to/kbs_bounded_fallback.patch
+git apply /path/to/kbs_bounded_fallback.patch
 python -m pytest -q tests/kbs
-python scripts/kbs_protocol.py plan | head -30
 ```
 
-Then locally smoke the ten previously blocked configurations individually or run the complete smoke:
+The patch changes ONLY the KBS LiteLLM gateway, KBS campaign environment,
+KBS protocol YAML, and one new test file. Existing RAG strategies are untouched.
+
+## Policy (controlled_revision_v2, gpt_oss_20b only)
+
+1. Run the same prompt with 4,096 maximum completion tokens and low reasoning effort.
+2. If **and only if** the provider returns **no final-answer text** and
+   `finish_reason=length`, make exactly **one** additional API call on the
+   same prompt/messages with `max_tokens=8192`.
+3. If retry succeeds, return the answer; if not, fail the record normally.
+4. Both completed API attempts are independently traced with usage and cost
+   (if available); a `generation_fallback` event identifies the reason.
+5. Legacy xquality never enables this fallback; the Qwen model does not
+   automatically use a GPT-OSS-specific recovery rule.
+6. API/network-level retries remain separately capped by the current LiteLLM configuration.
+
+## Verify on IMMOTEP
 
 ```bash
-python scripts/kbs_protocol.py smoke --profile local --mode sequential --protocol controlled_revision_v2 --max-errors 3
+python scripts/kbs_protocol.py smoke \
+  --profile local --mode sequential \
+  --protocol controlled_revision_v2 \
+  --method baseline --dataset docred_causal --max-errors 3
+
+python scripts/kbs_protocol.py smoke \
+  --profile local --mode sequential \
+  --protocol controlled_revision_v2 \
+  --method langgraph_agentic_simple --dataset docred_causal --max-errors 3
 ```
 
-Do not use `--allow-unverified` for that command. A run may still fail for actual model, resource, or agent network errors; this patch only resolves source-configuration gatekeeping.
+These smoke commands select a small document sample; they do **not** target the
+three failed pilot documents or establish that all original failures are resolved
+in the checkpoint database. The 3/3 successful exact-prompt diagnostic replays
+are stored separately and must not be imported as canonical experiment outputs.
+
+## Critical checkpoint warning
+The existing KBS engine fingerprints all Python source plus protocol.yaml. This
+patch **will change run identities**. Old results remain intact but will not be
+silently reused as the same scientific run. Do not rerun the entire `estimate`
+command merely to clear three historical failures. Keep its token/budget report
+and account for unsuccessful calls and the extra fallbacks when finalizing costs.
+When launching revised production, treat it as a newly versioned protocol.
+
+## Limits
+The fallback solves only the specific no-final-text/length case. It does NOT
+retry malformed relation JSON, missing entities, network outages, or prediction
+validation failures, and no extended LLM experiments were run during packaging.
+
+## Tests
+Eight isolated gateway tests exercise: first-call success, first-call content
+with length finish, one bounded retry, both-attempt billing traces, no retry on
+stop/empty or provider failure, failure on second attempt, and legacy isolation.
+Run full `tests/kbs` suite locally before real inference.
+
+## Precisely targeted end-to-end verification (recommended)
+
+The ZIP also includes `verify_three_failed_docred.py`. Copy it into the
+RAGTree repository root. Its default invocation is read-only:
+
+```bash
+python verify_three_failed_docred.py
+```
+
+If all three original document IDs are found exactly once, execute only those
+three evaluations through the real RAGTree runner and checkpoint manager:
+
+```bash
+python verify_three_failed_docred.py --execute --profile local --max-errors 3
+```
+
+It creates/reuses the **new versioned** run ID, leaves all previous estimate
+artifacts intact, and explicitly checks all three selected checkpoint statuses.
+Each agentic document may make multiple LLM calls; the script does not limit it
+to three *API requests*.
