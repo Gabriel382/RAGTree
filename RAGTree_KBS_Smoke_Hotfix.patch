@@ -1,0 +1,70 @@
+--- a/ragtree/experiments/kbs/cli.py
++++ b/ragtree/experiments/kbs/cli.py
+@@ -161,10 +161,27 @@
+                         if item['status'] in ('aborted','failed'):break
+                     estimates.append(current)
+                     atomic_json(Path(item['run_root'])/'estimate.json',current)
++            except ValueError as exc:
++                # A dataset with nonunique/missing record IDs cannot be checkpointed
++                # safely. Block ONLY its current configuration and continue the
++                # other smoke/estimate jobs. Never silently drop/merge source rows.
++                message=str(exc)
++                if ' duplicate ID ' in message or ' missing document ID' in message:
++                    results.append({'job':job.identity,'method':job.method,'dataset':job.dataset,
++                                    'status':'blocked','reasons':[message]})
++                    print(f'[{index}/{len(jobs)}] BLOCKED invalid dataset IDs: {message}',
++                          file=sys.stderr,flush=True)
++                    continue
++                results.append({'job':job.identity,'method':job.method,'dataset':job.dataset,
++                                'status':'orchestration_error','reason':repr(exc)})
++                print(f'[{index}/{len(jobs)}] ORCHESTRATION ERROR: {exc}',
++                      file=sys.stderr,flush=True)
++                break
+             except Exception as exc:
+                 results.append({'job':job.identity,'method':job.method,'dataset':job.dataset,
+-                        'status':'orchestration_error','reason':repr(exc)})
+-                print(f'[{index}/{len(jobs)}] ORCHESTRATION ERROR: {exc}',file=sys.stderr,flush=True)
++                                'status':'orchestration_error','reason':repr(exc)})
++                print(f'[{index}/{len(jobs)}] ORCHESTRATION ERROR: {exc}',
++                      file=sys.stderr,flush=True)
+                 break
+             with sqlite3.connect(root/'checkpoints.sqlite',timeout=30) as c:
+                 count=c.execute('SELECT COUNT(*) FROM failures WHERE session_id=?',(session,)).fetchone()[0]
+@@ -177,6 +194,6 @@
+             atomic_json(root/'reports'/f'projected_campaign_{session}.json',projected_campaign(estimates))
+         print(json.dumps({'report':str(report),'job_count':len(results),
+                           'statuses':{x['status']:sum(i['status']==x['status'] for i in results) for x in results}},indent=2))
+-        return 1 if any(r['status'] in ('aborted','failed','orchestration_error') for r in results) else (2 if any(r['status']=='blocked' for r in results) else 0)
++        return 1 if any(r['status'] in ('aborted','failed','orchestration_error','completed_with_failures') for r in results) else (2 if any(r['status']=='blocked' for r in results) else 0)
+ 
+ if __name__=='__main__':raise SystemExit(main())
+--- a/ragtree/experiments/kbs/engine.py
++++ b/ragtree/experiments/kbs/engine.py
+@@ -286,10 +286,25 @@
+                         _process_error(db,session_id,rid,f'__shard_{i}',f'exit={code}: {logtail}')
+                 status='failed'
+                 reason='one or more subprocesses exited non-zero'
+-            else:status='completed_with_failures' if _session_errors(db,session_id) else 'completed'
++            else:status='completed'
+         counts=status_counts(db,[rid])
++        # A previous job's failure must not mark this job as failed, and a
++        # previously failed/skipped document must not make smoke report success.
++        expected_ids = set(selected_ids) if selected_ids is not None else {
++            str(doc.get('document_id') or doc.get('id')) for doc in filtered_docs(job)
++        }
++        with sqlite3.connect(db, timeout=30) as c:
++            state = dict(c.execute('SELECT doc_id,status FROM records WHERE run_id=?',(rid,)))
++        selected_done = sum(state.get(identifier)=='done' for identifier in expected_ids)
++        selected_failed = sum(state.get(identifier)=='failed' for identifier in expected_ids)
++        selected_missing = len(expected_ids)-selected_done-selected_failed
++        if status=='completed' and (selected_failed or selected_missing):
++            status='completed_with_failures'
+         result={'job':job.identity,'run_id':rid,'run_root':str(root),'status':status,
+-                'counts':counts,'session_errors':_session_errors(db,session_id),'reason':reason,
++                'counts':counts,'selected_record_status':{
++                    'expected':len(expected_ids),'done':selected_done,
++                    'failed':selected_failed,'missing':selected_missing},
++                'session_errors':_session_errors(db,session_id),'reason':reason,
+                 'warnings':pf['warnings']}
+         atomic_json(root/'last_execution.json',result)
+         return result

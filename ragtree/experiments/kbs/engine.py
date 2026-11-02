@@ -286,10 +286,25 @@ def execute_job(job:Job,profile_name='local',mode=None,workers=None,max_errors=3
                         _process_error(db,session_id,rid,f'__shard_{i}',f'exit={code}: {logtail}')
                 status='failed'
                 reason='one or more subprocesses exited non-zero'
-            else:status='completed_with_failures' if _session_errors(db,session_id) else 'completed'
+            else:status='completed'
         counts=status_counts(db,[rid])
+        # A previous job's failure must not mark this job as failed, and a
+        # previously failed/skipped document must not make smoke report success.
+        expected_ids = set(selected_ids) if selected_ids is not None else {
+            str(doc.get('document_id') or doc.get('id')) for doc in filtered_docs(job)
+        }
+        with sqlite3.connect(db, timeout=30) as c:
+            state = dict(c.execute('SELECT doc_id,status FROM records WHERE run_id=?',(rid,)))
+        selected_done = sum(state.get(identifier)=='done' for identifier in expected_ids)
+        selected_failed = sum(state.get(identifier)=='failed' for identifier in expected_ids)
+        selected_missing = len(expected_ids)-selected_done-selected_failed
+        if status=='completed' and (selected_failed or selected_missing):
+            status='completed_with_failures'
         result={'job':job.identity,'run_id':rid,'run_root':str(root),'status':status,
-                'counts':counts,'session_errors':_session_errors(db,session_id),'reason':reason,
+                'counts':counts,'selected_record_status':{
+                    'expected':len(expected_ids),'done':selected_done,
+                    'failed':selected_failed,'missing':selected_missing},
+                'session_errors':_session_errors(db,session_id),'reason':reason,
                 'warnings':pf['warnings']}
         atomic_json(root/'last_execution.json',result)
         return result

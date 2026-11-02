@@ -161,10 +161,27 @@ def main(argv=None):
                         if item['status'] in ('aborted','failed'):break
                     estimates.append(current)
                     atomic_json(Path(item['run_root'])/'estimate.json',current)
+            except ValueError as exc:
+                # A dataset with nonunique/missing record IDs cannot be checkpointed
+                # safely. Block ONLY its current configuration and continue the
+                # other smoke/estimate jobs. Never silently drop/merge source rows.
+                message=str(exc)
+                if ' duplicate ID ' in message or ' missing document ID' in message:
+                    results.append({'job':job.identity,'method':job.method,'dataset':job.dataset,
+                                    'status':'blocked','reasons':[message]})
+                    print(f'[{index}/{len(jobs)}] BLOCKED invalid dataset IDs: {message}',
+                          file=sys.stderr,flush=True)
+                    continue
+                results.append({'job':job.identity,'method':job.method,'dataset':job.dataset,
+                                'status':'orchestration_error','reason':repr(exc)})
+                print(f'[{index}/{len(jobs)}] ORCHESTRATION ERROR: {exc}',
+                      file=sys.stderr,flush=True)
+                break
             except Exception as exc:
                 results.append({'job':job.identity,'method':job.method,'dataset':job.dataset,
-                        'status':'orchestration_error','reason':repr(exc)})
-                print(f'[{index}/{len(jobs)}] ORCHESTRATION ERROR: {exc}',file=sys.stderr,flush=True)
+                                'status':'orchestration_error','reason':repr(exc)})
+                print(f'[{index}/{len(jobs)}] ORCHESTRATION ERROR: {exc}',
+                      file=sys.stderr,flush=True)
                 break
             with sqlite3.connect(root/'checkpoints.sqlite',timeout=30) as c:
                 count=c.execute('SELECT COUNT(*) FROM failures WHERE session_id=?',(session,)).fetchone()[0]
@@ -177,6 +194,6 @@ def main(argv=None):
             atomic_json(root/'reports'/f'projected_campaign_{session}.json',projected_campaign(estimates))
         print(json.dumps({'report':str(report),'job_count':len(results),
                           'statuses':{x['status']:sum(i['status']==x['status'] for i in results) for x in results}},indent=2))
-        return 1 if any(r['status'] in ('aborted','failed','orchestration_error') for r in results) else (2 if any(r['status']=='blocked' for r in results) else 0)
+        return 1 if any(r['status'] in ('aborted','failed','orchestration_error','completed_with_failures') for r in results) else (2 if any(r['status']=='blocked' for r in results) else 0)
 
 if __name__=='__main__':raise SystemExit(main())
