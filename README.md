@@ -1,61 +1,40 @@
-# KBS GPT-OSS-20B bounded fallback — compatibility installer
+# Controlled KBS OpenRouter provider pin (GPT-OSS only)
 
-This is a replacement for `git apply kbs_bounded_fallback.patch` **when the patch fails at `gateway.py:39`**. The original `.patch` expects one exact intermediate revision of the KBS gateway and cannot be applied reliably to different Windows/Linux checkouts.
+Context: three malformed reasoning-only GPT-OSS answers came from SiliconFlow,
+and one provider error from Darkbloom. The same saved failed MAVEN prompt succeeded
+on DeepInfra in a diagnostic single-call replay (274 output tokens, 100 reasoning,
+JSON final answer, USD 0.00012158 as recorded by OpenRouter).
 
-## Purpose
+This script pins DeepInfra for **GPT-OSS only**, for the **controlled_revision_v2**
+KBS protocol, via OpenRouter's `provider` selection request body. Qwen routing
+remains untouched. It also preserves the bounded 4096 -> 8192 on-length fallback.
+The strict provider choice is traceable and versioned in `protocol.yaml`.
 
-- Only in `controlled_revision_v2`, with the GPT-OSS-20B configured generation policy:
-  - Initial `max_tokens=4096`, `reasoning_effort=low`.
-  - If the final answer is empty and the response ends with `finish_reason=length`, retry that call once with `max_tokens=8192`.
-  - Log both requests and token usage separately. No infinite fallback loop.
-- Preserve the original RAG strategy algorithms, historical protocol, and datasets.
-- Handle different earlier KBS gateway revisions (original, diagnostic hotfix, or already patched).
-- Refuse unknown code variants instead of forcing a patch. Create a separate `.before_kbs_fallback.bak` copy of every modified file.
+1. Place `install_kbs_deepinfra_routing.py` at the RAGTree root on the server.
+2. In venv, run `python install_kbs_deepinfra_routing.py --repo .` (dry run).
+3. Run `python install_kbs_deepinfra_routing.py --repo . --apply`.
+4. Run `python -m pytest -q tests/kbs test_generation_fallback.py`.
+5. Check request provenance for the new test: trace must show
+   `extra_body.provider.only=['deepinfra']`; look up its OpenRouter generation
+   ID if needed to verify actual backend.
+6. Trial **one single document** within **one GPT-OSS method/dataset**:
 
-## Windows PowerShell
+   `python kbs_first_parallel_campaign_tqdm.py --execute --only-phase main_gpt --max-jobs 1 --documents-per-cell 1 --parallel-jobs 1 --workers-per-job 1 --max-errors 0`
 
-Extract the whole ZIP, including `gateway_retry_block.txt`, to a folder, such as `C:\Users\henri\Downloads\KBS_Fallback_Compat`. Then from the RAGTree root:
+7. Only after this passes, process the **same one cell** completely:
 
-```powershell
-cd C:\Users\henri\Documents\git\postdoc\RAGTree
+   `python kbs_first_parallel_campaign_tqdm.py --execute --only-phase main_gpt --max-jobs 1 --parallel-jobs 1 --workers-per-job 3 --max-errors 3 --retry-failed`
 
-git branch --show-current
-git status --short
+**IMPORTANT:** Versioned source/config edits change `run_id`, by design. Existing
+1226 successful documents remain physically preserved in the old run and can
+be used for cost analysis, but cannot be silently counted as equivalent to
+the new DeepInfra-pinned run. Do not delete or rekey them. This avoids mixing
+provider-routing policies in a benchmark whose reproducibility matters.
 
-# Dry-run: validate all four files, change nothing.
-python C:\Users\henri\Downloads\KBS_Fallback_Compat\install_compatible.py --repo .
+This installer has only been tested against reconstructed KBS files from the
+supplied patch packages. It has not been validated against the actual IMMOTEP
+working tree; dry-run and tests are mandatory. This is not a guarantee that
+DeepInfra succeeds on all documents, or that LiteLLM sends `extra_body` in
+all installed versions: verify the first real trace and OpenRouter provider.
 
-# Apply if and only if the above succeeds.
-python C:\Users\henri\Downloads\KBS_Fallback_Compat\install_compatible.py --repo . --apply
-
-# Optional: add the isolated fallback regression tests.
-Copy-Item C:\Users\henri\Downloads\KBS_Fallback_Compat\test_generation_fallback.py tests\kbs\test_generation_fallback.py
-python -m pytest -q tests/kbs
-
-git diff --stat
-```
-
-The script does not delete any pre-existing results/checkpoints. Because source files and the protocol YAML are hashed into run IDs, the new protocol creates separate run identities and **may not reuse prior successful checkpoints**. Do not rerun the complete estimator solely because this patch has been installed.
-
-### After validating and committing on Windows
-
-Commit only the intended source/config/test files (do not commit `.before_kbs_fallback.bak` copies), push the correct branch, and `git pull` that branch on IMMOTEP **only if you want to synchronize the two machines**. You can alternatively run this compatibility installer directly against the IMMOTEP checkout, after testing and committing any existing work there.
-
-## Linux
-
-```bash
-cd ~/git/postdoc/ragtree
-python3 /path/to/KBS_Fallback_Compat/install_compatible.py --repo .
-python3 /path/to/KBS_Fallback_Compat/install_compatible.py --repo . --apply
-python3 -m pytest -q tests/kbs
-```
-
-## What was verified
-
-- Compatibility dry-run/application/idempotence against three reconstructible KBS versions: base, pre-fallback, and already patched.
-- Full KBS offline suite on a reconstructed full repository after installing this script: **21 passed, 4 skipped**.
-- `verify_three_failed_docred.py` is included for targeted live testing, but **no live Windows inference** has been performed. It is only needed on the machine that has the original failed checkpoints and local LLM endpoint.
-
-## Troubleshooting
-
-If the installer says `NOT APPLIED: incompatible ...`, it has made no changes. Do not use `git apply --force`, delete your file, or overwrite it with a generic template. Share your current `gateway.py`, `engine.py`, and `protocol.py` (or their relevant diff) for a specifically targeted patch.
+There is no API key in the patch. The key stays in ~/.config/ragtree/openrouter.env.
